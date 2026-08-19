@@ -1,0 +1,52 @@
+section.sustainability-tin-tuc-ben-vung(class='clamp:py-[40-80]')
+	.container-xxl.flex.flex-col.items-center(class='clamp:gap-[40-40]')
+		h2.heading-1.text-gray-950.text-center Tin tức bền vững
+		.wrap.w-full.relative.init-swiper
+			.swiper(data-time='0' data-speed='600')
+				.swiper-wrapper
+					.swiper-slide
+						.item
+							.media
+								a(href='javascript:;')
+									+FooImg('./img/bg/home-bg-1.png', 'w-full h-full object-cover')
+							.content
+								.inner.flex.items-center(class='clamp:gap-[8-8]')
+									div.desc.body-3.text-gray-500 09/06/2026
+									div.desc.body-4.text-gray-500 |
+									div.desc.body-3.text-gray-500 Tin dự án
+								a(href='javascript:;')
+									h4.heading-5.text-gray-950 Phát triển xanh – Cách tiếp cận cho các thương hiệu Việt
+					.swiper-slide
+						.item
+							.media
+								a(href='javascript:;')
+									+FooImg('./img/bg/home-bg-1.png', 'w-full h-full object-cover')
+							.content
+								.inner.flex.items-center(class='clamp:gap-[8-8]')
+									div.desc.body-3.text-gray-500 09/06/2026
+									div.desc.body-4.text-gray-500 |
+									div.desc.body-3.text-gray-500 Tin dự án
+								a(href='javascript:;')
+									h4.heading-5.text-gray-950 Phát triển thị trường carbon, hướng tới Net Zero
+					.swiper-slide
+						.item
+							.media
+								a(href='javascript:;')
+									+FooImg('./img/bg/home-bg-1.png', 'w-full h-full object-cover')
+							.content
+								.inner.flex.items-center(class='clamp:gap-[8-8]')
+									div.desc.body-3.text-gray-500 09/06/2026
+									div.desc.body-4.text-gray-500 |
+									div.desc.body-3.text-gray-500 Sự kiện
+								a(href='javascript:;')
+									h4.heading-5.text-gray-950 "Xanh hoá" Khu Công nghiệp: chìa khoá thu hút FDI chất lượng cao
+			button.prev.bg-white(
+				type='button'
+				aria-label='Tin trước'
+			)
+				i.fa-light.fa-chevron-left.text-gray-300
+			button.next.bg-white(
+				type='button'
+				aria-label='Tin sau'
+			)
+				i.fa-light.fa-chevron-right.text-gray-300

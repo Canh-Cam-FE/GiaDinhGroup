@@ -1,0 +1,55 @@
+.about-thong-iep-cua-chu-tich
+	background: linear-gradient(180deg, rgba(0, 174, 239, 0.04) 0%, rgba(0, 174, 239, 0.08) 29.42%, rgba(37, 75, 157, 0.08) 73.77%, rgba(255, 255, 255, 0.00) 109.45%)
+	.media
+		@apply absolute 
+		bottom: r(34px)
+		left: r(84px)
+		max-width: r(835px)
+		max-height: r(560px)
+		img
+			@apply w-full h-full object-cover
+	.container
+		@apply pt-10
+	.row
+		@apply my-0
+		.col
+			@apply my-0 
+	.img
+		a
+			@apply flex items-end justify-center
+			img
+				@apply h-auto object-contain
+
+	.content
+		@screen lg
+			max-width: r(800px)
+
+	.card
+		@apply bg-white/80 backdrop-blur-sm
+	.bg-wrap
+		&::before,&::after
+			content: ''
+			@apply block absolute pointer-events-none  z-10  transition w-full h-full
+			width: r(52px)
+			height: r(42px)
+			background-repeat: no-repeat !important
+			background-size: contain !important
+			background-position: center !important
+		&::before
+			@apply z-60
+			top: r(-20px)
+			left: r(40px)
+			background: url('../img/icon/qoutes-1.png')
+		&::after
+			bottom: r(-60px)
+			right: r(40px)
+			background: url('../img/icon/qoutes-2.png')
+	.desc
+		p
+			strong
+				@apply text-lg
+				*
+					@apply text-lg
+	.t52-400-198-s6-avc
+		@screen max-lg
+			@apply  text-4xl text-center mx-auto w-full

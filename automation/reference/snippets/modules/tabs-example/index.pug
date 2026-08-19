@@ -1,0 +1,65 @@
+//- Gold standard: interactive Tabs — data-js-* hooks only (no legacy data-type).
+section.example-page-tabs(class='clamp:py-[48-96]')
+	.container-xxl
+		h3.heading-3.text-primary-2-title-content Tabbed content
+
+		.list.flex.flex-wrap.gap-4(role='tablist' aria-label='Example tabs' data-js-target='example-tabs')
+			button(
+				type='button'
+				role='tab'
+				aria-selected='true'
+				aria-controls='example-tab-panel-1'
+				data-js-target='example-tabs'
+				data-js-action='switch-tab'
+				data-tab='example-tab-panel-1'
+			)
+				span.heading-7 Tab one
+
+			button(
+				type='button'
+				role='tab'
+				aria-selected='false'
+				aria-controls='example-tab-panel-2'
+				data-js-target='example-tabs'
+				data-js-action='switch-tab'
+				data-tab='example-tab-panel-2'
+			)
+				span.heading-7 Tab two
+
+			button(
+				type='button'
+				role='tab'
+				aria-selected='false'
+				aria-controls='example-tab-panel-3'
+				data-js-target='example-tabs'
+				data-js-action='switch-tab'
+				data-tab='example-tab-panel-3'
+			)
+				span.heading-7 Tab three
+
+		.panel.active#example-tab-panel-1(
+			role='tabpanel'
+			tabindex='0'
+			class='mt-8'
+			data-js-target='example-tabs-panel'
+			data-tab='example-tab-panel-1'
+		)
+			div.desc.body-2 First panel copy — wire visibility in JS via data-js-target / data-js-action.
+
+		.panel#example-tab-panel-2(
+			role='tabpanel'
+			tabindex='0'
+			hidden
+			data-js-target='example-tabs-panel'
+			data-tab='example-tab-panel-2'
+		)
+			div.desc.body-2 Second panel copy.
+
+		.panel#example-tab-panel-3(
+			role='tabpanel'
+			tabindex='0'
+			hidden
+			data-js-target='example-tabs-panel'
+			data-tab='example-tab-panel-3'
+		)
+			div.desc.body-2 Third panel copy.

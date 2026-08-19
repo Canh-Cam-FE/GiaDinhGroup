@@ -1,0 +1,27 @@
+.mobile-menu-nav
+	@apply overflow-y-auto  
+	.nav
+		@apply flex-col w-full 
+	.menu-item
+		@apply relative z-10 
+		&:not(:last-child)
+			@apply  mb-3
+		.title 
+			@apply flex-between
+			>a
+				@apply  h-fit
+			&.is-active
+				.icon
+					transform: rotateX(-180deg) translateY(50%) !important
+		&:hover,&.current-menu-item,&.current-category-ancestor,&.current-menu-ancestor,&.current-menu-parent,&.current-category-parent,&.current-money-map-category-ancestor
+			>.title
+				a
+					@apply text-grey-950
+			>a
+				@apply text-grey-950
+	a
+			@apply text-xl  relative transition  text-grey-500 font-bold  
+			letter-spacing: 1.2px
+			transition: .3s all  ease-in-out
+.menu-label
+	letter-spacing: 1.2px

@@ -1,0 +1,118 @@
+.home-du-an-noi-bat
+	.img-wrap
+		a
+			&:before
+				content: ''
+				@apply block absolute pointer-events-none left-0 bottom-0 z-10 w-full h-full 
+				transition: .4s all ease-in-out
+			
+				background: rgba(#000,.5 )
+
+				@screen max-sm
+					@apply hidden
+			
+			@screen md
+				@apply flex-center  
+				width: auto
+				height: r(640px)
+				img
+					width: 100%
+					height: 100%
+					object-fit: cover
+			
+			@screen max-md
+				+img-ratio(640, 960)
+			@screen max-md
+				+img-ratio(240, 354)
+	.bottom
+		border: 1.5px solid #FFFFFF33
+		@apply p-4
+		&::after
+			content: ''
+			@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full bg-dark bg-opacity-20 
+			backdrop-filter: blur(40px)
+	.desktop-block
+		.desc
+			ul
+				li
+					&:before
+						@apply bg-white
+
+	.flex-options
+		display: flex
+		flex-direction: row
+		align-items: stretch
+		overflow: hidden
+		@apply w-full h-fit
+		@screen max-lg
+			@apply w-full grid grid-cols-2
+		@screen max-md
+			@apply grid-cols-1 gap-[16px]
+	.swiper-pagination
+		@apply bg-transparent !#{important}
+
+	.card-option
+		transform: scale(1)
+		background-size: cover
+		position: relative
+		width: 16%
+		overflow: hidden
+		cursor: pointer
+		transition: .6s all ease-in-out
+		@screen max-lg
+			@apply w-full
+		&:not(.is-active)
+			flex-grow: 1
+			.heading-3
+				&::after
+					@apply hidden
+				@screen sm
+					@apply text-xl 
+		&.is-active
+			@screen lg
+				flex-grow: 10000
+				transform: scale(1)
+				width: 50%
+			.bottom
+				@apply opacity-100
+			.img-wrap
+				a
+					&::before
+						background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%)
+					
+			.txt
+				@apply opacity-100
+		.card-label
+			@apply w-full h-fit
+			transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95)
+		.txt
+			@apply h-auto flex items-start 
+		.btn-wrap
+			@screen lg
+				@apply opacity-0
+		.bottom
+			@apply opacity-0
+			transition: .8s all  ease-in-out
+		.bg-wrap
+			@apply  p-6 !#{important}
+			@screen max-sm
+				@apply p-[24px] !#{important}
+		.heading-3
+			@apply w-full flex-between gap-4
+			@screen max-sm
+				@apply text-[24px] mb-[4px]
+			&::after
+				content: ''
+				@apply   pointer-events-none z-10  transition w-[20px] h-[40px] 
+				background: url('../img/icon/Arrow.png')
+				background-repeat: no-repeat
+				background-size: contain
+				background-position: center
+		.btn
+			@screen max-lg
+				@apply pt-0
+			span
+				@screen max-sm
+					@apply text-18 !#{important}
+				@screen sm
+					@apply text-lg !#{important}

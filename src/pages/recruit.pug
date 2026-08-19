@@ -1,0 +1,9 @@
+extends _layout.pug
+
+block var
+	- var title = 'Home'
+	- var bodyClass = 'homepage'
+
+block main
+	include ../components/banner-breadcrumb/index.pug
+	include ../modules/recruit/list/index.pug

@@ -1,0 +1,14 @@
+{
+	"_doc": "Layout / coding-rule constants formerly inlined in tailwind-design-system.js. Not design tokens — consumed by tailwind.config.js for fluid sizing (root font, design viewport, scrollbar fallback). Coding flags document the agent contract; they are not read at build time.",
+	"version": "1.0.0",
+	"designBaseWidthPx": 1920,
+	"scrollbarFallbackPx": 0,
+	"rootFontSizePx": 19.2,
+	"coding": {
+		"oneTypographyClassPerTextNode": true,
+		"maxTailwindUtilitiesPerElement": 6,
+		"noRawHexInMarkup": true,
+		"noResponsiveTextUtilities": true,
+		"jsSelectorsUseDataAttributes": true
+	}
+}

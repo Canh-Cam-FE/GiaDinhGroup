@@ -1,0 +1,17 @@
+section.home-linh-vuc-hoat-ong.pad-8
+	.container
+		h2.heading-1.text-gray-950.mb-10.text-center Lĩnh vực hoạt động
+		.row
+			-for(i=1;i<5;i++)
+				.col.w-full(class='md:w-1/3')
+					.card.sector-figure.relative.overflow-hidden
+						.img.zoom-in.overflow-hidden
+							a.img-ratio(class='ratio:pt-[440_453]')
+								+FooImg
+						.content.relative.z-50
+							h4.heading-4.text-white.relative.z-50 Bất động sản
+							.txt-grid.relative.z-50
+								div
+									.desc.desc.body-2.text-primary-4.my-4(class='lg:my-5') Phát triển các dự án hạ tầng công nghiệp và đô thị hiện đại, tạo nền tảng vững chắc cho doanh nghiệp an cư và phát triển sản xuất bền vững.
+									+btn2('Tìm hiểu thêm', 'white')
+				

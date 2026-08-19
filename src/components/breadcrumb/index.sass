@@ -1,0 +1,90 @@
+
+.banner-breadcrumb
+	@apply relative 
+	
+	.rank-math-breadcrumb
+		@apply  justify-start !#{important}
+		p
+			&, *, a, .last, a:first-child::before
+				@apply text-white !#{important}
+			.separator::after
+				@apply bg-white opacity-50 !#{important}
+	.global-breadcrumb
+		@apply  w-full 
+		background: none !important
+		@apply absolute-x bottom-0  pb-10  z-50 border-none
+		.heading-banner
+			@apply block
+.global-breadcrumb
+	@apply border-b border-grey-100
+	h2,.heading-banner
+		@apply hidden
+	.rank-math-breadcrumb
+		@apply overflow-y-hidden
+.rank-math-breadcrumb
+	@apply  flex-start   py-2  min-h-[40px] overflow-x-auto h-auto
+	@screen lg
+		@apply  h-full 
+		height: r(52px)
+	@media screen and ( max-width: 768px)
+		@apply justify-start
+	p
+		@apply  flex-start  font-normal mb-0   relative  text-base text-white text-opacity-50 whitespace-nowrap
+		justify-content: flex-start
+		align-items: center
+		@screen max-lg
+			@apply text-white text-opacity-50
+		@media screen and ( max-width: 768px)
+			@apply justify-start
+		@screen max-md
+			@apply text-base
+		*
+			@apply  font-normal
+		span 
+			@apply whitespace-nowrap  text-base
+			*
+				@apply  text-base
+			@screen max-md
+				@apply text-base
+				*
+					@apply text-base
+		.separator
+			margin: 0 
+			padding: 0 8px
+			font-size: 0
+			width: auto
+			@apply relative
+			@screen 2xl
+				@apply px-4
+			@media screen and ( max-width: 1024px)
+				@apply mx-0
+			&:first-child
+				margin-left: 18px !important
+				@screen 2xl
+					@apply mr-5 !#{important}
+			&:after
+				content: ""
+				@apply  block font-normal pointer-events-none z-10 bg-grey-300  text-base 
+				height: 16px
+				width: 1px
+				@media screen and ( max-width: 1024px)
+					font-size: 14px
+					@apply bg-gray-300
+				@media screen and ( max-width: 1024px)
+					@apply left-[-6px]
+		.last
+			@apply font-bold text-opacity-100 text-primary-2
+			@screen max-lg
+				@apply  text-primary-2
+		
+		a
+			@apply whitespace-nowrap  text-base relative text-grey-300 
+			@screen lg
+				@apply text-opacity-50
+			@screen max-lg
+				@apply text-grey-300
+			@media screen and ( max-width: 1024px)
+				@apply   text-base
+			+ .separator
+				margin: 0
+			

@@ -1,0 +1,42 @@
+.sustainability-tin-tuc-ben-vung
+	.wrap
+		@apply relative w-full
+
+	.swiper-slide
+		width: r(440px)
+		margin-right: r(40px)
+
+	.item
+		@apply flex flex-col
+		gap: r(0)
+
+		.media
+			@apply overflow-hidden w-full
+
+			a
+				@apply block w-full
+				+aspect-ratio(440, 220)
+
+			img
+				@apply w-full h-full object-cover
+
+		.content
+			@apply flex flex-col
+			padding: r(20px) r(4px)
+			gap: r(24px)
+
+	.prev,
+	.next
+		@apply absolute top-1/2 z-10 flex items-center justify-center -translate-y-1/2
+		width: r(48px)
+		height: r(48px)
+		min-width: r(48px)
+
+		i
+			@apply text-xl leading-none
+
+	.prev
+		left: r(-24px)
+
+	.next
+		right: r(-24px)

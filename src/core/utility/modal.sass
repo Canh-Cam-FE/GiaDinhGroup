@@ -1,0 +1,48 @@
+.popup-modal
+	padding: 0
+	border-radius: 16px
+	@apply w-full overflow-hidden
+.carousel__button
+	&.is-close
+		top: 0 !important
+		width: 50px
+		height: 50px
+		right: 0 !important
+		svg
+.register-modal
+	padding: r(40px) r(30px) !important
+	max-width: r(900px) !important
+	@screen lg
+		padding: r(40px) !important
+	@media screen and ( min-width: 1360px)
+		min-height: 620px
+	@media screen and ( min-width: 1600px)
+		padding: r(90px)  r(130px)  r(70px)  r(130px) !important
+.recruit-modal
+	max-width: r(1152px)
+	padding:   r(32px)  !important
+	border-radius: 16px
+	@screen xl
+		@apply rounded-8
+		padding:   r(64px)  !important
+	.form-title
+		font-size: r(28px)
+	.desc
+		@apply mb-6
+	.container,.container-fluid
+		@apply p-0
+	.btn
+		em,i
+			animation: none !important
+
+	.carousel__button
+		&.is-close
+			top: r(12px) !important
+			width: 50px
+			height: 50px
+			right: r(12) !important
+			@apply bg-primary-1 rounded-full overflow-hidden transition
+			svg
+				@apply text-2xl
+			&:hover
+				@apply bg-primary-2

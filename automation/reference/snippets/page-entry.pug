@@ -1,0 +1,10 @@
+extends _layout.pug
+
+block var
+	- var title = 'Example Page'
+	- var bodyClass = 'page example-page-page'
+
+block main
+	include ../components/breadcrumb/index.pug
+	include ../modules/example-page/hero/index.pug
+	include ../modules/example-page/cta/index.pug

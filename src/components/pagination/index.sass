@@ -1,0 +1,29 @@
+//Type 1 first child icon
+.modulepager,.post-nav
+	@apply flex items-center justify-center pt-12 pb-0
+	ul
+		padding: 0
+		margin: 0
+		position: relative
+		@apply flex-center gap-3
+		@screen xl
+			@apply gap-5
+		li
+			display: inline-block
+			&.active,&:hover
+				a,span
+					@apply bg-primary-2 text-white
+			
+			span,a
+				transition: .3s all  ease-in-out
+				text-decoration: none
+				@apply text-xl  text-grey-500 flex-center   overflow-hidden  min-w-[40px] min-h-[40px]   font-normal
+				@screen xl
+					width: r(52px)
+					min-width: r(52px)
+					height: r(52px)
+				
+		.next
+			a
+				@apply whitespace-nowrap
+					

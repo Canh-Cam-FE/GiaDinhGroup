@@ -1,0 +1,26 @@
+main
+	padding-top: var(--header-height)
+body
+	&.home,&.homepage
+		main
+			padding-top: 0
+		header
+			&::after
+				@apply opacity-0
+body
+	--header-height: 70px
+	@screen xl
+		--header-height:  #{clampSize(100)}
+	@media screen and ( min-width: 1600px)
+		--header-height:  #{clampSize(140)}
+	&.minimize
+		@screen xl
+			--header-height: #{clampSize(80)}
+			header
+				&::after
+					@apply opacity-100
+			.nav-brand
+				a
+					height: clampSize(60)
+		.search-overlay
+			top: var(--header-height)

@@ -1,0 +1,71 @@
+.language-wrap
+	@apply rounded-full relative 
+	z-index: 900
+	@media screen and ( max-width: 576px)
+		@apply flex  w-[42px] justify-start
+	.wpml-ls-display
+		@apply hidden
+	.wpml-ls-current-language
+		&:hover
+			span
+				@apply  no-underline
+		a
+			@apply flex-center  text-lg
+			background: none !important
+			padding: 0 !important
+			border: none !important
+	.wpml-ls-item-toggle
+		@apply overflow-hidden rounded-full pointer-events-none
+		span
+			padding: 0
+			@apply text-base text-grey-950 font-medium
+	.wpml-ls-sub-menu
+		visibility: visible !important
+		@apply opacity-0 pointer-events-none z-40 transition w-max p-0 border-transparent absolute-x bg-white shadow-md
+		filter: blur(2px)
+		top: calc( 100% - 2px )
+		transition: .3s all  ease-in-out
+		transform: translate(-50%,25px)
+		a
+			@apply flex-center    cursor-pointer
+
+		.wpml-ls-item
+			&:not(:last-child)
+				@apply border-b border-primary-3 border-opacity-5
+			a
+				@screen max-lg
+					padding: 4px 20px !important
+				@screen lg
+					@apply py-2 px-5 !#{important}
+				span
+					@apply font-normal text-lg text-grey-950 !#{important} 
+			&:hover
+				span
+					@apply underline
+	.wpml-ls-legacy-dropdown 
+		@apply relative flex-center 
+		max-width: max-content
+		padding: 0 
+		&:after
+			content: '\f078'
+			@apply block flex-center  pointer-events-none  z-10  transition w-full h-[16px]  font-Awesome6  text-base  font-normal   text-grey-950  right-0  
+			@screen xl
+				@apply text-grey-950 
+		&:hover
+			.wpml-ls-sub-menu
+				@apply opacity-100 pointer-events-auto rounded 
+				filter: none
+				transform: translate(-50%,0)
+		a 
+			@apply flex-center  text-grey-950
+			span
+				@apply order-1 m-0   text-base font-medium px-[2px] mx-1
+			img
+				@apply overflow-hidden rounded-full w-[24px] h-[24px] min-w-[24px] 
+				@screen max-sm
+					@apply hidden !#{important}
+			&.wpml-ls-item-toggle
+				&::after
+					@apply hidden
+.wpml-ls-legacy-list-horizontal
+	@apply hidden

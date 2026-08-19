@@ -1,0 +1,22 @@
+{
+	"font": ["src/fonts/**"],
+	"js": [
+		"src/plugins/jquery.js",
+		"node_modules/@fancyapps/ui/dist/fancybox.umd.js",
+		"src/plugins/mapping-listener.js",
+		"src/plugins/mapping.js",
+		"src/plugins/lozad.js",
+		"src/plugins/gsap.js",
+		"src/plugins/scrollTrigger.js",
+		"src/plugins/scrollreveal.js",
+		"src/plugins/counter.js",
+		"src/plugins/swiper.min.js",
+		"src/plugins/scrollFix.js"
+	],
+	"css": [
+		"src/plugins/font.css",
+		"node_modules/@fancyapps/ui/dist/fancybox.css",
+		"src/plugins/animation.css",
+		"src/plugins/swiper.min.css"
+	]
+}

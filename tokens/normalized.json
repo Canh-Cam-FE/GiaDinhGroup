@@ -1,0 +1,2667 @@
+{
+  "$schema": "designtoken-ir/v1",
+  "colors": {
+    "color.accent.sky": {
+      "group": "accent",
+      "id": "color.accent.sky",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Accent/Sky",
+        "instances": 1,
+        "manual": true,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "sky",
+      "value": "#a2d7e9"
+    },
+    "color.grey.d9": {
+      "group": "grey",
+      "id": "color.grey.d9",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Grey/d9",
+        "instances": 1,
+        "manual": true,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "d9",
+      "value": "#d9d9d9"
+    },
+    "color.neutral.white": {
+      "group": "neutral",
+      "id": "color.neutral.white",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Neutral/White#40003:840",
+        "figmaStyleId": "40003:840",
+        "instances": 7,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "white",
+      "value": "#ffffff"
+    },
+    "color.primary.1": {
+      "diagnostics": [
+        {
+          "code": "NAME_COLLISION",
+          "competingIds": [
+            "#254b9d×174",
+            "#991f21×32",
+            "#4d3300×2",
+            "#101010×1"
+          ],
+          "detail": "identity 'Primary/1' exports 4 distinct hex values; kept most frequent #254b9d",
+          "severity": "warn",
+          "subject": "color.primary.1"
+        }
+      ],
+      "group": "primary",
+      "id": "color.primary.1",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Primary/1#12006:1619",
+        "figmaStyleId": "12006:1619",
+        "instances": 6,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "1",
+      "value": "#254b9d"
+    },
+    "color.primary.2": {
+      "group": "primary",
+      "id": "color.primary.2",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Primary/2#12006:1621",
+        "figmaStyleId": "12006:1621",
+        "instances": 6,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "2",
+      "value": "#eb2228"
+    },
+    "color.primary.3": {
+      "group": "primary",
+      "id": "color.primary.3",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Primary/3#12006:1613",
+        "figmaStyleId": "12006:1613",
+        "instances": 4,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "3",
+      "value": "#808285"
+    },
+    "color.primary.4": {
+      "group": "primary",
+      "id": "color.primary.4",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Primary/4#12006:1622",
+        "figmaStyleId": "12006:1622",
+        "instances": 2,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "4",
+      "value": "#ffffff"
+    },
+    "color.primary.bg": {
+      "group": "primary",
+      "id": "color.primary.bg",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Primary/bg",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "bg",
+      "value": "#f2ede4"
+    },
+    "color.primary.table-accent-a": {
+      "group": "primary",
+      "id": "color.primary.table-accent-a",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Primary/Table Accent A",
+        "instances": 1,
+        "manual": true,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "table-accent-a",
+      "value": "#b9d5e6"
+    },
+    "color.primary.table-accent-b": {
+      "group": "primary",
+      "id": "color.primary.table-accent-b",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Primary/Table Accent B",
+        "instances": 1,
+        "manual": true,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "table-accent-b",
+      "value": "#a7c9de"
+    },
+    "color.primary.table-surface": {
+      "group": "primary",
+      "id": "color.primary.table-surface",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Primary/Table Surface",
+        "instances": 1,
+        "manual": true,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "table-surface",
+      "value": "#d3e4f0"
+    },
+    "color.secondary.2": {
+      "group": "secondary",
+      "id": "color.secondary.2",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Secondary/2",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "2",
+      "value": "#a4adb8"
+    },
+    "color.secondary.3": {
+      "group": "secondary",
+      "id": "color.secondary.3",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Secondary/3#40002:2277",
+        "figmaStyleId": "40002:2277",
+        "instances": 2,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "3",
+      "value": "#545554"
+    },
+    "color.secondary.bg": {
+      "group": "secondary",
+      "id": "color.secondary.bg",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Secondary/BG",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "bg",
+      "value": "#cee3ff"
+    },
+    "color.secondary.utility-black-20": {
+      "group": "secondary",
+      "id": "color.secondary.utility-black-20",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Secondary/Utility-Black-20",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "utility-black-20",
+      "value": "#000000"
+    },
+    "color.secondary.utility-white-50": {
+      "group": "secondary",
+      "id": "color.secondary.utility-white-50",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Secondary/Utility - White-50",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "utility-white-50",
+      "value": "#ffffff"
+    },
+    "color.secondary.white-80": {
+      "group": "secondary",
+      "id": "color.secondary.white-80",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Secondary/White-80",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "white-80",
+      "value": "#ffffff"
+    },
+    "color.utility.black": {
+      "group": "utility",
+      "id": "color.utility.black",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Utility/black#12006:1639",
+        "figmaStyleId": "12006:1639",
+        "instances": 2,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "black",
+      "value": "#000000"
+    },
+    "color.utility.gray-100": {
+      "group": "utility",
+      "id": "color.utility.gray-100",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Utility/gray-100#12006:1633",
+        "figmaStyleId": "12006:1633",
+        "instances": 5,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "gray-100",
+      "value": "#efefef"
+    },
+    "color.utility.gray-200": {
+      "group": "utility",
+      "id": "color.utility.gray-200",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Utility/gray-200#12006:1634",
+        "figmaStyleId": "12006:1634",
+        "instances": 4,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "gray-200",
+      "value": "#dcdcdc"
+    },
+    "color.utility.gray-300": {
+      "group": "utility",
+      "id": "color.utility.gray-300",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Utility/gray-300#12006:1635",
+        "figmaStyleId": "12006:1635",
+        "instances": 5,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "gray-300",
+      "value": "#bdbdbd"
+    },
+    "color.utility.gray-50": {
+      "group": "utility",
+      "id": "color.utility.gray-50",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Utility/gray-50#12006:1632",
+        "figmaStyleId": "12006:1632",
+        "instances": 6,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "gray-50",
+      "value": "#f6f6f6"
+    },
+    "color.utility.gray-500": {
+      "group": "utility",
+      "id": "color.utility.gray-500",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Utility/gray-500#12006:1637",
+        "figmaStyleId": "12006:1637",
+        "instances": 5,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "gray-500",
+      "value": "#818181"
+    },
+    "color.utility.gray-800": {
+      "group": "utility",
+      "id": "color.utility.gray-800",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Utility/gray-800",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "gray-800",
+      "value": "#464646"
+    },
+    "color.utility.gray-950": {
+      "group": "utility",
+      "id": "color.utility.gray-950",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Utility/gray-950#12006:1642",
+        "figmaStyleId": "12006:1642",
+        "instances": 7,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "gray-950",
+      "value": "#292929"
+    },
+    "color.utility.white": {
+      "group": "utility",
+      "id": "color.utility.white",
+      "kind": "color",
+      "provenance": {
+        "figmaKey": "Utility/white#12006:1631",
+        "figmaStyleId": "12006:1631",
+        "instances": 19,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "scale": "white",
+      "value": "#ffffff"
+    }
+  },
+  "components": {},
+  "contract": {
+    "entries": {
+      "Body/Body-1": {
+        "cssClass": "body-1",
+        "html": "div",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.body.body-1",
+          "kind": "typography",
+          "resolved": false
+        }
+      },
+      "Body/Body-2": {
+        "cssClass": "body-2",
+        "html": "div",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.body.body-2",
+          "kind": "typography",
+          "resolved": false
+        }
+      },
+      "Body/Body-3": {
+        "cssClass": "body-3",
+        "html": "div",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.body.body-3",
+          "kind": "typography",
+          "resolved": false
+        }
+      },
+      "Body/Body-4": {
+        "cssClass": "body-4",
+        "html": "div",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.body.body-4",
+          "kind": "typography",
+          "resolved": false
+        }
+      },
+      "Font Awesome/Brand": {
+        "cssClass": "brand",
+        "html": "div",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.font-awesome.brand",
+          "kind": "typography",
+          "resolved": false
+        }
+      },
+      "Font Awesome/Regular": {
+        "cssClass": "regular",
+        "html": "div",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.font-awesome.regular",
+          "kind": "typography",
+          "resolved": false
+        }
+      },
+      "Heading chân/Heading-1": {
+        "cssClass": "heading-serif-1",
+        "html": "h2",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.heading-chan.heading-1",
+          "kind": "typography",
+          "resolved": false
+        }
+      },
+      "Heading chân/Heading-2": {
+        "cssClass": "heading-serif-2",
+        "html": "h2",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.heading-chan.heading-2",
+          "kind": "typography",
+          "resolved": false
+        }
+      },
+      "Heading chân/Heading-3": {
+        "cssClass": "heading-serif-3",
+        "html": "h3",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.heading-chan.heading-3",
+          "kind": "typography",
+          "resolved": false
+        }
+      },
+      "Heading chân/Heading-4": {
+        "cssClass": "heading-serif-4",
+        "html": "h4",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.heading-chan.heading-4",
+          "kind": "typography",
+          "resolved": false
+        }
+      },
+      "Heading chân/Heading-5": {
+        "cssClass": "heading-serif-5",
+        "html": "h4",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.heading-chan.heading-5",
+          "kind": "typography",
+          "resolved": false
+        }
+      },
+      "Heading chân/Heading-6": {
+        "cssClass": "heading-serif-6",
+        "html": "h4",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.heading-chan.heading-6",
+          "kind": "typography",
+          "resolved": false
+        }
+      },
+      "Heading chân/Heading-7": {
+        "cssClass": "heading-serif-7",
+        "html": "span",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.heading-chan.heading-7",
+          "kind": "typography",
+          "resolved": false
+        }
+      },
+      "Heading/Heading-1": {
+        "cssClass": "heading-1",
+        "html": "h2",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.heading.heading-1",
+          "kind": "typography",
+          "resolved": false
+        }
+      },
+      "Heading/Heading-2": {
+        "cssClass": "heading-2",
+        "html": "h2",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.heading.heading-2",
+          "kind": "typography",
+          "resolved": false
+        }
+      },
+      "Heading/Heading-3": {
+        "cssClass": "heading-3",
+        "html": "h3",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.heading.heading-3",
+          "kind": "typography",
+          "resolved": false
+        }
+      },
+      "Heading/Heading-4": {
+        "cssClass": "heading-4",
+        "html": "h4",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.heading.heading-4",
+          "kind": "typography",
+          "resolved": false
+        }
+      },
+      "Heading/Heading-5": {
+        "cssClass": "heading-5",
+        "html": "h4",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.heading.heading-5",
+          "kind": "typography",
+          "resolved": false
+        }
+      },
+      "Heading/Heading-6": {
+        "cssClass": "heading-6",
+        "html": "h4",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.heading.heading-6",
+          "kind": "typography",
+          "resolved": false
+        }
+      },
+      "Local/t128-900-125-s-ahc": {
+        "cssClass": "t128-900-125-s-ahc",
+        "html": "div",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.local.t128-900-125-s-ahc",
+          "kind": "typography",
+          "resolved": false
+        }
+      },
+      "Local/t64-500-120-s-upp-ahc": {
+        "cssClass": "t64-500-120-s-upp-ahc",
+        "html": "div",
+        "locked": true,
+        "owner": "human",
+        "typography": {
+          "$ref": "type.local.t64-500-120-s-upp-ahc",
+          "kind": "typography",
+          "resolved": false
+        }
+      }
+    },
+    "id": "contract",
+    "version": "1.2"
+  },
+  "diagnostics": [
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL '1' has no color value; skipped",
+      "severity": "info",
+      "subject": "1"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Utility/gray-700' has no color value; skipped",
+      "severity": "info",
+      "subject": "Utility/gray-700"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Utility/gray-400' has no color value; skipped",
+      "severity": "info",
+      "subject": "Utility/gray-400"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Utility/gray-600' has no color value; skipped",
+      "severity": "info",
+      "subject": "Utility/gray-600"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Utility/gray-900' has no color value; skipped",
+      "severity": "info",
+      "subject": "Utility/gray-900"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Utility/Error-3' has no color value; skipped",
+      "severity": "info",
+      "subject": "Utility/Error-3"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Utility/Correct-3' has no color value; skipped",
+      "severity": "info",
+      "subject": "Utility/Correct-3"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Utility/Error-2' has no color value; skipped",
+      "severity": "info",
+      "subject": "Utility/Error-2"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Utility/Error-1' has no color value; skipped",
+      "severity": "info",
+      "subject": "Utility/Error-1"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Utility/Correct-1' has no color value; skipped",
+      "severity": "info",
+      "subject": "Utility/Correct-1"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Utility/Correct-2' has no color value; skipped",
+      "severity": "info",
+      "subject": "Utility/Correct-2"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Secondary/1' has no color value; skipped",
+      "severity": "info",
+      "subject": "Secondary/1"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Primary/5' has no color value; skipped",
+      "severity": "info",
+      "subject": "Primary/5"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Primary/linear' has no color value; skipped",
+      "severity": "info",
+      "subject": "Primary/linear"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'System/Black' has no color value; skipped",
+      "severity": "info",
+      "subject": "System/Black"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Black 20' has no color value; skipped",
+      "severity": "info",
+      "subject": "Black 20"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Black' has no color value; skipped",
+      "severity": "info",
+      "subject": "Black"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Black 60' has no color value; skipped",
+      "severity": "info",
+      "subject": "Black 60"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Grey/Grey-900' has no color value; skipped",
+      "severity": "info",
+      "subject": "Grey/Grey-900"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Brand/Primary/Primary-200' has no color value; skipped",
+      "severity": "info",
+      "subject": "Brand/Primary/Primary-200"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Purple/Purple-400' has no color value; skipped",
+      "severity": "info",
+      "subject": "Purple/Purple-400"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Grey/Grey-500' has no color value; skipped",
+      "severity": "info",
+      "subject": "Grey/Grey-500"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Green/Green-500' has no color value; skipped",
+      "severity": "info",
+      "subject": "Green/Green-500"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'gray/$-White' has no color value; skipped",
+      "severity": "info",
+      "subject": "gray/$-White"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Secondary/Primary - 1 - 10' has no color value; skipped",
+      "severity": "info",
+      "subject": "Secondary/Primary - 1 - 10"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Utility/gray-950-maintext' has no color value; skipped",
+      "severity": "info",
+      "subject": "Utility/gray-950-maintext"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Neutral/500 *' has no color value; skipped",
+      "severity": "info",
+      "subject": "Neutral/500 *"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Primary/bg5' has no color value; skipped",
+      "severity": "info",
+      "subject": "Primary/bg5"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Primary/BG 1' has no color value; skipped",
+      "severity": "info",
+      "subject": "Primary/BG 1"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Secondary/Utility - White-80' has no color value; skipped",
+      "severity": "info",
+      "subject": "Secondary/Utility - White-80"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Green' has no color value; skipped",
+      "severity": "info",
+      "subject": "Green"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'RED/600 MAIN' has no color value; skipped",
+      "severity": "info",
+      "subject": "RED/600 MAIN"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'gray/500' has no color value; skipped",
+      "severity": "info",
+      "subject": "gray/500"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Secondary/White-50' has no color value; skipped",
+      "severity": "info",
+      "subject": "Secondary/White-50"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Secondary/Black-50' has no color value; skipped",
+      "severity": "info",
+      "subject": "Secondary/Black-50"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Blue' has no color value; skipped",
+      "severity": "info",
+      "subject": "Blue"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Neutral/500' has no color value; skipped",
+      "severity": "info",
+      "subject": "Neutral/500"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'gray/300' has no color value; skipped",
+      "severity": "info",
+      "subject": "gray/300"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'gray/50' has no color value; skipped",
+      "severity": "info",
+      "subject": "gray/50"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Secondary/Primary-1-10' has no color value; skipped",
+      "severity": "info",
+      "subject": "Secondary/Primary-1-10"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'gray/950 main' has no color value; skipped",
+      "severity": "info",
+      "subject": "gray/950 main"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "FILL 'Neutral/50' has no color value; skipped",
+      "severity": "info",
+      "subject": "Neutral/50"
+    },
+    {
+      "code": "DUPLICATE_HEX",
+      "competingIds": [
+        "color.neutral.white",
+        "color.primary.4",
+        "color.secondary.utility-white-50",
+        "color.secondary.white-80",
+        "color.utility.white"
+      ],
+      "detail": "5 color tokens share #ffffff",
+      "severity": "info"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Body/Body-5' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Body/Body-5"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Font Awesome/Thin' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Font Awesome/Thin"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Font Awesome/Light' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Font Awesome/Light"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Font Awesome/Solid' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Font Awesome/Solid"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Heading/Heading-7' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Heading/Heading-7"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Heading/Heading-8' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Heading/Heading-8"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Label' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Label"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Body/14 Regular' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Body/14 Regular"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Font Awesome/Light - 4' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Font Awesome/Light - 4"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Body/16 Regular' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Body/16 Regular"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Body/18 Semibold' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Body/18 Semibold"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Header/48 Bold' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Header/48 Bold"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Subheader/24 Regular' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Subheader/24 Regular"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Subheader/24 Bold' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Subheader/24 Bold"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Body/16 Medium' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Body/16 Medium"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Heading/Number' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Heading/Number"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Font Awesome/Regular-3' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Font Awesome/Regular-3"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Body/16 Bold' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Body/16 Bold"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Heading/Heading-3-Regular' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Heading/Heading-3-Regular"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Font Awesome/Regular-1' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Font Awesome/Regular-1"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Font Awesome/Light-2' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Font Awesome/Light-2"
+    },
+    {
+      "code": "EMPTY_TOKEN",
+      "detail": "TEXT 'Body/18 Regular' has no metrics; skipped",
+      "severity": "info",
+      "subject": "Body/18 Regular"
+    },
+    {
+      "code": "ORPHAN_ALIAS",
+      "detail": "semantic 'danger' → 'color.utility.error-1' has no backing color",
+      "severity": "warn",
+      "subject": "semantic.danger"
+    },
+    {
+      "code": "ORPHAN_ALIAS",
+      "detail": "semantic 'success' → 'color.utility.correct-1' has no backing color",
+      "severity": "warn",
+      "subject": "semantic.success"
+    },
+    {
+      "code": "ORPHAN_ALIAS",
+      "detail": "semantic 'text-main' → 'color.utility.gray-950-maintext' has no backing color",
+      "severity": "warn",
+      "subject": "semantic.text-main"
+    },
+    {
+      "code": "ORPHAN_ALIAS",
+      "detail": "semantic 'ink' → 'color.black' has no backing color",
+      "severity": "warn",
+      "subject": "semantic.ink"
+    }
+  ],
+  "effects": {
+    "effect.background-blur": {
+      "diagnostics": [
+        {
+          "code": "UNRESOLVED_EFFECT",
+          "detail": "Figma export carries no effect value",
+          "severity": "info",
+          "subject": "effect.background-blur"
+        }
+      ],
+      "id": "effect.background-blur",
+      "kind": "effect",
+      "provenance": {
+        "figmaKey": "Background blur",
+        "source": "figma:Gia Định Group COPY"
+      },
+      "type": "background-blur"
+    },
+    "effect.background-blur-1": {
+      "diagnostics": [
+        {
+          "code": "UNRESOLVED_EFFECT",
+          "detail": "Figma export carries no effect value",
+          "severity": "info",
+          "subject": "effect.background-blur-1"
+        }
+      ],
+      "id": "effect.background-blur-1",
+      "kind": "effect",
+      "provenance": {
+        "figmaKey": "Background blur 1",
+        "source": "figma:Gia Định Group COPY"
+      },
+      "type": "background-blur"
+    },
+    "effect.dropshadow-light": {
+      "diagnostics": [
+        {
+          "code": "UNRESOLVED_EFFECT",
+          "detail": "Figma export carries no effect value",
+          "severity": "info",
+          "subject": "effect.dropshadow-light"
+        }
+      ],
+      "id": "effect.dropshadow-light",
+      "kind": "effect",
+      "provenance": {
+        "figmaKey": "Dropshadow Light",
+        "source": "figma:Gia Định Group COPY"
+      },
+      "type": "drop-shadow"
+    },
+    "effect.shadow-1": {
+      "diagnostics": [
+        {
+          "code": "UNRESOLVED_EFFECT",
+          "detail": "Figma export carries no effect value",
+          "severity": "info",
+          "subject": "effect.shadow-1"
+        }
+      ],
+      "id": "effect.shadow-1",
+      "kind": "effect",
+      "provenance": {
+        "figmaKey": "Shadow 1",
+        "source": "figma:Gia Định Group COPY"
+      },
+      "type": "drop-shadow"
+    },
+    "effect.shadow-2": {
+      "diagnostics": [
+        {
+          "code": "UNRESOLVED_EFFECT",
+          "detail": "Figma export carries no effect value",
+          "severity": "info",
+          "subject": "effect.shadow-2"
+        }
+      ],
+      "id": "effect.shadow-2",
+      "kind": "effect",
+      "provenance": {
+        "figmaKey": "Shadow 2",
+        "source": "figma:Gia Định Group COPY"
+      },
+      "type": "drop-shadow"
+    },
+    "effect.shadow-3": {
+      "diagnostics": [
+        {
+          "code": "UNRESOLVED_EFFECT",
+          "detail": "Figma export carries no effect value",
+          "severity": "info",
+          "subject": "effect.shadow-3"
+        }
+      ],
+      "id": "effect.shadow-3",
+      "kind": "effect",
+      "provenance": {
+        "figmaKey": "Shadow 3",
+        "source": "figma:Gia Định Group COPY"
+      },
+      "type": "drop-shadow"
+    },
+    "effect.shadow-4": {
+      "diagnostics": [
+        {
+          "code": "UNRESOLVED_EFFECT",
+          "detail": "Figma export carries no effect value",
+          "severity": "info",
+          "subject": "effect.shadow-4"
+        }
+      ],
+      "id": "effect.shadow-4",
+      "kind": "effect",
+      "provenance": {
+        "figmaKey": "Shadow 4",
+        "source": "figma:Gia Định Group COPY"
+      },
+      "type": "drop-shadow"
+    },
+    "effect.shadow-large": {
+      "diagnostics": [
+        {
+          "code": "UNRESOLVED_EFFECT",
+          "detail": "Figma export carries no effect value",
+          "severity": "info",
+          "subject": "effect.shadow-large"
+        }
+      ],
+      "id": "effect.shadow-large",
+      "kind": "effect",
+      "provenance": {
+        "figmaKey": "Shadow/Large",
+        "source": "figma:Gia Định Group COPY"
+      },
+      "type": "drop-shadow"
+    }
+  },
+  "fonts": {
+    "font.display": {
+      "fallbacks": [],
+      "family": "Inter Display",
+      "id": "font.display",
+      "kind": "font-family",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "display"
+    },
+    "font.icon": {
+      "fallbacks": [],
+      "family": "Font Awesome 6 Pro",
+      "id": "font.icon",
+      "kind": "font-family",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "icon"
+    },
+    "font.icon2": {
+      "fallbacks": [],
+      "family": "Material Symbols Outlined",
+      "id": "font.icon2",
+      "kind": "font-family",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "icon"
+    },
+    "font.icon3": {
+      "fallbacks": [],
+      "family": "Font Awesome 6 Brands",
+      "id": "font.icon3",
+      "kind": "font-family",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "icon"
+    },
+    "font.sans": {
+      "fallbacks": [
+        "sans-serif"
+      ],
+      "family": "Google Sans Flex",
+      "id": "font.sans",
+      "kind": "font-family",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "sans"
+    },
+    "font.sans2": {
+      "fallbacks": [
+        "sans-serif"
+      ],
+      "family": "Montserrat",
+      "id": "font.sans2",
+      "kind": "font-family",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "sans"
+    },
+    "font.sans3": {
+      "fallbacks": [
+        "sans-serif"
+      ],
+      "family": "Inter Tight",
+      "id": "font.sans3",
+      "kind": "font-family",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "sans"
+    },
+    "font.sans4": {
+      "fallbacks": [
+        "sans-serif"
+      ],
+      "family": "Nunito",
+      "id": "font.sans4",
+      "kind": "font-family",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "sans"
+    },
+    "font.sans5": {
+      "fallbacks": [
+        "sans-serif"
+      ],
+      "family": "Roboto",
+      "id": "font.sans5",
+      "kind": "font-family",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "sans"
+    },
+    "font.sans6": {
+      "fallbacks": [],
+      "family": "NVN Motherland Signature",
+      "id": "font.sans6",
+      "kind": "font-family",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "cursive"
+    },
+    "font.sans7": {
+      "fallbacks": [
+        "sans-serif"
+      ],
+      "family": "Be Vietnam Pro",
+      "id": "font.sans7",
+      "kind": "font-family",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "sans"
+    },
+    "font.serif": {
+      "fallbacks": [
+        "Georgia",
+        "serif"
+      ],
+      "family": "Cormorant Garamond",
+      "id": "font.serif",
+      "kind": "font-family",
+      "provenance": {
+        "manual": true,
+        "source": "manual:seed"
+      },
+      "role": "serif"
+    }
+  },
+  "gradients": {
+    "gradient.1": {
+      "diagnostics": [
+        {
+          "code": "UNRESOLVED_GRADIENT",
+          "detail": "Gradient FILL with no color data",
+          "severity": "info",
+          "subject": "gradient.1"
+        }
+      ],
+      "id": "gradient.1",
+      "kind": "gradient",
+      "provenance": {
+        "figmaKey": "Gradient/1",
+        "source": "figma:Gia Định Group COPY"
+      },
+      "stops": [],
+      "type": "unknown"
+    },
+    "gradient.2": {
+      "diagnostics": [
+        {
+          "code": "UNRESOLVED_GRADIENT",
+          "detail": "Gradient FILL with no color data",
+          "severity": "info",
+          "subject": "gradient.2"
+        }
+      ],
+      "id": "gradient.2",
+      "kind": "gradient",
+      "provenance": {
+        "figmaKey": "Gradient/2",
+        "source": "figma:Gia Định Group COPY"
+      },
+      "stops": [],
+      "type": "unknown"
+    },
+    "gradient.3": {
+      "diagnostics": [
+        {
+          "code": "UNRESOLVED_GRADIENT",
+          "detail": "Gradient FILL with no color data",
+          "severity": "info",
+          "subject": "gradient.3"
+        }
+      ],
+      "id": "gradient.3",
+      "kind": "gradient",
+      "provenance": {
+        "figmaKey": "Gradient/3",
+        "source": "figma:Gia Định Group COPY"
+      },
+      "stops": [],
+      "type": "unknown"
+    },
+    "gradient.4": {
+      "diagnostics": [
+        {
+          "code": "UNRESOLVED_GRADIENT",
+          "detail": "Gradient FILL with no color data",
+          "severity": "info",
+          "subject": "gradient.4"
+        }
+      ],
+      "id": "gradient.4",
+      "kind": "gradient",
+      "provenance": {
+        "figmaKey": "Gradient/4#24057:728",
+        "source": "figma:Gia Định Group COPY"
+      },
+      "stops": [],
+      "type": "unknown"
+    },
+    "gradient.bg": {
+      "diagnostics": [
+        {
+          "code": "UNRESOLVED_GRADIENT",
+          "detail": "Gradient FILL with no color data",
+          "severity": "info",
+          "subject": "gradient.bg"
+        }
+      ],
+      "id": "gradient.bg",
+      "kind": "gradient",
+      "provenance": {
+        "figmaKey": "Gradient/bg",
+        "source": "figma:Gia Định Group COPY"
+      },
+      "stops": [],
+      "type": "unknown"
+    },
+    "gradient.footer": {
+      "diagnostics": [
+        {
+          "code": "UNRESOLVED_GRADIENT",
+          "detail": "Gradient FILL with no color data",
+          "severity": "info",
+          "subject": "gradient.footer"
+        }
+      ],
+      "id": "gradient.footer",
+      "kind": "gradient",
+      "provenance": {
+        "figmaKey": "Gradient/Footer",
+        "source": "figma:Gia Định Group COPY"
+      },
+      "stops": [],
+      "type": "unknown"
+    },
+    "gradient.linear.2": {
+      "diagnostics": [
+        {
+          "code": "UNRESOLVED_GRADIENT",
+          "detail": "Figma exposes only the identifier 'gradient:linear:2', no stop data",
+          "severity": "info",
+          "subject": "gradient.linear.2"
+        }
+      ],
+      "id": "gradient.linear.2",
+      "kind": "gradient",
+      "provenance": {
+        "figmaKey": "linear 2",
+        "source": "figma:Gia Định Group COPY"
+      },
+      "stops": [],
+      "type": "linear"
+    },
+    "gradient.linear.3": {
+      "diagnostics": [
+        {
+          "code": "UNRESOLVED_GRADIENT",
+          "detail": "Figma exposes only the identifier 'gradient:linear:3', no stop data",
+          "severity": "info",
+          "subject": "gradient.linear.3"
+        }
+      ],
+      "id": "gradient.linear.3",
+      "kind": "gradient",
+      "provenance": {
+        "figmaKey": "linear 3",
+        "source": "figma:Gia Định Group COPY"
+      },
+      "stops": [],
+      "type": "linear"
+    }
+  },
+  "meta": {
+    "bundleVersion": "1.0.0",
+    "contractVersion": "1.2",
+    "extractedAt": "2026-08-03T07:30:05.105Z",
+    "fingerprint": "sha256:1b045c0b1108c1cf4ed94f7db76f2a8516bdf59e62272c48057f699897ef849c",
+    "schemaVersion": "v1",
+    "source": "figma:Gia Định Group COPY"
+  },
+  "radii": {
+    "radius.radius.12": {
+      "id": "radius.radius.12",
+      "kind": "radius",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "radius",
+      "value": 12
+    },
+    "radius.radius.20": {
+      "id": "radius.radius.20",
+      "kind": "radius",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "radius",
+      "value": 20
+    },
+    "radius.radius.24": {
+      "id": "radius.radius.24",
+      "kind": "radius",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "radius",
+      "value": 24
+    },
+    "radius.radius.28": {
+      "id": "radius.radius.28",
+      "kind": "radius",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "radius",
+      "value": 28
+    },
+    "radius.radius.4": {
+      "id": "radius.radius.4",
+      "kind": "radius",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "radius",
+      "value": 4
+    },
+    "radius.radius.40": {
+      "id": "radius.radius.40",
+      "kind": "radius",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "radius",
+      "value": 40
+    },
+    "radius.radius.5": {
+      "id": "radius.radius.5",
+      "kind": "radius",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "radius",
+      "value": 5
+    },
+    "radius.radius.96": {
+      "id": "radius.radius.96",
+      "kind": "radius",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "radius",
+      "value": 96
+    }
+  },
+  "semantics": {
+    "semantic.surface": {
+      "id": "semantic.surface",
+      "kind": "semantic",
+      "provenance": {
+        "manual": true,
+        "source": "manual:seed"
+      },
+      "references": {
+        "$ref": "color.utility.white",
+        "kind": "color",
+        "resolved": false
+      },
+      "role": "surface"
+    }
+  },
+  "spacing": {
+    "spacing.gap.10": {
+      "id": "spacing.gap.10",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "gap",
+      "value": 10
+    },
+    "spacing.gap.106": {
+      "id": "spacing.gap.106",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "gap",
+      "value": 106
+    },
+    "spacing.gap.12": {
+      "id": "spacing.gap.12",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "gap",
+      "value": 12
+    },
+    "spacing.gap.120": {
+      "id": "spacing.gap.120",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "gap",
+      "value": 120
+    },
+    "spacing.gap.16": {
+      "id": "spacing.gap.16",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "gap",
+      "value": 16
+    },
+    "spacing.gap.20": {
+      "id": "spacing.gap.20",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "gap",
+      "value": 20
+    },
+    "spacing.gap.216": {
+      "id": "spacing.gap.216",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "gap",
+      "value": 216
+    },
+    "spacing.gap.24": {
+      "id": "spacing.gap.24",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "gap",
+      "value": 24
+    },
+    "spacing.gap.26": {
+      "id": "spacing.gap.26",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "gap",
+      "value": 26
+    },
+    "spacing.gap.28": {
+      "id": "spacing.gap.28",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "gap",
+      "value": 28
+    },
+    "spacing.gap.32": {
+      "id": "spacing.gap.32",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "gap",
+      "value": 32
+    },
+    "spacing.gap.38": {
+      "id": "spacing.gap.38",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "gap",
+      "value": 38
+    },
+    "spacing.gap.4": {
+      "id": "spacing.gap.4",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "gap",
+      "value": 4
+    },
+    "spacing.gap.40": {
+      "id": "spacing.gap.40",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "gap",
+      "value": 40
+    },
+    "spacing.gap.52": {
+      "id": "spacing.gap.52",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "gap",
+      "value": 52
+    },
+    "spacing.gap.60": {
+      "id": "spacing.gap.60",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "gap",
+      "value": 60
+    },
+    "spacing.gap.76": {
+      "id": "spacing.gap.76",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "gap",
+      "value": 76
+    },
+    "spacing.gap.8": {
+      "id": "spacing.gap.8",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "gap",
+      "value": 8
+    },
+    "spacing.gap.80": {
+      "id": "spacing.gap.80",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "gap",
+      "value": 80
+    },
+    "spacing.pad.10": {
+      "id": "spacing.pad.10",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "pad",
+      "value": 10
+    },
+    "spacing.pad.12": {
+      "id": "spacing.pad.12",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "pad",
+      "value": 12
+    },
+    "spacing.pad.16": {
+      "id": "spacing.pad.16",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "pad",
+      "value": 16
+    },
+    "spacing.pad.160": {
+      "id": "spacing.pad.160",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "pad",
+      "value": 160
+    },
+    "spacing.pad.20": {
+      "id": "spacing.pad.20",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "pad",
+      "value": 20
+    },
+    "spacing.pad.200": {
+      "id": "spacing.pad.200",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "pad",
+      "value": 200
+    },
+    "spacing.pad.24": {
+      "id": "spacing.pad.24",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "pad",
+      "value": 24
+    },
+    "spacing.pad.260": {
+      "id": "spacing.pad.260",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "pad",
+      "value": 260
+    },
+    "spacing.pad.3": {
+      "id": "spacing.pad.3",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "pad",
+      "value": 3
+    },
+    "spacing.pad.32": {
+      "id": "spacing.pad.32",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "pad",
+      "value": 32
+    },
+    "spacing.pad.4": {
+      "id": "spacing.pad.4",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "pad",
+      "value": 4
+    },
+    "spacing.pad.40": {
+      "id": "spacing.pad.40",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "pad",
+      "value": 40
+    },
+    "spacing.pad.48": {
+      "id": "spacing.pad.48",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "pad",
+      "value": 48
+    },
+    "spacing.pad.7": {
+      "id": "spacing.pad.7",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "pad",
+      "value": 7
+    },
+    "spacing.pad.8": {
+      "id": "spacing.pad.8",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "pad",
+      "value": 8
+    },
+    "spacing.pad.80": {
+      "id": "spacing.pad.80",
+      "kind": "spacing",
+      "provenance": {
+        "source": "figma:Gia Định Group COPY"
+      },
+      "role": "pad",
+      "value": 80
+    }
+  },
+  "typography": {
+    "type.body.body": {
+      "defaultColor": {
+        "$ref": "color.utility.gray-950",
+        "kind": "color",
+        "resolved": false
+      },
+      "fontFamily": {
+        "$ref": "font.sans",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.body.body",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 20,
+        "fontWeight": 400,
+        "letterSpacing": 0,
+        "lineHeight": 1.25
+      },
+      "provenance": {
+        "figmaKey": "Body/Body",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      }
+    },
+    "type.body.body-1": {
+      "defaultColor": {
+        "$ref": "color.primary.2",
+        "kind": "color",
+        "resolved": false
+      },
+      "diagnostics": [
+        {
+          "code": "TRAIT_CONFLICT",
+          "detail": "Figma marked this style with conflicting traits across instances",
+          "severity": "info",
+          "subject": "type.body.body-1"
+        },
+        {
+          "code": "NAME_COLLISION",
+          "competingIds": [
+            "18/400/1.4/sans×28",
+            "16/400/1.4/sans×1",
+            "20/400/1.4/sans×1"
+          ],
+          "detail": "identity 'Body/Body-1' has 3 metric variants; kept most frequent (set automation/config/font-style-picks.json to choose)",
+          "severity": "warn",
+          "subject": "type.body.body-1"
+        }
+      ],
+      "fontFamily": {
+        "$ref": "font.sans",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.body.body-1",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 18,
+        "fontWeight": 400,
+        "letterSpacing": 0,
+        "lineHeight": 1.4
+      },
+      "provenance": {
+        "figmaKey": "Body/Body-1#9:121",
+        "instances": 6,
+        "source": "figma:Gia Định Group COPY"
+      }
+    },
+    "type.body.body-2": {
+      "defaultColor": {
+        "$ref": "color.utility.gray-950",
+        "kind": "color",
+        "resolved": false
+      },
+      "diagnostics": [
+        {
+          "code": "TRAIT_CONFLICT",
+          "detail": "Figma marked this style with conflicting traits across instances",
+          "severity": "info",
+          "subject": "type.body.body-2"
+        }
+      ],
+      "fontFamily": {
+        "$ref": "font.sans",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.body.body-2",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 16,
+        "fontWeight": 400,
+        "letterSpacing": 0,
+        "lineHeight": 1.4
+      },
+      "provenance": {
+        "figmaKey": "Body/Body-2#9:123",
+        "instances": 5,
+        "source": "figma:Gia Định Group COPY"
+      }
+    },
+    "type.body.body-3": {
+      "defaultColor": {
+        "$ref": "color.utility.gray-500",
+        "kind": "color",
+        "resolved": false
+      },
+      "diagnostics": [
+        {
+          "code": "TRAIT_CONFLICT",
+          "detail": "Figma marked this style with conflicting traits across instances",
+          "severity": "info",
+          "subject": "type.body.body-3"
+        },
+        {
+          "code": "NAME_COLLISION",
+          "competingIds": [
+            "14/400/1.4/sans×55",
+            "16/400/1.4/sans×8"
+          ],
+          "detail": "identity 'Body/Body-3' has 2 metric variants; kept most frequent (set automation/config/font-style-picks.json to choose)",
+          "severity": "warn",
+          "subject": "type.body.body-3"
+        }
+      ],
+      "fontFamily": {
+        "$ref": "font.sans",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.body.body-3",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 14,
+        "fontWeight": 400,
+        "letterSpacing": 0,
+        "lineHeight": 1.4
+      },
+      "provenance": {
+        "figmaKey": "Body/Body-3#9:124",
+        "instances": 7,
+        "source": "figma:Gia Định Group COPY"
+      }
+    },
+    "type.body.body-4": {
+      "defaultColor": {
+        "$ref": "color.utility.gray-950",
+        "kind": "color",
+        "resolved": false
+      },
+      "diagnostics": [
+        {
+          "code": "TRAIT_CONFLICT",
+          "detail": "Figma marked this style with conflicting traits across instances",
+          "severity": "info",
+          "subject": "type.body.body-4"
+        },
+        {
+          "code": "NAME_COLLISION",
+          "competingIds": [
+            "14/400/1.4/sans×21",
+            "14/400/1.4/sans×13",
+            "18/400/1.4/sans2×1"
+          ],
+          "detail": "identity 'Body/Body-4' has 3 metric variants; kept most frequent (set automation/config/font-style-picks.json to choose)",
+          "severity": "warn",
+          "subject": "type.body.body-4"
+        }
+      ],
+      "fontFamily": {
+        "$ref": "font.sans",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.body.body-4",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 14,
+        "fontWeight": 400,
+        "letterSpacing": 0,
+        "lineHeight": 1.4
+      },
+      "provenance": {
+        "figmaKey": "Body/Body-4#9:126",
+        "instances": 4,
+        "source": "figma:Gia Định Group COPY"
+      }
+    },
+    "type.font-awesome.brand": {
+      "defaultColor": {
+        "$ref": "color.utility.white",
+        "kind": "color",
+        "resolved": false
+      },
+      "fontFamily": {
+        "$ref": "font.icon3",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.font-awesome.brand",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 20,
+        "fontWeight": 400,
+        "letterSpacing": 0,
+        "lineHeight": 1
+      },
+      "provenance": {
+        "figmaKey": "Font Awesome/Brand#9:132",
+        "instances": 3,
+        "source": "figma:Gia Định Group COPY"
+      }
+    },
+    "type.font-awesome.light-1": {
+      "defaultColor": {
+        "$ref": "color.utility.gray-300",
+        "kind": "color",
+        "resolved": false
+      },
+      "fontFamily": {
+        "$ref": "font.icon",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.font-awesome.light-1",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 30,
+        "fontWeight": 300,
+        "letterSpacing": 0,
+        "lineHeight": 1
+      },
+      "provenance": {
+        "figmaKey": "Font Awesome/Light-1",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      }
+    },
+    "type.font-awesome.regular": {
+      "defaultColor": {
+        "$ref": "color.primary.2",
+        "kind": "color",
+        "resolved": false
+      },
+      "fontFamily": {
+        "$ref": "font.icon",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.font-awesome.regular",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 20,
+        "fontWeight": 400,
+        "letterSpacing": 0,
+        "lineHeight": 1
+      },
+      "provenance": {
+        "figmaKey": "Font Awesome/Regular",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      }
+    },
+    "type.heading-chan.heading-1": {
+      "fontFamily": {
+        "$ref": "font.serif",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.heading-chan.heading-1",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 48,
+        "fontWeight": 700,
+        "letterSpacing": 0,
+        "lineHeight": 1.25
+      },
+      "provenance": {
+        "source": "contract:curated"
+      }
+    },
+    "type.heading-chan.heading-2": {
+      "fontFamily": {
+        "$ref": "font.serif",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.heading-chan.heading-2",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 32,
+        "fontWeight": 500,
+        "letterSpacing": 0,
+        "lineHeight": 1.3
+      },
+      "provenance": {
+        "source": "contract:curated"
+      }
+    },
+    "type.heading-chan.heading-3": {
+      "fontFamily": {
+        "$ref": "font.serif",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.heading-chan.heading-3",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 24,
+        "fontWeight": 700,
+        "letterSpacing": 0,
+        "lineHeight": 1.35
+      },
+      "provenance": {
+        "source": "contract:curated"
+      }
+    },
+    "type.heading-chan.heading-4": {
+      "fontFamily": {
+        "$ref": "font.serif",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.heading-chan.heading-4",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 20,
+        "fontWeight": 700,
+        "letterSpacing": 0,
+        "lineHeight": 1.4
+      },
+      "provenance": {
+        "source": "contract:curated"
+      }
+    },
+    "type.heading-chan.heading-5": {
+      "fontFamily": {
+        "$ref": "font.serif",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.heading-chan.heading-5",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 18,
+        "fontWeight": 700,
+        "letterSpacing": 0,
+        "lineHeight": 1.4
+      },
+      "provenance": {
+        "source": "contract:curated"
+      }
+    },
+    "type.heading-chan.heading-6": {
+      "fontFamily": {
+        "$ref": "font.serif",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.heading-chan.heading-6",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 16,
+        "fontWeight": 700,
+        "letterSpacing": 0,
+        "lineHeight": 1.4
+      },
+      "provenance": {
+        "source": "contract:curated"
+      }
+    },
+    "type.heading-chan.heading-7": {
+      "fontFamily": {
+        "$ref": "font.serif",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.heading-chan.heading-7",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 14,
+        "fontWeight": 700,
+        "letterSpacing": 0,
+        "lineHeight": 1.4
+      },
+      "provenance": {
+        "source": "contract:curated"
+      }
+    },
+    "type.heading.heading-1": {
+      "defaultColor": {
+        "$ref": "color.utility.gray-950",
+        "kind": "color",
+        "resolved": false
+      },
+      "diagnostics": [
+        {
+          "code": "TRAIT_CONFLICT",
+          "detail": "Figma marked this style with conflicting traits across instances",
+          "severity": "info",
+          "subject": "type.heading.heading-1"
+        },
+        {
+          "code": "NAME_COLLISION",
+          "competingIds": [
+            "48/700/1.2/sans×32",
+            "48/700/1.3/sans2×1"
+          ],
+          "detail": "identity 'Heading/Heading-1' has 2 metric variants; kept most frequent (set automation/config/font-style-picks.json to choose)",
+          "severity": "warn",
+          "subject": "type.heading.heading-1"
+        }
+      ],
+      "fontFamily": {
+        "$ref": "font.sans",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.heading.heading-1",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 48,
+        "fontWeight": 700,
+        "letterSpacing": -0.02,
+        "lineHeight": 1.2
+      },
+      "provenance": {
+        "figmaKey": "Heading/Heading-1#16041:1987",
+        "instances": 5,
+        "source": "figma:Gia Định Group COPY"
+      }
+    },
+    "type.heading.heading-2": {
+      "defaultColor": {
+        "$ref": "color.primary.1",
+        "kind": "color",
+        "resolved": false
+      },
+      "diagnostics": [
+        {
+          "code": "TRAIT_CONFLICT",
+          "detail": "Figma marked this style with conflicting traits across instances",
+          "severity": "info",
+          "subject": "type.heading.heading-2"
+        }
+      ],
+      "fontFamily": {
+        "$ref": "font.sans",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.heading.heading-2",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 36,
+        "fontWeight": 700,
+        "letterSpacing": -0.02,
+        "lineHeight": 1.25
+      },
+      "provenance": {
+        "figmaKey": "Heading/Heading-2#9:14",
+        "instances": 2,
+        "source": "figma:Gia Định Group COPY"
+      }
+    },
+    "type.heading.heading-3": {
+      "defaultColor": {
+        "$ref": "color.utility.white",
+        "kind": "color",
+        "resolved": false
+      },
+      "diagnostics": [
+        {
+          "code": "TRAIT_CONFLICT",
+          "detail": "Figma marked this style with conflicting traits across instances",
+          "severity": "info",
+          "subject": "type.heading.heading-3"
+        }
+      ],
+      "fontFamily": {
+        "$ref": "font.sans",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.heading.heading-3",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 30,
+        "fontWeight": 600,
+        "letterSpacing": -0.02,
+        "lineHeight": 1.3
+      },
+      "provenance": {
+        "figmaKey": "Heading/Heading-3#9:113",
+        "instances": 4,
+        "source": "figma:Gia Định Group COPY"
+      }
+    },
+    "type.heading.heading-4": {
+      "defaultColor": {
+        "$ref": "color.primary.2",
+        "kind": "color",
+        "resolved": false
+      },
+      "diagnostics": [
+        {
+          "code": "TRAIT_CONFLICT",
+          "detail": "Figma marked this style with conflicting traits across instances",
+          "severity": "info",
+          "subject": "type.heading.heading-4"
+        }
+      ],
+      "fontFamily": {
+        "$ref": "font.sans",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.heading.heading-4",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 24,
+        "fontWeight": 700,
+        "letterSpacing": 0,
+        "lineHeight": 1.35
+      },
+      "provenance": {
+        "figmaKey": "Heading/Heading-4#9:117",
+        "instances": 2,
+        "source": "figma:Gia Định Group COPY"
+      }
+    },
+    "type.heading.heading-5": {
+      "defaultColor": {
+        "$ref": "color.utility.gray-950",
+        "kind": "color",
+        "resolved": false
+      },
+      "diagnostics": [
+        {
+          "code": "TRAIT_CONFLICT",
+          "detail": "Figma marked this style with conflicting traits across instances",
+          "severity": "info",
+          "subject": "type.heading.heading-5"
+        },
+        {
+          "code": "NAME_COLLISION",
+          "competingIds": [
+            "20/700/1.4/sans×91",
+            "18/700/1.4/sans×8"
+          ],
+          "detail": "identity 'Heading/Heading-5' has 2 metric variants; kept most frequent (set automation/config/font-style-picks.json to choose)",
+          "severity": "warn",
+          "subject": "type.heading.heading-5"
+        }
+      ],
+      "fontFamily": {
+        "$ref": "font.sans",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.heading.heading-5",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 20,
+        "fontWeight": 700,
+        "letterSpacing": 0,
+        "lineHeight": 1.4
+      },
+      "provenance": {
+        "figmaKey": "Heading/Heading-5#9:119",
+        "instances": 3,
+        "source": "figma:Gia Định Group COPY"
+      }
+    },
+    "type.heading.heading-6": {
+      "defaultColor": {
+        "$ref": "color.utility.white",
+        "kind": "color",
+        "resolved": false
+      },
+      "diagnostics": [
+        {
+          "code": "TRAIT_CONFLICT",
+          "detail": "Figma marked this style with conflicting traits across instances",
+          "severity": "info",
+          "subject": "type.heading.heading-6"
+        }
+      ],
+      "fontFamily": {
+        "$ref": "font.sans",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.heading.heading-6",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 18,
+        "fontWeight": 600,
+        "letterSpacing": 0,
+        "lineHeight": 1.4
+      },
+      "provenance": {
+        "figmaKey": "Heading/Heading-6",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      }
+    },
+    "type.local.t128-700-120-s-ls-002-upp": {
+      "fontFamily": {
+        "$ref": "font.sans",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.local.t128-700-120-s-ls-002-upp",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 128,
+        "fontWeight": 700,
+        "letterSpacing": -0.02,
+        "lineHeight": 1.2
+      },
+      "provenance": {
+        "figmaKey": "Local/t128-700-120-s-ls-002-upp",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "synthetic": true
+    },
+    "type.local.t128-900-125-s-ahc": {
+      "fontFamily": {
+        "$ref": "font.sans",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.local.t128-900-125-s-ahc",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 128,
+        "fontWeight": 900,
+        "letterSpacing": 0,
+        "lineHeight": 1.25
+      },
+      "provenance": {
+        "figmaKey": "Local/t128-900-125-s-ahc",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "synthetic": true
+    },
+    "type.local.t16-500-140-s-ahc-avc": {
+      "fontFamily": {
+        "$ref": "font.sans",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.local.t16-500-140-s-ahc-avc",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 16,
+        "fontWeight": 500,
+        "letterSpacing": 0,
+        "lineHeight": 1.4
+      },
+      "provenance": {
+        "figmaKey": "Local/t16-500-140-s-ahc-avc",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "synthetic": true
+    },
+    "type.local.t52-400-198-s6-avc": {
+      "fontFamily": {
+        "$ref": "font.sans6",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.local.t52-400-198-s6-avc",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 52,
+        "fontWeight": 400,
+        "letterSpacing": 0,
+        "lineHeight": 1.98
+      },
+      "provenance": {
+        "figmaKey": "Local/t52-400-198-s6-avc",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "synthetic": true
+    },
+    "type.local.t52-700-120-s-ls-002-upp": {
+      "fontFamily": {
+        "$ref": "font.sans",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.local.t52-700-120-s-ls-002-upp",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 52,
+        "fontWeight": 700,
+        "letterSpacing": -0.02,
+        "lineHeight": 1.2
+      },
+      "provenance": {
+        "figmaKey": "Local/t52-700-120-s-ls-002-upp",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "synthetic": true
+    },
+    "type.local.t60-700-120-s-ls-002": {
+      "fontFamily": {
+        "$ref": "font.sans",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.local.t60-700-120-s-ls-002",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 60,
+        "fontWeight": 700,
+        "letterSpacing": -0.02,
+        "lineHeight": 1.2
+      },
+      "provenance": {
+        "figmaKey": "Local/t60-700-120-s-ls-002",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "synthetic": true
+    },
+    "type.local.t60-700-120-s-ls-002-upp": {
+      "fontFamily": {
+        "$ref": "font.sans",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.local.t60-700-120-s-ls-002-upp",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 60,
+        "fontWeight": 700,
+        "letterSpacing": -0.02,
+        "lineHeight": 1.2
+      },
+      "provenance": {
+        "figmaKey": "Local/t60-700-120-s-ls-002-upp",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "synthetic": true
+    },
+    "type.local.t60-700-120-s-ls-002-upp-ahc": {
+      "fontFamily": {
+        "$ref": "font.sans",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.local.t60-700-120-s-ls-002-upp-ahc",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 60,
+        "fontWeight": 700,
+        "letterSpacing": -0.02,
+        "lineHeight": 1.2
+      },
+      "provenance": {
+        "figmaKey": "Local/t60-700-120-s-ls-002-upp-ahc",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "synthetic": true
+    },
+    "type.local.t64-500-120-s-upp-ahc": {
+      "fontFamily": {
+        "$ref": "font.sans",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.local.t64-500-120-s-upp-ahc",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 64,
+        "fontWeight": 500,
+        "letterSpacing": 0,
+        "lineHeight": 1.2
+      },
+      "provenance": {
+        "figmaKey": "Local/t64-500-120-s-upp-ahc",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "synthetic": true
+    },
+    "type.local.t72-700-94-s2-ls-004-avc": {
+      "fontFamily": {
+        "$ref": "font.sans2",
+        "kind": "font-family",
+        "resolved": false
+      },
+      "id": "type.local.t72-700-94-s2-ls-004-avc",
+      "kind": "typography",
+      "metrics": {
+        "fontSize": 72,
+        "fontWeight": 700,
+        "letterSpacing": -0.04,
+        "lineHeight": 0.94
+      },
+      "provenance": {
+        "figmaKey": "Local/t72-700-94-s2-ls-004-avc",
+        "instances": 1,
+        "source": "figma:Gia Định Group COPY"
+      },
+      "synthetic": true
+    }
+  }
+}

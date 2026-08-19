@@ -1,0 +1,34 @@
+section.news-detail.relative.z-50.pad-8
+	.container 
+		h2.heading-2.mb-5 Cùng Red & Blue phân biệt sạc nhanh DC trên ô tô điện khác sạc thường AC như thế nào
+		time.div.desc.body-3.text-grey-500 09/06/2026
+		.single-swiper.init-swiper.my-10
+			.swiper
+				.swiper-wrapper
+					.swiper-slide
+						.img.zoom-in.overflow-hidden
+							a.img-ratio(class='ratio:pt-[788_1400]')
+								+FooImg
+					.swiper-slide
+						.img.zoom-in.overflow-hidden
+							a.img-ratio(class='ratio:pt-[788_1400]')
+								+FooImg
+		.w-full(class='lg:w-10/12 xl:w-9/12 mx-auto')
+			.briefcontent.font-bold.body-1.border-t.border-grey-200.py-5 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			.fullcontent
+				p Trong bài viết này, hãy cũng Vcharge đi tìm hiểu và khám phá sâu hơn về cách mà sạc nhanh DC – sạc thường AC hoạt động và những điểm khác biệt quan trọng giữa chúng. Đây là bước rất quan trọng để hiểu rõ hơn về công nghệ sạc điện trên ô tô và có lựa chọn phù hợp cho nhu cầu của mình.
+				+FooImg
+				p Trong bài viết này, hãy cũng Vcharge đi tìm hiểu và khám phá sâu hơn về cách mà sạc nhanh DC – sạc thường AC hoạt động và những điểm khác biệt quan trọng giữa chúng. Đây là bước rất quan trọng để hiểu rõ hơn về công nghệ sạc điện trên ô tô và có lựa chọn phù hợp cho nhu cầu của mình. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+section.news-other.relative.z-50.pad-8.bg-grey-50
+	.container 
+		h2.heading-1.text-primary-1.text-center.mb-10 Tin tức khác 
+		.auto-3.init-swiper.relative.z-50
+			.swiper(class='max-lg:mb-10')
+				.swiper-wrapper 
+					-for(i=1;i<5;i++)
+						.swiper-slide 
+							+newsItem
+						.swiper-slide 
+							+newsItem
+			+SlideBtn

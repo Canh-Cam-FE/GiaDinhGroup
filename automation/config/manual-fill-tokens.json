@@ -1,0 +1,9 @@
+{
+	"_comment": "Orphan solid hex → Figma-style fi keys when no paint style is attached. Used by extract + agent-compiler. Prefer names that already map to tailwind.config.js (e.g. Grey/d9 → bg-grey-d9).",
+	"Primary/Table Surface": "#d3e4f0",
+	"Primary/Table Accent A": "#b9d5e6",
+	"Primary/Table Accent B": "#a7c9de",
+	"Primary/5": "#0058aa",
+	"Grey/d9": "#d9d9d9",
+	"Accent/Sky": "#a2d7e9"
+}

@@ -1,0 +1,37 @@
+.home-lien-he
+	// linear 2 — Figma gradient fill (stops unresolved in tokens; visual match)
+	background: linear-gradient(86.75deg, #254B9D -10.65%, #2360B4 100.95%)
+	&::after
+		content: ''
+		@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full
+		background: url('../img/icon/logo-form.png')
+		background-repeat: no-repeat
+		background-size: contain
+		background-position: center left
+	.box
+		@apply w-full
+		padding: r(40px)
+		&::after
+			content: ''
+			@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full
+			background: #A2D7E91A
+			backdrop-filter: blur(20px)
+	.wrap-form
+		.wpcf7-form
+			@apply gap-y-5
+			&.sent
+				.wpcf7-response-output
+					@apply bg-white block rounded-2 px-4 py-1 mt-2 !#{important}
+					width: fit-content !important
+
+		.form-group
+			input, textarea
+				@apply text-white border-white/40 p-0
+
+				&::placeholder
+					@apply text-lg text-white
+
+			textarea
+				min-height: 70px
+				height: r(70px)
+	

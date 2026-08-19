@@ -1,0 +1,46 @@
+
+section.about-vision.anchor-section-id.section-hover.overflow-hidden.relative#anchor-2(class='pad-t-8')
+	
+	.tablet-block
+		.bg-placeholder.relative(style='--bg-url: url("/img/banner/desktop.jpg");  ')
+			.grid.relative.z-50.block-grid(class='grid-cols-2')
+				.item-bg.hover-grid.relative.lazy(data-src="https://picsum.photos/1920/1080?nature=1")
+					.txt(class='absolute-x  bottom-0 p-5 w-full z-20 lg:py-10 xl:px-20')
+						h3.heading-2.text-white.relative.z-50(class=' ')  Vận tải nội địa
+						.txt-grid.relative.z-50
+							div 
+								.desc.body-2.text-white Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+									ul
+										li Location: Vancouver, British Columbia, Canada
+										li Total Area: 3,000 sq meters
+										li Workers: 30
+										li Monthly Capacity: 11,000 units
+										li In-house Facilities:
+										li Sample Room
+				.item-bg.hover-grid.relative.lazy(data-src="https://picsum.photos/1920/1080?nature=2")
+					.txt(class='absolute-x  bottom-0 p-5 w-full z-20 lg:py-10 xl:px-20')
+						h3.heading-2.text-white.relative.z-50(class=' ')  Vận tải nội địa
+						.txt-grid.relative.z-50
+							div 
+								.desc.body-2.text-white Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+									ul
+										li Location: Vancouver, British Columbia, Canada
+										li Total Area: 3,000 sq meters
+										li Workers: 30
+										li Monthly Capacity: 11,000 units
+										li In-house Facilities:
+										li Sample Room
+			
+	.mobile-block
+		.auto-3.init-swiper
+			.swiper
+				.swiper-wrapper
+					-for(i=1;i<5;i++)
+						.swiper-slide
+							.item.relative
+								.img.zoom-in.overflow-hidden
+									a.img-ratio(class='ratio:pt-[560_1400]')
+										+FooImg
+								.txt
+									h3.heading-5.my-3 1.freight  management
+									.desc.body-2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

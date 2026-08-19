@@ -1,0 +1,126 @@
+.wpcf7-form 
+	&.sent
+		.wpcf7-response-output
+			@apply text-green border-green border  !#{important}
+	&.invalid
+		.wpcf7-response-output
+			@apply text-red border-red  border !#{important}
+.wrap-form
+	@apply relative
+	.wpcf7-form
+		@apply  gap-y-[20px] grid gap-x-5 grid-cols-2
+	.fa-exclamation-triangle,.wpcf7-not-valid-tip
+		@apply absolute text-red font-normal text-sm
+		bottom: -20px
+		left: 0
+		@media screen and ( max-width: 576px)
+			font-size: 12px
+		&:before
+			font-family: 'Font Awesome 6 Pro' !important
+	.wpcf7-form-control-wrap
+		@apply block static h-full
+	.wpcf7-response-output
+		@apply text-red text-16 relative 
+		z-index: 9999
+		border: none !important
+		margin: 0 !important
+		grid-column: span 2 / span 2
+		padding:  0 !important
+	.col
+		@apply mb-4 relative
+		&:last-child
+			@apply mb-6
+	
+	.form-group
+		@apply relative overflow-visible
+		grid-column: span 1 / span 1
+		&.col-span-2
+			grid-column: span 2 / span 2
+		>span
+			@apply w-full
+		input,textarea,select
+			height: 40px
+			@apply w-full transition font-normal text-base  bg-transparent  py-2  overflow-hidden   px-4  border-b border-gray-200
+			outline: none !important
+			@screen xl
+				@apply rem:px-[10px]
+			&::placeholder
+				@apply text-grey-800   text-base
+			@screen 2xl
+				@apply   min-h-[40px]
+				height: r(42px)
+	
+		select
+			@apply text-base
+			option
+				@apply text-base
+	.form-group
+		@media screen and ( max-width: 767px)
+			grid-column: span 2 / span 2
+		&.full-width
+			@apply col-span-4
+		textarea
+			@apply w-full
+			height: r(120px)
+			@screen lg
+				height: r(201px)
+	.custom-select
+		@apply relative
+		select
+			height: 40px
+			@apply w-full transition font-normal text-base bg-white py-2  overflow-hidden   px-4 text-grey-950
+			outline: none !important
+			&::placeholder
+				@apply text-grey-600 text-base
+			@screen 2xl
+				@apply   min-h-[40px]
+				height: r(46px)
+		&:after
+			@apply text-grey-950 text-xl
+.frm-btnwrap
+	@apply col-span-2  flex-start
+.wpcf7 form.wpcf7-form.submitting button 
+	opacity: 0.5  !important
+	pointer-events: none !important
+.attach-file
+	.dnd-upload-counter
+		display: none
+	.codedropz-upload-handler
+		@apply bg-transparent pl-2  flex items-center  rounded-none
+		@apply  border-none !#{important}
+		@apply border-b border-solid border-gray-200 !#{important}
+		height: 40px
+		border-top: none !important
+		border-right: none !important
+		border-left: none !important
+		@screen 2xl
+			@apply   min-h-[40px]
+			height: r(42px)
+		&::after
+			content: '\f093'
+			@apply block absolute-y pointer-events-none right-7  transition  font-Awesome6 text-white w-[21px] h-[21px] text-base font-light z-99
+		.codedropz-upload-container
+			padding: 4px 0
+	.codedropz-btn-wrap
+		@apply flex w-full 
+
+		a
+			border: none !important
+			
+			@apply   rounded-none text-sm flex-start py-2 px-4 text-white !#{important}
+			@apply absolute-y right-4
+			width: 140px !important
+			height: 36px !important
+			@screen max-sm
+				font-size: 11px !important
+				width: 110px !important
+	h3
+		@apply whitespace-nowrap text-base
+	.codedropz-upload-inner 
+		@apply  flex-center w-full text-base text-primary-1
+		*
+			@apply text-base text-primary-1
+		.cd-upload-btn
+			@apply   h-full z-99  cursor-pointer flex items-start  w-full text-xs bg-primary-1
+		span
+			@apply block mx-2 opacity-0

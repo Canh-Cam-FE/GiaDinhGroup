@@ -1,0 +1,15 @@
+.home-doi-tac
+	.init-swiper + .init-swiper .swiper-wrapper
+		animation-direction: reverse
+
+	.swiper-slide
+		@apply w-auto
+
+	.item
+		@apply flex items-center justify-center bg-white border border-grey-100 px-4
+		width: r(240px)
+		height: r(160px)
+		@screen lg
+			padding: 0 r(32px)
+		img
+			@apply max-w-full max-h-full object-contain

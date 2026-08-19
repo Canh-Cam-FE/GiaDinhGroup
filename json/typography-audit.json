@@ -1,0 +1,1313 @@
+{
+  "generatedAt": "2026-08-03T08:46:31.978Z",
+  "cssFile": "styles/tailwind.min.css",
+  "cssExists": true,
+  "system": {
+    "typographyBaseKeys": 21,
+    "parserClassesWithMetrics": 21,
+    "collisions": [],
+    "missingCssClasses": []
+  },
+  "orphanJsonPages": [],
+  "pages": [
+    {
+      "pageSlug": "home",
+      "meta": {
+        "role": "page",
+        "page": "home",
+        "system": "system-design.json",
+        "src": "figma-targets.json",
+        "file": "Gia Định Group COPY",
+        "at": "2026-08-03T07:30:05.128Z",
+        "match": "artboard",
+        "canvases": [
+          "T TR - 22.07.2028 - ĐC 3 - Final"
+        ],
+        "artboard": "01_Home",
+        "figmaSection": "TRANG CHỦ",
+        "sections": [
+          "Frame 1000005781",
+          "banner",
+          "Tools",
+          "Header"
+        ],
+        "moduleRegions": [
+          {
+            "id": "ve-gia-inh-group",
+            "folder": "ve-gia-inh-group",
+            "parentSection": "Frame 1000005781",
+            "sectionClass": "home-ve-gia-inh-group",
+            "regionType": "content",
+            "sort": 0,
+            "sourceIndices": [
+              0
+            ],
+            "title": "Về Gia Định Group"
+          },
+          {
+            "id": "linh-vuc-hoat-ong",
+            "folder": "linh-vuc-hoat-ong",
+            "parentSection": "Frame 1000005781",
+            "sectionClass": "home-linh-vuc-hoat-ong",
+            "regionType": "content",
+            "sort": 1,
+            "sourceIndices": [
+              1
+            ],
+            "title": "Lĩnh vực hoạt động"
+          },
+          {
+            "id": "du-an-noi-bat",
+            "folder": "du-an-noi-bat",
+            "parentSection": "Frame 1000005781",
+            "sectionClass": "home-du-an-noi-bat",
+            "regionType": "content",
+            "sort": 2,
+            "sourceIndices": [
+              2
+            ],
+            "title": "dự án nổi bật"
+          },
+          {
+            "id": "oi-tac",
+            "folder": "oi-tac",
+            "parentSection": "Frame 1000005781",
+            "sectionClass": "home-oi-tac",
+            "regionType": "content",
+            "sort": 3,
+            "sourceIndices": [
+              3
+            ],
+            "title": "Đối tác"
+          },
+          {
+            "id": "tin-tuc",
+            "folder": "tin-tuc",
+            "parentSection": "Frame 1000005781",
+            "sectionClass": "home-tin-tuc",
+            "regionType": "content",
+            "sort": 4,
+            "sourceIndices": [
+              4
+            ],
+            "title": "Tin tức"
+          },
+          {
+            "id": "lien-he",
+            "folder": "lien-he",
+            "parentSection": "Frame 1000005781",
+            "sectionClass": "home-lien-he",
+            "regionType": "content",
+            "sort": 5,
+            "sourceIndices": [
+              5
+            ],
+            "title": "LIÊN HỆ"
+          },
+          {
+            "id": "banner-2",
+            "folder": "banner-2",
+            "parentSection": "banner",
+            "sectionClass": "home-banner-2",
+            "regionType": "content",
+            "sort": 0,
+            "sourceIndices": [
+              0
+            ],
+            "title": "banner 2"
+          },
+          {
+            "id": "gia-inh-group",
+            "folder": "gia-inh-group",
+            "parentSection": "banner",
+            "sectionClass": "home-gia-inh-group",
+            "regionType": "content",
+            "sort": 1,
+            "sourceIndices": [
+              1
+            ],
+            "title": "GIA ĐỊNH GROUP"
+          },
+          {
+            "id": "frame-1000003374",
+            "folder": "frame-1000003374",
+            "parentSection": "Tools",
+            "sectionClass": "home-frame-1000003374",
+            "regionType": "content",
+            "sort": 0,
+            "sourceIndices": [
+              0
+            ],
+            "title": "Frame 1000003374"
+          }
+        ]
+      },
+      "pugSources": [
+        "src/pages/home.pug",
+        "src/modules/home/banner/index.pug",
+        "src/modules/home/banner-2/index.pug",
+        "src/modules/home/du-an-noi-bat/index.pug",
+        "src/modules/home/frame-1000003374/index.pug",
+        "src/modules/home/gia-inh-group/index.pug",
+        "src/modules/home/lien-he/index.pug",
+        "src/modules/home/linh-vuc-hoat-ong/index.pug",
+        "src/modules/home/oi-tac/index.pug",
+        "src/modules/home/tin-tuc/index.pug",
+        "src/modules/home/ve-gia-inh-group/index.pug"
+      ],
+      "textNodeCount": 82,
+      "uniqueChecks": 65,
+      "passCount": 66,
+      "issueCount": 12,
+      "status": "WARN",
+      "issues": [
+        {
+          "severity": "HIGH",
+          "code": "PUG_NO_TYPO_CLASS",
+          "ty": "Body/Body-1",
+          "tx": "Khám phá thêm",
+          "expectedClass": "body-1",
+          "expectedTag": "div",
+          "pugFile": "src/modules/home/ve-gia-inh-group/index.pug",
+          "pugLine": 44,
+          "pugSnippet": "+btn1('Khám phá thêm')",
+          "foundClasses": [],
+          "css": {
+            "present": true,
+            "rules": {
+              "fontSize": "clamp(16px, calc(18 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.9375rem)",
+              "fontWeight": "400",
+              "lineHeight": "1.4",
+              "fontFamily": "Google Sans Flex, sans-serif",
+              "color": null
+            }
+          },
+          "message": "Pug line has copy but no typography component class",
+          "fix": "Add .body-1 to element (one class per text node)"
+        },
+        {
+          "severity": "HIGH",
+          "code": "PUG_NO_TYPO_CLASS",
+          "ty": "Body/Body-1",
+          "tx": "Khám phá thêm",
+          "expectedClass": "body-1",
+          "expectedTag": "div",
+          "pugFile": "src/modules/home/ve-gia-inh-group/index.pug",
+          "pugLine": 51,
+          "pugSnippet": "+btn1('Khám phá thêm')",
+          "foundClasses": [],
+          "css": {
+            "present": true,
+            "rules": {
+              "fontSize": "clamp(16px, calc(18 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.9375rem)",
+              "fontWeight": "400",
+              "lineHeight": "1.4",
+              "fontFamily": "Google Sans Flex, sans-serif",
+              "color": null
+            }
+          },
+          "message": "Pug line has copy but no typography component class",
+          "fix": "Add .body-1 to element (one class per text node)"
+        },
+        {
+          "severity": "HIGH",
+          "code": "PUG_NO_TYPO_CLASS",
+          "ty": "Body/Body-2",
+          "tx": "Tìm hiểu thêm",
+          "expectedClass": "body-2",
+          "expectedTag": "div",
+          "pugFile": "src/modules/home/linh-vuc-hoat-ong/index.pug",
+          "pugLine": 13,
+          "pugSnippet": "+btn2('Tìm hiểu thêm', 'text-white')",
+          "foundClasses": [],
+          "css": {
+            "present": true,
+            "rules": {
+              "fontSize": "clamp(14px, calc(16 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.8333333333333334rem)",
+              "fontWeight": "400",
+              "lineHeight": "1.4",
+              "fontFamily": "Google Sans Flex, sans-serif",
+              "color": null
+            }
+          },
+          "message": "Pug line has copy but no typography component class",
+          "fix": "Add .body-2 to element (one class per text node)"
+        },
+        {
+          "severity": "HIGH",
+          "code": "PUG_NO_TYPO_CLASS",
+          "ty": "Body/Body-1",
+          "tx": "Xem tất cả dự án",
+          "expectedClass": "body-1",
+          "expectedTag": "div",
+          "pugFile": "src/modules/home/du-an-noi-bat/index.pug",
+          "pugLine": 38,
+          "pugSnippet": "+btn1('Xem tất cả dự án')",
+          "foundClasses": [],
+          "css": {
+            "present": true,
+            "rules": {
+              "fontSize": "clamp(16px, calc(18 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.9375rem)",
+              "fontWeight": "400",
+              "lineHeight": "1.4",
+              "fontFamily": "Google Sans Flex, sans-serif",
+              "color": null
+            }
+          },
+          "message": "Pug line has copy but no typography component class",
+          "fix": "Add .body-1 to element (one class per text node)"
+        },
+        {
+          "severity": "INFO",
+          "code": "TX_DYNAMIC_POSSIBLE",
+          "ty": "Body/Body-4",
+          "tx": "|",
+          "expectedClass": "body-4",
+          "css": {
+            "present": true,
+            "rules": {
+              "fontSize": "clamp(14px, calc(14 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.7291666666666667rem)",
+              "fontWeight": "400",
+              "lineHeight": "1.4",
+              "fontFamily": "Google Sans Flex, sans-serif",
+              "color": null
+            }
+          },
+          "message": "Class .body-4 found in Pug but copy not as literal — likely dynamic (each / = var). Verify manually.",
+          "fix": "Confirm the loop body or data source produces the correct copy at runtime"
+        },
+        {
+          "severity": "HIGH",
+          "code": "PUG_NO_TYPO_CLASS",
+          "ty": "Body/Body-1",
+          "tx": "Xem tất cả",
+          "expectedClass": "body-1",
+          "expectedTag": "div",
+          "pugFile": "src/modules/home/du-an-noi-bat/index.pug",
+          "pugLine": 38,
+          "pugSnippet": "+btn1('Xem tất cả dự án')",
+          "foundClasses": [],
+          "css": {
+            "present": true,
+            "rules": {
+              "fontSize": "clamp(16px, calc(18 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.9375rem)",
+              "fontWeight": "400",
+              "lineHeight": "1.4",
+              "fontFamily": "Google Sans Flex, sans-serif",
+              "color": null
+            }
+          },
+          "message": "Pug line has copy but no typography component class",
+          "fix": "Add .body-1 to element (one class per text node)"
+        },
+        {
+          "severity": "HIGH",
+          "code": "PUG_NO_TYPO_CLASS",
+          "ty": "Body/Body-1",
+          "tx": "Xem tất cả",
+          "expectedClass": "body-1",
+          "expectedTag": "div",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 147,
+          "pugSnippet": "+btn1('Xem tất cả')",
+          "foundClasses": [],
+          "css": {
+            "present": true,
+            "rules": {
+              "fontSize": "clamp(16px, calc(18 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.9375rem)",
+              "fontWeight": "400",
+              "lineHeight": "1.4",
+              "fontFamily": "Google Sans Flex, sans-serif",
+              "color": null
+            }
+          },
+          "message": "Pug line has copy but no typography component class",
+          "fix": "Add .body-1 to element (one class per text node)"
+        },
+        {
+          "severity": "MEDIUM",
+          "code": "PUG_ORPHAN_TYPO_CLASS",
+          "foundClass": "banner-2",
+          "pugFile": "src/pages/home.pug",
+          "pugLine": 8,
+          "pugSnippet": "include ../modules/home/banner-2/index.pug",
+          "message": "Class .banner-2 in Pug but no page JSON TEXT node maps to it",
+          "fix": "Remove invented class or align page JSON ty; if Local/* token, use parser cssClass from DESIGN_LOOKUP"
+        },
+        {
+          "severity": "MEDIUM",
+          "code": "PUG_ORPHAN_TYPO_CLASS",
+          "foundClass": "heading-banner",
+          "pugFile": "src/modules/home/banner/index.pug",
+          "pugLine": 16,
+          "pugSnippet": "h2.heading-banner.text-white.uppercase.my-4.text-fd-up",
+          "message": "Class .heading-banner in Pug but no page JSON TEXT node maps to it",
+          "fix": "Remove invented class or align page JSON ty; if Local/* token, use parser cssClass from DESIGN_LOOKUP"
+        },
+        {
+          "severity": "MEDIUM",
+          "code": "PUG_ORPHAN_TYPO_CLASS",
+          "foundClass": "heading-banner",
+          "pugFile": "src/modules/home/banner/index.pug",
+          "pugLine": 31,
+          "pugSnippet": "h2.heading-banner.text-white.uppercase.my-4.text-fd-up TRULY VIETNAM,TRULY MARKET BUILDER",
+          "message": "Class .heading-banner in Pug but no page JSON TEXT node maps to it",
+          "fix": "Remove invented class or align page JSON ty; if Local/* token, use parser cssClass from DESIGN_LOOKUP"
+        },
+        {
+          "severity": "MEDIUM",
+          "code": "PUG_ORPHAN_TYPO_CLASS",
+          "foundClass": "heading-banner",
+          "pugFile": "src/modules/home/banner/index.pug",
+          "pugLine": 44,
+          "pugSnippet": "h2.heading-banner.text-white.uppercase.my-4.text-fd-up TRULY VIETNAM,TRULY MARKET BUILDER",
+          "message": "Class .heading-banner in Pug but no page JSON TEXT node maps to it",
+          "fix": "Remove invented class or align page JSON ty; if Local/* token, use parser cssClass from DESIGN_LOOKUP"
+        },
+        {
+          "severity": "MEDIUM",
+          "code": "PUG_ORPHAN_TYPO_CLASS",
+          "foundClass": "banner-2",
+          "pugFile": "src/modules/home/banner-2/index.pug",
+          "pugLine": 1,
+          "pugSnippet": "section.home-banner-2.init-swiper.relative(data-js-target='home-banner')",
+          "message": "Class .banner-2 in Pug but no page JSON TEXT node maps to it",
+          "fix": "Remove invented class or align page JSON ty; if Local/* token, use parser cssClass from DESIGN_LOOKUP"
+        }
+      ],
+      "passes": [
+        {
+          "ty": "Heading/Heading-1",
+          "tx": "Con số nổi bật",
+          "expectedClass": "heading-1",
+          "pugFile": "src/modules/home/ve-gia-inh-group/index.pug",
+          "pugLine": 7,
+          "cssRules": {
+            "fontSize": "clamp(36px, calc(48 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 2.5rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.25",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-2",
+          "tx": "Chúng tôi không ngừng nỗ lực để trở thành tập đoàn đa ngành nghề uy tín hàng đầu",
+          "expectedClass": "body-2",
+          "pugFile": "src/modules/home/ve-gia-inh-group/index.pug",
+          "pugLine": 8,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(16 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.8333333333333334rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-1",
+          "tx": "35+",
+          "expectedClass": "heading-1",
+          "pugFile": "src/modules/home/ve-gia-inh-group/index.pug",
+          "pugLine": 13,
+          "cssRules": {
+            "fontSize": "clamp(36px, calc(48 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 2.5rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.25",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-5",
+          "tx": "Năm",
+          "expectedClass": "heading-5",
+          "pugFile": "src/modules/home/ve-gia-inh-group/index.pug",
+          "pugLine": 17,
+          "cssRules": {
+            "fontSize": "clamp(18px, calc(20 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.0416666666666667rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-3",
+          "tx": "Hình thành và phát triển",
+          "expectedClass": "body-3",
+          "pugFile": "src/modules/home/ve-gia-inh-group/index.pug",
+          "pugLine": 18,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(14 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.7291666666666667rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-1",
+          "tx": "5000+",
+          "expectedClass": "heading-1",
+          "pugFile": "src/modules/home/ve-gia-inh-group/index.pug",
+          "pugLine": 21,
+          "cssRules": {
+            "fontSize": "clamp(36px, calc(48 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 2.5rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.25",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-5",
+          "tx": "Nhân sự",
+          "expectedClass": "heading-5",
+          "pugFile": "src/modules/home/ve-gia-inh-group/index.pug",
+          "pugLine": 25,
+          "cssRules": {
+            "fontSize": "clamp(18px, calc(20 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.0416666666666667rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-3",
+          "tx": "Đảm nhiệm nhiều vị trí",
+          "expectedClass": "body-3",
+          "pugFile": "src/modules/home/ve-gia-inh-group/index.pug",
+          "pugLine": 26,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(14 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.7291666666666667rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-1",
+          "tx": "30+",
+          "expectedClass": "heading-1",
+          "pugFile": "src/modules/home/ve-gia-inh-group/index.pug",
+          "pugLine": 30,
+          "cssRules": {
+            "fontSize": "clamp(36px, calc(48 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 2.5rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.25",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-5",
+          "tx": "Dự án",
+          "expectedClass": "heading-5",
+          "pugFile": "src/modules/home/ve-gia-inh-group/index.pug",
+          "pugLine": 34,
+          "cssRules": {
+            "fontSize": "clamp(18px, calc(20 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.0416666666666667rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-3",
+          "tx": "Đã và đang hoàn thành",
+          "expectedClass": "body-3",
+          "pugFile": "src/modules/home/ve-gia-inh-group/index.pug",
+          "pugLine": 35,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(14 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.7291666666666667rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-1",
+          "tx": "50+",
+          "expectedClass": "heading-1",
+          "pugFile": "src/modules/home/ve-gia-inh-group/index.pug",
+          "pugLine": 38,
+          "cssRules": {
+            "fontSize": "clamp(36px, calc(48 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 2.5rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.25",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-5",
+          "tx": "Đối tác",
+          "expectedClass": "heading-5",
+          "pugFile": "src/modules/home/ve-gia-inh-group/index.pug",
+          "pugLine": 42,
+          "cssRules": {
+            "fontSize": "clamp(18px, calc(20 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.0416666666666667rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-3",
+          "tx": "Hợp tác",
+          "expectedClass": "body-3",
+          "pugFile": "src/modules/home/ve-gia-inh-group/index.pug",
+          "pugLine": 43,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(14 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.7291666666666667rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-1",
+          "tx": "Về Gia Định Group",
+          "expectedClass": "heading-1",
+          "pugFile": "src/modules/home/ve-gia-inh-group/index.pug",
+          "pugLine": 47,
+          "cssRules": {
+            "fontSize": "clamp(36px, calc(48 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 2.5rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.25",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-2",
+          "tx": "Trải qua hơn 30 năm hình thành và phát triển, với sự tâm huyết của đội ngũ lãnh ",
+          "expectedClass": "body-2",
+          "pugFile": "src/modules/home/ve-gia-inh-group/index.pug",
+          "pugLine": 49,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(16 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.8333333333333334rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-2",
+          "tx": "Đồng hành với phương châm CÙNG HỢP TÁC - CÙNG PHÁT TRIỂN, chúng tôi tự hào là đố",
+          "expectedClass": "body-2",
+          "pugFile": "src/modules/home/ve-gia-inh-group/index.pug",
+          "pugLine": 50,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(16 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.8333333333333334rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Local/t128-900-125-s-ahc",
+          "tx": "WHATWE DO",
+          "expectedClass": "t128-900-125-s-ahc",
+          "pugFile": "src/modules/home/ve-gia-inh-group/index.pug",
+          "pugLine": 53,
+          "cssRules": {
+            "fontSize": "clamp(124px, calc(128 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 6.666666666666667rem)",
+            "fontWeight": "900",
+            "lineHeight": "1",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-1",
+          "tx": "Lĩnh vực hoạt động",
+          "expectedClass": "heading-1",
+          "pugFile": "src/modules/home/linh-vuc-hoat-ong/index.pug",
+          "pugLine": 3,
+          "cssRules": {
+            "fontSize": "clamp(36px, calc(48 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 2.5rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.25",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-4",
+          "tx": "Bất động sản",
+          "expectedClass": "heading-4",
+          "pugFile": "src/modules/home/linh-vuc-hoat-ong/index.pug",
+          "pugLine": 11,
+          "cssRules": {
+            "fontSize": "clamp(20px, calc(24 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.25rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.35",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-2",
+          "tx": "Phát triển các dự án hạ tầng công nghiệp và đô thị hiện đại, tạo nền tảng vững c",
+          "expectedClass": "body-2",
+          "pugFile": "src/modules/home/linh-vuc-hoat-ong/index.pug",
+          "pugLine": 12,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(16 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.8333333333333334rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-4",
+          "tx": "Sản xuất, xuất khẩu",
+          "expectedClass": "heading-4",
+          "pugFile": "src/modules/home/linh-vuc-hoat-ong/index.pug",
+          "pugLine": 19,
+          "cssRules": {
+            "fontSize": "clamp(20px, calc(24 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.25rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.35",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-4",
+          "tx": "Năng lượng tái tạo",
+          "expectedClass": "heading-4",
+          "pugFile": "src/modules/home/linh-vuc-hoat-ong/index.pug",
+          "pugLine": 25,
+          "cssRules": {
+            "fontSize": "clamp(20px, calc(24 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.25rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.35",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-4",
+          "tx": "Logistics",
+          "expectedClass": "heading-4",
+          "pugFile": "src/modules/home/linh-vuc-hoat-ong/index.pug",
+          "pugLine": 32,
+          "cssRules": {
+            "fontSize": "clamp(20px, calc(24 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.25rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.35",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-4",
+          "tx": "Đầu tư tài chính",
+          "expectedClass": "heading-4",
+          "pugFile": "src/modules/home/linh-vuc-hoat-ong/index.pug",
+          "pugLine": 38,
+          "cssRules": {
+            "fontSize": "clamp(20px, calc(24 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.25rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.35",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-4",
+          "tx": "Nông nghiệp công nghệ cao",
+          "expectedClass": "heading-4",
+          "pugFile": "src/modules/home/linh-vuc-hoat-ong/index.pug",
+          "pugLine": 44,
+          "cssRules": {
+            "fontSize": "clamp(20px, calc(24 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.25rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.35",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-1",
+          "tx": "dự án nổi bật",
+          "expectedClass": "heading-1",
+          "pugFile": "src/modules/home/du-an-noi-bat/index.pug",
+          "pugLine": 3,
+          "cssRules": {
+            "fontSize": "clamp(36px, calc(48 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 2.5rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.25",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-3",
+          "tx": "CỤM CÔNG NGHIỆP HỒ SƠN 1",
+          "expectedClass": "heading-3",
+          "pugFile": "src/modules/home/du-an-noi-bat/index.pug",
+          "pugLine": 10,
+          "cssRules": {
+            "fontSize": "clamp(26px, calc(30 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.5625rem)",
+            "fontWeight": "600",
+            "lineHeight": "1.3",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-2",
+          "tx": "Vị Trí: Huyện Hữu Lũng, Tỉnh Lạng Sơn Quy Mô: 75 ha",
+          "expectedClass": "body-2",
+          "pugFile": "src/modules/home/du-an-noi-bat/index.pug",
+          "pugLine": 12,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(16 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.8333333333333334rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-5",
+          "tx": "GIA ĐỊNH OFFICE 2",
+          "expectedClass": "heading-5",
+          "pugFile": "src/modules/home/du-an-noi-bat/index.pug",
+          "pugLine": 17,
+          "cssRules": {
+            "fontSize": "clamp(18px, calc(20 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.0416666666666667rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-5",
+          "tx": "CỤM CÔNG NGHIỆP TAM LẬP 2",
+          "expectedClass": "heading-5",
+          "pugFile": "src/modules/home/du-an-noi-bat/index.pug",
+          "pugLine": 22,
+          "cssRules": {
+            "fontSize": "clamp(18px, calc(20 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.0416666666666667rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-5",
+          "tx": "CỤM NHÀ XƯỞNG TÂN UYÊN",
+          "expectedClass": "heading-5",
+          "pugFile": "src/modules/home/du-an-noi-bat/index.pug",
+          "pugLine": 27,
+          "cssRules": {
+            "fontSize": "clamp(18px, calc(20 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.0416666666666667rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-5",
+          "tx": "GIA ĐỊNH TOWER",
+          "expectedClass": "heading-5",
+          "pugFile": "src/modules/home/du-an-noi-bat/index.pug",
+          "pugLine": 32,
+          "cssRules": {
+            "fontSize": "clamp(18px, calc(20 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.0416666666666667rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-5",
+          "tx": "CỤM NHÀ XƯỞNG AN PHÚ",
+          "expectedClass": "heading-5",
+          "pugFile": "src/modules/home/du-an-noi-bat/index.pug",
+          "pugLine": 37,
+          "cssRules": {
+            "fontSize": "clamp(18px, calc(20 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.0416666666666667rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-1",
+          "tx": "Đối tác",
+          "expectedClass": "heading-1",
+          "pugFile": "src/modules/home/oi-tac/index.pug",
+          "pugLine": 3,
+          "cssRules": {
+            "fontSize": "clamp(36px, calc(48 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 2.5rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.25",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-1",
+          "tx": "Tin tức",
+          "expectedClass": "heading-1",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 5,
+          "cssRules": {
+            "fontSize": "clamp(36px, calc(48 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 2.5rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.25",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-1",
+          "tx": "Tất cả",
+          "expectedClass": "body-1",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 16,
+          "cssRules": {
+            "fontSize": "clamp(16px, calc(18 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.9375rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-1",
+          "tx": "Sự kiện",
+          "expectedClass": "body-1",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 28,
+          "cssRules": {
+            "fontSize": "clamp(16px, calc(18 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.9375rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-1",
+          "tx": "Tin dự án",
+          "expectedClass": "body-1",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 40,
+          "cssRules": {
+            "fontSize": "clamp(16px, calc(18 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.9375rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-1",
+          "tx": "Phát triển bền vững",
+          "expectedClass": "body-1",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 52,
+          "cssRules": {
+            "fontSize": "clamp(16px, calc(18 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.9375rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-3",
+          "tx": "09/06/2026",
+          "expectedClass": "body-3",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 69,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(14 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.7291666666666667rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-3",
+          "tx": "09/06/2026",
+          "expectedClass": "body-3",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 80,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(14 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.7291666666666667rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-3",
+          "tx": "09/06/2026",
+          "expectedClass": "body-3",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 107,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(14 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.7291666666666667rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-3",
+          "tx": "09/06/2026",
+          "expectedClass": "body-3",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 118,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(14 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.7291666666666667rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-3",
+          "tx": "Phát triển bền vững",
+          "expectedClass": "body-3",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 71,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(14 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.7291666666666667rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-5",
+          "tx": "Lạng Sơn phấn đấu trở thành tỉnh phát triển công nghiệp...",
+          "expectedClass": "heading-5",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 73,
+          "cssRules": {
+            "fontSize": "clamp(18px, calc(20 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.0416666666666667rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-5",
+          "tx": "Lạng Sơn phấn đấu trở thành tỉnh phát triển công nghiệp...",
+          "expectedClass": "heading-5",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 122,
+          "cssRules": {
+            "fontSize": "clamp(18px, calc(20 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.0416666666666667rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-3",
+          "tx": "Tin dự án",
+          "expectedClass": "body-3",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 82,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(14 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.7291666666666667rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-3",
+          "tx": "Tin dự án",
+          "expectedClass": "body-3",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 109,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(14 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.7291666666666667rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-5",
+          "tx": "Viettel Construction và Tập đoàn Gia Định ký kết hợp..",
+          "expectedClass": "heading-5",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 84,
+          "cssRules": {
+            "fontSize": "clamp(18px, calc(20 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.0416666666666667rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-5",
+          "tx": "Viettel Construction và Tập đoàn Gia Định ký kết hợp..",
+          "expectedClass": "heading-5",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 111,
+          "cssRules": {
+            "fontSize": "clamp(18px, calc(20 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.0416666666666667rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-3",
+          "tx": "10/12/2025",
+          "expectedClass": "body-3",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 92,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(14 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.7291666666666667rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-3",
+          "tx": "Sự kiện",
+          "expectedClass": "body-3",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 94,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(14 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.7291666666666667rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-3",
+          "tx": "Sự kiện",
+          "expectedClass": "body-3",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 120,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(14 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.7291666666666667rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-4",
+          "tx": "​​Tập đoàn Gia Định Đón Tiếp Đoàn Lãnh Đạo tỉnh An Huy (Trung Quốc) và Đoàn Lãnh",
+          "expectedClass": "heading-4",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 97,
+          "cssRules": {
+            "fontSize": "clamp(20px, calc(24 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.25rem)",
+            "fontWeight": "700",
+            "lineHeight": "1.35",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-3",
+          "tx": "Ngày 03/12/ 2025 vừa qua, Tập đoàn Gia Định vừa có buổi đón tiếp trang trọng và ",
+          "expectedClass": "body-3",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 98,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(14 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.7291666666666667rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-3",
+          "tx": "LIÊN HỆ",
+          "expectedClass": "heading-3",
+          "pugFile": "src/modules/home/lien-he/index.pug",
+          "pugLine": 7,
+          "cssRules": {
+            "fontSize": "clamp(26px, calc(30 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.5625rem)",
+            "fontWeight": "600",
+            "lineHeight": "1.3",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-2",
+          "tx": "Để biết thông tin chi tiết về công ty, vui lòng điền thông tin liên lạc bên dưới",
+          "expectedClass": "body-2",
+          "pugFile": "src/modules/home/lien-he/index.pug",
+          "pugLine": 8,
+          "cssRules": {
+            "fontSize": "clamp(14px, calc(16 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.8333333333333334rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-1",
+          "tx": "Họ tên *",
+          "expectedClass": "body-1",
+          "pugFile": "src/modules/home/lien-he/index.pug",
+          "pugLine": 15,
+          "cssRules": {
+            "fontSize": "clamp(16px, calc(18 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.9375rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-1",
+          "tx": "Tên công ty *",
+          "expectedClass": "body-1",
+          "pugFile": "src/modules/home/lien-he/index.pug",
+          "pugLine": 18,
+          "cssRules": {
+            "fontSize": "clamp(16px, calc(18 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.9375rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-1",
+          "tx": "Email *",
+          "expectedClass": "body-1",
+          "pugFile": "src/modules/home/lien-he/index.pug",
+          "pugLine": 22,
+          "cssRules": {
+            "fontSize": "clamp(16px, calc(18 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.9375rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-1",
+          "tx": "Số điện thoại *",
+          "expectedClass": "body-1",
+          "pugFile": "src/modules/home/lien-he/index.pug",
+          "pugLine": 25,
+          "cssRules": {
+            "fontSize": "clamp(16px, calc(18 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.9375rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-1",
+          "tx": "Nội dung",
+          "expectedClass": "body-1",
+          "pugFile": "src/modules/home/lien-he/index.pug",
+          "pugLine": 28,
+          "cssRules": {
+            "fontSize": "clamp(16px, calc(18 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.9375rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Body/Body-1",
+          "tx": "Gửi",
+          "expectedClass": "body-1",
+          "pugFile": "src/modules/home/lien-he/index.pug",
+          "pugLine": 32,
+          "cssRules": {
+            "fontSize": "clamp(16px, calc(18 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.9375rem)",
+            "fontWeight": "400",
+            "lineHeight": "1.4",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Heading/Heading-3",
+          "tx": "GIA ĐỊNH GROUP",
+          "expectedClass": "heading-3",
+          "pugFile": "src/modules/home/gia-inh-group/index.pug",
+          "pugLine": 3,
+          "cssRules": {
+            "fontSize": "clamp(26px, calc(30 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 1.5625rem)",
+            "fontWeight": "600",
+            "lineHeight": "1.3",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        },
+        {
+          "ty": "Local/t64-500-120-s-upp-ahc",
+          "tx": "Cùng hợp tác – cùng kiến tạo giá trị bền vững cho tương lai.",
+          "expectedClass": "t64-500-120-s-upp-ahc",
+          "pugFile": "src/modules/home/gia-inh-group/index.pug",
+          "pugLine": 4,
+          "cssRules": {
+            "fontSize": "clamp(48px, calc(64 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 3.3333333333333335rem)",
+            "fontWeight": "500",
+            "lineHeight": "120%",
+            "fontFamily": "Google Sans Flex, sans-serif",
+            "color": null
+          }
+        }
+      ],
+      "skipped": [
+        {
+          "ty": "Font Awesome/Regular",
+          "tx": "arrow-right",
+          "reason": "Icon font node — use i.fa-solid / i.fa-brands, not .heading-* / .body-*"
+        }
+      ]
+    }
+  ]
+}

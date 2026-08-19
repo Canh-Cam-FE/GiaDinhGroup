@@ -1,0 +1,20 @@
+// Pixel-perfect viewport (Figma 1920px canvas vs browser scrollbar)
+// Figma frames are 1920px wide with no scrollbar. A maximized 1920px window
+// often yields ~1903px content (classic scrollbar ~17px). Fluid math must use
+// the effective width, not raw 100vw.
+//
+// --design-vw: calc(100vw - var(--scrollbar-width))
+// Set --scrollbar-width via src/js/modules/viewport.js (0 on overlay-scroll OSes).
+
+:root
+	--design-width: 1920
+	--scrollbar-width: 0px
+	--design-vw: calc(100vw - var(--scrollbar-width))
+
+html
+	scrollbar-gutter: stable
+	// Prevent 100vw-based overflows on small viewports
+	overflow-x: clip
+
+body
+	overflow-x: clip

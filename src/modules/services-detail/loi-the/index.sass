@@ -1,0 +1,90 @@
+.services-detail-3
+	&::after
+		content: ''
+		@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full
+		background: url('../img/icon/sergice-logo.png')
+		background-repeat: no-repeat
+		background-size: contain
+		background-position: left bottom
+		max-width: r(450px)
+		max-height: r(302px)
+	.container-fluid
+		@apply p-0 relative z-50
+	.block-wrap
+		@screen max-2xl
+			@apply pl-4
+		@screen 2xl
+			max-width: r(300px)
+	.row
+		@apply justify-between m-0 p-0
+	.col
+		@apply m-0 p-0
+		@screen lg
+			&:nth-child(1)
+				width: 29%
+			&:nth-child(2)
+				width: 67.7%
+			
+	.init-swiper
+		@screen md
+			--spv: 2.7
+	.item
+		@apply flex flex-col
+		.img
+			@apply w-full overflow-hidden
+			+aspect-ratio(520, 440)
+
+			img
+				@apply w-full h-full object-cover
+
+		.content
+			@apply flex flex-col
+			padding: r(20px) r(4px)
+			gap: r(12px)
+	.mouse
+		@apply flex items-start justify-center rounded-full border border-white
+		width: r(28px)
+		height: r(44px)
+		animation: dotMove 1.5s infinite ease-in-out
+	.dot
+		@apply block rounded-full mt-1
+		width: r(4px)
+		height: r(8px)
+		
+
+	.box
+		&.left
+			i
+				animation: fadeOpacity 1.5s infinite
+				&:nth-child(3)
+					animation-delay: 0s
+				&:nth-child(2)
+					animation-delay: 0.2s
+				&:nth-child(1)
+					animation-delay: 0.4s
+		&.right
+			i
+				animation: fadeOpacity 1.5s infinite
+				&:nth-child(1)
+					animation-delay: 0s
+				&:nth-child(2)
+					animation-delay: 0.2s
+				&:nth-child(3)
+					animation-delay: 0.4s
+		i
+			@apply text-sm leading-none opacity-20 text-2xl font-extralight
+			margin-right: -2px
+
+@keyframes fadeOpacity
+	0%, 100%
+		opacity: 0.2
+	50%
+		opacity: 1
+
+@keyframes dotMove
+	0%, 100%
+		transform: translateX(0)
+	25%
+		transform: translateX(-5px)
+	75%
+		transform: translateX(5px)

@@ -1,0 +1,23 @@
+.about-bat-ong-san
+	.card
+		@apply relative w-full overflow-hidden
+		+aspect-ratio(440, 453)
+
+		.media
+			@apply absolute inset-0
+
+			img
+				@apply w-full h-full object-cover
+
+			&::after
+				content: ''
+				@apply absolute inset-0 bg-secondary-utility-black-20/20
+
+		.content
+			@apply absolute inset-x-0 bottom-0 z-10 flex flex-col
+			padding: r(48px) r(40px)
+			gap: r(24px)
+
+		&.active, &:hover
+			.media::after
+				@apply bg-black/40

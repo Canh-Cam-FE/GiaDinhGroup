@@ -1,0 +1,81 @@
+{
+	"version": "1.0.0",
+	"role": "agent-page-contract",
+	"description": "Canonical folder and file contract for Figma page JSON → production Pug/Sass. Agents must follow this — not legacy monoliths.",
+	"authority": {
+		"structural": "this file + automation/reference/snippets/",
+		"typography": "generated/agent-lookup.json (via agent prompt DESIGN_LOOKUP / TYPOGRAPHY_TABLE)",
+		"layoutRules": "automation/agent-rules/01-layout-agent.md",
+		"pageJson": "json/{page}.json + meta.moduleRegions when present"
+	},
+	"page": {
+		"path": "src/pages/{slug}.pug",
+		"must": [
+			"extends _layout.pug",
+			"set title and bodyClass in block var",
+			"bodyClass format: page {slug}-page",
+			"block main contains include lines only — no section markup"
+		],
+		"mustNot": [
+			"section.* roots in the page entry file",
+			"header or footer markup (owned by _layout.pug)"
+		]
+	},
+	"module": {
+		"folder": "src/modules/{page}/{section}/",
+		"files": ["index.pug", "index.sass"],
+		"pug": {
+			"sectionRootsPerFile": 1,
+			"sectionClass": "section.{page}-{section}",
+			"scaffold": ".container-xxl | .container-fluid → .row → .col",
+			"childVocabulary": [".wrap", ".content", ".list", ".item", ".card", ".box", ".inner", ".img", ".media", ".panel"],
+			"maxTailwindUtilitiesPerElement": 6
+		},
+		"sass": {
+			"scope": "single section root selector only",
+			"coLocated": true,
+			"mustNot": "Tailwind utility names as custom child classes — see automation/agent-rules/01-layout-agent.md §A"
+		}
+	},
+	"manifest": {
+		"source": "SECTION_MANIFEST in agent-coding-prompt.txt (from json meta.moduleRegions or agent-compiler expandModuleRegions)",
+		"rule": "manifest line count === module folder count === page include count",
+		"forbidden": "multiple section.* roots in one index.pug"
+	},
+	"layoutChrome": {
+		"ownedBy": "src/pages/_layout.pug",
+		"skipInModules": ["header", "footer"],
+		"sharedRef": {
+			"top-banner": "include ../components/banner/index.pug",
+			"global-breadcrumb": "include ../components/breadcrumb/index.pug"
+		},
+		"includePathRelativeTo": "src/pages/{slug}.pug",
+		"mustNot": "scaffold src/modules/{page}/breadcrumb/ for SHARED_REF global-breadcrumb"
+	},
+	"buildPipeline": {
+		"html": "gulp compiles src/pages/*.pug only (excludes src/pages/_*.pug)",
+		"sass": "gulp glob src/modules/**/*.sass → main.min.css (any folder depth)",
+		"tailwindContent": ["src/pages/**/*.pug", "src/modules/**/*.{pug,sass}", "src/components/**/*.{pug,sass}"],
+		"referenceOutsideSrc": "automation/reference/ is NOT compiled — safe for agent snippets"
+	},
+	"legacyExceptions": [
+		{
+			"slug": "home",
+			"path": "src/modules/home/index.pug",
+			"pattern": "monolith — many section.home-* in one file",
+			"agentRule": "DO NOT COPY file structure; use automation/reference/snippets/ instead"
+		}
+	],
+	"snippets": {
+		"pageEntry": "snippets/page-entry.pug",
+		"modules": [
+			{ "section": "hero", "folder": "snippets/modules/hero/" },
+			{ "section": "cta", "folder": "snippets/modules/cta/" }
+		],
+		"sharedChrome": {
+			"global-breadcrumb": "include ../components/breadcrumb/index.pug",
+			"top-banner": "include ../components/banner/index.pug",
+			"note": "SHARED_REF only — never scaffold src/modules/{page}/breadcrumb/"
+		}
+	}
+}

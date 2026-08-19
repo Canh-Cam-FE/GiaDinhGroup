@@ -1,0 +1,12 @@
+@layer components
+	.img-full
+		img
+			@apply w-full h-full object-cover
+	.img-ratio
+		@apply relative block h-0 overflow-hidden pt-full
+		img,iframe,video
+			@apply absolute top-0 left-0 w-full h-full object-cover transition
+	.img-ratio-center
+		@apply flex-center relative block h-0 overflow-hidden pt-full
+		img,iframe
+			@apply absolute-center w-auto h-auto object-contain transition max-w-full max-h-full 

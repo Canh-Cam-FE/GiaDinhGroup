@@ -1,0 +1,32 @@
+.news-detail-page
+	.top-banner
+		@apply hidden
+.news-detail
+
+	time
+		@apply px-0 text-sm
+		&:before
+			@apply hidden
+	
+	#ez-toc-container
+		ul
+			li
+				&::before
+					@apply hidden
+
+	.briefcontent
+		@apply text-base font-bold
+		*
+			@apply text-base font-bold
+.news-other
+	.news-item
+		@apply bg-white h-full
+	.prev,.next
+		width: r(46px) !important
+		min-width: r(46px) !important
+		height: r(40px) !important
+		@apply border border-grey-500 bg-white
+		&::before
+			@apply text-grey-500 text-xs
+			@screen xl
+				@apply text-base

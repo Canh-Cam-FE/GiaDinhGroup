@@ -1,0 +1,322 @@
+
+.other-recruit-wrap
+	@apply sticky
+.recruit-detail
+	.row
+		
+		.col
+			@screen md
+				&:nth-child(1)
+					width: 37.5%
+				&:nth-child(2)
+					width: 58%
+	.table-wrap
+		@apply flex-center
+		td
+			@apply text-base py-3 w-full border-t border-grey-200
+			@screen sm
+				@apply  py-2
+			@screen md
+				@apply  w-1/2
+		table
+			@media screen and ( max-width: 1024px)
+				@apply whitespace-normal
+			tr
+				@media screen and ( max-width: 768px)
+					@apply flex flex-wrap
+					td
+						@apply  block w-full
+				td
+					@apply text-base
+					&:first-child
+						@apply font-bold text-base
+				&:last-child
+					td
+						@apply border-b border-grey-200
+						&:first-child
+							@apply font-bold text-primary-1
+				p
+					@apply mb-0  text-lg
+					span,strong
+						@apply w-1/2 inline-block
+					*
+						@apply text-lg
+	.btn
+		@apply w-full flex-between
+		&.btn-primary
+			em,i
+				@apply  h-full
+	.block-wrap
+.other-recruit
+	.recruit-item
+		border-bottom: 1px solid #d9d9d9
+		&:last-child
+			@apply border-b-transparent 
+	.timeline
+		em
+			@apply font-Awesome6 font-light
+			color: #2F2D30
+		span
+			@apply mx-3
+			color: #2F2D30
+		strong
+			@apply text-primary-1 font-normal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.form-apply
+	iframe
+		width: 100%
+		height: 410px
+		@media screen and ( min-width: 1200px) and ( max-width: 1800px)
+			height: 400px
+		@screen xl
+			@apply w-full
+	.container-fluid
+		padding: 0 !important
+#ctl00_phMain_jobApply_upContact
+	margin-bottom: 0 !important
+.recruit-container
+	padding: 0 !important
+.apply-frm
+	margin: 0 !important
+	overflow: hidden
+	background: #fff !important
+	width: 100%
+	height: 100%
+	.alert-success
+		@apply text-2xl text-center text-primary-1 block w-full 
+		*
+			@apply text-2xl
+	@media screen and ( max-width:  576px)
+		overflow: hidden
+		width: 100%
+	.btn-wrap
+		@apply w-full flex-between
+		@media screen and ( max-width: 600px)
+			@apply flex flex-col
+			align-items: flex-start
+		.form-group
+			@apply w-full
+		.frm-btn
+			@apply flex-start w-fit
+			@media screen and ( min-width: 600px)
+				@apply flex-end
+	.btn-submit
+		@apply bg-primary-1 border-primary-1 text-white font-bold rounded-full transition h-[48px] px-8
+		min-width: 240px
+	.recruitment-container
+		min-width: 1110px !important
+	.frm-captcha
+		@apply my-6
+		@screen lg
+			@apply absolute right-0  pr-8
+			bottom: 0
+			width: auto !important
+			margin-top: 0 !important
+	h4
+		@apply hidden
+	.frm-captcha
+		@media screen and ( max-width: 1024px)
+			margin-top: 20px !important
+		.frm-captcha-input
+			@media screen and ( max-width: 576px)
+				@apply mt-5
+			input
+				@apply border h-[44px] overflow-hidden rounded-full text-grey-950
+				width: r(280px)
+				max-width: r(280px) !important
+				&::placeholder
+					@apply text-lg text-grey-500
+	input[type="file"]
+		left: 0
+	>div
+		width: 100%
+	.RadUpload_Simple 
+		width: 100%
+		height: 100%
+		input
+			width: 100%
+			height: 100%
+	.RadUpload 
+		width: 100%
+		height: 100%
+		pointer-events:  auto
+		@apply border border-grey-100
+		min-height: 46px
+		height: 46px
+		.ruButton
+			@apply text-16 uppercase opacity-0
+			font-family: 'Nunito Sans', sans-serif
+		.ruInputs
+			width: 100%
+			position: relative
+		.ruRemove
+			position: absolute
+			bottom: -77px
+			right: 0
+			opacity: 1
+			font-size: 12px
+			color: #ff0000
+			width: auto !important
+			display: block
+			height: 20px !important
+			background-position: 0px -62px
+		.ruBrowse
+			@apply hidden
+	#ctl00_phMain_jobApply_pnlNewComment
+		position: relative
+		display: flex
+		flex-wrap: wrap
+		>.form-group
+			width: 100%
+			margin-top: -10px
+			position: relative
+		.col-left,.col-right
+			flex: 0 0 100%
+			max-width: 100%
+			display: flex
+			flex-wrap: wrap
+			>.form-group
+				margin-bottom: 30px
+			@media (min-width: 576px)
+				margin: 0 -10px
+				>.form-group
+					padding: 0 10px
+	.fa-exclamation-triangle
+		@apply absolute font-normal 
+		bottom: -22px
+		left: 20px
+		color: #f30000
+		font-size: 12px
+	.label
+		display: none
+		font-size: 14px
+		font-weight: 400
+		color: #999999
+		margin-bottom: 4px
+		.required
+			color: red
+	
+	textarea
+		height: 90px
+		@screen xl
+			height: 130px
+	.RadAsyncUpload
+		.ruDropZone
+			display: none
+		.ruFileWrap
+			position: static
+			display: block
+			height: auto !important
+			max-height: 50px
+			.ruUploadProgress 
+				position: absolute
+				bottom: -70px
+				left: 10px
+		.ruFileInput, .rugreyse
+			height: 50px
+			width: 120px
+			height: 50px
+			text-transform: uppercase
+			font-size: 15px
+			display: flex
+			justify-content: center
+			align-items: center
+			border: 1px solid #333
+			background: #333
+			height: 50px
+			width: 250px
+			&:hover
+				background: white !important
+				color: #333 !important
+		.ruFileInput
+			cursor: pointer
+			border: 1px solid #333
+			pointer-events: auto
+			top: 0 !important
+			left: 0
+			padding: 0 !important
+			bottom: 10px
+			position: absolute
+			opacity: 0
+			height: 40px
+			width: 100% !important
+			cursor: pointer
+			&:hover
+				background: white !important
+				color: #333 !important
+	.form-group-btn
+		@media screen and ( max-width: 1024px)
+			@apply flex-start mt-6
+		@screen lg
+			@apply absolute right-[20px] bottom-0
+	.frm-btnwrap
+		@apply flex-start w-auto mt-8
+		@media screen and ( max-width: 576px)
+			position: static !important
+	.attachfile1
+		@apply block relative
+		.left
+			@apply absolute top-0 left-0 bottom-0 right-0 w-full h-full  cursor-pointer pointer-events-none
+			z-index: 99
+		label
+			@apply flex-start   font-normal  relative pointer-events-none  w-full  text-base  rounded-none text-primary-1 px-[20px] bg-grey-50
+			margin-top: 0
+			height: 46px
+			font-weight: 400 !important
+			@media screen and ( max-width: 1024px)
+				word-break: break-normal 
+			*
+				@apply text-primary-1 !#{important}
+				font: inherit
+			input[type='file']
+				@apply w-full cursor-pointer h-full
+			input[type='file']::file-selector-button
+				cursor: pointer
+			input[type='file']::-webkit-file-upload-button 
+				cursor: pointer
+			::-webkit-file-upload-button 
+				cursor: pointer
+	.attachfile2
+		display: none
+	.form-group 
+		position: relative
+		&.disable-input
+			input
+				@apply pointer-events-none
+				background: #F1F1F1
+				border: none
+	.wrap-form
+		@apply w-full
+		.form-group
+			@media screen and ( max-width: 1024px)
+				grid-column: span 1 / span 1
+			@media screen and ( max-width: 768px)
+				grid-column: span 2 / span 2
+			&.col-span-2
+				@media screen and ( min-width: 768px) and ( max-width: 1200px)
+					grid-column: span 2 / span 2 !important
+			input,textarea,select
+				@apply px-5 border border-grey-100
+				min-height: 46px
+				height: 46px
+				&::placeholder
+					@apply text-base text-grey-500 font-normal
+					
+			textarea
+				@apply pt-4 px-5 border border-grey-100
+				height: 120px !important
+		.frm-btnwrap
+			@apply mt-4 !#{important}

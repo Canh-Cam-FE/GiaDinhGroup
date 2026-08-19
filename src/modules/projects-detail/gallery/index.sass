@@ -1,0 +1,35 @@
+.projects-detail-gallery
+	.wrap
+		@apply relative w-full 
+
+		.media
+			@apply w-full overflow-hidden
+			+aspect-ratio(787, 1400)
+			img
+				@apply w-full h-full object-cover
+	.swiper-thumbs
+		@apply mt-2
+		@screen xl
+			@apply mt-10
+	.swiper-thumbs
+		.item
+			@apply block w-full overflow-hidden transition-opacity
+			padding: 0
+			.media
+				@apply w-full overflow-hidden
+				+aspect-ratio(180,320)
+				img
+					@apply w-full h-full object-cover
+
+		.swiper-slide-thumb-active .item,
+		.item.is-active,
+		.item[aria-selected='true']
+			@apply opacity-100
+		
+
+	.prev
+		@screen max-lg
+			@apply left-0 absolute-y
+	.next
+		@screen max-lg
+			@apply right-0 absolute-y

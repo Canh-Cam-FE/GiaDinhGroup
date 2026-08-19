@@ -1,0 +1,100 @@
+.about-vision
+	
+	.mobile-block
+		@apply block
+		@screen lg
+			@apply hidden 
+	.tablet-block
+		@apply hidden
+		@screen lg
+			@apply block 
+	.block-grid
+		&::after
+			content: ''
+			@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.38) 100%)
+	.three-swiper
+		.swiper
+			@apply m-0 p-0
+			.swiper-slide
+				@apply p-0
+		.item
+			&::after
+				content: ''
+				@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full
+				background: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.38) 100%)
+	.bg-placeholder
+		&::before,&::after
+			content: ''
+			@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full
+			background-repeat: no-repeat !important
+			background-size: cover  !important
+			background-position: center  !important
+		&::before
+			background-image:  var(--bg-url)
+		&::after
+			background-image:  var(--bg-hover)
+			@apply opacity-0
+		&.active
+			&::before
+				@apply opacity-0
+			&::after
+				@apply opacity-100
+	.item-bg
+		@apply border-r border-white border-opacity-20 relative z-20
+		height: r(560px)
+		&::after
+			content: ''
+			@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full  opacity-0
+			background: linear-gradient(180deg, rgba(0, 140, 255, 0.60) 0%, rgba(37, 75, 157, 0.60) 100%)
+			
+		&:last-child
+			@apply border-none
+		&:hover
+			&:after
+				@apply opacity-100
+			.txt-grid
+				grid-template-rows: 1fr
+			.heading-5
+				min-height: auto
+				height: auto
+			.desc
+				@apply mt-4
+			.txt
+				&:before
+					opacity: 1
+				&:after
+					@apply opacity-0
+	
+	.desc
+		transition: .3s all  ease-in-out
+		@media screen and ( max-width: 1400px)
+			@apply text-xs
+		@screen lg
+			@apply mt-0
+			ul
+				@apply mt-3
+				li
+					
+						@apply pl-4
+						&::before
+							@apply bg-white left-[1px] w-[4px] h-[4px] min-w-[4px] rounded-full top-[6px]
+	.container
+		@screen xl
+			@apply px-5
+	.item
+		.img
+			a
+				@screen max-sm
+					+img-ratio(466,338)
+		@screen max-sm
+			@apply bg-primary-1 text-center text-white h-full
+			.txt
+				@apply px-4 py-5
+			.heading-5
+				@apply mt-0 mb-4 text-[20px]
+				*
+					@apply text-[20px]
+	.swiper
+		@screen max-sm
+			--spv: 1.1

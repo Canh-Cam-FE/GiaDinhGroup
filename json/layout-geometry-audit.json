@@ -1,0 +1,430 @@
+{
+  "generatedAt": "2026-08-03T09:11:53.841Z",
+  "designBaseWidthPx": 1920,
+  "rootFontSizePx": 19.2,
+  "summary": {
+    "pages": 6,
+    "pass": 4,
+    "warn": 2,
+    "fail": 0,
+    "skip": 0,
+    "issues": 9
+  },
+  "pages": [
+    {
+      "pageSlug": "about",
+      "status": "WARN",
+      "regions": 15,
+      "anchorsMatched": 29,
+      "anchorsUnmatched": 15,
+      "issueCount": 6,
+      "issues": [
+        {
+          "severity": "INFO",
+          "code": "WIDTH_UNCONSTRAINED",
+          "region": "thong-iep-cua-chu-tich",
+          "node": "Frame 349420",
+          "pugFile": "src/modules/about/thong-iep-cua-chu-tich/index.pug",
+          "pugLine": 7,
+          "expected": {
+            "width": 800
+          },
+          "found": {
+            "width": null
+          },
+          "message": "Figma frame is FIXED at 800px but the element declares no width constraint",
+          "fix": "Add xl:rem:max-w-[800px] or a column fraction on .col"
+        },
+        {
+          "severity": "INFO",
+          "code": "WIDTH_UNCONSTRAINED",
+          "region": "nguyen-chi-trung",
+          "node": "Frame 1000005347",
+          "pugFile": "src/modules/about/nguyen-chi-trung/index.pug",
+          "pugLine": 3,
+          "expected": {
+            "width": 1400
+          },
+          "found": {
+            "width": null
+          },
+          "message": "Figma frame is FIXED at 1400px but the element declares no width constraint",
+          "fix": "Add xl:rem:max-w-[1400px] or a column fraction on .col"
+        },
+        {
+          "severity": "HIGH",
+          "code": "STRUCTURE_COLLAPSED",
+          "region": "2011",
+          "node": "Frame 1000004731",
+          "pugFile": "src/modules/about/2011/index.pug",
+          "pugLine": 18,
+          "expected": {
+            "frame": "Frame 1000004731",
+            "layoutChildren": 2,
+            "itemSpacing": 40
+          },
+          "found": {
+            "sharedWith": "Frame 1000004728"
+          },
+          "message": "Figma nests \"Frame 1000004731\" around \"Frame 1000004728\", but both resolve to the same Pug element — the module is missing a nesting level",
+          "fix": "Wrap the inner content in its own element so each frame's gap/padding can apply (40px vs 8px)"
+        },
+        {
+          "severity": "INFO",
+          "code": "WIDTH_UNCONSTRAINED",
+          "region": "quy-mo",
+          "node": "Frame 1000004211",
+          "pugFile": "src/modules/about/quy-mo/index.pug",
+          "pugLine": 6,
+          "expected": {
+            "width": 599
+          },
+          "found": {
+            "width": null
+          },
+          "message": "Figma frame is FIXED at 599px but the element declares no width constraint",
+          "fix": "Add xl:rem:max-w-[599px] or a column fraction on .col"
+        },
+        {
+          "severity": "HIGH",
+          "code": "STRUCTURE_COLLAPSED",
+          "region": "tong-quan-tap-oan",
+          "node": "Frame 1000005960",
+          "pugFile": "src/modules/about/tong-quan-tap-oan/index.pug",
+          "pugLine": 5,
+          "expected": {
+            "frame": "Frame 1000005960",
+            "layoutChildren": 2,
+            "itemSpacing": 106
+          },
+          "found": {
+            "sharedWith": "Frame 1000005959"
+          },
+          "message": "Figma nests \"Frame 1000005960\" around \"Frame 1000005959\", but both resolve to the same Pug element — the module is missing a nesting level",
+          "fix": "Wrap the inner content in its own element so each frame's gap/padding can apply (106px vs 40px)"
+        },
+        {
+          "severity": "INFO",
+          "code": "WIDTH_UNCONSTRAINED",
+          "region": "tong-quan-tap-oan",
+          "node": "Frame 1000004364",
+          "pugFile": "src/modules/about/tong-quan-tap-oan/index.pug",
+          "pugLine": 7,
+          "expected": {
+            "width": 594
+          },
+          "found": {
+            "width": null
+          },
+          "message": "Figma frame is FIXED at 594px but the element declares no width constraint",
+          "fix": "Add xl:rem:max-w-[594px] or a column fraction on .col"
+        }
+      ],
+      "skipped": [
+        {
+          "region": "frame-1000003703",
+          "reason": "No auto-layout frame had 2+ matched text anchors — geometry unverified"
+        },
+        {
+          "region": "ban-lanh-ao",
+          "reason": "No auto-layout frame had 2+ matched text anchors — geometry unverified"
+        },
+        {
+          "region": "frame-1000004457",
+          "reason": "No auto-layout frame had 2+ matched text anchors — geometry unverified"
+        },
+        {
+          "region": "oi-tac",
+          "reason": "No auto-layout frame had 2+ matched text anchors — geometry unverified"
+        },
+        {
+          "region": "lich-su-hinh-thanh-phat-trien",
+          "reason": "No auto-layout frame had 2+ matched text anchors — geometry unverified"
+        },
+        {
+          "region": "2011",
+          "node": "Frame 1000004740",
+          "reason": "Not checked — an inner frame collapsed, so outer attribution is unreliable"
+        },
+        {
+          "region": "2011",
+          "node": "Frame 1000004733",
+          "reason": "Not checked — an inner frame collapsed, so outer attribution is unreliable"
+        },
+        {
+          "region": "frame-1000005890",
+          "reason": "No auto-layout frame had 2+ matched text anchors — geometry unverified"
+        },
+        {
+          "region": "linh-vuc-hoat-ong",
+          "reason": "No auto-layout frame had 2+ matched text anchors — geometry unverified"
+        },
+        {
+          "region": "frame-1000003374",
+          "reason": "No auto-layout frame had 2+ matched text anchors — geometry unverified"
+        }
+      ]
+    },
+    {
+      "pageSlug": "home",
+      "status": "WARN",
+      "regions": 9,
+      "anchorsMatched": 31,
+      "anchorsUnmatched": 0,
+      "issueCount": 3,
+      "issues": [
+        {
+          "severity": "HIGH",
+          "code": "STRUCTURE_COLLAPSED",
+          "region": "tin-tuc",
+          "node": "Frame 1000004515",
+          "pugFile": "src/modules/home/tin-tuc/index.pug",
+          "pugLine": 3,
+          "expected": {
+            "frame": "Frame 1000004515",
+            "layoutChildren": 2,
+            "itemSpacing": 40
+          },
+          "found": {
+            "sharedWith": "Frame 1000004514"
+          },
+          "message": "Figma nests \"Frame 1000004515\" around \"Frame 1000004514\", but both resolve to the same Pug element — the module is missing a nesting level",
+          "fix": "Wrap the inner content in its own element so each frame's gap/padding can apply (40px vs 40px)"
+        },
+        {
+          "severity": "HIGH",
+          "code": "STRUCTURE_COLLAPSED",
+          "region": "lien-he",
+          "node": "Frame 1000003749",
+          "pugFile": "src/modules/home/lien-he/index.pug",
+          "pugLine": 12,
+          "expected": {
+            "frame": "Frame 1000003749",
+            "layoutChildren": 2,
+            "itemSpacing": 32
+          },
+          "found": {
+            "sharedWith": "Frame 1000003710"
+          },
+          "message": "Figma nests \"Frame 1000003749\" around \"Frame 1000003710\", but both resolve to the same Pug element — the module is missing a nesting level",
+          "fix": "Wrap the inner content in its own element so each frame's gap/padding can apply (32px vs 20px)"
+        },
+        {
+          "severity": "INFO",
+          "code": "WIDTH_UNCONSTRAINED",
+          "region": "lien-he",
+          "node": "Frame 1000003708",
+          "pugFile": "src/modules/home/lien-he/index.pug",
+          "pugLine": 6,
+          "expected": {
+            "width": 497
+          },
+          "found": {
+            "width": null
+          },
+          "message": "Figma frame is FIXED at 497px but the element declares no width constraint",
+          "fix": "Add xl:rem:max-w-[497px] or a column fraction on .col"
+        }
+      ],
+      "skipped": [
+        {
+          "region": "oi-tac",
+          "reason": "No auto-layout frame had 2+ matched text anchors — geometry unverified"
+        },
+        {
+          "region": "tin-tuc",
+          "node": "Frame 1000003370",
+          "reason": "Not checked — an inner frame collapsed, so outer attribution is unreliable"
+        },
+        {
+          "region": "tin-tuc",
+          "node": "Frame 348639",
+          "reason": "Not checked — an inner frame collapsed, so outer attribution is unreliable"
+        },
+        {
+          "region": "tin-tuc",
+          "node": "Frame 349637",
+          "reason": "Not checked — an inner frame collapsed, so outer attribution is unreliable"
+        },
+        {
+          "region": "lien-he",
+          "node": "Frame 1000003757",
+          "reason": "Not checked — an inner frame collapsed, so outer attribution is unreliable"
+        },
+        {
+          "region": "lien-he",
+          "node": "Frame 1000003695",
+          "reason": "Not checked — an inner frame collapsed, so outer attribution is unreliable"
+        },
+        {
+          "region": "banner-2",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "frame-1000003374",
+          "reason": "No auto-layout frame had 2+ matched text anchors — geometry unverified"
+        }
+      ]
+    },
+    {
+      "pageSlug": "projects",
+      "status": "PASS",
+      "regions": 5,
+      "anchorsMatched": 0,
+      "anchorsUnmatched": 0,
+      "issueCount": 0,
+      "issues": [],
+      "skipped": [
+        {
+          "region": "du-an",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "cum-cong-nghiep-ho-son-1",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "frame-1000004412",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "frame-1000003703",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "frame-1000003374",
+          "reason": "Module Pug missing"
+        }
+      ]
+    },
+    {
+      "pageSlug": "projects-detail",
+      "status": "PASS",
+      "regions": 7,
+      "anchorsMatched": 0,
+      "anchorsUnmatched": 0,
+      "issueCount": 0,
+      "issues": [],
+      "skipped": [
+        {
+          "region": "vi-tri-loi-the",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "nam-trong-vi-tri-loi-the-phat-trien-tam-giac-gom-ha-noi",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "loi-the-khac",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "cum-cong-nghiep-ho-son-1",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "frame-1000005888",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "du-an-khac",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "frame-1000003374",
+          "reason": "Module Pug missing"
+        }
+      ]
+    },
+    {
+      "pageSlug": "services-detail",
+      "status": "PASS",
+      "regions": 10,
+      "anchorsMatched": 0,
+      "anchorsUnmatched": 0,
+      "issueCount": 0,
+      "issues": [],
+      "skipped": [
+        {
+          "region": "frame-1000004125",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "rectangle-83416",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "san-xuat-xuat-khau",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "frame-1000004457",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "oi-tac",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "loi-the-cua-gia-inh",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "la-doanh-nghiep-ung-au-nganh-cong-nghiep-giay-tai-viet-n",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "tin-tuc",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "thu-vien-anh",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "frame-1000005975",
+          "reason": "Module Pug missing"
+        }
+      ]
+    },
+    {
+      "pageSlug": "sustainability",
+      "status": "PASS",
+      "regions": 7,
+      "anchorsMatched": 0,
+      "anchorsUnmatched": 0,
+      "issueCount": 0,
+      "issues": [],
+      "skipped": [
+        {
+          "region": "suc-khoe-an-toan-lao-ong",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "trach-nhiem-xa-hoi",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "vi-moi-truong",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "frame-1000005121",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "gia-inh-group",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "tin-tuc-ben-vung",
+          "reason": "Module Pug missing"
+        },
+        {
+          "region": "frame-1000003374",
+          "reason": "Module Pug missing"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+section.develope-1.relative
+	.img.zoom-in.overflow-hidden
+		a.img-ratio(class='ratio:pt-[960_1920]')
+			+FooImg
+	.container(class='absolute-x top-10 lg:top-20')
+		.box-wrap.relative(class='relative lg:rem:max-w-[620px]')
+			.bg-wrap
+				h2.heading-banner.text-primary-1.uppercase.mb-5 Gia định group
+				.desc.body-2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+section.develope-2
+	-for(i=1;i<5;i++)
+		.row 
+			.col.w-full(class='md:w-1/2')
+				.img.zoom-in.overflow-hidden
+					a
+						+FooImg
+			.col.w-full(class='md:w-1/2')
+				.txt.col-left.h-full(class='max-md:py-10 max-md:px-[15px]')
+					h2.heading-1.text-white.mb-5 Sức khoe an toàn
+					.scrollbar-wrap
+						.desc.body-2.text-white Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+section.develope-3.bg-white.pad-8
+	.container
+		h2.heading-1.text-gray-950.text-center(class='mb-10') Tin tức
+
+		.auto-3.init-swiper
+			.swiper
+				.swiper-wrapper
+					-for(i=1;i<5;i++)
+						.swiper-slide
+							.item.news-item
+								.img.zoom-in.overflow-hidden
+									a.img-ratio(class='ratio:pt-[228_320]')
+										+FooImg
+									
+								.content
+									h4.pt-5.pb-6
+										a(href='javascript:;' class='group-hover:text-primary-2').heading-5.text-gray-950 Lạng Sơn phấn đấu trở thành tỉnh phát triển công nghiệp...
+									.inner.flex.items-center(class='clamp:gap-[8-8]')
+										div.desc.body-3.text-gray-500 09/06/2026
+			+SlideBtn

@@ -1,0 +1,17 @@
+.sustainability-vi-moi-truong
+	// linear 3 — Figma gradient fill (stops unresolved in tokens; visual match)
+	.col:first-child
+		background: linear-gradient(180deg, theme('colors.primary.bg') 0%, theme('colors.secondary.bg') 100%)
+
+	.content
+		@apply flex flex-col justify-center h-full
+		min-height: r(600px)
+		max-width: r(600px)
+		gap: r(20px)
+
+	.media
+		@apply overflow-hidden w-full h-full
+		min-height: r(600px)
+
+		img
+			@apply w-full h-full object-cover

@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "resolved-bundle/v1",
+  "title": "DesignTokenIR ResolvedTokenBundle",
+  "description": "Output of resolve.mjs: a single theme's tokens with all symbolic Refs flattened to concrete values and the Contract overlay merged into typography. This is the ONLY artifact emitters consume. Fully deterministic; no unresolved references.",
+  "type": "object",
+  "required": ["$schema", "meta", "theme", "colors", "gradients", "fonts", "semantics", "spacing", "radii", "effects", "typography", "components", "diagnostics"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "const": "resolved-bundle/v1" },
+    "meta": {
+      "type": "object",
+      "required": ["source", "extractedAt", "schemaVersion", "bundleVersion", "contractVersion", "theme", "policy", "sourceFingerprint", "fingerprint"],
+      "additionalProperties": false,
+      "properties": {
+        "source": { "type": "string" },
+        "extractedAt": { "type": "string" },
+        "schemaVersion": { "const": "v1" },
+        "bundleVersion": { "type": "string" },
+        "contractVersion": { "type": "string" },
+        "theme": { "type": "string" },
+        "policy": { "enum": ["strict", "lenient"] },
+        "sourceFingerprint": { "type": "string", "description": "fingerprint of the NormalizedTokenSet this was resolved from" },
+        "fingerprint": { "type": "string" }
+      }
+    },
+    "theme": { "type": "string" },
+    "colors": { "type": "object", "additionalProperties": { "$ref": "#/$defs/ResolvedColor" } },
+    "gradients": { "type": "object", "additionalProperties": { "$ref": "#/$defs/ResolvedGradient" } },
+    "fonts": { "type": "object", "additionalProperties": { "$ref": "#/$defs/ResolvedFont" } },
+    "semantics": { "type": "object", "additionalProperties": { "$ref": "#/$defs/ResolvedSemantic" } },
+    "spacing": { "type": "array", "items": { "$ref": "#/$defs/ResolvedScale" } },
+    "radii": { "type": "array", "items": { "$ref": "#/$defs/ResolvedScale" } },
+    "effects": { "type": "array", "items": { "$ref": "#/$defs/ResolvedEffect" } },
+    "typography": { "type": "array", "items": { "$ref": "#/$defs/ResolvedTypography" } },
+    "components": { "type": "object", "additionalProperties": { "$ref": "#/$defs/ResolvedComponent" } },
+    "diagnostics": { "type": "array", "items": { "$ref": "#/$defs/ResolutionDiagnostic" } }
+  },
+  "$defs": {
+    "TokenId": { "type": "string", "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9][a-z0-9-]*)+$" },
+    "Hex": { "type": "string", "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$" },
+    "HtmlTag": { "enum": ["h1", "h2", "h3", "h4", "h5", "h6", "div", "span", "p", "label", "a"] },
+    "ResolutionDiagnostic": {
+      "type": "object",
+      "required": ["code", "severity", "detail", "subject"],
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "enum": ["COLLISION_PLURALITY", "COLLISION_TIE", "COLLISION_HARMLESS", "OVERRIDE_APPLIED", "TRAIT_CONFLICT", "UNRESOLVED_REF", "UNMAPPED_FONT", "MISSING_CONTRACT", "UNRESOLVED_GRADIENT", "UNRESOLVED_EFFECT", "ORPHAN_ALIAS"]
+        },
+        "severity": { "enum": ["info", "warn", "blocker"] },
+        "detail": { "type": "string" },
+        "subject": { "type": "string" },
+        "chosen": { "type": "string" },
+        "candidates": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "ResolvedColor": {
+      "type": "object",
+      "required": ["id", "value", "group"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/TokenId" },
+        "value": { "$ref": "#/$defs/Hex" },
+        "group": { "type": "string" },
+        "scale": { "type": "string" },
+        "source": { "enum": ["figma", "override"] }
+      }
+    },
+    "ResolvedGradient": {
+      "type": "object",
+      "required": ["id", "type", "stops"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/TokenId" },
+        "type": { "enum": ["linear", "radial", "unknown"] },
+        "angle": { "type": "number" },
+        "stops": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["color", "position"],
+            "additionalProperties": false,
+            "properties": { "color": { "type": "string" }, "position": { "type": "number" } }
+          }
+        },
+        "unresolved": { "type": "boolean" }
+      }
+    },
+    "ResolvedFont": {
+      "type": "object",
+      "required": ["id", "family", "fallbacks", "stack", "role"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/TokenId" },
+        "family": { "type": "string" },
+        "fallbacks": { "type": "array", "items": { "type": "string" } },
+        "stack": { "type": "string", "description": "family + fallbacks joined; raw (quoting is an emitter concern)" },
+        "role": { "enum": ["sans", "serif", "display", "icon", "mono", "cursive"] }
+      }
+    },
+    "ResolvedSemantic": {
+      "type": "object",
+      "required": ["id", "role", "references", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/TokenId" },
+        "role": { "type": "string" },
+        "references": { "$ref": "#/$defs/TokenId" },
+        "value": { "$ref": "#/$defs/Hex" }
+      }
+    },
+    "ResolvedScale": {
+      "type": "object",
+      "required": ["id", "role", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/TokenId" },
+        "role": { "enum": ["pad", "gap", "radius"] },
+        "value": { "type": "number" }
+      }
+    },
+    "ResolvedEffect": {
+      "type": "object",
+      "required": ["id", "type"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/TokenId" },
+        "type": { "enum": ["drop-shadow", "inner-shadow", "layer-blur", "background-blur", "unknown"] },
+        "value": { "type": "object", "additionalProperties": true },
+        "unresolved": { "type": "boolean" }
+      }
+    },
+    "ResolvedTypography": {
+      "type": "object",
+      "required": ["id", "cssClass", "html", "owner", "metrics", "fontFamily"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/TokenId" },
+        "cssClass": { "type": "string" },
+        "html": { "$ref": "#/$defs/HtmlTag" },
+        "owner": { "enum": ["human", "agent", "default"] },
+        "synthetic": { "type": "boolean" },
+        "metrics": {
+          "type": "object",
+          "required": ["fontSize", "fontWeight", "lineHeight", "letterSpacing"],
+          "additionalProperties": false,
+          "properties": {
+            "fontSize": { "type": "number", "exclusiveMinimum": 0 },
+            "fontWeight": { "type": "integer", "minimum": 1, "maximum": 1000 },
+            "lineHeight": { "type": "number", "exclusiveMinimum": 0 },
+            "letterSpacing": { "type": "number" }
+          }
+        },
+        "fontFamily": {
+          "type": "object",
+          "required": ["id", "family", "stack", "role"],
+          "additionalProperties": false,
+          "properties": {
+            "id": { "$ref": "#/$defs/TokenId" },
+            "family": { "type": "string" },
+            "stack": { "type": "string" },
+            "role": { "type": "string" }
+          }
+        },
+        "color": { "$ref": "#/$defs/Hex" }
+      }
+    },
+    "ResolvedComponent": {
+      "type": "object",
+      "required": ["id", "slots"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/TokenId" },
+        "slots": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["ref"],
+            "additionalProperties": false,
+            "properties": { "ref": { "type": "string" }, "value": { "type": "string" } }
+          }
+        }
+      }
+    }
+  }
+}

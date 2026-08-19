@@ -1,0 +1,163 @@
+{
+  "fi": {
+    "Accent/Sky": "accent-sky",
+    "Grey/d9": "grey-d9",
+    "Neutral/White": "white",
+    "Primary/1": "primary-1",
+    "Primary/2": "primary-2",
+    "Primary/3": "primary-3",
+    "Primary/4": "primary-4",
+    "Primary/Table Accent A": "primary-table-accent-a",
+    "Primary/Table Accent B": "primary-table-accent-b",
+    "Primary/Table Surface": "primary-table-surface",
+    "Primary/bg": "primary-bg",
+    "Secondary/2": "secondary-2",
+    "Secondary/3": "secondary-3",
+    "Secondary/BG": "secondary-bg",
+    "Secondary/Utility - White-50": "secondary-utility-white-50",
+    "Secondary/Utility-Black-20": "secondary-utility-black-20",
+    "Secondary/White-80": "secondary-white-80",
+    "Utility/black": "black",
+    "Utility/gray-100": "gray-100",
+    "Utility/gray-200": "gray-200",
+    "Utility/gray-300": "gray-300",
+    "Utility/gray-50": "gray-50",
+    "Utility/gray-500": "gray-500",
+    "Utility/gray-800": "gray-800",
+    "Utility/gray-950": "gray-950",
+    "Utility/white": "white"
+  },
+  "meta": {
+    "bundleVersion": "1.0.0",
+    "contractVersion": "1.2",
+    "resolvedFingerprint": "sha256:e7854e42855def91e12dcc4b6e9c70c1cd90283fc40aa3a27c7eb2ba0206337f",
+    "source": "figma:Gia Định Group COPY",
+    "sourceFingerprint": "sha256:1b045c0b1108c1cf4ed94f7db76f2a8516bdf59e62272c48057f699897ef849c"
+  },
+  "ty": {
+    "Body/Body": {
+      "class": "body",
+      "tag": "div"
+    },
+    "Body/Body-1": {
+      "class": "body-1",
+      "tag": "div"
+    },
+    "Body/Body-2": {
+      "class": "body-2",
+      "tag": "div"
+    },
+    "Body/Body-3": {
+      "class": "body-3",
+      "tag": "div"
+    },
+    "Body/Body-4": {
+      "class": "body-4",
+      "tag": "div"
+    },
+    "Font Awesome/Brand": {
+      "class": "brand",
+      "tag": "div"
+    },
+    "Font Awesome/Light-1": {
+      "class": "light-1",
+      "tag": "div"
+    },
+    "Font Awesome/Regular": {
+      "class": "regular",
+      "tag": "div"
+    },
+    "Heading chân/Heading-1": {
+      "class": "heading-serif-1",
+      "tag": "h2"
+    },
+    "Heading chân/Heading-2": {
+      "class": "heading-serif-2",
+      "tag": "h2"
+    },
+    "Heading chân/Heading-3": {
+      "class": "heading-serif-3",
+      "tag": "h3"
+    },
+    "Heading chân/Heading-4": {
+      "class": "heading-serif-4",
+      "tag": "h4"
+    },
+    "Heading chân/Heading-5": {
+      "class": "heading-serif-5",
+      "tag": "h4"
+    },
+    "Heading chân/Heading-6": {
+      "class": "heading-serif-6",
+      "tag": "h4"
+    },
+    "Heading chân/Heading-7": {
+      "class": "heading-serif-7",
+      "tag": "span"
+    },
+    "Heading/Heading-1": {
+      "class": "heading-1",
+      "tag": "h2"
+    },
+    "Heading/Heading-2": {
+      "class": "heading-2",
+      "tag": "h2"
+    },
+    "Heading/Heading-3": {
+      "class": "heading-3",
+      "tag": "h3"
+    },
+    "Heading/Heading-4": {
+      "class": "heading-4",
+      "tag": "h4"
+    },
+    "Heading/Heading-5": {
+      "class": "heading-5",
+      "tag": "h4"
+    },
+    "Heading/Heading-6": {
+      "class": "heading-6",
+      "tag": "h4"
+    },
+    "Local/t128-700-120-s-ls-002-upp": {
+      "class": "t128-700-120-s-ls-002-upp",
+      "tag": "div"
+    },
+    "Local/t128-900-125-s-ahc": {
+      "class": "t128-900-125-s-ahc",
+      "tag": "div"
+    },
+    "Local/t16-500-140-s-ahc-avc": {
+      "class": "t16-500-140-s-ahc-avc",
+      "tag": "div"
+    },
+    "Local/t52-400-198-s6-avc": {
+      "class": "t52-400-198-s6-avc",
+      "tag": "div"
+    },
+    "Local/t52-700-120-s-ls-002-upp": {
+      "class": "t52-700-120-s-ls-002-upp",
+      "tag": "div"
+    },
+    "Local/t60-700-120-s-ls-002": {
+      "class": "t60-700-120-s-ls-002",
+      "tag": "div"
+    },
+    "Local/t60-700-120-s-ls-002-upp": {
+      "class": "t60-700-120-s-ls-002-upp",
+      "tag": "div"
+    },
+    "Local/t60-700-120-s-ls-002-upp-ahc": {
+      "class": "t60-700-120-s-ls-002-upp-ahc",
+      "tag": "div"
+    },
+    "Local/t64-500-120-s-upp-ahc": {
+      "class": "t64-500-120-s-upp-ahc",
+      "tag": "div"
+    },
+    "Local/t72-700-94-s2-ls-004-avc": {
+      "class": "t72-700-94-s2-ls-004-avc",
+      "tag": "div"
+    }
+  }
+}

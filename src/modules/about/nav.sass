@@ -1,0 +1,44 @@
+.sticky-nav
+	@apply min-h-[48px] h-12 bg-white
+	box-shadow: 0px 8px 32px 0px #0000000F
+	top: 0 !important
+	&.scroll-to-fixed-fixed
+		top:  var(--header-height) !important
+	&.reached-limit
+		top: unset !important
+		position: static !important
+	.container
+		@apply relative h-full p-0
+	ul
+		@apply flex-center h-full bg-grey-100
+		@screen max-xl
+			@apply px-6
+	@media screen and ( max-width: 1800px)
+		+res-nav
+		ul 
+			@apply justify-start pl-4
+	li
+		@apply flex-center h-full
+		
+		&::after
+			content: ''
+			@apply block  absolute-y right-0 pointer-events-none   z-10  transition  w-[1px] h-4 bg-grey-300
+
+		a
+			@apply h-full flex-center text-base  font-normal text-grey-950
+			&::after
+				content: ''
+				@apply block absolute-x pointer-events-none  bottom-0 z-10  transition h-[2px] bg-primary-1  w-0
+		&:hover,&.is-active
+			a
+				@apply text-primary-1 
+				&::after
+					@apply w-full
+		&:last-child
+			&:after
+				@apply hidden
+		@screen max-lg
+			@apply order-3
+			&.is-active
+				order: 1
+		

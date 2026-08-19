@@ -1,0 +1,120 @@
+.projects-list
+	.zone-nav
+		.list
+			li
+				@apply flex items-center relative
+				&:not(:last-child)
+					padding-right: r(16px)
+					&::after
+						content: ''
+						@apply absolute right-0 top-1/2 -translate-y-1/2 w-px bg-gray-200
+						height: r(8px)
+
+			a
+				@apply inline-flex flex-col items-start border-b-2 border-transparent
+				padding-bottom: r(4px)
+
+				&[aria-selected='true']
+					@apply border-primary-2
+
+					span
+						@apply text-primary-2
+
+				&:not([aria-selected='true']):hover span
+					@apply text-primary-2
+
+.project-big
+	@apply overflow-hidden  relative
+	
+
+	.media
+		@apply overflow-hidden w-full
+
+		a
+			@apply block w-full
+			+aspect-ratio(452,800 )
+
+	.content
+		@apply flex flex-col justify-center h-full bg-white relative
+		padding: r(24px) r(40px)
+		gap: r(40px)
+		&::after
+			content: ''
+			@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full opacity-0
+			background: linear-gradient(86.75deg, #254B9D -10.65%, #2360B4 100.95%)
+
+		.wrap
+			@apply flex flex-col
+			gap: r(24px)
+
+		.box
+			@apply flex flex-col
+			gap: r(24px)
+
+		.item
+			@apply flex flex-col
+			gap: r(4px)
+
+		.inner
+			hr
+				@apply w-px border-0 bg-gray-200 self-stretch
+				min-height: r(48px)
+	.row,.col
+		@apply m-0 p-0 relative z-50
+	.btn.btn-primary
+		@apply bg-primary-2 w-fit
+	.wrap,.btn-wrap
+		@apply relative z-60
+	&:hover
+	
+		.content
+			&::after
+				@apply opacity-100
+		.heading-3,.desc
+			@apply text-white
+		.btn.btn-primary
+			@apply bg-white
+			span,em,i
+				@apply text-primary-2
+			em,i
+				transform: translateX(5px)
+.project-item
+	@apply flex flex-col overflow-hidden bg-white
+	.media
+		@apply overflow-hidden w-full
+
+		a
+			@apply block w-full
+			+aspect-ratio(293,440 )
+
+		img
+			@apply w-full h-full object-cover
+
+	.content
+		@apply flex flex-col relative
+		padding: r(24px) r(20px)
+		gap: r(8px)
+		&::after
+			content: ''
+			@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full opacity-0
+			background: linear-gradient(86.75deg, #254B9D -10.65%, #2360B4 100.95%)
+	&:hover
+		.content
+			&:after 
+				@apply  opacity-100
+		.heading-5,.desc,.desc *
+			@apply text-white
+		.desc ul li:before
+			@apply bg-white
+	h4,.heading-5
+		@apply relative z-50
+	.desc
+		@apply relative z-40
+		ul
+			@apply pl-0
+			li
+				@apply pl-4
+				&:last-child
+					@apply mb-0
+				&:before
+					@apply w-[4px] min-w-[4px] min-h-[4px] left-0 top-1

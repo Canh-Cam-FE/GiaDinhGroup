@@ -1,0 +1,28 @@
+.about-quy-mo
+	.num
+		background: linear-gradient(86.75deg, #254B9D -10.65%, #2360B4 100.95%)
+		-webkit-background-clip: text
+		background-clip: text
+		color: transparent
+		@screen max-xl
+			@apply text-7xl
+		@screen max-sm
+			@apply text-6xl
+	.map-wrap
+		@apply relative w-full flex-center mx-auto
+		max-width: r(619px)
+		@screen lg
+			margin-left: auto
+		img
+			@apply w-auto h-auto
+
+	.list
+		@apply absolute inset-0 pointer-events-none
+	.col
+		&:nth-child(1)
+			@screen max-lg
+				@apply order-2 h-auto
+		&:nth-child(2)
+			@screen max-lg
+				@apply order-1
+			

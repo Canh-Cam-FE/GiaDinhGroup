@@ -1,0 +1,51 @@
+section.primary-banner.init-swiper(data-home-banner)
+	.banner-container.relative(class='overflow-hidden')
+		.swiper
+			.swiper-wrapper
+				.swiper-slide
+					.wrap.relative
+						.img.video
+							a
+								video(muted playsinline).primary-banner-video.desktop
+									source(src='./img/video.mp4', type='video/mp4')
+								video(muted playsinline).primary-banner-video.mobile
+									source(src='./img/video-2.mp4', type='video/mp4')
+						.txt(class='absolute-x bottom-0   z-90  w-full flex-col justify-center items-center text-center')
+							.bg-wrap.py-8(class='mx-auto lg:rem:max-w-[1120px]')
+								h3.heading-3.text-white.text-fd-up.uppercase Gia định 
+									<br>
+									|group
+								h2.heading-banner.text-white.uppercase.my-4.text-fd-up
+									<p>Cùng hợp tác – cùng kiến tạo giá trị bền vững cho tương lai. </p>
+								
+									
+				.swiper-slide
+					.wrap.relative
+						.img
+							a
+								picture
+									source(media='(max-width: 767px)' srcset='./img/banner/mobile.jpg')
+									source(media='(min-width: 768px)' srcset='./img/banner/desktop.jpg')
+									img(src='./img/banner/desktop.jpg' alt='Home Banner 1' fetchpriority='high')
+						.txt(class='absolute-x bottom-0   z-90  w-full flex-col justify-center items-center text-center')
+							.bg-wrap.py-8(class='mx-auto lg:rem:max-w-[902px]')
+								h3.heading-3.text-white.text-fd-up.uppercase Công ty phát triển thị 
+									<br> trường hàng đầu tại Việt Nam
+								h2.heading-banner.text-white.uppercase.my-4.text-fd-up TRULY VIETNAM,TRULY MARKET BUILDER
+								
+				.swiper-slide
+					.wrap.relative
+						.img
+							a
+								picture
+									source(media='(max-width: 767px)' srcset='./img/banner/mobile-2.jpg')
+									source(media='(min-width: 768px)' srcset='./img/banner/desktop-2.jpg')
+									img(src='./img/banner/desktop.jpg' alt='Home Banner 1' fetchpriority='high')
+						.txt(class='absolute-x bottom-0   z-90  w-full flex-col justify-center items-center text-center')
+							.bg-wrap.py-8(class='mx-auto lg:rem:max-w-[902px]')
+								h3.heading-3.text-white.text-fd-up.uppercase Công ty phát triển thị
+									<br>
+									| trường hàng đầu tại Việt Nam
+								h2.heading-banner.text-white.uppercase.my-4.text-fd-up TRULY VIETNAM,TRULY MARKET BUILDER
+	.custom-pagination(class='absolute-x z-50 bottom-0 pb-8 lg:pb-20 xl:pb-25')
+		.swiper-pagination

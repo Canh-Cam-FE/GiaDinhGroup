@@ -1,0 +1,121 @@
+section.home-tin-tuc.bg-white.pad-8
+	.container
+
+		h2.heading-1.text-gray-950.text-center(class='mb-4') Tin tức
+		.tab-nav.mb-10
+			ul.list.flex.flex-wrap.items-center.justify-center(class='clamp:gap-[16-16]')
+				li.active
+					a(href='javascript:;' data-type='news-tab-1')
+						span.desc.body-1 Tất cả
+						i.material-symbols-outlined arrow_drop_down
+				hr
+				li
+					a(href='javascript:;' data-type='news-tab-2')
+						span.desc.body-1 Sự kiện
+						i.material-symbols-outlined arrow_drop_down
+				hr
+				li
+					a(href='javascript:;' data-type='news-tab-3')
+						span.desc.body-1 Tin dự án
+						i.material-symbols-outlined arrow_drop_down
+				hr
+				li
+					a(href='javascript:;' data-type='news-tab-4')
+						span.desc.body-1 Phát triển bền vững
+						i.material-symbols-outlined arrow_drop_down
+		.tab-item.active#news-tab-1
+			.desktop-block(class='max-lg:hidden')
+				.row
+					.col.w-full(class='lg:w-3/12')
+						.list.flex.flex-col(class=' gap-5 lg:clamp:gap-[40-40]')
+							.item.news-item
+								.img.zoom-in.overflow-hidden
+									a.img-ratio(class='ratio:pt-[228_320]')
+										+FooImg
+									
+								.content
+									h4
+										a(href='javascript:;' class='group-hover:text-primary-2').heading-5.text-gray-950 Lạng Sơn phấn đấu trở thành tỉnh phát triển công nghiệp...
+									.inner.flex.items-center(class='clamp:gap-[8-8]')
+										div.desc.body-3.text-gray-500 09/06/2026
+										div.desc.body-4.text-gray-500 |
+										div.desc.body-3.text-gray-500 Phát triển bền vững
+							.item.news-item
+								.img.zoom-in.overflow-hidden
+									a.img-ratio(class='ratio:pt-[228_320]')
+										+FooImg
+								.content
+									h4
+										a(href='javascript:;' class='group-hover:text-primary-2').heading-5.text-gray-950 Lạng Sơn phấn đấu trở thành tỉnh phát triển công nghiệp...
+									.inner.flex.items-center(class='clamp:gap-[8-8]')
+										div.desc.body-3.text-gray-500 09/06/2026
+										div.desc.body-4.text-gray-500 |
+										div.desc.body-3.text-gray-500 Phát triển bền vững
+					.col.w-full(class='lg:w-6/12')
+						.item.news-item.group
+							.img.zoom-in.overflow-hidden
+								a.img-ratio(class='ratio:pt-[520_640]')
+									+FooImg
+								
+							.content
+								h4
+									a(class='heading-4 group-hover:text-primary-2 text-gray-950 ' href='javascript:;') ​​Tập đoàn Gia Định Đón Tiếp Đoàn Lãnh Đạo tỉnh An Huy (Trung Quốc) và Đoàn Lãnh Đạo tỉnh....
+								div.desc.body-3.text-gray-950.line-clamp-2 Ngày 03/12/ 2025 vừa qua, Tập đoàn Gia Định vừa có buổi đón tiếp trang trọng và làm việc với Đoàn Lãnh đạo Thành phố Hợp Phì, tỉnh An Huy, Trung Quốc và Đoàn L…
+								.inner.flex.items-center(class='clamp:gap-[8-8] pt-2')
+									div.desc.body-3.text-gray-500 10/12/2025
+									div.desc.body-4.text-gray-500 |
+									div.desc.body-3.text-gray-500 Sự kiện
+					.col.w-full(class='lg:w-3/12')
+						.list.flex.flex-col(class=' gap-5 lg:clamp:gap-[40-40]')
+							.item.news-item
+								.img.zoom-in.overflow-hidden
+									a.img-ratio(class='ratio:pt-[228_320]')
+										+FooImg
+								
+							.content
+								h4
+									a(href='javascript:;' class='group-hover:text-primary-2').heading-5.text-gray-950 Lạng Sơn phấn đấu trở thành tỉnh phát triển công nghiệp...
+								.inner.flex.items-center(class='clamp:gap-[8-8]')
+									div.desc.body-3.text-gray-500 09/06/2026
+									div.desc.body-4.text-gray-500 |
+									div.desc.body-3.text-gray-500 Phát triển bền vững
+							.item.news-item
+								.img.zoom-in.overflow-hidden
+									a.img-ratio(class='ratio:pt-[228_320]')
+										+FooImg
+								.content
+									h4
+										a(href='javascript:;' class='group-hover:text-primary-2').heading-5.text-gray-950 Lạng Sơn phấn đấu trở thành tỉnh phát triển công nghiệp...
+									.inner.flex.items-center(class='clamp:gap-[8-8]')
+										div.desc.body-3.text-gray-500 09/06/2026
+										div.desc.body-4.text-gray-500 |
+										div.desc.body-3.text-gray-500 Phát triển bền vững
+			.tablet-block(class='lg:hidden')
+				.auto-3.init-swiper
+					.swiper
+						.swiper-wrapper
+							-for(i=1;i<5;i++)
+								.swiper-slide
+									.item.news-item.group
+										.img.zoom-in.overflow-hidden
+											a.img-ratio(class='ratio:pt-[520_640]')
+												+FooImg
+											
+										.content
+											h4
+												a(class='heading-4 group-hover:text-primary-2 text-gray-950 ' href='javascript:;') ​​Tập đoàn Gia Định Đón Tiếp Đoàn Lãnh Đạo tỉnh An Huy (Trung Quốc) và Đoàn Lãnh Đạo tỉnh....
+											div.desc.body-3.text-gray-950.line-clamp-2 Ngày 03/12/ 2025 vừa qua, Tập đoàn Gia Định vừa có buổi đón tiếp trang trọng và làm việc với Đoàn Lãnh đạo Thành phố Hợp Phì, tỉnh An Huy, Trung Quốc và Đoàn L…
+											.inner.flex.items-center(class='clamp:gap-[8-8] pt-2')
+												div.desc.body-3.text-gray-500 10/12/2025
+												div.desc.body-4.text-gray-500 |
+												div.desc.body-3.text-gray-500 Sự kiện
+				.pagination-wrap.mt-8
+					.swiper-pagination
+		.tab-item#news-tab-2
+			div.desc.body-2.text-gray-800 Nội dung sự kiện sẽ được cập nhật.
+		.tab-item#news-tab-3
+			div.desc.body-2.text-gray-800 Nội dung tin dự án sẽ được cập nhật.
+		.tab-item#news-tab-4
+			div.desc.body-2.text-gray-800 Nội dung phát triển bền vững sẽ được cập nhật.
+	.btn-wrap.mt-4.flex-center.block-btn
+		+btn1('Xem tất cả')

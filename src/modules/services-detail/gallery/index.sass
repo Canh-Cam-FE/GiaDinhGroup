@@ -1,0 +1,19 @@
+.services-detail-thu-vien-anh
+	.heading-1
+		@apply w-full
+	.prev,.next
+		@apply bg-white
+		@screen xl
+			@apply top-[30%]
+		&:hover
+			@apply bg-primary-2
+			em,i
+				@apply text-white
+	.wrap
+		@apply grid gap-2 sm:gap-4 lg:gap-10
+		grid-template-columns: repeat(6, 1fr)
+		.img
+			&:nth-child(1), &:nth-child(2)
+				grid-column: span 3
+			&:nth-child(n+3)
+				grid-column: span 2

@@ -1,0 +1,48 @@
+.projects-detail-vi-tri
+	.item
+		@apply flex flex-col
+		a
+			@apply relative
+			&::after
+				@apply bg-black/40
+		&:hover
+			.box
+				@apply opacity-0
+			.img 
+				&::before
+					transform: translateX(-110%)
+				&::after
+					transform: translateX(110%)
+
+	.img
+		@apply relative
+		a
+			+img-ratio(330,440)
+			@apply z-20
+		img
+			@apply w-full h-full object-cover
+		&::before,&::after
+			content: ''
+			@apply absolute top-0 h-full bg-primary-1 transition z-50
+			width: 51%
+		&::before
+			@apply left-0
+		&::after
+			@apply right-0
+
+		
+
+	.content
+		@apply absolute inset-0 flex flex-col justify-between h-full z-90
+		padding: r(32px) r(40px)
+		gap: r(12px)
+
+	.box
+		@apply flex items-center transition
+		width: r(96px)
+		height: r(96px)
+
+		i
+			@apply text-5xl leading-none
+			@screen xl
+				font-size: r(96px)

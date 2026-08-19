@@ -1,0 +1,272 @@
+.btn
+	span,em
+		transition: .4s all  ease-in-out
+	&.btn-primary
+		@apply bg-primary-1 px-6  h-12 min-h-[40px] 
+		transition: .4s all  ease-in-out
+		@screen xl
+			@apply px-6
+		&:hover
+			@apply bg-primary-2
+			em,i
+				transform: translateX(5px)
+		span
+			transition: .4s all  ease-in-out
+			@apply text-lg  font-normal relative z-20 text-white whitespace-nowrap
+		em,i
+			transition: .4s all  ease-in-out
+			@apply text-white relative z-40 flex-center overflow-hidden rounded-full text-xl font-normal   ml-2 w-5 h-4
+			font-weight: 300
+			
+	
+		&.white
+			@apply bg-white
+			span,em,i
+				@apply text-primary-1
+			&:hover
+				&::before
+					@apply opacity-0
+				&::after
+					@apply opacity-100
+				em,i
+					animation: l-t-r 0.4s forwards
+				
+	&.btn-arrow
+		@apply   rounded-full   flex-center border-primary-1 border
+		height: 46px
+		width: 46px
+		min-width: 46px
+		&:hover
+			box-shadow: 0px 0px 0px 1px rgba(0,0,172,1)
+			em,i
+				animation: l-t-r 0.4s forwards
+		em,i
+			@apply  text-14  font-normal text-primary-1
+			animation: r-t-l 0.4s forwards
+	&.btn-default
+		@apply  px-6 rounded-full bg-white
+		height: 40px
+		transition: .3s all  ease-in-out
+		span
+			transition: .3s all  ease-in-out
+			@apply  font-semibold relative z-20 text-primary-2 h-full flex items-center text-18
+		em,i
+			@apply text-18 text-primary-2 font-normal  ml-2
+		&:hover
+			@apply bg-primary-2
+			span,em,i
+				@apply text-white
+		&.blue
+			@apply bg-primary-1
+			span,em,i
+				@apply text-white
+			&:hover
+				box-shadow: 0px 4px 12px 0px #FF9123 inset
+				@apply bg-primary-2
+	&.btn-secondary
+		@apply border-2 px-4  border-primary-1 py-2 min-h-[40px]
+		height: r(40px)
+		&::after
+			content: ''
+			@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-0 h-full bg-primary-1
+		&:hover
+			&::after
+				@apply w-full
+			span,em,i
+				@apply text-white
+			em,i
+				animation: l-t-r 0.4s forwards
+		span
+			@apply text-base  font-normal relative z-20 text-primary-1
+		em,i
+			@apply text-primary-1 text-xl ml-2 font-light relative z-60
+			animation: r-t-l 0.4s forwards
+		&.white
+			@apply border-white
+			span,em,i
+				@apply text-white
+	&.btn-download
+		&:hover
+			span,em,i
+				@apply text-primary-1
+			em,i
+				animation: t-t-b 0.4s forwards
+		span
+			@apply text-16  font-semibold relative z-20 text-primary-1
+		.icon
+			@apply w-[32px] h-[32px] min-w-[32px] flex-center border  ml-[8px] rounded-full  border-primary-1 overflow-hidden
+		em,i
+			@apply text-primary-1 text-14  font-light relative z-60 
+			animation: b-t-t 0.4s forwards
+	&.btn-tertiary
+		@apply   py-1 border-b border-primary-1 border-transparent
+		span
+			@apply text-grey-500 leading-none text-sm transition font-normal uppercase
+		em,i
+			@apply ml-2 text-2xl  font-light text-grey-500 leading-none
+		&:hover
+			@apply text-grey-950 
+			span
+				@apply text-grey-950
+			em
+				transform: translateX(3px)
+		&.white
+			@apply text-white
+			*
+				@apply text-white
+			&:hover
+				@apply text-white
+				*
+					@apply text-white
+				@apply border-b-white
+		
+.swiper-nav
+	@media screen and ( max-width: 1024px)
+		@apply flex-center pt-6 pb-1
+	.prev,.next
+		@apply flex-center transition  pointer-events-auto  font-Awesome6 border border-grey-300 
+		height: 40px
+		width: 40px
+		@media screen and ( max-width: 1024px)
+			@apply mx-3 relative
+		@screen lg
+			@apply absolute-y  z-30 w-12 h-12 min-w-12 min-h-12
+		&::before
+			@apply flex-center  pointer-events-none  z-50  transition w-fit h-fit leading-none font-light  text-2xl text-grey-300 font-Awesome6
+			font-weight: 200 !important
+			width: 20px
+			@screen lg
+				font-size: r(30px)
+		&:hover
+			@apply bg-primary-2 border-primary-2
+			&::before
+				@apply text-white
+		&.swiper-button-disabled
+			@apply opacity-50 pointer-events-none
+		
+	.next
+		&::before
+			content: "\f054"
+	.prev
+		&::before
+			content: "\f053"
+	&.center
+		@media screen and ( max-width: 1024px)
+			
+			.prev
+				@apply absolute-y  z-30 
+				@apply left-0 
+			.next
+				@apply absolute-y  z-30 
+				@apply right-0
+	&.normal
+		padding: 0 !important
+		margin: 0 !important
+		@apply flex-center
+		.next,.prev
+			left: unset !important
+			right: unset !important
+			position: relative !important
+			transform: none !important
+		.prev
+			margin-right: 8px
+	&.inset
+		.next
+			right: 0
+		.prev
+			left: 0
+	&.white
+		.next,.prev
+			@apply border-white
+			&::before
+				@apply text-white
+			&:hover
+				@apply bg-white
+				&::before
+					@apply text-primary-1
+	&.grey
+		.next,.prev
+			&::before
+				@apply text-grey-300
+	&.mobile
+		.prev,.next
+			@apply absolute-y z-50
+		.prev
+			left: -18px
+		.next
+			right: -18px
+	.next
+		@screen lg
+			right: r(-75px)
+		@screen xl
+			right: r(-80px)
+	.prev
+		@screen lg
+			left: r(-75px)
+		@screen xl
+			left: r(-80px)
+.custom-swiper-nav
+	@apply h-[56px]  
+	.hand-ui
+		height: r(40px)
+		width: r(64px)
+	.prev,.next
+		height: 24px
+		width: 12px
+		@apply cursor-pointer
+		em
+			@apply text-white text-24 transition
+		&:hover
+			em
+				@apply text-primary-2
+.swiper-nav-group
+	@apply mt-6
+	.swiper-pagination
+		@apply mx-2 w-fit h-[16px] flex-center
+	.swiper-nav
+		padding: 0 !important
+		margin: 0 !important
+		@apply flex-center
+		.next,.prev
+			@apply mx-1
+			left: unset !important
+			right: unset !important
+			position: relative !important
+			transform: none !important
+	
+	
+.mobile-pagination
+	@apply hidden
+	@media screen and ( max-width: 1024px)
+		@apply block
+.swiper-pagination
+	@apply   rounded-full overflow-hidden p-1  mx-0 w-fit h-[16px] flex-center
+	position: static !important
+	left: unset !important
+	right: unset !important
+	bottom: unset !important
+	transform: none !important
+	margin-top: 0
+	.swiper-pagination-bullet 
+		@apply  bg-white  transition bg-opacity-100 opacity-50 w-[8px] min-w-[8px] h-[8px] rounded-full 
+		@apply mx-1 !#{important}
+		@screen xl
+			margin: 0 r(2px) !important
+		@media screen and ( min-width: 1800px)
+			@apply w-2 min-w-2 h-2 min-h-2
+		&.swiper-pagination-bullet-active
+			@apply inline-block opacity-100
+
+.btn-grid
+	display: grid 
+	grid-template-rows: 0fr
+	transition: .2s grid-template-rows ease
+	> div
+		overflow: hidden
+	.btn
+		@apply m-[2px]
+
+.wrap-gap,.wrap-center,.wrap-left,.wrap-right,.ajaflex-center-wrap
+	a
+		&:not(:last-child)
+			@apply mr-2

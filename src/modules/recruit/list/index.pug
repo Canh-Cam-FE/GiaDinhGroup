@@ -1,0 +1,113 @@
+section.recruit-banner.pad-6.bg-primary-1.relative.overflow-hidden
+	h2.heading-2.italic.text-white.text-center Cùng DACINCO chinh phục những dự án tầm cỡ
+section.recruit-1.relative.overflow-hidden
+	.container-fluid.bg-grey-50
+		.row 
+			.col.w-full(class='lg:w-1/2')
+				.img.zoom-in.overflow-hidden.flex-center.w-full
+					a.overflow-hidden.w-full
+						+FooImg
+			.col.w-full(class='lg:w-1/2')
+				.txt(class='lg:pl-10 2xl:pl-20  rem:lg:max-w-[760px] rem:xl:max-w-[790px] rem:2xl:max-w-[700px] h-full col-left')
+					h2.heading-1.mb-10 Môi trường làm việc 
+					.scrollbar-wrap
+						.fullcontent
+							h5 “Con người là chìa khóa của thành công”
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+	.container-fluid.bg-grey-50
+		.row 
+			.col.w-full(class='lg:w-1/2')
+				.img.zoom-in.overflow-hidden.flex-center.w-full
+					a.overflow-hidden.w-full
+						+FooImg
+			.col.w-full(class='lg:w-1/2')
+				.txt(class='lg:pl-10 2xl:pl-20  rem:lg:max-w-[760px] rem:xl:max-w-[790px] rem:2xl:max-w-[700px] h-full col-left')
+					h2.heading-1.mb-10 Môi trường làm việc 
+					.scrollbar-wrap
+						.fullcontent
+							h5 “Con người là chìa khóa của thành công”
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+section.recruit-2.relative.overflow-hidden.pad-8
+	.container
+		h2.heading-1.mb-10.text-center Môi trường làm việc 
+		.auto-3.init-swiper
+			.swiper
+				.swiper-wrapper(class='max-lg:mb-10')
+					-for(i=1;i<5;i++)
+						.swiper-slide
+							.item.overflow-hidden.bg-grey-50
+								.img.zoom-in.overflow-hidden
+									a.img-ratio(class='ratio:pt-[248_440]')
+										+FooImg
+								.txt.p-6.text-center(class='lg:py-10')
+									h2.heading-2.uppercase.text-primary-1 CHẾ ĐỘ ĐÃI NGỘ VÀ CHÍNH SÁCH PHÚC LỢI
+									.desc.my-6 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+									.btn-wrap.flex-center
+										+btn3
+						.swiper-slide
+							.item.overflow-hidden.bg-grey-50
+								.img.zoom-in.overflow-hidden
+									a.img-ratio(class='ratio:pt-[248_440]')
+										+FooImg
+								.txt.p-6.text-center(class='lg:py-10')
+									h2.heading-2.uppercase.text-primary-1 CHẾ ĐỘ ĐÃI 
+									.desc.my-6 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiu
+									.btn-wrap.flex-center
+										+btn3
+			+SlideBtn
+section.recruit-list.pad-8.bg-grey-50
+	.container
+		h2.heading-1.mb-3.text-center Danh sách vị trí đang tuyển dụng
+		.body-1.text-center.mb-10 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		.filter-table-wrap
+			.table-wrap
+				table
+					thead
+						tr
+							th STT
+							th VỊ TRÍ ỨNG TUYỂN 
+							th KHU VỰC
+							th HẠN NỘP HỒ SƠ
+							th
+					tbody
+						-for(i=1;i<5;i++)
+							tr
+								td(data-attr='STT ') 01
+								td(data-attr='Vị trí ')
+									a.title giáo viên tiểu học 
+								td(data-attr='NƠI LÀM VIỆC') Tp.HCM
+								td(data-attr='hạn nộp hồ sơ') 16.09.2024
+								td
+									.flex-center.btn-wrap 
+										a.btn.btn-tertiary
+											em.fa-light.fa-eye
+											span Xem chi tiết
+							tr
+								td(data-attr='STT ') 01
+								td(data-attr='Vị trí ')
+									a.title giáo viên 
+								td(data-attr='NƠI LÀM VIỆC') Tp.HCM
+								td(data-attr='hạn nộp hồ sơ') 16.09.2024
+								td
+									.flex-center.btn-wrap 
+										a.btn.btn-tertiary
+											em.fa-light.fa-eye
+											span Xem chi tiết
+							tr
+								td(data-attr='STT ') 01
+								td(data-attr='Vị trí ')
+									a.title giáo viên tiểu học 
+								td(data-attr='NƠI LÀM VIỆC') Tp.HCM
+								td(data-attr='hạn nộp hồ sơ') 16.09.2024
+								td
+									.flex-center.btn-wrap 
+										a.btn.btn-tertiary
+											em.fa-light.fa-eye
+											span Xem chi tiết
+											
+			.ajax-btn-wrap.mx-auto.w-fit.pt-9
+				a.btn.btn-primary.down.btn-load-more
+					span Xem thêm
+					em.fa-regular.fa-chevron-down

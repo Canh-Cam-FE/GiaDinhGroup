@@ -1,0 +1,87 @@
+section.home-tin-tuc.bg-white.pad-8.news-list
+	.container
+		h2.heading-1.text-gray-950.text-center(class='mb-4') Tin tức
+		.tab-nav.mb-10
+			ul.list.flex.flex-wrap.items-center.justify-center(class='clamp:gap-[16-16]')
+				li.active
+					a(href='javascript:;' )
+						span.desc.body-1 Tất cả
+						i.material-symbols-outlined arrow_drop_down
+				hr
+				li
+					a(href='javascript:;' )
+						span.desc.body-1 Sự kiện
+						i.material-symbols-outlined arrow_drop_down
+				hr
+				li
+					a(href='javascript:;' )
+						span.desc.body-1 Tin dự án
+						i.material-symbols-outlined arrow_drop_down
+				hr
+				li
+					a(href='javascript:;' )
+						span.desc.body-1 Phát triển bền vững
+						i.material-symbols-outlined arrow_drop_down
+		.news-item.big.row.group
+			.col.w-full(class='lg:w-8/12')
+				.img.zoom-in.overflow-hidden
+					a.img-ratio(class='ratio:pt-[519_920]')
+						+FooImg
+			.col.w-full(class='lg:w-4/12')
+				.content.col-left.h-full.px-8(class='max-lg:px-[15px]')
+					h4.border-b.border-white.pb-4.border-opacity-20
+						a(href='javascript:;' class='group-hover:text-primary-2').heading-4.text-gray-950.uppercase.text-white Lạng Sơn phấn đấu trở thành tỉnh phát triển công nghiệp...
+					.desc.body-2.text-white.mt-4 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					.inner.flex.items-center(class='clamp:gap-[8-8] mt-5')
+						div.desc.body-3.text-white 09/06/2026
+						div.desc.body-4.text-white |
+						div.desc.body-3.text-white Phát triển bền vững
+		.grid.grid-cols-3.gap-8.bottom-block.pt-10(class='lg:gap-10')
+			-for(i=1;i<3;i++)
+			
+				.item.news-item
+					.img.zoom-in.overflow-hidden
+						a.img-ratio(class='ratio:pt-[228_320]')
+							+FooImg
+					.content
+						h4
+							a(href='javascript:;' class='group-hover:text-primary-2').heading-5.text-gray-950 Lạng Sơn phấn đấu trở thành ỉnh phát triển công nghiệp...
+						.inner.flex.items-center(class='clamp:gap-[8-8]')
+							div.desc.body-3.text-gray-500 09/06/2026
+							div.desc.body-4.text-gray-500 |
+							div.desc.body-3.text-gray-500 Phát triển bền vững
+				.item.news-item
+					.img.zoom-in.overflow-hidden
+						a.img-ratio(class='ratio:pt-[228_320]')
+							+FooImg
+					.content
+						h4
+							a(href='javascript:;' class='group-hover:text-primary-2').heading-5.text-gray-950 Lạng Sơn phấn đấu trở thành tỉnh phát triển công nghiệp...
+						.inner.flex.items-center(class='clamp:gap-[8-8]')
+							div.desc.body-3.text-gray-500 09/06/2026
+							div.desc.body-4.text-gray-500 |
+							div.desc.body-3.text-gray-500 Phát triển bền vững
+
+
+				.item.news-item
+					.img.zoom-in.overflow-hidden
+						a.img-ratio(class='ratio:pt-[228_320]')
+							+FooImg
+					.content
+						h4
+							a(href='javascript:;' class='group-hover:text-primary-2').heading-5.text-gray-950 Lạng Sơn phấn đấu trở thành tỉnh phát triển công nghiệp...
+						.inner.flex.items-center(class='clamp:gap-[8-8]')
+							div.desc.body-3.text-gray-500 09/06/2026
+							div.desc.body-4.text-gray-500 |
+							div.desc.body-3.text-gray-500 Phát triển bền vững
+
+		.pages
+			.modulepager
+				ul.pagination
+					li.active
+						a(href="#") 1
+					li
+						a(href="#") 2
+					li
+						a(href="#") 3
+				

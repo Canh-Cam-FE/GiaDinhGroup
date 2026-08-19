@@ -1,0 +1,83 @@
+.home-tin-tuc
+	&.news-list
+		.news-item.big
+			@apply m-0 p-0 bg-primary-1 flex-nowrap
+			.col
+				@apply m-0 p-0
+	.btn-wrap
+		@apply mt-0
+	.tab-nav
+		.list
+			li
+				a
+					@apply inline-flex items-center gap-1
+					span, i
+						@apply text-gray-950
+
+				&.active,&:hover
+					a
+						span, i
+							@apply text-primary-2
+			hr
+				@apply w-px h-4 border-0 bg-gray-200
+		@screen max-md
+			+res-nav
+			.list
+				@apply justify-start whitespace-nowrap flex-nowrap
+
+	.tab-item
+		@apply w-full
+
+		&:not(.active)
+			@apply hidden
+
+	.item, .card
+		@apply flex flex-col
+
+		.media
+			@apply overflow-hidden w-full
+
+			a
+				@apply block w-full
+				+aspect-ratio(320, 228)
+
+			img
+				@apply w-full h-full object-cover
+
+		.content
+			@apply flex flex-col
+			padding: r(20px) r(4px)
+			gap: r(16px)
+
+	.card .media a
+		+aspect-ratio(640, 520)
+
+	.card .content
+		gap: r(24px)
+
+	.card .wrap
+		@apply flex flex-col
+		gap: r(12px)
+	.row
+		@screen lg
+			margin: 0 r(-30px)
+			.col
+				padding: 0 r(30px)
+.news-item
+	.content
+		@apply flex flex-col
+		padding: r(20px)  0
+		gap: r(16px)
+
+	&:hover
+		.heading-5
+			@apply text-primary-2
+	&.big
+		.content
+			@apply px-5
+			@screen xl
+				@apply px-10
+.news-other
+	.news-item
+		.content
+			@apply px-4

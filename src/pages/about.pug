@@ -1,0 +1,37 @@
+extends _layout.pug
+
+block var
+	- var title = 'Giới thiệu — Gia Định Group'
+	- var bodyClass = 'page about-page'
+
+block main
+	include ../components/banner-breadcrumb/index.pug
+	.sticky-nav.bg-grey-50
+		.container
+			ul
+				li.px-3(class='lg:px-5').relative.is-active
+					a( class='py-2 flex-center transition relative text-grey-950 text-base ' href="#anchor-1")  Robot Vệ Sinh
+				li.px-3(class='lg:px-5').relative
+					a( class='py-2 flex-center transition relative text-grey-950 text-base ' href="#anchor-2")  Robot Chà Sàn
+				li.px-3(class='lg:px-5').relative
+					a( class='py-2 flex-center transition relative text-grey-950 text-base ' href="#anchor-3") Robot Phục Vụ
+		
+				li.px-3(class='lg:px-5').relative
+					a( class='py-2 flex-center transition relative text-grey-950 text-base ' href="#anchor-4") Robot Vệ Sinh
+		
+				li.px-3(class='lg:px-5').relative
+					a( class='py-2 flex-center transition relative text-grey-950 text-base ' href="#anchor-5") Robot Chà Sàn
+			
+				li.px-3(class='lg:px-5').relative
+					a( class='py-2 flex-center transition relative text-grey-950 text-base ' href="#anchor-6") Robot Chà Sàn
+		
+	.scroll-section-wrap
+		include ../modules/about/tong-quan-tap-oan/index.pug
+		include ../modules/about/thong-iep-cua-chu-tich/index.pug
+		include ../modules/about/vision/index.pug
+		include ../modules/about/gia-tri-cot-loi/index.pug
+		include ../modules/about/history/index.pug
+		include ../modules/about/quy-mo/index.pug
+		include ../modules/about/lanh-dao/index.pug
+		include ../modules/home/linh-vuc-hoat-ong/index.pug
+		include ../modules/home/oi-tac/index.pug

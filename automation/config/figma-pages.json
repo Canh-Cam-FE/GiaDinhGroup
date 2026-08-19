@@ -1,0 +1,34 @@
+{
+	"_doc": "Maps the Figma export to routes and declares what is in scope for tokens. Replaces the hardcoded slug regexes that used to live in extract.mjs. Keys starting with _ are ignored.",
+
+	"_tokenScope": "Canvases whose styles define the shipped design system. Everything else (Cover, separators, 'Design Systems' library page, superseded drafts) is ignored so dead styles never reach json/system-design.json.",
+	"tokenScope": {
+		"includeCanvases": [
+			"T TR - 22.07.2028 - ĐC 3 - Final",
+			"T TR - 13.07.2027"
+		],
+		"excludeSectionPrefixes": ["CHUẨN CC"]
+	},
+
+	"_pages": "Figma page artboard name -> route slug. Artboards are the 1920-wide FRAMEs nested inside the canvas SECTIONs. Anything not listed here produces no page JSON.",
+	"pages": {
+		"01_Home": "home",
+		"01_Gioithieu": "about",
+		"02_Linhvuchoatdong_b": "services-detail",
+		"03_Duan_b": "projects",
+		"03_Duanchitiet_c": "projects-detail",
+		"04_Phattriebenvung": "sustainability"
+	},
+
+	"_componentLibrarySections": "Sections that stage reusable component sets rather than page layouts. Skipped by page slicing; still in scope for tokens.",
+	"componentLibrarySections": ["Section 1"],
+
+	"_legacy": "Superseded page artboards. Kept out of both page slicing and token scope. See docs/page-migration-status.md — these use a retired Montserrat / #104891 design system.",
+	"legacyPages": [
+		"06_Tintuc_01_Ds",
+		"06_Tintuc_02_Ct",
+		"07_Lienhe",
+		"08_Tuyendung_01_Ds",
+		"08_Tuyendung_02_Ct"
+	]
+}

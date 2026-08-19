@@ -1,0 +1,41 @@
+{
+  "version": "1.1.0",
+  "description": "Figma design tokens → project CSS. Token mappings live in tailwind.config.js → designSystem; this file covers workflow and non-Tailwind assets.",
+  "sources": {
+    "figma": "figma/figma-for-coding-agent.json",
+    "figmaLegacy": "figma/figma.json",
+    "figmaStylesPath": "designTokens.figmaStyles",
+    "figmaDocumentPath": "document",
+    "designSystem": "tailwind.config.js ← generated/design-tokens.js + generated/typography.js (npm run tokens)",
+    "sassEntry": "src/core/design-system/index.sass"
+  },
+  "workflow": [
+    "Read tailwind.config.js designSystem (typography + colors mappings)",
+    "Parse figma/figma.json — match node.styleId or styles.fill/text to figmaStyles[].name",
+    "Apply cssClass from designSystem.typography or tailwind utilities from designSystem.colors",
+    "If node has no named style, map raw fills to nearest color token in theme.extend.colors",
+    "Keep ≤ 6 Tailwind utilities per element; use module index.sass for overflow"
+  ],
+  "components": {
+    "Button 1": { "mixin": "btn1", "file": "src/modules/mixin.pug", "cssRoot": ".btn.btn-primary" },
+    "Button 2": { "mixin": "btn2", "file": "src/modules/mixin.pug", "cssRoot": ".btn.btn-secondary" },
+    "Button 3": { "mixin": "btn3", "file": "src/modules/mixin.pug", "cssRoot": ".btn.btn-tertiary" },
+    "Button 4": { "mixin": "btn4", "file": "src/modules/mixin.pug", "cssRoot": ".btn.btn-default" },
+    "Button 6": { "mixin": "btn6", "file": "src/modules/mixin.pug", "cssRoot": ".btn.btn-arrow" }
+  },
+  "layout": {
+    "container": { "cssClass": "container", "sassFile": "grid.sass" },
+    "containerFluid": { "cssClass": "container-fluid", "sassFile": "grid.sass" },
+    "row": { "cssClass": "row", "sassFile": "grid.sass" },
+    "col": { "cssClass": "col", "sassFile": "grid.sass" }
+  },
+  "radius": {
+    "description": "Large decorative radii from Figma cornerRadius — not standard rounded-*",
+    "classes": ["rad-b-40", "rad-l-40", "rad-r-40", "rad-l-25", "rad-r-25", "rad-l-20", "rad-r-20", "rad-l-16", "rad-r-16", "rad-l-12", "rad-r-12"],
+    "sassFile": "radius.sass"
+  },
+  "contentPatterns": {
+    "richText": { "cssClasses": ["desc", "body-1"], "wrapper": "div", "copyOnWrapper": true, "noNestedP": true, "sassFile": "content.sass" },
+    "cmsHtml": { "cssClass": "fullcontent", "sassFile": "content.sass" }
+  }
+}

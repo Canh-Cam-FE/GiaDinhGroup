@@ -1,0 +1,158 @@
+// ============================================================
+// _hamburger.sass — Animated hamburger menu component
+//
+// A self-contained, fully configurable hamburger button.
+// Override any variable before importing this file.
+//
+// Required HTML:
+//   <button class="hamburger hamburger--collapse" type="button">
+//     <span class="hamburger-box">
+//       <span class="hamburger-inner"></span>
+//     </span>
+//   </button>
+//
+// Toggle active state via JS:
+//   button.classList.toggle('is-active')
+//
+// Usage:
+//   @import 'animation-lib/hamburger'
+// ============================================================
+
+
+// ── Configuration variables ──────────────────────────────────
+// Override these before @import if you need custom values.
+
+$hamburger-padding-x           : 0 !default
+$hamburger-padding-y           : 0 !default
+$hamburger-layer-width         : 32px !default
+$hamburger-layer-height        : 2px !default
+$hamburger-layer-spacing       : 7px !default
+$hamburger-layer-color         : #000 !default
+$hamburger-layer-border-radius : 4px !default
+
+$hamburger-hover-opacity       : 0.7 !default
+$hamburger-active-layer-color  : $hamburger-layer-color !default
+$hamburger-active-hover-opacity: $hamburger-hover-opacity !default
+
+// Set to true to use filter instead of opacity for hover state
+$hamburger-hover-use-filter    : false !default
+$hamburger-hover-filter        : opacity(50%) !default
+$hamburger-active-hover-filter : $hamburger-hover-filter !default
+
+// ── Timing variables ─────────────────────────────────────────
+
+$hamburger-transition-duration      : 0.15s !default
+$hamburger-transition-timing        : ease !default
+
+$hamburger-collapse-duration        : 0.13s !default
+$hamburger-collapse-delay           : 0.13s !default
+$hamburger-collapse-active-delay    : 0.22s !default
+
+$hamburger-collapse-offset: $hamburger-layer-spacing + $hamburger-layer-height !default
+
+
+// ── Base ─────────────────────────────────────────────────────
+
+.hamburger
+	padding: $hamburger-padding-y $hamburger-padding-x
+	display: inline-block
+	cursor: pointer
+	transition-property: opacity, filter
+	transition-duration: $hamburger-transition-duration
+	transition-timing-function: linear
+	font: inherit
+	color: inherit
+	text-transform: none
+	background-color: transparent
+	border: 0
+	margin: 0
+	overflow: visible
+
+	@if $hamburger-hover-use-filter == true
+		&:hover
+			filter: $hamburger-hover-filter
+	@else
+		&:hover
+			opacity: $hamburger-hover-opacity
+
+	&.is-active
+		@if $hamburger-hover-use-filter == true
+			&:hover
+				filter: $hamburger-active-hover-filter
+		@else
+			&:hover
+				opacity: $hamburger-active-hover-opacity
+
+		.hamburger-inner,
+		.hamburger-inner::before,
+		.hamburger-inner::after
+			background-color: $hamburger-active-layer-color
+
+.hamburger-box
+	width: $hamburger-layer-width
+	height: ($hamburger-layer-height * 3) + ($hamburger-layer-spacing * 2)
+	display: inline-block
+	position: relative
+
+.hamburger-inner
+	display: block
+	top: 50%
+	margin-top: calc(#{$hamburger-layer-height} / -2)
+
+	&,
+	&::before,
+	&::after
+		width: $hamburger-layer-width
+		height: $hamburger-layer-height
+		background-color: $hamburger-layer-color
+		border-radius: $hamburger-layer-border-radius
+		position: absolute
+		transition-property: transform
+		transition-duration: $hamburger-transition-duration
+		transition-timing-function: $hamburger-transition-timing
+
+	&::before,
+	&::after
+		content: ""
+		display: block
+
+	&::before
+		top: -($hamburger-layer-spacing + $hamburger-layer-height)
+
+	&::after
+		bottom: -($hamburger-layer-spacing + $hamburger-layer-height)
+
+
+// ── Collapse variant ──────────────────────────────────────────
+// The three lines collapse into an × when .is-active is applied.
+
+.hamburger--collapse
+	.hamburger-inner
+		top: auto
+		bottom: 0
+		transition-duration: $hamburger-collapse-duration
+		transition-delay: $hamburger-collapse-delay
+		transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19)
+
+		&::after
+			top: -(($hamburger-layer-spacing + $hamburger-layer-height) * 2)
+			transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear
+
+		&::before
+			transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+
+	&.is-active
+		.hamburger-inner
+			transform: translate3d(0, -#{$hamburger-collapse-offset}, 0) rotate(-45deg)
+			transition-delay: $hamburger-collapse-active-delay
+			transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+
+			&::after
+				top: 0
+				opacity: 0
+				transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear
+
+			&::before
+				top: 0
+				transform: rotate(-90deg)
+				transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1)

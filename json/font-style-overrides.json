@@ -1,0 +1,426 @@
+{
+	"generatedAt": "2026-08-03T07:30:05.105Z",
+	"source": "figma-targets.json",
+	"targetsSource": "figma-targets.json",
+	"picksSource": "automation/config/font-style-picks.json",
+	"file": "Gia Định Group COPY",
+	"summary": {
+		"duplicateNameStyles": 5,
+		"localOverrideStyles": 0,
+		"totalIssues": 5,
+		"issuesUsedInTargets": 5,
+		"usageNote": "All counts are usage inside the token scope declared in automation/config/figma-pages.json (shipped pages only; retired sections excluded). Canonical pick = automation/config/font-style-picks.json",
+		"chosenCount": 0,
+		"needsDecisionCount": 5,
+		"invalidPickCount": 0,
+		"picksFile": "automation/config/font-style-picks.json"
+	},
+	"issues": [
+		{
+			"type": "duplicate-name",
+			"baseName": "Body/Body-1",
+			"cssClass": "body-1",
+			"variants": [
+				{
+					"styleKey": "Body/Body-1#9:121",
+					"fontSize": 18,
+					"fontWeight": 400,
+					"lineHeight": 1.4,
+					"font": "sans",
+					"lhClass": "leading-140",
+					"letterSpacing": 0,
+					"lsClass": "tracking-normal",
+					"usageCount": 28,
+					"samples": [
+						"Label",
+						"Đi đầu cùng châm ngôn ‘Cùng hợp tác - Cùng phát triển’, chúng tôi luôn mang trong mình ước mong mang nền công nghiệp Việt Nam vươn xa hơn trên thị trường thế giới.",
+						"Công Ty Cổ Phần Tập Đoàn Gia Định",
+						"Button",
+						"Xem chi tiết"
+					],
+					"dictionaryUsageCount": 28,
+					"targetsUsageCount": 28
+				},
+				{
+					"styleKey": "Body/Body-1#40021:236",
+					"fontSize": 16,
+					"fontWeight": 400,
+					"lineHeight": 1.4,
+					"font": "sans",
+					"lhClass": "leading-140",
+					"letterSpacing": 0,
+					"lsClass": "tracking-normal",
+					"usageCount": 1,
+					"samples": ["Download Brochure"],
+					"dictionaryUsageCount": 1,
+					"targetsUsageCount": 1
+				},
+				{
+					"styleKey": "Body/Body-1#40002:1327",
+					"fontSize": 20,
+					"fontWeight": 400,
+					"lineHeight": 1.4,
+					"font": "sans",
+					"lhClass": "leading-140",
+					"letterSpacing": 0,
+					"lsClass": "tracking-normal",
+					"alignV": "CENTER",
+					"usageCount": 1,
+					"samples": [
+						"Gia Định Group cam kết phát triển bền vững thông qua việc đảm bảo sức khỏe, an toàn lao động, bảo vệ môi trường và thực hiện trách nhiệm xã hội, hướng đến giá trị lâu dài cho con người và cộng đồng."
+					],
+					"dictionaryUsageCount": 1,
+					"targetsUsageCount": 1
+				}
+			],
+			"targetsTotalUsage": 30,
+			"suggestedInTargets": {
+				"styleKey": "Body/Body-1#9:121",
+				"fontSize": 18,
+				"fontWeight": 400,
+				"lineHeight": 1.4,
+				"font": "sans",
+				"targetsUsageCount": 28,
+				"label": "18px · sans"
+			},
+			"needsDecision": true
+		},
+		{
+			"type": "duplicate-name",
+			"baseName": "Body/Body-3",
+			"cssClass": "body-3",
+			"variants": [
+				{
+					"styleKey": "Body/Body-3#9:124",
+					"fontSize": 14,
+					"fontWeight": 400,
+					"lineHeight": 1.4,
+					"font": "sans",
+					"lhClass": "leading-140",
+					"letterSpacing": 0,
+					"lsClass": "tracking-normal",
+					"usageCount": 55,
+					"samples": [
+						"Label",
+						"Title",
+						"2025.12.03",
+						"Pháp luật - Kinh doanh",
+						"Tải profile"
+					],
+					"dictionaryUsageCount": 55,
+					"targetsUsageCount": 55
+				},
+				{
+					"styleKey": "Body/Body-3#40002:818",
+					"fontSize": 16,
+					"fontWeight": 400,
+					"lineHeight": 1.4,
+					"font": "sans",
+					"lhClass": "leading-140",
+					"letterSpacing": 0,
+					"lsClass": "tracking-normal",
+					"alignV": "CENTER",
+					"usageCount": 8,
+					"samples": [
+						"Hình thành và phát triển",
+						"Đảm nhiệm nhiều vị trí",
+						"Đã và đang hoàn thành",
+						"Hợp tác",
+						"sản xuất"
+					],
+					"dictionaryUsageCount": 8,
+					"targetsUsageCount": 8
+				}
+			],
+			"targetsTotalUsage": 63,
+			"suggestedInTargets": {
+				"styleKey": "Body/Body-3#9:124",
+				"fontSize": 14,
+				"fontWeight": 400,
+				"lineHeight": 1.4,
+				"font": "sans",
+				"targetsUsageCount": 55,
+				"label": "14px · sans"
+			},
+			"needsDecision": true
+		},
+		{
+			"type": "duplicate-name",
+			"baseName": "Body/Body-4",
+			"cssClass": "body-4",
+			"variants": [
+				{
+					"styleKey": "Body/Body-4#9:126",
+					"fontSize": 14,
+					"fontWeight": 400,
+					"lineHeight": 1.4,
+					"font": "sans",
+					"lhClass": "leading-140",
+					"letterSpacing": 0,
+					"lsClass": "tracking-normal",
+					"usageCount": 21,
+					"samples": [
+						"© 2026 Gia Định Group. All Rights Reserved. Thiết kế web bởi Cánh Cam.",
+						"Lạng Sơn",
+						"Hưng Yên",
+						"Ninh Bình",
+						"Vĩnh Long"
+					],
+					"dictionaryUsageCount": 21,
+					"targetsUsageCount": 21
+				},
+				{
+					"styleKey": "Body/Body-4#40002:1812",
+					"fontSize": 14,
+					"fontWeight": 400,
+					"lineHeight": 1.4,
+					"font": "sans",
+					"lhClass": "leading-140",
+					"letterSpacing": 0,
+					"lsClass": "tracking-normal",
+					"usageCount": 13,
+					"samples": ["|"],
+					"dictionaryUsageCount": 13,
+					"targetsUsageCount": 13
+				},
+				{
+					"styleKey": "Body/Body-4#42079:2210",
+					"fontSize": 18,
+					"fontWeight": 400,
+					"lineHeight": 1.4,
+					"font": "sans2",
+					"lhClass": "leading-140",
+					"letterSpacing": 0,
+					"lsClass": "tracking-normal",
+					"usageCount": 1,
+					"samples": ["Chủ Tịch Tập Đoàn Gia Định"],
+					"dictionaryUsageCount": 1,
+					"targetsUsageCount": 1
+				}
+			],
+			"targetsTotalUsage": 35,
+			"suggestedInTargets": {
+				"styleKey": "Body/Body-4#9:126",
+				"fontSize": 14,
+				"fontWeight": 400,
+				"lineHeight": 1.4,
+				"font": "sans",
+				"targetsUsageCount": 21,
+				"label": "14px · sans"
+			},
+			"needsDecision": true
+		},
+		{
+			"type": "duplicate-name",
+			"baseName": "Heading/Heading-1",
+			"cssClass": "heading-1",
+			"variants": [
+				{
+					"styleKey": "Heading/Heading-1#16041:1987",
+					"fontSize": 48,
+					"fontWeight": 700,
+					"lineHeight": 1.2,
+					"font": "sans",
+					"lhClass": "leading-120",
+					"letterSpacing": -0.02,
+					"lsClass": "tracking-tighter",
+					"textCase": "UPPER",
+					"usageCount": 32,
+					"samples": [
+						"Vì con người, vì môi trường, vì tương lai bền vững",
+						"Con số nổi bật",
+						"35+",
+						"5000+",
+						"30+"
+					],
+					"dictionaryUsageCount": 32,
+					"targetsUsageCount": 32
+				},
+				{
+					"styleKey": "Heading/Heading-1#42272:3494",
+					"fontSize": 48,
+					"fontWeight": 700,
+					"lineHeight": 1.3,
+					"font": "sans2",
+					"lhClass": "leading-130",
+					"letterSpacing": 0,
+					"lsClass": "tracking-normal",
+					"usageCount": 1,
+					"samples": ["SẢN XUẤT, XUẤT KHẨU"],
+					"dictionaryUsageCount": 1,
+					"targetsUsageCount": 1
+				}
+			],
+			"targetsTotalUsage": 33,
+			"suggestedInTargets": {
+				"styleKey": "Heading/Heading-1#16041:1987",
+				"fontSize": 48,
+				"fontWeight": 700,
+				"lineHeight": 1.2,
+				"font": "sans",
+				"targetsUsageCount": 32,
+				"label": "48px · w700 · lh1.2 · sans"
+			},
+			"needsDecision": true
+		},
+		{
+			"type": "duplicate-name",
+			"baseName": "Heading/Heading-5",
+			"cssClass": "heading-5",
+			"variants": [
+				{
+					"styleKey": "Heading/Heading-5#9:119",
+					"fontSize": 20,
+					"fontWeight": 700,
+					"lineHeight": 1.4,
+					"font": "sans",
+					"lhClass": "leading-140",
+					"letterSpacing": 0,
+					"lsClass": "tracking-normal",
+					"usageCount": 91,
+					"samples": [
+						"Theo dõi chúng tôi",
+						"Title",
+						"GIA ĐỊNH OFFICE 2",
+						"CỤM CÔNG NGHIỆP TAM LẬP 2",
+						"CỤM NHÀ XƯỞNG TÂN UYÊN"
+					],
+					"dictionaryUsageCount": 91,
+					"targetsUsageCount": 91
+				},
+				{
+					"styleKey": "Heading/Heading-5#40002:1184",
+					"fontSize": 18,
+					"fontWeight": 700,
+					"lineHeight": 1.4,
+					"font": "sans",
+					"lhClass": "leading-140",
+					"letterSpacing": 0,
+					"lsClass": "tracking-normal",
+					"usageCount": 8,
+					"samples": ["Năm", "Nhân sự", "Dự án", "Đối tác", "Chi nhánh"],
+					"dictionaryUsageCount": 8,
+					"targetsUsageCount": 8
+				}
+			],
+			"targetsTotalUsage": 99,
+			"suggestedInTargets": {
+				"styleKey": "Heading/Heading-5#9:119",
+				"fontSize": 20,
+				"fontWeight": 700,
+				"lineHeight": 1.4,
+				"font": "sans",
+				"targetsUsageCount": 91,
+				"label": "20px · w700 · sans"
+			},
+			"needsDecision": true
+		}
+	],
+	"targets": {
+		"issuesUsed": 5,
+		"suggestedByClass": {
+			"body-1": {
+				"styleKey": "Body/Body-1#9:121",
+				"fontSize": 18,
+				"fontWeight": 400,
+				"lineHeight": 1.4,
+				"font": "sans",
+				"targetsUsageCount": 28,
+				"label": "18px · sans",
+				"sizeConflictInTargets": true
+			},
+			"body-3": {
+				"styleKey": "Body/Body-3#9:124",
+				"fontSize": 14,
+				"fontWeight": 400,
+				"lineHeight": 1.4,
+				"font": "sans",
+				"targetsUsageCount": 55,
+				"label": "14px · sans",
+				"sizeConflictInTargets": true
+			},
+			"body-4": {
+				"styleKey": "Body/Body-4#9:126",
+				"fontSize": 14,
+				"fontWeight": 400,
+				"lineHeight": 1.4,
+				"font": "sans",
+				"targetsUsageCount": 21,
+				"label": "14px · sans",
+				"sizeConflictInTargets": true
+			},
+			"heading-1": {
+				"styleKey": "Heading/Heading-1#16041:1987",
+				"fontSize": 48,
+				"fontWeight": 700,
+				"lineHeight": 1.2,
+				"font": "sans",
+				"targetsUsageCount": 32,
+				"label": "48px · w700 · lh1.2 · sans",
+				"sizeConflictInTargets": false
+			},
+			"heading-5": {
+				"styleKey": "Heading/Heading-5#9:119",
+				"fontSize": 20,
+				"fontWeight": 700,
+				"lineHeight": 1.4,
+				"font": "sans",
+				"targetsUsageCount": 91,
+				"label": "20px · w700 · sans",
+				"sizeConflictInTargets": true
+			}
+		}
+	},
+	"picks": {
+		"chosenByClass": {},
+		"needsDecision": ["body-1", "body-3", "body-4", "heading-1", "heading-5"],
+		"invalidPicks": [],
+		"suggestedByClass": {
+			"body-1": {
+				"styleKey": "Body/Body-1#9:121",
+				"fontSize": 18,
+				"fontWeight": 400,
+				"lineHeight": 1.4,
+				"font": "sans",
+				"targetsUsageCount": 28,
+				"label": "18px · sans"
+			},
+			"body-3": {
+				"styleKey": "Body/Body-3#9:124",
+				"fontSize": 14,
+				"fontWeight": 400,
+				"lineHeight": 1.4,
+				"font": "sans",
+				"targetsUsageCount": 55,
+				"label": "14px · sans"
+			},
+			"body-4": {
+				"styleKey": "Body/Body-4#9:126",
+				"fontSize": 14,
+				"fontWeight": 400,
+				"lineHeight": 1.4,
+				"font": "sans",
+				"targetsUsageCount": 21,
+				"label": "14px · sans"
+			},
+			"heading-1": {
+				"styleKey": "Heading/Heading-1#16041:1987",
+				"fontSize": 48,
+				"fontWeight": 700,
+				"lineHeight": 1.2,
+				"font": "sans",
+				"targetsUsageCount": 32,
+				"label": "48px · w700 · lh1.2 · sans"
+			},
+			"heading-5": {
+				"styleKey": "Heading/Heading-5#9:119",
+				"fontSize": 20,
+				"fontWeight": 700,
+				"lineHeight": 1.4,
+				"font": "sans",
+				"targetsUsageCount": 91,
+				"label": "20px · w700 · sans"
+			}
+		}
+	}
+}

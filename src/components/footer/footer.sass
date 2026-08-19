@@ -1,0 +1,53 @@
+footer
+	
+	address
+		@apply not-italic text-base
+		*
+			@apply text-base
+		li
+			@apply mb-1
+		a
+			&:hover
+				@apply underline
+	.logo
+		a
+			display: flex
+			height: r(76px)
+			@screen lg
+				width: r(115px)
+			@screen max-lg
+				@apply flex-center mb-7
+			img
+				width: auto
+				height: 100%
+				object-fit: contain
+	.wrapper
+		@screen max-lg
+			@apply block
+		@screen lg
+			@apply items-start
+	.bottom
+		&::after
+			content: ''
+			@apply block absolute pointer-events-none left-0 top-0 z-10  transition w-full h-[4px]
+			background: linear-gradient(90deg, #254B9D 0%, #E51F24 100%)
+.social
+	a
+		@apply bg-primary-1 flex-center transition flex-col-reverse min-h-[40px]  min-w-[40px] h-10 w-10
+		i,em
+			@apply text-xl text-white
+		&:hover
+			transform: translateY(-5px)
+.policy-nav
+	@apply w-full
+	li
+		
+		&:last-child
+			&::after
+				@apply hidden
+		&:hover,&.active
+			a
+				@apply border-b-grey-950
+		&::after
+			content: '|'
+			@apply inline-block relative  z-10  transition w-full h-full text-grey-950 text-xs  mx-2

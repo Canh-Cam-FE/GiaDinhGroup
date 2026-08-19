@@ -1,0 +1,17 @@
+{
+	"_comment": "Pick the canonical styleKey for each conflicting typography class. Key = cssClass (body-1) or Figma base name (Body/Body-1). Value = full styleKey from json/font-style-overrides.json. Keys starting with _ are ignored, so this file is a no-op until you move an entry out of _suggested. Re-run npm run extract && npm run tokens after editing.",
+
+	"_note": "You only need a pick when you disagree with the resolver. Since tokens are scoped to the shipped pages and variants are ranked by node usage, every conflict below already has a clear plurality winner and strict resolve passes with no picks at all.",
+
+	"_suggested": {
+		"body-1": "Body/Body-1#9:121",
+		"body-3": "Body/Body-3#9:124",
+		"body-4": "Body/Body-4#9:126",
+		"heading-1": "Heading/Heading-1#16041:1987",
+		"heading-5": "Heading/Heading-5#9:119"
+	},
+
+	"_example": {
+		"body-1": "Body/Body-1#9:121"
+	}
+}

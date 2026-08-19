@@ -1,0 +1,28 @@
+.top-banner
+	@apply relative
+	.img
+		a
+			@apply relative
+			&::before,&::after
+				content: ''
+				@apply block absolute pointer-events-none left-0  z-10  transition w-full h-full
+			&:before
+				@apply z-30 bottom-0
+				height: r(320px)
+				background: linear-gradient(180deg, rgba(37, 75, 157, 0) 0%, rgba(37, 75, 157, 0.614487) 52.84%, rgba(37, 75, 157, 0.747708) 72.26%, #254B9D 104.84%)
+			@screen md
+				+img-ratio(660,1920)
+			@screen max-md
+				+img-ratio(1,1)
+	
+	.txt
+		@screen lg
+			bottom: r(120px)
+		@screen 2xl
+			bottom: r(280px)
+		@screen max-lg
+			@apply py-8
+		@screen max-sm
+			@apply pt-5 pb-3
+		
+		

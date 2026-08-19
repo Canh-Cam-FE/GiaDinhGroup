@@ -1,0 +1,183 @@
+// ============================================================
+// _keyframes.sass — Animation keyframe tokens
+//
+// Contains ONLY @keyframes blocks. Import this file once at
+// the top of your stylesheet bundle. All class-level helpers
+// that depend on these keyframes live in _animation-classes.sass.
+//
+// Usage:
+//   @use 'animation-lib/keyframes'          // Sass module
+//   @import 'animation-lib/_keyframes'      // legacy @import
+// ============================================================
+
+
+// ── Opacity ──────────────────────────────────────────────────
+
+// Simple fade in
+@keyframes fd-in
+	0%
+		opacity: 0
+	100%
+		opacity: 1
+
+// Simple fade out
+@keyframes fd-out
+	0%
+		opacity: 1
+	100%
+		opacity: 0
+
+// Loading pulse (opacity loop)
+@keyframes loadingFade
+	0%
+		opacity: 0
+	50%
+		opacity: 0.8
+	100%
+		opacity: 0
+
+@-webkit-keyframes loadingFade
+	0%
+		opacity: 0
+	50%
+		opacity: 0.8
+	100%
+		opacity: 0
+
+@-moz-keyframes loadingFade
+	0%
+		opacity: 0
+	50%
+		opacity: 0.8
+	100%
+		opacity: 0
+
+// Flash (opacity blink)
+@keyframes flash
+	0%
+		opacity: .4
+	100%
+		opacity: 1
+
+
+// ── Translate ────────────────────────────────────────────────
+
+// Slide in from left
+@-webkit-keyframes slide-in-left
+	0%
+		-webkit-transform: translateX(-50%)
+		transform: translateX(-50%)
+		opacity: 0
+	100%
+		-webkit-transform: translateX(0)
+		transform: translateX(0)
+		opacity: 1
+
+@keyframes slide-in-left
+	0%
+		transform: translateX(-50%)
+		opacity: 0
+	100%
+		transform: translateX(0)
+		opacity: 1
+
+// Slide / wipe left-to-right (text swap)
+@keyframes l-t-r
+	49%
+		transform: translate(100%)
+	50%
+		opacity: 0
+		transform: translate(-100%)
+	51%
+		opacity: 1
+
+// Slide / wipe right-to-left (text swap)
+@keyframes r-t-l
+	49%
+		transform: translate(-100%)
+	50%
+		opacity: 0
+		transform: translate(100%)
+	51%
+		opacity: 1
+
+// Fade + translate Y upward (word-by-word text reveal)
+@keyframes fadeUp
+	to
+		opacity: 1
+		transform: translateY(0)
+
+// Translate Y upward (masked text slide)
+@keyframes slideUp
+	to
+		transform: translateY(0)
+
+
+// ── Scale / Shadow ───────────────────────────────────────────
+
+// Ripple ring expand
+@keyframes ripple
+	0%
+		box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.8)
+	100%
+		box-shadow: 0 0 0 1rem rgba(255, 255, 255, 0)
+
+// Circle expand on hover (ripple burst)
+@keyframes circle
+	0%
+		opacity: 1
+	40%
+		opacity: 1
+	100%
+		width: 200%
+		height: 200%
+		opacity: 0
+
+@-webkit-keyframes circle
+	0%
+		opacity: 1
+	40%
+		opacity: 1
+	100%
+		width: 200%
+		height: 200%
+		opacity: 0
+
+
+// ── Shine / Gloss ────────────────────────────────────────────
+
+// Horizontal shine sweep on hover
+@keyframes shine
+	100%
+		left: 125%
+
+@-webkit-keyframes shine
+	100%
+		left: 125%
+
+// Gradient text shine (background-position animation)
+@keyframes textShine
+	0%
+		background-position: 0 100%
+	100%
+		background-position: 0 0
+
+
+// ── Rotation ─────────────────────────────────────────────────
+
+// Oscillating wobble (e.g. for icons / notifications)
+@keyframes oscillate-rotation
+	0%
+		transform: rotate(0) scale(1) skew(0deg)
+	10%
+		transform: rotate(-25deg) scale(1) skew(0deg)
+	20%
+		transform: rotate(25deg) scale(1) skew(0deg)
+	30%
+		transform: rotate(-25deg) scale(1) skew(0deg)
+	40%
+		transform: rotate(25deg) scale(1) skew(0deg)
+	50%
+		transform: rotate(0) scale(1) skew(0deg)
+	100%
+		transform: rotate(0) scale(1) skew(0deg)

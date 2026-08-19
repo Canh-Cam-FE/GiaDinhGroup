@@ -1,0 +1,252 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "designtoken-ir/v1",
+  "title": "DesignTokenIR NormalizedTokenSet",
+  "description": "Canonical, source-agnostic design token intermediate representation. One NormalizedTokenSet per source/brand. References are symbolic ($ref by TokenId); the resolver flattens them into a ResolvedTokenBundle for emitters. Figma addressing (node ids, styleIds) lives in provenance, never in identity. Emitter-specific naming (Tailwind lhClass/lsClass/cssClass) is NOT stored here.",
+  "type": "object",
+  "required": ["$schema", "meta", "colors", "gradients", "fonts", "typography", "semantics", "spacing", "radii", "effects", "components", "contract", "diagnostics"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "const": "designtoken-ir/v1" },
+    "meta": { "$ref": "#/$defs/Meta" },
+    "colors": { "type": "object", "additionalProperties": { "$ref": "#/$defs/ColorToken" } },
+    "gradients": { "type": "object", "additionalProperties": { "$ref": "#/$defs/GradientToken" } },
+    "fonts": { "type": "object", "additionalProperties": { "$ref": "#/$defs/FontFamilyToken" } },
+    "typography": { "type": "object", "additionalProperties": { "$ref": "#/$defs/TypographyToken" } },
+    "semantics": { "type": "object", "additionalProperties": { "$ref": "#/$defs/SemanticColor" } },
+    "spacing": { "type": "object", "additionalProperties": { "$ref": "#/$defs/ScaleToken" } },
+    "radii": { "type": "object", "additionalProperties": { "$ref": "#/$defs/ScaleToken" } },
+    "effects": { "type": "object", "additionalProperties": { "$ref": "#/$defs/EffectToken" } },
+    "components": { "type": "object", "additionalProperties": { "$ref": "#/$defs/ComponentToken" } },
+    "contract": { "$ref": "#/$defs/Contract" },
+    "diagnostics": { "type": "array", "items": { "$ref": "#/$defs/Diagnostic" } }
+  },
+  "$defs": {
+    "TokenId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9][a-z0-9-]*)+$",
+      "description": "Stable semantic identity, e.g. 'color.primary.1'. Never a Figma node id."
+    },
+    "TokenKind": {
+      "enum": ["color", "gradient", "typography", "font-family", "spacing", "radius", "effect", "semantic", "component"]
+    },
+    "HtmlTag": {
+      "enum": ["h1", "h2", "h3", "h4", "h5", "h6", "div", "span", "p", "label", "a"]
+    },
+    "Ref": {
+      "type": "object",
+      "required": ["$ref", "kind"],
+      "additionalProperties": false,
+      "properties": {
+        "$ref": { "$ref": "#/$defs/TokenId" },
+        "kind": { "$ref": "#/$defs/TokenKind" },
+        "resolved": { "type": "boolean", "description": "false in NormalizedTokenSet, true in ResolvedTokenBundle" }
+      }
+    },
+    "Meta": {
+      "type": "object",
+      "required": ["source", "extractedAt", "schemaVersion", "bundleVersion", "contractVersion"],
+      "additionalProperties": false,
+      "properties": {
+        "source": { "type": "string", "description": "e.g. 'figma:Nụ cười Việt'" },
+        "extractedAt": { "type": "string", "description": "ISO timestamp inherited from source export (kept at set level only, never per-entity, to avoid diff churn)" },
+        "schemaVersion": { "const": "v1" },
+        "bundleVersion": { "type": "string", "description": "semver of token CONTENT" },
+        "contractVersion": { "type": "string", "description": "semver of the semantic overlay" },
+        "fingerprint": { "type": "string", "description": "content hash for deterministic CI diff gate" }
+      }
+    },
+    "Provenance": {
+      "type": "object",
+      "required": ["source"],
+      "additionalProperties": false,
+      "properties": {
+        "source": { "type": "string" },
+        "figmaKey": { "type": "string", "description": "original key incl. node id, e.g. 'Primary/1#12006:1619'" },
+        "figmaStyleId": { "type": "string" },
+        "manual": { "type": "boolean" },
+        "usageCount": { "type": "integer", "minimum": 0 },
+        "instances": { "type": "integer", "minimum": 1, "description": "how many source nodes collapsed into this identity" }
+      }
+    },
+    "Diagnostic": {
+      "type": "object",
+      "required": ["code", "severity", "detail"],
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "enum": ["TRAIT_CONFLICT", "NAME_COLLISION", "DUPLICATE_HEX", "MISSING_COLOR", "UNMAPPED_FONT", "ORPHAN_ALIAS", "UNRESOLVED_GRADIENT", "UNRESOLVED_EFFECT", "EMPTY_TOKEN"]
+        },
+        "severity": { "enum": ["info", "warn", "blocker"] },
+        "detail": { "type": "string" },
+        "subject": { "type": "string", "description": "TokenId or source key the diagnostic is about" },
+        "competingIds": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "ColorToken": {
+      "type": "object",
+      "required": ["id", "kind", "value", "group", "provenance"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/TokenId" },
+        "kind": { "const": "color" },
+        "value": { "type": "string", "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$" },
+        "group": { "type": "string" },
+        "scale": { "type": "string" },
+        "provenance": { "$ref": "#/$defs/Provenance" },
+        "diagnostics": { "type": "array", "items": { "$ref": "#/$defs/Diagnostic" } },
+        "deprecated": {
+          "type": "object",
+          "required": ["since"],
+          "additionalProperties": false,
+          "properties": {
+            "since": { "type": "string" },
+            "replacedBy": { "$ref": "#/$defs/TokenId" }
+          }
+        }
+      }
+    },
+    "GradientToken": {
+      "type": "object",
+      "required": ["id", "kind", "type", "stops", "provenance"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/TokenId" },
+        "kind": { "const": "gradient" },
+        "type": { "enum": ["linear", "radial", "unknown"] },
+        "angle": { "type": "number" },
+        "stops": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["color", "position"],
+            "additionalProperties": false,
+            "properties": {
+              "color": { "oneOf": [{ "$ref": "#/$defs/Ref" }, { "type": "string" }] },
+              "position": { "type": "number" }
+            }
+          }
+        },
+        "provenance": { "$ref": "#/$defs/Provenance" },
+        "diagnostics": { "type": "array", "items": { "$ref": "#/$defs/Diagnostic" } }
+      }
+    },
+    "FontFamilyToken": {
+      "type": "object",
+      "required": ["id", "kind", "family", "fallbacks", "role", "provenance"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/TokenId" },
+        "kind": { "const": "font-family" },
+        "family": { "type": "string" },
+        "fallbacks": { "type": "array", "items": { "type": "string" } },
+        "role": { "enum": ["sans", "serif", "display", "icon", "mono", "cursive"] },
+        "provenance": { "$ref": "#/$defs/Provenance" }
+      }
+    },
+    "TypographyToken": {
+      "type": "object",
+      "required": ["id", "kind", "metrics", "fontFamily", "provenance"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/TokenId" },
+        "kind": { "const": "typography" },
+        "metrics": {
+          "type": "object",
+          "required": ["fontSize", "fontWeight", "lineHeight", "letterSpacing"],
+          "additionalProperties": false,
+          "properties": {
+            "fontSize": { "type": "number", "exclusiveMinimum": 0 },
+            "fontWeight": { "type": "integer", "minimum": 1, "maximum": 1000 },
+            "lineHeight": { "type": "number", "exclusiveMinimum": 0, "description": "unitless ratio; the FACT (not leading-NNN)" },
+            "letterSpacing": { "type": "number", "description": "em ratio" }
+          }
+        },
+        "fontFamily": { "$ref": "#/$defs/Ref" },
+        "defaultColor": { "$ref": "#/$defs/Ref" },
+        "synthetic": { "type": "boolean", "description": "true for Local/* tokens synthesized by extract" },
+        "provenance": { "$ref": "#/$defs/Provenance" },
+        "diagnostics": { "type": "array", "items": { "$ref": "#/$defs/Diagnostic" } }
+      }
+    },
+    "SemanticColor": {
+      "type": "object",
+      "required": ["id", "kind", "role", "references", "provenance"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/TokenId" },
+        "kind": { "const": "semantic" },
+        "role": { "type": "string" },
+        "references": { "$ref": "#/$defs/Ref" },
+        "provenance": { "$ref": "#/$defs/Provenance" },
+        "diagnostics": { "type": "array", "items": { "$ref": "#/$defs/Diagnostic" } }
+      }
+    },
+    "ScaleToken": {
+      "type": "object",
+      "required": ["id", "kind", "value", "provenance"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/TokenId" },
+        "kind": { "enum": ["spacing", "radius"] },
+        "role": { "enum": ["pad", "gap", "radius"] },
+        "value": { "type": "number", "description": "px design fact; px→rem/clamp() is an emitter concern" },
+        "provenance": { "$ref": "#/$defs/Provenance" }
+      }
+    },
+    "EffectToken": {
+      "type": "object",
+      "required": ["id", "kind", "type", "provenance"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/TokenId" },
+        "kind": { "const": "effect" },
+        "type": { "enum": ["drop-shadow", "inner-shadow", "layer-blur", "background-blur", "unknown"] },
+        "value": {
+          "type": "object",
+          "description": "Optional resolved shadow/blur spec; frequently absent in Figma exports",
+          "additionalProperties": true
+        },
+        "provenance": { "$ref": "#/$defs/Provenance" },
+        "diagnostics": { "type": "array", "items": { "$ref": "#/$defs/Diagnostic" } }
+      }
+    },
+    "ComponentToken": {
+      "type": "object",
+      "required": ["id", "kind", "slots", "provenance"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/TokenId" },
+        "kind": { "const": "component" },
+        "slots": { "type": "object", "additionalProperties": { "$ref": "#/$defs/Ref" } },
+        "states": {
+          "type": "object",
+          "additionalProperties": { "type": "object", "additionalProperties": { "$ref": "#/$defs/Ref" } }
+        },
+        "provenance": { "$ref": "#/$defs/Provenance" }
+      }
+    },
+    "ContractEntry": {
+      "type": "object",
+      "required": ["typography", "cssClass", "html", "owner"],
+      "additionalProperties": false,
+      "properties": {
+        "typography": { "$ref": "#/$defs/Ref" },
+        "cssClass": { "type": "string" },
+        "html": { "$ref": "#/$defs/HtmlTag" },
+        "owner": { "enum": ["human", "agent", "default"] },
+        "locked": { "type": "boolean" }
+      }
+    },
+    "Contract": {
+      "type": "object",
+      "required": ["id", "version", "entries"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "const": "contract" },
+        "version": { "type": "string" },
+        "entries": { "type": "object", "additionalProperties": { "$ref": "#/$defs/ContractEntry" } }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.about-gia-tri-cot-loi
+	.item
+		@apply flex flex-col justify-start relative
+		gap: r(4px)
+		&:hover
+			.icon
+				img
+					transform: rotateY(180deg)
+			&::after
+				@apply opacity-100
+		&::after
+			content: ''
+			@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full opacity-0 rounded-5
+			background: linear-gradient(180deg, rgba(0, 174, 239, 0.04) 0%, rgba(0, 174, 239, 0.04) 26.88%, rgba(0, 174, 239, 0.08) 100%)
+	.num
+		background: var(--linear-3, linear-gradient(180deg, rgba(0, 174, 239, 0.04) 0%, rgba(0, 174, 239, 0.04) 26.88%, rgba(0, 174, 239, 0.08) 100%))
+		background-clip: text
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+		color: transparent
+		@apply absolute bottom-0 right-0 
+	.icon
+		@apply mb-auto
+		margin-bottom: r(16px)
+		img
+			@apply w-full h-full object-contain transition
+	.icon,.content
+		@apply relative z-20

@@ -1,0 +1,33 @@
+block var
+block mixin
+	include ../modules/mixin.pug
+doctype html
+
+html(lang="en")
+
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		link(rel="stylesheet", href="./css/core.min.css", attr)
+		link(rel="stylesheet", href="./css/tailwind.min.css")
+		link(rel="stylesheet", href="./css/main.min.css")
+		link( rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Material+Symbols+Outlined:wght@100;400;700&display=swap")
+
+		
+		title #{title}
+
+	body(class=bodyClass)
+		block header
+			include ../components/header/header.pug
+		main
+			block main
+		block footer
+			include ../components/footer/footer.pug
+		<script src="https://unpkg.com/videojs-youtube/dist/Youtube.min.js"></script>
+		script(src="./js/core.min.js")
+		script(src="./js/main.min.js")  
+		<script src="https://unpkg.com/videojs-youtube/dist/Youtube.min.js"></script>
+		

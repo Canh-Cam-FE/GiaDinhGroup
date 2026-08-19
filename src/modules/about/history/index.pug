@@ -1,0 +1,44 @@
+section.about-history.anchor-section-id.pad-8.bg-grey-50#anchor-4
+	.container
+		h2.heading-1.text-gray-950.mb-10.text-center Lịch sử hình thành - phát triển
+		
+		.history-main.relative.mb-10(class='clamp:mb-[40-60]')
+			.wrap.w-full.flex.items-center.justify-center(class='clamp:gap-[40-40]')
+				button.box.bg-white.prev(
+					type='button'
+					aria-label='Năm trước'
+				)
+					i.fa-light.fa-chevron-left.text-gray-300
+				
+				.panel.swiper.w-full
+					.swiper-wrapper
+						- var years = ['1999', '2003', '2004', '2010', '2011', '2014', '2018', '2020', '2023']
+						each year in years
+							.swiper-slide
+								.row
+									.col.w-full(class='lg:w-5/12')
+										.txt.col-left.h-full
+											.content.flex.flex-col(class='clamp:gap-[8-8]')
+												h4.heading-4.text-gray-950 Chính thức đổi tên:
+												div.desc.body-1.text-gray-950 Công Ty Cổ Phần Tập Đoàn Gia Định
+									.col.w-full(class='lg:w-7/12')
+										.media.bg-grey-d9.overflow-hidden
+											+FooImg
+											
+				button.box.bg-white.next(
+					type='button'
+					aria-label='Năm sau'
+				)
+					i.fa-light.fa-chevron-right.text-gray-300
+			.swiper-pagination
+		.history-thumb.relative.w-full.mt-12
+			.swiper.relative.z-10
+				.swiper-wrapper
+					- var years = ['1999', '2003', '2004', '2010', '2011', '2014', '2018', '2020', '2023']
+					each year in years
+						.swiper-slide
+							.item.relative.flex.flex-col.items-center.justify-start.cursor-pointer
+								hr.transition-colors.duration-300(class='w-px border-0 bg-gray-300 h-[40px] mb-[26px]')
+								.text-wrap.flex.flex-col.items-center.justify-center(class='h-[48px]')
+									div.desc.body-2.text-gray-300.idle.transition-all.duration-300= year
+									h2.heading-2.text-primary-2.current.transition-all.duration-300.hidden= year

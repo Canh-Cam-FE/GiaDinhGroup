@@ -1,0 +1,20 @@
+section.projects-detail-du-an-khac.pad-8.bg-grey-50
+	.container
+		h2.heading-1.text-gray-950.mb-10.text-center DỰ ÁN KHÁC
+		.auto-3.init-swiper
+			.swiper
+				.swiper-wrapper
+					-for(i=1;i<5;i++)
+						.swiper-slide
+							.item.bg-white.project-item
+								.media.zoom-in
+									a(href='javascript:;')
+										+FooImg
+								.content
+									h4
+										a.heading-5.text-gray-950 Cụm Công Nghiệp Hồ Sơn 1
+									div.desc.body-2.text-gray-950
+										ul
+											li  Vị Trí: Huyện Hữu Lũng, Tỉnh Lạng Sơn
+											li Quy Mô: 75 ha
+			+SlideBtn

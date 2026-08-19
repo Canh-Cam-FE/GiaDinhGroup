@@ -1,0 +1,19 @@
+section.home-doi-tac(class='clamp:py-[64-80]' setBackground='./img/bg/home-partner-bg.png')
+	.container-xxl.flex.flex-col.items-center(class='clamp:gap-[32-40]')
+		h2.heading-1.text-gray-950 Đối tác
+		.wrap.w-full.overflow-hidden(class='rem:rounded-[20px]')
+			.list.flex.flex-col(class='clamp:gap-[20-20]')
+				.init-swiper
+					.swiper.is-loop(data-time='0' data-speed='4000')
+						.swiper-wrapper
+							- for (var i = 1; i <= 11; i++)
+								.swiper-slide
+									.item.bg-white.flex.items-center.justify-center
+										img(src="./img/partner/"+((i%11)+1)+".png", alt="alt")
+				.init-swiper.reverse-direction
+					.swiper.is-loop(data-time='0' data-speed='4500')
+						.swiper-wrapper
+							- for (var i = 1; i <= 11; i++)
+								.swiper-slide
+									.item.bg-white.flex.items-center.justify-center
+										img(src="./img/partner/"+((i%11)+1)+".png", alt="alt")

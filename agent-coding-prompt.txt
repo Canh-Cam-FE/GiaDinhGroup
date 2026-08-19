@@ -1,0 +1,390 @@
+# Phase 2 – Begin Coding Agent
+
+**Page:** `services-detail.json` (Slug: `services-detail`)
+**Generated At:** `2026-08-03T09:46:31.067Z`
+
+**Token Audit:**
+```
+Used Typography:
+- Body/Body-2: OK
+- Heading/Heading-1: OK
+- Local/t60-700-120-s-ls-002-upp: OK
+- Heading/Heading-5: OK
+- Body/Body-3: OK
+- Local/t60-700-120-s-ls-002: OK
+- font: icon: ICON
+- Body/Body-1: OK
+- font: icon2: ICON
+- Body/Body-4: OK
+- Font Awesome/Light-1: ICON
+
+Used Fills:
+- Utility/gray-300: OK
+- Primary/2: OK
+- Utility/gray-950: OK
+- Primary/1: OK
+- Utility/gray-800: OK
+- Utility/gray-200: OK
+- Utility/white: OK
+- Utility/gray-500: OK
+```
+
+You are operating **strictly under the execution contract of Phase 2 (Begin Coding)**.
+Compile the page JSON below into production-ready Pug + Sass + Tailwind.
+Do not modify the global design system or compiler architecture.
+
+---
+
+
+
+# 0. Layout reference (canonical structure)
+
+> Structural contract: `automation/reference/page-contract.json` — **authoritative for folder layout**.
+> **Do not copy** `src/modules/home/index.pug` structure (legacy monolith).
+> Typography in snippets uses token classes — apply `ty` from DESIGN_LOOKUP for real pages.
+
+### Page entry (thin — includes only)
+
+```pug
+extends _layout.pug
+
+block var
+	- var title = 'Example Page'
+	- var bodyClass = 'page example-page-page'
+
+block main
+	include ../components/breadcrumb/index.pug
+	include ../modules/example-page/hero/index.pug
+	include ../modules/example-page/cta/index.pug
+```
+
+### Module: `{page}/hero/` (one section root per file)
+
+```pug
+section.example-page-hero.bg-primary-1.text-white(class='clamp:py-[80-120]')
+	.container-xxl
+		.row.items-center
+			.col.w-full(class='lg:w-1/2')
+				.content
+					h2.heading-1 Tiêu đề section
+					div.body-2 Mô tả ngắn — một class typography từ DESIGN_LOOKUP.
+					+btn1('Nhãn nút')
+			.col.w-full(class='lg:w-1/2')
+				.media
+					+FooImg('./img/banner/desktop.jpg', 'rounded-2')
+```
+
+```sass
+.example-page-hero
+	.content
+		@apply flex flex-col gap-5
+
+	.media img
+		@apply w-full h-auto object-cover
+```
+
+### Module: `{page}/cta/` (one section root per file)
+
+```pug
+section.example-page-cta(class='clamp:py-[48-96]')
+	.container-xxl.flex.flex-col.items-start.gap-5
+		h3.heading-3.text-primary-2-title-content Kêu gọi hành động
+		+btn2('Đặt lịch')
+```
+
+```sass
+.example-page-cta
+	.container-xxl
+		@apply flex flex-col items-start gap-5
+```
+
+### Shared chrome (do not scaffold a page module)
+
+> Breadcrumb / top-banner arrive as `SHARED_REF` — include the shared component from the **page entry**, never generate `src/modules/{page}/breadcrumb/`.
+
+```pug
+include ../components/breadcrumb/index.pug  //- SHARED_REF ref="global-breadcrumb"
+include ../components/banner/index.pug      //- SHARED_REF ref="top-banner" (when present)
+```
+
+### Gold standard reference (layout & interactive tabs)
+
+```pug
+//- GOLD STANDARD REFERENCE
+//- Gold standard: Flexbox (.row / .col) + CSS Grid — zero redundant wrappers.
+//- Apply layout utilities on .col / .list / semantic children — never empty .wrap or .inner for spacing alone.
+section.example-page-grid(class='clamp:py-[48-96]')
+	.container-xxl
+		h3.heading-3.text-primary-2-title-content Flexbox columns (.row / .col)
+
+		.row.items-start(class='gap-6 lg:gap-8')
+			.col.w-full(class='lg:w-1/2')
+				h4.heading-4.text-primary-2-title-content Column A
+				div.body-2 Copy sits directly on .col — no spacing-only .wrap or .inner.
+
+			.col.w-full(class='lg:w-5/12')
+				h4.heading-4.text-primary-2-title-content Column B
+				div.body-2 Use Tailwind V3 width fractions on .col (e.g. lg:w-5/12).
+
+			.col.w-full(class='lg:w-7/12')
+				.card.rounded-2.bg-grey-100.p-6
+					div.body-3 Named child (.card) only when it carries semantics — not as a generic spacer.
+
+		h3.heading-3.text-primary-2-title-content(class='mt-12 lg:mt-16') CSS Grid (grid-template-columns)
+
+		.list.grid.grid-cols-1.gap-6(class='md:grid-cols-2 lg:grid-cols-3')
+			.item.rounded-2.bg-white.p-6.shadow-sm
+				h4.heading-5.text-primary-2-title-content Grid item 1
+				div.body-4 Utilities on .list: grid + grid-cols-* — cells are direct children.
+
+			.item.rounded-2.bg-white.p-6.shadow-sm
+				h4.heading-5.text-primary-2-title-content Grid item 2
+				div.body-4 No extra wrapper between .list and .item.
+
+			.item.rounded-2.bg-white.p-6.shadow-sm
+				h4.heading-5.text-primary-2-title-content Grid item 3
+				div.body-4 Match column count to Figma (grid-cols-2, grid-cols-3, …).
+
+//- Gold standard: interactive Tabs — data-js-* hooks only (no legacy data-type).
+section.example-page-tabs(class='clamp:py-[48-96]')
+	.container-xxl
+		h3.heading-3.text-primary-2-title-content Tabbed content
+
+		.list.flex.flex-wrap.gap-4(role='tablist' aria-label='Example tabs' data-js-target='example-tabs')
+			button(
+				type='button'
+				role='tab'
+				aria-selected='true'
+				aria-controls='example-tab-panel-1'
+				data-js-target='example-tabs'
+				data-js-action='switch-tab'
+				data-tab='example-tab-panel-1'
+			)
+				span.heading-7 Tab one
+
+			button(
+				type='button'
+				role='tab'
+				aria-selected='false'
+				aria-controls='example-tab-panel-2'
+				data-js-target='example-tabs'
+				data-js-action='switch-tab'
+				data-tab='example-tab-panel-2'
+			)
+				span.heading-7 Tab two
+
+			button(
+				type='button'
+				role='tab'
+				aria-selected='false'
+				aria-controls='example-tab-panel-3'
+				data-js-target='example-tabs'
+				data-js-action='switch-tab'
+				data-tab='example-tab-panel-3'
+			)
+				span.heading-7 Tab three
+
+		.panel.active#example-tab-panel-1(
+			role='tabpanel'
+			tabindex='0'
+			class='mt-8'
+			data-js-target='example-tabs-panel'
+			data-tab='example-tab-panel-1'
+		)
+			div.body-2 First panel copy — wire visibility in JS via data-js-target / data-js-action.
+
+		.panel#example-tab-panel-2(
+			role='tabpanel'
+			tabindex='0'
+			hidden
+			data-js-target='example-tabs-panel'
+			data-tab='example-tab-panel-2'
+		)
+			div.body-2 Second panel copy.
+
+		.panel#example-tab-panel-3(
+			role='tabpanel'
+			tabindex='0'
+			hidden
+			data-js-target='example-tabs-panel'
+			data-tab='example-tab-panel-3'
+		)
+			div.body-2 Third panel copy.
+```
+
+
+---
+
+# 0b. Figma component → Pug mixin map
+
+| Figma INSTANCE name | Pug mixin | CSS root |
+|---------------------|-----------|----------|
+| Button 1 | +btn1 | .btn.btn-primary |
+| Button 2 | +btn2 | .btn.btn-secondary |
+| Button 3 | +btn3 | .btn.btn-tertiary |
+| Button 4 | +btn4 | .btn.btn-default |
+| Button 6 | +btn6 | .btn.btn-arrow |
+
+When `node.t === "INSTANCE"` and `node.n` matches a row above, call the mixin instead of hand-coding button markup.
+
+---
+
+# 1. Design System Lookup
+
+> Color fills and typography **tags/classes** are resolved at compile time from `generated/agent-lookup.json` (DesignTokenIR). Use `TYPOGRAPHY_TABLE` below — not inference.
+
+```json
+{"ty":{"Body/Body":{"class":"body","tag":"div"},"Body/Body-1":{"class":"body-1","tag":"div"},"Body/Body-2":{"class":"body-2","tag":"div"},"Body/Body-3":{"class":"body-3","tag":"div"},"Body/Body-4":{"class":"body-4","tag":"div"},"Font Awesome/Brand":{"class":"brand","tag":"div"},"Font Awesome/Light-1":{"class":"light-1","tag":"div"},"Font Awesome/Regular":{"class":"regular","tag":"div"},"Heading chân/Heading-1":{"class":"heading-serif-1","tag":"h2"},"Heading chân/Heading-2":{"class":"heading-serif-2","tag":"h2"},"Heading chân/Heading-3":{"class":"heading-serif-3","tag":"h3"},"Heading chân/Heading-4":{"class":"heading-serif-4","tag":"h4"},"Heading chân/Heading-5":{"class":"heading-serif-5","tag":"h4"},"Heading chân/Heading-6":{"class":"heading-serif-6","tag":"h4"},"Heading chân/Heading-7":{"class":"heading-serif-7","tag":"span"},"Heading/Heading-1":{"class":"heading-1","tag":"h2"},"Heading/Heading-2":{"class":"heading-2","tag":"h2"},"Heading/Heading-3":{"class":"heading-3","tag":"h3"},"Heading/Heading-4":{"class":"heading-4","tag":"h4"},"Heading/Heading-5":{"class":"heading-5","tag":"h4"},"Heading/Heading-6":{"class":"heading-6","tag":"h4"},"Local/t128-700-120-s-ls-002-upp":{"class":"t128-700-120-s-ls-002-upp","tag":"div"},"Local/t128-900-125-s-ahc":{"class":"t128-900-125-s-ahc","tag":"div"},"Local/t16-500-140-s-ahc-avc":{"class":"t16-500-140-s-ahc-avc","tag":"div"},"Local/t52-400-198-s6-avc":{"class":"t52-400-198-s6-avc","tag":"div"},"Local/t52-700-120-s-ls-002-upp":{"class":"t52-700-120-s-ls-002-upp","tag":"div"},"Local/t60-700-120-s-ls-002":{"class":"t60-700-120-s-ls-002","tag":"div"},"Local/t60-700-120-s-ls-002-upp":{"class":"t60-700-120-s-ls-002-upp","tag":"div"},"Local/t60-700-120-s-ls-002-upp-ahc":{"class":"t60-700-120-s-ls-002-upp-ahc","tag":"div"},"Local/t64-500-120-s-upp-ahc":{"class":"t64-500-120-s-upp-ahc","tag":"div"},"Local/t72-700-94-s2-ls-004-avc":{"class":"t72-700-94-s2-ls-004-avc","tag":"div"}},"fi":{"Accent/Sky":"accent-sky","Grey/d9":"grey-d9","Neutral/White":"white","Primary/1":"primary-1","Primary/2":"primary-2","Primary/3":"primary-3","Primary/4":"primary-4","Primary/Table Accent A":"primary-table-accent-a","Primary/Table Accent B":"primary-table-accent-b","Primary/Table Surface":"primary-table-surface","Primary/bg":"primary-bg","Secondary/2":"secondary-2","Secondary/3":"secondary-3","Secondary/BG":"secondary-bg","Secondary/Utility - White-50":"secondary-utility-white-50","Secondary/Utility-Black-20":"secondary-utility-black-20","Secondary/White-80":"secondary-white-80","Utility/black":"black","Utility/gray-100":"gray-100","Utility/gray-200":"gray-200","Utility/gray-300":"gray-300","Utility/gray-50":"gray-50","Utility/gray-500":"gray-500","Utility/gray-800":"gray-800","Utility/gray-950":"gray-950","Utility/white":"white","Primary/5":"primary-5","Accent/sky":"accent-sky","Black":"black","Gray/50":"gray-50","Gray/100":"gray-100","Gray/200":"gray-200","Gray/300":"gray-300","Gray/500":"gray-500","Gray/800":"gray-800","Gray/950":"gray-950","Grey/50":"grey-50","Grey/400":"grey-400","Grey/600":"grey-600","Grey/700":"grey-700","Grey/900":"grey-900","Grey/main":"grey-main","Primary/table-accent-a":"primary-table-accent-a","Primary/table-accent-b":"primary-table-accent-b","Primary/table-surface":"primary-table-surface","Secondary/1":"secondary-1","Secondary/bg":"secondary-bg","Secondary/utility-black-20":"secondary-utility-black-20","Green":"green","Red":"red","Success":"success","Danger":"danger"}}
+```
+
+**How to read:**
+- `fi["node.fi value"]` → the Tailwind color utility stem (e.g. `primary-1`, `white`)
+- For typography: use `TYPOGRAPHY_TABLE` (§2) — **never** guess tags or classes from `DESIGN_LOOKUP` alone
+
+---
+
+## Typography Resolution Table (pre-resolved — use verbatim)
+
+> Every TEXT node with a `ty` token in this page has been resolved from `typography-contract.json`.
+> **Copy the class and tag exactly as shown.**
+
+| Node name | ty token | class | tag |
+|-----------|----------|-------|-----|
+| (unnamed) | `Body/Body-2` | `.body-2` | `<div>` |
+| (unnamed) | `Heading/Heading-1` | `.heading-1` | `<h2>` |
+| (unnamed) | `Local/t60-700-120-s-ls-002-upp` | `.t60-700-120-s-ls-002-upp` | `<div>` |
+| (unnamed) | `Heading/Heading-5` | `.heading-5` | `<h4>` |
+| (unnamed) | `Body/Body-3` | `.body-3` | `<div>` |
+| (unnamed) | `Local/t60-700-120-s-ls-002` | `.t60-700-120-s-ls-002` | `<div>` |
+| Label | `Body/Body-1` | `.body-1` | `<div>` |
+| (unnamed) | `Body/Body-4` | `.body-4` | `<div>` |
+
+---
+
+# 2. Page Sections
+
+> One module folder per line. Do NOT merge. Do NOT skip.
+
+```
+1. "Frame 1000004125" → src/modules/services-detail/frame-1000004125/
+2. "Rectangle 83416" → src/modules/services-detail/rectangle-83416/
+3. "SẢN XUẤT, XUẤT KHẨU" → src/modules/services-detail/san-xuat-xuat-khau/
+4. "Frame 1000004457" → src/modules/services-detail/frame-1000004457/
+5. "Đối tác" → src/modules/services-detail/oi-tac/
+6. "Lợi thế của gia định" → src/modules/services-detail/loi-the-cua-gia-inh/
+7. "Là doanh nghiệp đứng đầu ngành công nghiệp giày tại Việt Nam" → src/modules/services-detail/la-doanh-nghiep-ung-au-nganh-cong-nghiep-giay-tai-viet-n/
+8. "Tin tức" → src/modules/services-detail/tin-tuc/
+9. "THƯ VIỆN ẢNH" → src/modules/services-detail/thu-vien-anh/
+10. "Frame 1000005975" → src/modules/services-detail/frame-1000005975/
+```
+
+---
+
+# 3. Compilation Rules
+
+> **Authoritative rulebook:** read and follow `automation/agent-rules/01-layout-agent.md` **§A (Absolute rules)** first — these are non-negotiable.
+>
+> Load only the numbered reference modules your task needs (do not improvise rules from memory):
+
+| When you are… | Read |
+| -------------- | ---- |
+| Mapping text nodes | `automation/agent-rules/02-typography.md` |
+| Mapping fills / gradients | `automation/agent-rules/03-colors-gradients.md` |
+| Mapping Figma instances / forms | `automation/agent-rules/04-components.md` |
+| Converting bounds / auto-layout | `automation/agent-rules/05-layout-geometry.md` |
+| Folder naming / fluid sizing | `automation/agent-rules/06-project-structure.md` |
+| Pug / Sass / JS boilerplate | `automation/agent-rules/07-code-templates.md` |
+| Images / Swiper | `automation/agent-rules/08-media-swiper.md` |
+| Homepage-style pages | `automation/agent-rules/09-page-reference.md` |
+| JSON schema / breakpoints (reference only) | `automation/agent-rules/11-appendix.md` |
+
+**Workflow:** follow `01-layout-agent.md` §C — complete the Pre-Flight Checklist (§4 below) in the **planning phase** before writing any Pug/Sass/JS.
+
+---
+
+# 4. Pre-Flight Checklist
+
+> **Read this before writing a single line of code.** Every item is a hard constraint.
+>
+> **Enforcement:** Your final response must begin with the exact heading `### Pre-Flight Verification` followed immediately by this checklist (`- [x]` / `- [ ]`) **before** any Pug/Sass/JS code block.
+
+# Output checklist (Pre-Flight Checklist)
+
+> **Enforcement rule:** print this checklist as a completed markdown checklist (`- [x]` / `- [ ]`) in your response **before** outputting any Pug/Sass/JS code block. Verifying each item first — instead of writing code and hoping it complies — is what actually prevents the violations below; a mental note is not enough.
+>
+> You must begin your final response with the exact words: "### Pre-Flight Verification" followed immediately by the checklist.
+>
+> This file (`10-checklist.md`) **is** the Pre-Flight Checklist. `11-appendix.md` is a separate reference (JSON schema, breakpoints, transitions) — do not confuse the two, and do not substitute one for the other.
+
+## Coding phase
+
+- [ ] `json/{page}.json` walked; section list + `ty`/`fi`/`tx` mapping documented
+- [ ] Module saved to the correct `manifest.json` canonical folder path (`src/modules/{page}/{section}/` per `automation/reference/page-contract.json` — manifest line count === folder count === page include count)
+- [ ] `SHARED_REF` nodes (`header`, `footer`, `top-banner`, `global-breadcrumb`, etc.) explicitly skipped or mapped to the correct `include` — not rendered as duplicate markup
+- [ ] Zero `UNRESOLVED_TEXT` nodes (every TEXT has a `ty` token or icon `font` — see `02-typography.md` resolution order step 5)
+
+## Layout compilation
+
+- [ ] Visual verification done: rendered at 1920px outer width, diffed against Figma export, spacing within ±2px
+- [ ] Auto-layout alignment correct: `justify-*` mapped from `primaryAxisAlignItems`, `items-*` from `counterAxisAlignItems` — axes not swapped
+- [ ] Absolute/overlapping nodes (no `al`) positioned with `.relative`/`.absolute` + `clamp:` offsets — not forced into `.row`/`.col`
+- [ ] `REPEAT` nodes unrolled exactly `count` times from `sample`; `LINE` nodes rendered as `<hr>` — not skipped or flattened into static divs
+- [ ] Figma component instances mapped to the correct mixins (`+btn1`–`+btn6`, `+formSample()` for form blocks, card/item mixins, etc.) per `04-components.md` — including mandatory form-wrapper detection
+- [ ] `index.pug` + `index.sass` with matching root class (new work follows `06-project-structure.md` naming; legacy modules may retain their existing root if the task is edit-only)
+- [ ] **New pages:** one `section.{page}-{section}` root per module file — see `automation/reference/page-contract.json`
+- [ ] **New pages:** `src/pages/{slug}.pug` includes one module per manifest line — no `section.*` in the page entry
+- [ ] Typography: `.heading-*` / `.heading-serif-*` on `h1`–`h4`/`span` only; `.body-*` on `div` or `div.desc` — never `p.heading-*` or `p.desc`; no `md:text-*` on copy
+- [ ] Semantic HTML tags and CSS classes match `TYPOGRAPHY_TABLE` (from `generated/agent-lookup.json`) for each `ty` — no guessed or contradictory tags
+- [ ] Icon TEXT nodes (no `ty`, `font: icon|icon2|icon3`) rendered as `i.fa-solid|fa-brands.fa-*` — not `div.body-*`
+- [ ] Icon glyphs (`<i>`) have color utilities applied **directly on the `<i>` tag** — not via parent wrapper inheritance
+- [ ] `.desc` / `.zone-desc` on `div` only for both single-line and multi-line copy — no `p.desc`, no `p.zone-desc`, no nested `p`
+- [ ] Solid fills verified via `generated/agent-lookup.json` (`fi`) → utility present in `generated/design-tokens.js` / `DESIGN_LOOKUP` after `npm run tokens` — not from empty `system-design.json` FILL shells (see `03-colors-gradients.md`)
+- [ ] Sass solid colors use `@apply bg-{token}` / `@apply text-{token}` — not `theme('colors.{token}')` (utility names ≠ theme paths; see `03-colors-gradients.md`)
+- [ ] `Gradient/*` fills implemented in section Sass or theme `bg-gradient-*` — no arbitrary hex / fake color utilities in Pug
+- [ ] `.row` / `.col` for multi-column layouts
+- [ ] ≤ 6 Tailwind classes per element
+- [ ] `clamp:` / `rem:` / `ratio:` for fluid layout sizing
+- [ ] Reused mixins/components where instances match
+- [ ] JS uses `data-js-target` / `data-js-action` (or `data-js-*`) — not CSS class selectors
+- [ ] Generic nested child classes only (`.wrap`, `.box`, `.inner`, `.card`, `.item`, `.list`, `.img`, `.content`, `.media`, `.panel`) — no numbered suffixes, no BEM `__` / `--`, no section prefix on children
+- [ ] `bodyClass`: `page {page}-page` (e.g. `page home-page`, `page services-page`)
+- [ ] Images: `alt`, lazy load, `picture` when mobile art differs
+- [ ] Local `.png`/`.jpg` images have a same-basename `.webp` sibling exported into `src/img/` so `+FooImg()`'s automatic `<picture>`/webp source actually resolves (see `08-media-swiper.md`)
+- [ ] Semantic HTML (`section`, `nav`, `h1`–`h4`, `button`/`a.btn`)
+
+
+---
+
+# 5. Required Output
+
+> Begin with `### Pre-Flight Verification` and the completed §4 checklist before any code output.
+
+**Page Entry:** `src/pages/services-detail.pug`
+```pug
+extends _layout.pug
+
+block var
+  - var title = 'Page Title'
+  - var bodyClass = 'page services-detail-page'
+
+block main
+  include ../modules/services-detail/{section-folder}/index.pug
+```
+
+**Per section in the manifest** (one folder each):
+- `src/modules/services-detail/{section-folder}/index.pug`
+- `src/modules/services-detail/{section-folder}/index.sass`
+
+**JS (conditional — only if interaction exists):**
+- `src/js/modules/{feature}.js`
+- Add `import` + registration to `src/js/main.js` (see `07-code-templates.md`)
+
+---
+
+# 6. Target Page Layout
+
+**Source:** `services-detail.json`
+
+```json
+{"meta":{"page":"services-detail","sections":["breadcrumb","Footer","Frame 1000005881","Frame 1000005969","21","20","6","Frame 1000005976","Header"]},"tree":[{"n":"breadcrumb","ch":[{"t":"FRAME","b":{"w":445,"h":22},"al":{"layoutMode":"HORIZONTAL","itemSpacing":16,"layoutSizingHorizontal":"HUG","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","b":{"w":73,"h":22},"fi":"Utility/gray-300","ty":"Body/Body-2","tx":"Trang chủ"},{"t":"TEXT","b":{"w":5,"h":22},"fi":"Utility/gray-300","ty":"Body/Body-2","tx":"|"},{"t":"TEXT","n":"Trang chủ","b":{"w":142,"h":22},"fi":"Utility/gray-300","ty":"Body/Body-2","tx":"Lĩnh vực hoạt động"},{"t":"TEXT","b":{"w":5,"h":22},"fi":"Utility/gray-300","ty":"Body/Body-2","tx":"|"},{"t":"TEXT","n":"Giới thiệu","b":{"w":156,"h":22},"fi":"Primary/2","ty":"Body/Body-2","tx":"Sản xuất, xuất khẩu"}]}]},{"n":"Footer","ch":[{"t":"SHARED_REF","ref":"footer"}]},{"ch":[{"t":"FRAME","n":"Rectangle 83416","b":{"w":900,"h":600}},{"t":"FRAME","b":{"w":599,"h":520},"al":{"layoutMode":"VERTICAL","itemSpacing":40,"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"ch":[{"t":"FRAME","b":{"w":599,"h":214},"al":{"layoutMode":"VERTICAL","itemSpacing":20,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","b":{"w":578,"h":62},"fi":"Utility/gray-950","ty":"Heading/Heading-1","tx":"SẢN XUẤT, XUẤT KHẨU"},{"t":"TEXT","n":"Kinh nghiệm 34 năm qua, Tập đoàn Gia Định đã đạt được nhiều thành tựu nhờ vào năng lực sản xuất quy mô lớn, với 10 chi nhánh sản xuất và 12 công ty thành viên trải dài khắp cả nước. Hệ thống dây chuyền sản xuất khép kín, chuyên nghiệp, công nghệ cao, sản lượng 5.000.000 đôi giày mỗi năm. Tập đoàn Gia Định đã trở thành một trong những đơn vị đi đầu trong ngành sản xuất da giày, nguyên phụ liệu da giày tại thị trường Việt Nam","b":{"w":599,"h":132},"fi":"Utility/gray-950","ty":"Body/Body-2","tx":"Kinh nghiệm 34 năm qua, Tập đoàn Gia Định đã đạt được nhiều thành tựu nhờ vào năng lực sản xuất quy mô lớn, với 10 chi nhánh sản xuất và 12 công ty thành viên …"}]},{"t":"FRAME","b":{"w":599,"h":266},"al":{"layoutMode":"VERTICAL","itemSpacing":40,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"FRAME","b":{"w":599,"h":113},"al":{"layoutMode":"HORIZONTAL","itemSpacing":40,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"FRAME","b":{"w":280,"h":113},"al":{"layoutMode":"VERTICAL","itemSpacing":8,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","b":{"w":280,"h":72},"fi":"Primary/1","ty":"Local/t60-700-120-s-ls-002-upp","tx":"35+"},{"t":"LINE"},{"t":"FRAME","b":{"w":280,"h":25},"al":{"layoutMode":"HORIZONTAL","counterAxisAlignItems":"CENTER","itemSpacing":8,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"RECTANGLE","n":"Rectangle 83184","b":{"w":8,"h":8},"fi":"Primary/2","r":4},{"t":"TEXT","b":{"w":42,"h":25},"fi":"Utility/gray-950","ty":"Heading/Heading-5","tx":"Năm"},{"t":"TEXT","b":{"w":214,"h":25},"fi":"Utility/gray-800","ty":"Body/Body-3","tx":"Hình thành và phát triển"}]}]},{"t":"FRAME","b":{"w":280,"h":113},"al":{"layoutMode":"VERTICAL","itemSpacing":8,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","b":{"w":280,"h":72},"fi":"Primary/1","ty":"Local/t60-700-120-s-ls-002-upp","tx":"10+"},{"t":"LINE"},{"t":"FRAME","b":{"w":280,"h":25},"al":{"layoutMode":"HORIZONTAL","counterAxisAlignItems":"CENTER","itemSpacing":8,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"RECTANGLE","n":"Rectangle 83184","b":{"w":8,"h":8},"fi":"Primary/2","r":4},{"t":"TEXT","b":{"w":89,"h":25},"fi":"Utility/gray-950","ty":"Heading/Heading-5","tx":"Chi nhánh"},{"t":"TEXT","b":{"w":167,"h":25},"fi":"Utility/gray-800","ty":"Body/Body-3","tx":"sản xuất"}]}]}]},{"t":"FRAME","b":{"w":599,"h":113},"al":{"layoutMode":"HORIZONTAL","itemSpacing":40,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"FRAME","b":{"w":280,"h":113},"al":{"layoutMode":"VERTICAL","itemSpacing":8,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","b":{"w":280,"h":72},"fi":"Primary/1","ty":"Local/t60-700-120-s-ls-002-upp","tx":"12+"},{"t":"LINE"},{"t":"FRAME","b":{"w":280,"h":25},"al":{"layoutMode":"HORIZONTAL","counterAxisAlignItems":"CENTER","itemSpacing":8,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"RECTANGLE","n":"Rectangle 83184","b":{"w":8,"h":8},"fi":"Primary/2","r":4},{"t":"TEXT","b":{"w":68,"h":25},"fi":"Utility/gray-950","ty":"Heading/Heading-5","tx":"Công ty"},{"t":"TEXT","b":{"w":188,"h":25},"fi":"Utility/gray-800","ty":"Body/Body-3","tx":"thành viên"}]}]},{"t":"FRAME","b":{"w":280,"h":113},"al":{"layoutMode":"VERTICAL","itemSpacing":8,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","b":{"w":280,"h":72},"fi":"Primary/1","ty":"Local/t60-700-120-s-ls-002","tx":"05 triệu"},{"t":"LINE"},{"t":"FRAME","b":{"w":280,"h":25},"al":{"layoutMode":"HORIZONTAL","counterAxisAlignItems":"CENTER","itemSpacing":8,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"RECTANGLE","n":"Rectangle 83184","b":{"w":8,"h":8},"fi":"Primary/2","r":4},{"t":"TEXT","b":{"w":71,"h":25},"fi":"Utility/gray-950","ty":"Heading/Heading-5","tx":"Đôi giày"},{"t":"TEXT","b":{"w":185,"h":25},"fi":"Utility/gray-800","ty":"Body/Body-3","tx":"mỗi năm"}]}]}]}]}]},{"t":"RECTANGLE","n":"Rectangle 83398","b":{"w":1920,"h":1},"fi":"Utility/gray-200"}]},{"ch":[{"t":"INSTANCE","b":{"w":440,"h":480},"al":{"layoutMode":"VERTICAL","layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"ref":"Property 1=Default","ch":[{"t":"INSTANCE","n":"image zoom out","b":{"w":440,"h":320},"ref":"Property 1=Default"},{"t":"FRAME","b":{"w":440,"h":160},"al":{"layoutMode":"VERTICAL","itemSpacing":4,"padding":{"top":20,"bottom":20},"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","b":{"w":440,"h":28},"fi":"Utility/gray-950","ty":"Heading/Heading-5","tx":"Sản xuất, xuất khẩu"},{"t":"TEXT","n":"Giày dép, may mặc: được sản xuất và xuất khẩu 100% qua các thị trường eu, mỹ, nhật. Nguyên phụ liệu ngành giày dép như đế nhựa, gót nhựa, phom giày, đế trung, nẹp thép, đinh thép, miếng lót giày.","b":{"w":440,"h":88},"fi":"Utility/gray-950","ty":"Body/Body-2","tx":"Giày dép, may mặc: được sản xuất và xuất khẩu 100% qua các thị trường eu, mỹ, nhật. Nguyên phụ liệu ngành giày dép như đế nhựa, gót nhựa, phom giày, đế trung, …"}]}]},{"t":"INSTANCE","b":{"w":440,"h":480},"al":{"layoutMode":"VERTICAL","layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"ref":"Property 1=Default","ch":[{"t":"INSTANCE","n":"image zoom out","b":{"w":440,"h":320},"ref":"Property 1=Default"},{"t":"FRAME","b":{"w":440,"h":160},"al":{"layoutMode":"VERTICAL","itemSpacing":4,"padding":{"top":20,"bottom":20},"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","n":"Sản xuất, xuất khẩu","b":{"w":440,"h":28},"fi":"Utility/gray-950","ty":"Heading/Heading-5","tx":"Các công nghiệp phụ trợ"},{"t":"TEXT","n":"Giày dép, may mặc: được sản xuất và xuất khẩu 100% qua các thị trường eu, mỹ, nhật. Nguyên phụ liệu ngành giày dép như đế nhựa, gót nhựa, phom giày, đế trung, nẹp thép, đinh thép, miếng lót giày.","b":{"w":440,"h":88},"fi":"Utility/gray-950","ty":"Body/Body-2","tx":"Rất đa dạng bao gồm cả gia công cơ khí, chế tạo khuôn đúc, rèn, đúc, nhiệt luyện, xử lý bề mặc. Và các chủng loại nguyên phụ liệu phục vụ cho ngành sản xuất da…"}]}]},{"t":"INSTANCE","b":{"w":440,"h":458},"al":{"layoutMode":"VERTICAL","layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"ref":"Property 1=Default","ch":[{"t":"INSTANCE","n":"image zoom out","b":{"w":440,"h":320},"ref":"Property 1=Default"},{"t":"FRAME","b":{"w":440,"h":138},"al":{"layoutMode":"VERTICAL","itemSpacing":4,"padding":{"top":20,"bottom":20},"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","n":"Sản xuất, xuất khẩu","b":{"w":440,"h":28},"fi":"Utility/gray-950","ty":"Heading/Heading-5","tx":"Dịch vụ tư vấn"},{"t":"TEXT","n":"Giày dép, may mặc: được sản xuất và xuất khẩu 100% qua các thị trường eu, mỹ, nhật. Nguyên phụ liệu ngành giày dép như đế nhựa, gót nhựa, phom giày, đế trung, nẹp thép, đinh thép, miếng lót giày.","b":{"w":440,"h":66},"fi":"Utility/gray-950","ty":"Body/Body-2","tx":"Đưa ra các giải pháp về nghiên cứu phát triển sản phẩm, thị trường, phát triển ý tưởng thiết kế sáng tạo phù hợp với yêu cầu của từng khách hàng."}]}]}]},{"n":"21","ch":[{"t":"GROUP","n":"Mask group","b":{"w":1920,"h":870}},{"t":"FRAME","b":{"w":845,"h":824}},{"t":"FRAME","b":{"w":1400,"h":638},"al":{"layoutMode":"VERTICAL","counterAxisAlignItems":"CENTER","itemSpacing":40,"padding":{"top":80,"bottom":80},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","b":{"w":640,"h":58},"fi":"Utility/gray-950","ty":"Heading/Heading-1","tx":"Đối tác"},{"t":"FRAME","b":{"w":1400,"h":380},"r":20,"ch":[{"t":"INSTANCE","n":"Logo slide 2","b":{"w":1920,"h":160},"ref":"Property 1=Default","ch":[{"t":"FRAME","n":"slide","b":{"w":4140,"h":160},"al":{"layoutMode":"HORIZONTAL","counterAxisAlignItems":"CENTER","itemSpacing":20,"layoutSizingHorizontal":"HUG","layoutSizingVertical":"HUG"},"ch":[{"t":"FRAME","n":"logo 1","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 2","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 3","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 4","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 5","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 6","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 7","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 8","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 9","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 10","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 11","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 12","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 13","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 14","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 15","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 16","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"}]}]},{"t":"INSTANCE","n":"Logo slide 1","b":{"w":1920,"h":160},"ref":"Property 1=Default","ch":[{"t":"FRAME","n":"slide","b":{"w":4140,"h":160},"al":{"layoutMode":"HORIZONTAL","counterAxisAlignItems":"CENTER","itemSpacing":20,"layoutSizingHorizontal":"HUG","layoutSizingVertical":"HUG"},"ch":[{"t":"FRAME","n":"logo 1","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 2","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 3","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 4","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 5","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 6","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 7","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 8","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 9","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 10","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 11","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 12","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 13","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 14","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 15","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"},{"t":"FRAME","n":"logo 16","b":{"w":240,"h":160},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":10,"padding":{"right":40,"left":40},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"fi":"Utility/white"}]}]}]}]}]},{"n":"20","ch":[{"t":"TEXT","b":{"w":285,"h":116},"fi":"Utility/white","ty":"Heading/Heading-1","tx":"Lợi thế của gia định"},{"t":"FRAME","b":{"w":1300,"h":616},"ch":[{"t":"FRAME","b":{"w":2440,"h":616},"al":{"layoutMode":"HORIZONTAL","itemSpacing":40,"padding":{"right":80},"layoutSizingHorizontal":"HUG","layoutSizingVertical":"HUG"},"ch":[{"t":"REPEAT","name":"News 7","count":2,"sample":{"t":"INSTANCE","n":"News 7","b":{"w":440,"h":616},"al":{"layoutMode":"VERTICAL","layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"ref":"Property 1=Default","ch":[{"t":"FRAME","b":{"w":440,"h":520}},{"t":"FRAME","n":"Frame text","b":{"w":440,"h":96},"al":{"layoutMode":"VERTICAL","itemSpacing":24,"padding":{"top":20,"right":4,"bottom":20,"left":4},"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"FRAME","b":{"w":432,"h":56},"al":{"layoutMode":"VERTICAL","itemSpacing":12,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","n":"Title","b":{"w":432,"h":56},"fi":"Utility/white","ty":"Heading/Heading-5","tx":"Là doanh nghiệp đứng đầu ngành công nghiệp giày tại Việt Nam"}]}]}]}},{"t":"INSTANCE","n":"News 8","b":{"w":440,"h":616},"al":{"layoutMode":"VERTICAL","layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"ref":"Property 1=Default","ch":[{"t":"FRAME","b":{"w":440,"h":520}},{"t":"FRAME","n":"Frame text","b":{"w":440,"h":96},"al":{"layoutMode":"VERTICAL","itemSpacing":24,"padding":{"top":20,"right":4,"bottom":20,"left":4},"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"FRAME","b":{"w":432,"h":56},"al":{"layoutMode":"VERTICAL","itemSpacing":12,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","n":"Title","b":{"w":432,"h":56},"fi":"Utility/white","ty":"Heading/Heading-5","tx":"Chiến lược kinh doanh luôn lấy lợi ích khách hàng làm ưu tiên hàng đầu"}]}]}]},{"t":"INSTANCE","n":"News 9","b":{"w":440,"h":616},"al":{"layoutMode":"VERTICAL","layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"ref":"Property 1=Default","ch":[{"t":"FRAME","b":{"w":440,"h":520}},{"t":"FRAME","n":"Frame text","b":{"w":440,"h":96},"al":{"layoutMode":"VERTICAL","itemSpacing":24,"padding":{"top":20,"right":4,"bottom":20,"left":4},"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"FRAME","b":{"w":432,"h":56},"al":{"layoutMode":"VERTICAL","itemSpacing":12,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","n":"Title","b":{"w":432,"h":56},"fi":"Utility/white","ty":"Heading/Heading-5","tx":"Năng lực sản xuất quy mô lớn đáp ứng các đơn hàng lớn"}]}]}]},{"t":"INSTANCE","n":"News 10","b":{"w":440,"h":616},"al":{"layoutMode":"VERTICAL","layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"ref":"Property 1=Default","ch":[{"t":"FRAME","b":{"w":440,"h":520}},{"t":"FRAME","n":"Frame text","b":{"w":440,"h":96},"al":{"layoutMode":"VERTICAL","itemSpacing":24,"padding":{"top":20,"right":4,"bottom":20,"left":4},"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"FRAME","b":{"w":432,"h":56},"al":{"layoutMode":"VERTICAL","itemSpacing":12,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","n":"Title","b":{"w":432,"h":56},"fi":"Utility/white","ty":"Heading/Heading-5","tx":"Nguồn nhân lực dồi dào, nhiệt huyết, sáng tạo"}]}]}]}]}]},{"t":"GROUP","n":"<Group>","b":{"w":450,"h":302},"ch":[{"t":"GROUP","b":{"w":450,"h":302},"ch":[{"t":"GROUP","b":{"w":414,"h":212}},{"t":"GROUP","b":{"w":54,"h":54}},{"t":"GROUP","b":{"w":54,"h":54}}]}]},{"t":"INSTANCE","n":"Scroll mice","b":{"w":140,"h":44},"ref":"Property 1=Default","ch":[{"t":"FRAME","b":{"w":45,"h":24},"al":{"layoutMode":"HORIZONTAL","layoutSizingHorizontal":"HUG","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","b":{"w":15,"h":24},"fi":"Utility/white","tx":"chevron-right","font":"icon"},{"t":"TEXT","b":{"w":15,"h":24},"fi":"Utility/white","tx":"chevron-right","font":"icon"},{"t":"TEXT","b":{"w":15,"h":24},"fi":"Utility/white","tx":"chevron-right","font":"icon"}]},{"t":"FRAME","b":{"w":28,"h":44},"ch":[{"t":"RECTANGLE","n":"Rectangle 83180","b":{"w":4,"h":8},"fi":"Primary/2","r":96}]},{"t":"FRAME","b":{"w":45,"h":24},"al":{"layoutMode":"HORIZONTAL","layoutSizingHorizontal":"HUG","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","b":{"w":15,"h":24},"fi":"Utility/white","tx":"chevron-right","font":"icon"},{"t":"TEXT","b":{"w":15,"h":24},"fi":"Utility/white","tx":"chevron-right","font":"icon"},{"t":"TEXT","b":{"w":15,"h":24},"fi":"Utility/white","tx":"chevron-right","font":"icon"}]}]}]},{"n":"6","ch":[{"t":"FRAME","b":{"w":1400,"h":659},"al":{"layoutMode":"VERTICAL","counterAxisAlignItems":"CENTER","itemSpacing":40,"padding":{"top":80,"bottom":80},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"ch":[{"t":"FRAME","b":{"w":1400,"h":99},"al":{"layoutMode":"VERTICAL","counterAxisAlignItems":"CENTER","itemSpacing":16,"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","b":{"w":640,"h":58},"fi":"Utility/gray-950","ty":"Heading/Heading-1","tx":"Tin tức"},{"t":"FRAME","b":{"w":515,"h":25},"al":{"layoutMode":"HORIZONTAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":16,"layoutSizingHorizontal":"HUG","layoutSizingVertical":"HUG"},"ch":[{"t":"INSTANCE","n":"Link black","b":{"w":68,"h":25},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"SPACE_BETWEEN","itemSpacing":8,"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"FIXED"},"ref":"State=Hover, Size=Small","ch":[{"t":"FRAME","b":{"w":68,"h":25},"al":{"layoutMode":"HORIZONTAL","primaryAxisAlignItems":"SPACE_BETWEEN","counterAxisAlignItems":"CENTER","layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","n":"Label","b":{"w":48,"h":25},"fi":"Primary/2","ty":"Body/Body-1","tx":"Tất cả"},{"t":"TEXT","n":"Label","b":{"w":20,"h":24},"fi":"Primary/2","tx":"arrow_drop_down","font":"icon2"}]}]},{"t":"LINE"},{"t":"INSTANCE","n":"Link black","b":{"w":79,"h":25},"al":{"layoutMode":"HORIZONTAL","primaryAxisAlignItems":"SPACE_BETWEEN","counterAxisAlignItems":"CENTER","layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"ref":"State=Default, Size=Small","ch":[{"t":"TEXT","n":"Label","b":{"w":59,"h":25},"fi":"Utility/gray-950","ty":"Body/Body-1","tx":"Sự kiện"},{"t":"TEXT","n":"Label","b":{"w":20,"h":24},"fi":"Utility/gray-950","tx":"arrow_drop_down","font":"icon2"}]},{"t":"LINE"},{"t":"INSTANCE","n":"Link black","b":{"w":94,"h":25},"al":{"layoutMode":"HORIZONTAL","primaryAxisAlignItems":"SPACE_BETWEEN","counterAxisAlignItems":"CENTER","layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"ref":"State=Default, Size=Small","ch":[{"t":"TEXT","n":"Label","b":{"w":74,"h":25},"fi":"Utility/gray-950","ty":"Body/Body-1","tx":"Tin dự án"},{"t":"TEXT","n":"Label","b":{"w":20,"h":24},"fi":"Utility/gray-950","tx":"arrow_drop_down","font":"icon2"}]},{"t":"LINE"},{"t":"INSTANCE","n":"Link black","b":{"w":178,"h":25},"al":{"layoutMode":"HORIZONTAL","primaryAxisAlignItems":"SPACE_BETWEEN","counterAxisAlignItems":"CENTER","layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"ref":"State=Default, Size=Small","ch":[{"t":"TEXT","n":"Label","b":{"w":158,"h":25},"fi":"Utility/gray-950","ty":"Body/Body-1","tx":"Phát triển bền vững"},{"t":"TEXT","n":"Label","b":{"w":20,"h":24},"fi":"Utility/gray-950","tx":"arrow_drop_down","font":"icon2"}]}]}]},{"t":"FRAME","b":{"w":1400,"h":360},"al":{"layoutMode":"HORIZONTAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","itemSpacing":60,"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"HUG"},"ch":[{"t":"FRAME","b":{"w":427,"h":360},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","itemSpacing":40,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"INSTANCE","n":"News 6","b":{"w":427,"h":360},"al":{"layoutMode":"VERTICAL","layoutSizingHorizontal":"FILL","layoutSizingVertical":"FIXED"},"ref":"Property 1=Default","ch":[{"t":"FRAME","b":{"w":427,"h":228}},{"t":"FRAME","n":"Frame text","b":{"w":427,"h":132},"al":{"layoutMode":"VERTICAL","itemSpacing":16,"padding":{"top":20,"right":4,"bottom":20,"left":4},"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"FRAME","b":{"w":228,"h":20},"al":{"layoutMode":"HORIZONTAL","counterAxisAlignItems":"CENTER","itemSpacing":8,"layoutSizingHorizontal":"HUG","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","n":"2025.12.03","b":{"w":77,"h":20},"fi":"Utility/gray-500","ty":"Body/Body-3","tx":"09/06/2026"},{"t":"TEXT","b":{"w":4,"h":20},"fi":"Utility/gray-500","ty":"Body/Body-4","tx":"|"},{"t":"TEXT","n":"Pháp luật - Kinh doanh","b":{"w":131,"h":20},"fi":"Utility/gray-500","ty":"Body/Body-3","tx":"Phát triển bền vững"}]},{"t":"FRAME","b":{"w":419,"h":56},"al":{"layoutMode":"VERTICAL","itemSpacing":12,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","n":"Title","b":{"w":419,"h":56},"fi":"Utility/gray-950","ty":"Heading/Heading-5","tx":"Lạng Sơn phấn đấu trở thành tỉnh phát triển công nghiệp..."}]}]}]}]},{"t":"FRAME","b":{"w":427,"h":360},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","itemSpacing":40,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"INSTANCE","n":"News 8","b":{"w":427,"h":360},"al":{"layoutMode":"VERTICAL","layoutSizingHorizontal":"FILL","layoutSizingVertical":"FIXED"},"ref":"Property 1=Default","ch":[{"t":"FRAME","b":{"w":427,"h":220}},{"t":"FRAME","n":"Frame text","b":{"w":427,"h":140},"al":{"layoutMode":"VERTICAL","itemSpacing":24,"padding":{"top":20,"right":4,"bottom":20,"left":4},"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"FRAME","b":{"w":158,"h":20},"al":{"layoutMode":"HORIZONTAL","counterAxisAlignItems":"CENTER","itemSpacing":8,"layoutSizingHorizontal":"HUG","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","n":"2025.12.03","b":{"w":77,"h":20},"fi":"Utility/gray-500","ty":"Body/Body-3","tx":"09/06/2026"},{"t":"TEXT","b":{"w":4,"h":20},"fi":"Utility/gray-500","ty":"Body/Body-4","tx":"|"},{"t":"TEXT","n":"Pháp luật - Kinh doanh","b":{"w":61,"h":20},"fi":"Utility/gray-500","ty":"Body/Body-3","tx":"Tin dự án"}]},{"t":"FRAME","b":{"w":419,"h":56},"al":{"layoutMode":"VERTICAL","itemSpacing":12,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","n":"Title","b":{"w":419,"h":56},"fi":"Utility/gray-950","ty":"Heading/Heading-5","tx":"Viettel Construction và Tập đoàn Gia Định ký kết hợp.."}]}]}]}]},{"t":"INSTANCE","n":"arrow 2","b":{"w":48,"h":48},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","padding":{"top":12,"right":20,"bottom":12,"left":20},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"FIXED"},"fi":"Utility/white","ref":"Property 1=Default","ch":[{"t":"TEXT","b":{"w":19,"h":30},"fi":"Utility/gray-300","ty":"Font Awesome/Light-1","tx":"chevron-right"}]},{"t":"INSTANCE","n":"arrow 3","b":{"w":48,"h":48},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","padding":{"top":12,"right":20,"bottom":12,"left":20},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"FIXED"},"fi":"Utility/white","ref":"Property 1=Default","ch":[{"t":"TEXT","b":{"w":19,"h":30},"fi":"Utility/gray-300","ty":"Font Awesome/Light-1","tx":"chevron-right"}]},{"t":"INSTANCE","n":"News 9","b":{"w":427,"h":360},"al":{"layoutMode":"VERTICAL","layoutSizingHorizontal":"FILL","layoutSizingVertical":"FIXED"},"ref":"Property 1=Default","ch":[{"t":"FRAME","b":{"w":427,"h":220}},{"t":"FRAME","n":"Frame text","b":{"w":427,"h":140},"al":{"layoutMode":"VERTICAL","itemSpacing":24,"padding":{"top":20,"right":4,"bottom":20,"left":4},"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"FRAME","b":{"w":145,"h":20},"al":{"layoutMode":"HORIZONTAL","counterAxisAlignItems":"CENTER","itemSpacing":8,"layoutSizingHorizontal":"HUG","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","n":"2025.12.03","b":{"w":77,"h":20},"fi":"Utility/gray-500","ty":"Body/Body-3","tx":"09/06/2026"},{"t":"TEXT","b":{"w":4,"h":20},"fi":"Utility/gray-500","ty":"Body/Body-4","tx":"|"},{"t":"TEXT","n":"Pháp luật - Kinh doanh","b":{"w":48,"h":20},"fi":"Utility/gray-500","ty":"Body/Body-3","tx":"Sự kiện"}]},{"t":"FRAME","b":{"w":419,"h":56},"al":{"layoutMode":"VERTICAL","itemSpacing":12,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"TEXT","n":"Title","b":{"w":419,"h":56},"fi":"Utility/gray-950","ty":"Heading/Heading-5","tx":"Lạng Sơn phấn đấu trở thành tỉnh phát triển công nghiệp..."}]}]}]}]}]}]},{"ch":[{"t":"TEXT","b":{"w":1400,"h":58},"fi":"Utility/gray-950","ty":"Heading/Heading-1","tx":"THƯ VIỆN ẢNH"},{"t":"FRAME","b":{"w":1400,"h":837},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","itemSpacing":40,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"FRAME","b":{"w":1400,"h":500},"al":{"layoutMode":"HORIZONTAL","counterAxisAlignItems":"CENTER","itemSpacing":40,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"REPEAT","name":"image zoom out","count":2,"sample":{"t":"INSTANCE","n":"image zoom out","b":{"w":680,"h":500},"ref":"Property 1=Default"}}]},{"t":"FRAME","b":{"w":1400,"h":297},"al":{"layoutMode":"HORIZONTAL","counterAxisAlignItems":"CENTER","itemSpacing":40,"layoutSizingHorizontal":"FILL","layoutSizingVertical":"HUG"},"ch":[{"t":"REPEAT","name":"image zoom out","count":3,"sample":{"t":"INSTANCE","n":"image zoom out","b":{"w":440,"h":297},"ref":"Property 1=Default"}}]},{"t":"INSTANCE","n":"arrow 2","b":{"w":48,"h":48},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","padding":{"top":12,"right":20,"bottom":12,"left":20},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"FIXED"},"fi":"Utility/white","ref":"Property 1=Default","ch":[{"t":"TEXT","b":{"w":19,"h":30},"fi":"Utility/gray-300","ty":"Font Awesome/Light-1","tx":"chevron-right"}]},{"t":"INSTANCE","n":"arrow 3","b":{"w":48,"h":48},"al":{"layoutMode":"VERTICAL","primaryAxisAlignItems":"CENTER","counterAxisAlignItems":"CENTER","padding":{"top":12,"right":20,"bottom":12,"left":20},"layoutSizingHorizontal":"FIXED","layoutSizingVertical":"FIXED"},"fi":"Utility/white","ref":"Property 1=Default","ch":[{"t":"TEXT","b":{"w":19,"h":30},"fi":"Utility/gray-300","ty":"Font Awesome/Light-1","tx":"chevron-right"}]}]}]},{"n":"Header","ch":[{"t":"SHARED_REF","ref":"header"}]}]}
+```

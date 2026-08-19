@@ -1,0 +1,8 @@
+{
+	"_doc": "Manual resolution layer for ambiguous Figma collisions (COLLISION_TIE). Only add an entry when resolve.mjs reports a tie it cannot break — anything else silently overwrites a real Figma value. resolve.mjs warns (STALE_OVERRIDE) for entries whose token is absent or not in conflict. Consumed by automation/scripts/resolve.mjs; see tokens/normalized.json diagnostics for competing candidates.",
+
+	"_history": "Emptied 2026-07-31. The previous 12 entries were inherited from the retired dental-clinic project and 11 of them contradicted the current export — color.primary.1 forced #3d77b0 over Figma's #101010, color.primary.2 forced #225189 over #eb2228. They were unnecessary as well as wrong: scoping tokens to the shipped pages (automation/config/figma-pages.json) and ranking variants by node usage leaves strict resolve with zero ties.",
+
+	"colors": {},
+	"typography": {}
+}

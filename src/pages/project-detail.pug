@@ -1,0 +1,13 @@
+extends _layout.pug
+
+block var
+	- var title = 'Chi tiết dự án — Gia Định Group'
+	- var bodyClass = 'page projects-detail-page'
+
+block main
+	include ../components/banner-breadcrumb/index.pug
+	include ../modules/projects-detail/info/index.pug
+	include ../modules/projects-detail/gallery/index.pug
+	include ../modules/projects-detail/loi-the/index.pug
+	include ../modules/projects-detail/loi-the-khac/index.pug
+	include ../modules/projects-detail/du-an-khac/index.pug

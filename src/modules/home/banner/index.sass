@@ -1,0 +1,106 @@
+.primary-banner
+	@apply relative z-50 overflow-visible
+	@media screen and ( max-width: 1200px)
+		padding: 0 !important
+	.swiper
+		width: 100%
+	.swiper-slide
+		width: 100% !important
+		margin-right: 0 !important
+	.swiper-wrapper
+		@apply h-auto
+	.wrap
+		@apply relative
+		@media screen and ( max-width: 1024px)
+			@apply static
+	.swiper-slide
+		@apply h-auto pointer-events-none
+		z-index: 1
+		&:hover
+			.img
+				&::before
+					@apply opacity-10
+		&.swiper-slide-active
+			z-index: 2
+			@apply pointer-events-auto
+	.img
+		@apply relative  z-20
+		
+		a
+			&::before,&::after
+				content: ''
+				@apply block absolute pointer-events-none left-0  z-10  transition w-full h-full
+			&::before
+				@apply top-0
+				background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%)
+				max-height: r(213px)
+			&::after
+				@apply bottom-0
+				background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%)
+				max-height: r(662px)
+			@screen max-md
+				+aspect-ratio(720,402)
+			@screen md
+				+aspect-ratio(960,1920)
+			video
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				object-fit: cover
+	.video
+		&::after
+			content: '\e037'
+			@apply flex-center text-white absolute-center pointer-events-none  z-10  transition w-full h-full bg-dark bg-opacity-20 rounded-full  font-thin font-Material-Icon overflow-hidden opacity-0
+			top: 40%
+			font-size: r(64px)
+			width: r(80px)
+			min-width: r(80px)
+			height: r(80px)
+		&.pause
+			&::after
+				opacity: 1
+		
+	.heading-banner
+		@apply leading-none font-medium text-64
+		*
+			@apply font-medium text-64
+		@screen xl
+			@apply leading-[1.2]
+		@screen max-xl
+			@apply text-5xl my-3
+		@screen max-sm
+			br
+				@apply hidden
+	.heading-3
+		@apply font-semibold mb-4
+		*
+			@apply font-semibold
+		@screen max-md
+			@apply text-lg
+			*
+				@apply text-lg
+		@screen max-sm
+			@apply text-[18px]
+			*
+				@apply text-[18px]
+	.desktop
+		@apply hidden
+		@screen md
+			@apply block 
+	.mobile
+		@apply block
+		@screen md
+			@apply hidden 
+	.txt
+		@apply pb-15
+		@screen lg
+			padding-bottom: r(120px)
+		@screen xl
+			padding-bottom: r(140px)
+.header-btn-group
+	@apply relative py-1 px-4
+	&::before
+		content: ''
+		@apply block absolute pointer-events-none left-0 bottom-0 z-0  transition w-full h-full   overflow-hidden rounded border border-grey-950 border-opacity-40 

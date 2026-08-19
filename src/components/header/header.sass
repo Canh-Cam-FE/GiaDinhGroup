@@ -1,0 +1,59 @@
+header
+	@apply h-[var(--header-height)] border-b-transparent
+	&::before 
+		content: ""
+		position: absolute
+		inset: 0
+		z-index: 9
+		pointer-events: none
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.00) 100%)
+		backdrop-filter: blur(0px)
+		-webkit-backdrop-filter: blur(0px)
+	&::after
+		content: ''
+		@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full bg-white opacity-100
+		@screen max-xl
+			@apply opacity-100
+	.container-fluid
+		@screen 2xl
+			padding: 0 r(160px)
+.site-menu-toggle
+	@apply bg-white  flex-center  mt-0
+	height: 40px
+	width: 40px
+	min-width: 40px
+	.hamburger
+		@apply mt-1
+	@screen xl
+		@apply hidden
+.nav-brand
+	@screen max-xl
+		@apply absolute-center z-50
+	a
+		height: 50px
+		width: 100%
+		@apply transition flex-center 
+		@media screen and ( min-width: 1200px)
+			@apply justify-start 
+			height: #{clampSize(75)}
+		img,svg
+			width: 100%
+			height: 100%
+			object-fit: contain
+.mobile-nav-wrap
+	@apply fixed  right-0 w-full  h-fit p-6 bg-white border border-grey-100 
+	top: var(--header-height)
+	z-index: 9999
+	transform: translateX(100%)
+	transition: transform .8s cubic-bezier(.165,.84,.44,1)
+	width: 275px
+	@screen lg
+		@apply px-8 py-4
+	@media screen and ( min-width: 4000px)
+		width: r(275px) 
+	
+	&.is-open
+		@apply opacity-100
+		transform: none
+	.close-menu
+		display: none !important

@@ -1,0 +1,103 @@
+.home-about
+	@apply relative overflow-hidden
+	padding-top: r(80px)
+	@screen xl
+		padding-top: r(150px)
+	&.service-detail-1
+		@apply py-16
+		@screen xl
+			@apply py-20
+		.content
+			@apply ml-auto mr-0
+		.list
+			.inner
+				.desc
+					margin-top: r(2px)
+	.container-fluid
+		@apply p-[15px]
+		@screen xl
+			@apply p-0
+		>.row
+			@screen lg
+				@apply flex-nowrap
+			&:not(:last-child)
+				@apply pb-15
+				@screen xl
+					padding-bottom: r(150px)
+			&:nth-child(even)
+				@apply flex-row-reverse
+				.img
+					@apply ml-auto w-full
+				.content
+					@apply ml-auto mr-0
+	.list
+		@apply w-full
+		.row
+			@screen sm
+				@apply flex-nowrap
+	.progress-track
+		@apply top-0 w-[2px] h-full
+		@screen xl
+			@apply absolute-x 
+		@screen max-xl
+			@apply absolute
+		&::before,&:after
+			content: ''
+			@apply block w-full h-full  pointer-events-none z-10  absolute inset-0
+		&::before
+			@apply z-99 bg-primary-2
+			transform-origin: top
+			transform: scaleY(var(--progress, 0))
+		&::after
+			background: linear-gradient(180deg, rgba(220, 220, 220, 0.00) 0%, #DCDCDC 50%, rgba(220, 220, 220, 0.00) 100%)
+
+	.content
+		@apply flex flex-col
+	
+	.content
+		@apply mr-auto
+	.item
+		hr
+			@apply border-0 border-t border-gray-200 w-full
+
+	.panel
+		@apply relative w-full overflow-hidden
+	
+	.t128-900-125-s-ahc
+		@apply uppercase whitespace-nowrap z-50 absolute bottom-0
+		left: r(140px)
+		letter-spacing: -0.02em
+		text-align: center
+		text-shadow: 0 8px 32px rgba(0, 0, 0, 0.04)
+		
+		
+		font-style: normal
+		font-weight: 900
+		line-height: 1
+		
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.80) 79.38%)
+		background-clip: text
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+		@screen max-lg
+			@apply text-8xl left-10
+			transform: translateY(16%)
+		@screen max-sm
+			@apply text-7xl left-4
+		@screen lg
+			line-height: 1
+			transform: translateY(22%)
+	.zone-desc
+		p
+			&:not(:last-child)
+				@apply mb-4
+		@apply text-grey-800
+		*
+			@apply text-grey-800
+		strong
+			@apply text-gray-950 font-bold
+			*
+				@apply text-gray-950 font-bold
+	.bg-bottom
+		img
+			@apply w-full

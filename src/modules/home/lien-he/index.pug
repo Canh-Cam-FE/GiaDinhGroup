@@ -1,0 +1,25 @@
+section.home-lien-he.relative
+	.container.py-8
+		.row
+			.col.w-full(class='lg:w-5/12')
+				.content.flex.flex-col(class='clamp:gap-[24-24] clamp:py-[40-40]')
+					h3.heading-3.text-white LIÊN HỆ
+					div.desc.body-2.text-white Để biết thông tin chi tiết về công ty, vui lòng điền thông tin liên lạc bên dưới và chúng tôi sẽ liên lạc với bạn sớm nhất
+			.col.w-full(class='lg:w-7/12')
+				.box.relative
+					.wrap-form.relative.z-50
+						.wpcf7-form
+							.form-group
+								input(type='text' name='hoten' placeholder='Họ tên *' required)
+							.form-group
+								input(type='text' name='congty' placeholder='Tên công ty *' required)
+							.form-group
+								input(type='email' name='email' placeholder='Email *' required)
+							.form-group
+								input(type='tel' name='phone' placeholder='Số điện thoại *' required)
+							.form-group.col-span-2
+								textarea(name='noidung' placeholder='Nội dung')
+							.frm-btnwrap.flex-start
+								button.btn.btn-primary.white
+									span.desc.body-1 Gửi
+									em.fa-regular.fa-arrow-right

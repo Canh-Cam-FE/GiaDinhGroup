@@ -1,0 +1,14 @@
+.about-tong-quan-tap-oan
+	.container-fluid
+		@screen lg
+			@apply p-0
+	.content
+		max-width: r(594px)
+	.row
+		@apply justify-end ml-auto !#{important}
+	.media
+		@apply w-full overflow-hidden
+		+aspect-ratio(640, 960)
+
+		img
+			@apply w-full h-full object-cover

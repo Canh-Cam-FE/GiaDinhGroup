@@ -1,0 +1,59 @@
+.about-chief
+	.top-row
+		@apply justify-between
+		>.col
+			@screen max-lg
+				@apply w-full
+			@screen lg
+				width: 42.8%
+				&:nth-child(2)
+					width: 51.5%
+				
+	.card
+		@apply relative
+		&::after
+			content: ''
+			@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-[1px] bg-primary-2 opacity-0
+		&:hover
+			&::after
+				@apply opacity-100
+			.heading-4
+				@apply text-primary-2
+		.box
+			@apply flex flex-col items-center
+			gap: r(4px)
+
+		.media
+			@apply w-full overflow-hidden
+			+aspect-ratio(620, 600,contain)
+			img
+				@apply w-full h-full object-contain
+
+	.list
+		.item
+			@apply flex flex-col relative
+			&::after
+				content: ''
+				@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-[1px] bg-primary-2 opacity-0
+			&:hover
+				&::after
+					@apply opacity-100
+				.heading-6
+					@apply text-primary-2
+			.media
+				flex: 0 0 auto
+				@apply w-full 
+			.box
+				flex: 0 1  auto
+				@apply h-full
+		.box
+			@apply h-full
+			gap: r(4px)
+		.media
+			background: linear-gradient(180deg, rgba(37, 75, 157, 0.04) 0%, rgba(37, 75, 157, 0.08) 25%, rgba(37, 75, 157, 0.08) 50%, rgba(37, 75, 157, 0.04) 100%)
+			@apply w-full overflow-hidden
+			+aspect-ratio(262, 340,contain)
+
+			img
+				@apply w-full h-full object-contain
+

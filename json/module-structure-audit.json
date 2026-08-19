@@ -1,0 +1,21 @@
+{
+  "summary": {
+    "at": "2026-08-03T09:12:06.981Z",
+    "pages": 1,
+    "pass": 1,
+    "warn": 0,
+    "fail": 0,
+    "skip": 0
+  },
+  "pages": [
+    {
+      "slug": "about",
+      "status": "PASS",
+      "regions": 16,
+      "contentRegions": 15,
+      "includes": 15,
+      "pattern": "split-folders",
+      "issues": []
+    }
+  ]
+}

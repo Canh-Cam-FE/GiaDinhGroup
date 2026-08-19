@@ -1,0 +1,21 @@
+section.services-detail-thu-vien-anh.bg-grey-50.pad-8
+	.container
+		h2.heading-1.text-gray-950.mb-10.text-center THƯ VIỆN ẢNH
+		.single.init-swiper.relative
+			.swiper
+				.swiper-wrapper
+					.swiper-slide
+						.item 
+							.wrap
+								-for(i=1;i<6;i++)
+									.img.zoom-in.overflow-hidden
+										a.img-ratio(class='ratio:pt-[297_440]')
+											+FooImg
+					.swiper-slide
+						.item 
+							.wrap
+								-for(i=1;i<6;i++)
+									.img.zoom-in.overflow-hidden
+										a.img-ratio(class='ratio:pt-[297_440]')
+											+FooImg
+			+SlideBtn

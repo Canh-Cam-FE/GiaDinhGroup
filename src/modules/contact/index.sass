@@ -1,0 +1,59 @@
+.contact-us
+	.row
+		@apply justify-between
+	.btn
+		em,i
+			transform: none !important
+	address
+		@apply not-italic mb-0 flex flex-col
+		.desc
+			@apply font-normal
+		p
+			@apply mb-0 font-normal
+		li
+			@apply flex-start text-base mb-3 font-medium
+			align-items: flex-start
+			*
+				font: inherit
+		
+		em,i
+			@apply text-xl inline-block w-6 min-w-6 font-Awesome6 text-primary-1 font-bold
+		.icon
+			@apply mr-4
+			img
+				max-width: 24px
+		a
+			@apply inline-block
+			&:hover
+				@apply underline  text-primary-1 
+	.frm-msg
+		span
+			@apply text-primary-1
+	.wrap-form
+		.form-group
+			textarea
+				@screen lg
+					height: 120px
+		.frm-btnwrap
+			@screen max-md
+				@apply mt-8
+		
+.loader
+	@apply my-4 hidden
+	svg
+		@apply w-[40px]
+
+.map-wrap
+	
+	a
+		display: block
+		height: 450px
+		@apply overflow-hidden
+		text-align: center
+		width: 100%
+		@media screen and ( max-width: 1024px)
+			height: 400px
+		@media screen and ( max-width: 576px)
+			height: 300px
+		iframe
+			@apply inline-block w-full h-full

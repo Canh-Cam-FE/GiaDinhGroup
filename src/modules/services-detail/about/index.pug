@@ -1,0 +1,68 @@
+section.home-about.bg-white.relative.service-detail-1
+	.container-fluid.p-0.relative
+		.row(class='gap-10 lg:gap-16')
+			.col.w-full(class='lg:w-1/2')
+				.content.h-full.flex.flex-col.col-left.justify-center(class='clamp:gap-[24-32] lg:rem:max-w-[740px] 2xl:rem:max-w-[640px]')
+					.wrap.flex.flex-col(class='clamp:gap-[24-32]')
+						h2.heading-1.text-gray-950 Con số nổi bật
+						div.desc.body-2.text-gray-800 Chúng tôi không ngừng nỗ lực để trở thành tập đoàn đa ngành nghề uy tín hàng đầu Việt Nam, hướng đến trở thành một mô hình chuẩn mực và tiên phong trong quá tr…
+					.list.flex.flex-col(class='clamp:gap-[24-32]')
+						.row.flex(class='clamp:gap-[32-32]')
+							.col.w-full(class='sm:w-1/2')
+								.item.flex.flex-col(class='clamp:gap-[8-8]')
+									h2.heading-1.text-primary-1 35+
+									hr
+									.inner.flex.items-center(class='clamp:gap-[8-8]')
+										span.box.bg-primary-2.rounded-full(class='rem:w-[8px] rem:h-[8px] rem:min-w-[8px]')
+										h4.heading-5.text-gray-950 Năm
+										div.desc.body-3.text-gray-800 Hình thành và phát triển
+							.col.w-full(class='sm:w-1/2')
+								.item.flex.flex-col(class='clamp:gap-[8-8]')
+									h2.heading-1.text-primary-1 5000+
+									hr
+									.inner.flex.items-center(class='clamp:gap-[8-8]')
+										span.box.bg-primary-2.rounded-full(class='rem:w-[8px] rem:h-[8px] rem:min-w-[8px]')
+										h4.heading-5.text-gray-950 Nhân sự
+										div.desc.body-3.text-gray-800 Đảm nhiệm nhiều vị trí
+						.row.flex(class='clamp:gap-[32-32]')
+							.col.w-full(class='sm:w-1/2')
+								.item.flex.flex-col(class='clamp:gap-[8-8]')
+									h2.heading-1.text-primary-1 30+
+									hr
+									.inner.flex.items-center(class='clamp:gap-[8-8]')
+										span.box.bg-primary-2.rounded-full(class='rem:w-[8px] rem:h-[8px] rem:min-w-[8px]')
+										h4.heading-5.text-gray-950 Dự án
+										div.desc.body-3.text-gray-800 Đã và đang hoàn thành
+							.col.w-full(class='sm:w-1/2')
+								.item.flex.flex-col(class='clamp:gap-[8-8]')
+									h2.heading-1.text-primary-1 50+
+									hr
+									.inner.flex.items-center(class='clamp:gap-[8-8]')
+										span.box.bg-primary-2.rounded-full(class='rem:w-[8px] rem:h-[8px] rem:min-w-[8px]')
+										h4.heading-5.text-gray-950 Đối tác
+										div.desc.body-3.text-gray-800 Hợp tác
+
+			.col.w-full(class='lg:w-1/2')
+				.single-swiper.init-swiper
+					.swiper
+						.swiper-wrapper
+							-for(i=1;i<5;i++)
+								.swiper-slide
+									.img.zoom-in.overflow-hidden(class='lg:rem:max-w-[900px] lg:rem:max-h-[600px]')
+										a.img-ratio(class='ratio:pt-[600_900]')
+											+FooImg
+section.bg-grey-50.relative.service-detail-2.pad-8
+	.container
+		.auto-3.init-swiper
+			.swiper
+				.swiper-wrapper
+					-for(i=1;i<5;i++)
+						.swiper-slide
+							.box-info.group
+								.img.zoom-in.overflow-hidden
+									a.img-ratio(class='ratio:pt-[320_440]')
+										+FooImg
+								.txt.pt-5
+									h3
+										a.heading-5.mb-1(class='group-hover:text-primary-2') Sản xuất
+										.desc.body-2.line-clamp-4 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

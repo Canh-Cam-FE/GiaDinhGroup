@@ -1,0 +1,93 @@
+.nav-primary-menu
+	@apply  relative z-30 w-fit h-full flex-end 
+	@screen max-xl
+		display: none !important
+	.nav
+		@apply  h-full flex-end w-fit
+		>.menu-item
+			@apply z-30 relative  flex items-center rem:px-[22px]
+			&::after
+				content: ''
+				@apply block absolute-y pointer-events-none right-0 z-10  transition w-1 min-w-1 h-1 min-h-1 bg-grey-300 rounded-full overflow-hidden
+			&:last-child
+				&::after
+					@apply hidden
+			>.title
+				a
+					@apply py-1  text-lg font-semibold
+					@media screen and ( max-width: 1400px)
+						@apply  text-base
+					@media screen and ( max-width: 1300px)
+						@apply  text-14
+			&:hover,&.current-menu-item,&.current-category-ancestor,&.current-menu-ancestor,&.current-menu-parent,&.current-category-parent,&.current-money-map-category-ancestor,&.current-post-ancestor,&.current-projects-ancestor
+				>.title 
+					.icon
+						&::after
+							@apply text-primary-2
+					a
+						@apply text-primary-2
+					&:after
+						@apply w-full
+					
+			&:last-child
+				.sub-menu
+					left: unset
+					@apply right-0
+	.menu-item-has-children
+		@screen xl
+			&:hover
+				>.sub-menu
+					@apply opacity-100 pointer-events-auto   transform-none filter-none
+		>.sub-menu
+			@apply absolute left-0  top-full block z-30  w-max  transition overflow-hidden  opacity-0 pointer-events-none    p-5 bg-white
+			min-width: r(260px)
+			filter: blur(10px)
+			transform: translateY(20px)
+			@screen xl
+				box-shadow: 0px 5px 10px -3px rgba(0,0,0,0.1)
+				@apply absolute left-0 
+			li
+				&:not(:last-child)
+					@apply m-0 mb-4
+					@screen 2xl
+						@apply  mb-4
+				&:hover,&.current-menu-item,&.current-category-ancestor,&.current-menu-ancestor,&.current-menu-parent,&.current-category-parent,&.current-money-map-category-ancestor,&.current-post-ancestor,&.current-project-ancestor
+					.title a,a
+						@apply  text-primary-2 !#{important}
+						&::after
+							@apply w-full
+				a
+					@apply flex-start text-base transition    font-normal capitalize relative py-[1px]
+					&::after
+						content: ''
+						@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-0 h-[1px] bg-primary-2
+					
+					color: #151515 !important
+				.title
+					@apply flex-start  p-0
+					&::before
+						@apply hidden
+	.menu-item
+		@apply relative z-10  block h-full
+		&:first-child
+			@apply ml-0
+		&:last-child
+			@apply mr-0
+		.icon
+			@apply w-[20px] min-w-[20px] h-[24px] flex-center
+			@screen xl
+				@apply sq-5 h-[6]
+			&::after
+				content: 'arrow_drop_down'
+				@apply flex-center  pointer-events-none z-10  transition w-full h-full font-Material-Symbols-Outlined
+		.title
+			@apply flex-center relative h-fit 
+			&::after
+				content: ''
+				@apply block absolute-x pointer-events-none  bottom-0 z-10  transition w-0 h-[1px] bg-primary-2
+
+			a
+				@apply relative 
+		a
+			@apply  relative  h-auto flex-center    cursor-pointer transition whitespace-nowrap leading-140  font-semibold text-lg  uppercase
+			

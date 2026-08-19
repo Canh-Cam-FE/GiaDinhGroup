@@ -1,0 +1,34 @@
+.home-linh-vuc-hoat-ong
+	.card
+		@apply relative w-full overflow-hidden
+		&:hover
+			.content
+				&:before
+					@apply opacity-0
+				&::after
+					@apply opacity-100
+			.txt-grid
+				grid-template-rows: 1fr
+	.content
+		@apply absolute inset-x-0 bottom-0 z-10 flex flex-col p-4
+		@screen xl
+			padding: r(48px) r(40px)
+		
+		&::before 
+			content: ""
+			position: absolute
+			inset: 0
+			z-index: 9
+			pointer-events: none
+			background: rgba(#000,.2 )
+			backdrop-filter: blur(6px)
+			-webkit-backdrop-filter: blur(6px)
+			-webkit-mask-image: rgba(#000,.2 )
+			mask-image: rgba(#000,.2 )
+		
+		&::after
+			content: ''
+			@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full opacity-0
+			background: linear-gradient(250.24deg, rgba(0, 140, 255, 0.8) -0.5%, rgba(37, 75, 157, 0.8) 139.78%)
+			mask-image: linear-gradient(250.24deg, rgba(0, 140, 255, 0.8) -0.5%, rgba(37, 75, 157, 0.8) 139.78%)
+			-webkit-mask-image: linear-gradient(250.24deg, rgba(0, 140, 255, 0.8) -0.5%, rgba(37, 75, 157, 0.8) 139.78%)

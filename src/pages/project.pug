@@ -1,0 +1,9 @@
+extends _layout.pug
+
+block var
+	- var title = 'Dự án — Gia Định Group'
+	- var bodyClass = 'page projects-page'
+
+block main
+	include ../components/banner-breadcrumb/index.pug
+	include ../modules/projects/list/index.pug

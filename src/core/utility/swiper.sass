@@ -1,0 +1,117 @@
+.swiper-slide
+	height: auto 
+.init-swiper
+	@apply relative
+	--mr: 10px
+	--spv: 1
+	@screen md
+		--mr: 16px
+	@screen xl
+		--mr:  #{clampSize(40)}
+	&[data-time='0']
+		.swiper-wrapper
+			transition-timing-function: linear
+	.swiper-slide.swiper-slide
+		@apply overflow-visible
+	.swiper-wrapper
+		@apply h-auto !#{important}
+	.swiper-slide
+		width: calc(calc(100% - calc(var(--mr) * calc(var(--spv) - 1)))/var(--spv))
+		@apply h-auto
+		&:not(:last-child)
+			margin-right: var(--mr)
+
+	&.no-gap
+		--mr: 1px
+
+	&.small-gap
+		--mr: #{clampSize(8)}
+	&.medium-gap
+		--mr: #{clampSize(32)}
+	&.large-gap
+		--mr: #{clampSize(60)}
+	&.auto-2
+		@screen md
+			--spv: 2
+	&.auto-3
+		@screen md
+			--spv: 2
+		@screen lg
+			--spv: 3
+	&.auto-4
+		@screen sm
+			--spv: 2
+		@screen md
+			--spv: 3
+		@screen xl
+			--spv: 4
+	&.auto-5
+		--spv: 1
+		@screen sm
+			--spv: 2
+		@screen md
+			--spv: 3
+		@screen lg
+			--spv: 4
+		@screen xl
+			--spv: 5
+	&.auto-6
+		--spv: 1
+		@screen sm
+			--spv: 2
+		@screen md
+			--spv: 3
+		@screen lg
+			--spv: 4
+		@screen xl
+			--spv: 6
+	&.show-half-mobile
+		@screen max-sm
+			--spv: 1.5
+	&.slide-products-spacing
+		--mr: #{clampSize(18)}
+	.swiper-scrollbar.swiper-scrollbar
+		@apply static
+		@apply rounded-none w-full
+		@apply  mt-10 h-[2px]
+		.swiper-scrollbar-drag
+			@apply rounded-none
+			@apply bg-primary-2
+	&.arrow-edge
+		.arrow-button
+			.button-prev
+				@apply left-0
+			.button-next
+				@apply right-0
+.visible-slide
+	.swiper
+		@apply overflow-visible
+
+
+
+.swiper-column-1,.swiper-column-2,.swiper-xl-3,.swiper-xl-4
+	.swiper-slide
+		@apply h-auto
+
+.swiper-center
+	.swiper-wrapper
+		@apply w-fit mx-auto
+
+.swiper-shadow-spacing
+	@screen xl
+		.swiper
+			padding: #{clampSize(32)}
+			margin: #{clampSize(-32)}
+
+.swiper
+	&.swiper-fade
+		.swiper-slide
+			opacity: 0 !important
+		.swiper-slide-active
+			opacity: 1 !important
+
+.dynamic-slide.swiper-slide
+	width: calc(calc(100% - calc(var(--mr) * calc(var(--spv) - 1)))/var(--spv))
+	@apply h-auto
+	&:not(:last-child)
+		margin-right: var(--mr)

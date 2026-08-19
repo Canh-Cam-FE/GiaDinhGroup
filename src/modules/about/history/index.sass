@@ -1,0 +1,94 @@
+.about-history
+	.box
+		@apply flex items-center justify-center shrink-0 cursor-pointer transition-opacity duration-300
+		width: r(48px)
+		height: r(48px)
+		padding: r(12px) r(20px)
+
+		&.swiper-button-disabled
+			@apply opacity-50 cursor-not-allowed pointer-events-none
+	.prev,.next
+		@apply border border-grey-300 transition
+		&:hover
+			@apply border-primary-2 bg-primary-2 
+
+			em,i
+				@apply text-white
+		em,i
+			@apply transition
+			font-size: r(30px)
+	.swiper-pagination
+		position: absolute !important
+		@screen lg
+			left: 20% !important
+		right: unset !important
+		bottom: r(16px) !important
+		.swiper-pagination-bullet 
+			@apply  bg-transparent bg-opacity-100 border border-white
+			@apply mx-1 !#{important}
+			@media screen and ( min-width: 2000px)
+				@apply w-2 min-w-2 h-2 min-h-2
+			&.swiper-pagination-bullet-active
+				@apply bg-primary-2 border-primary-2
+	.panel
+		@apply w-full overflow-hidden
+		max-width: r(1400px)
+
+		.swiper
+			@apply w-full
+
+	.media
+		@apply w-full overflow-hidden relative
+		+aspect-ratio(500, 800)
+		&::after
+			content: ''
+			@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full
+			height: r(102px)
+			background: linear-gradient(180deg, rgba(37, 75, 157, 0.00) 0%, #254B9D 100%)
+
+		img
+			@apply w-full h-full object-cover
+
+	.history-thumb
+		@apply w-full overflow-hidden
+		
+		.swiper
+			@apply w-full overflow-visible
+		.swiper-slide
+			&::before,&::after
+				content: ''
+				@apply block absolute pointer-events-none top-0 z-10  transition w-[1px] h-[20px] bg-grey-200
+			&::before
+				left: -12%
+			&::after
+				right: -12%
+		.item
+			@apply relative flex flex-col items-center
+			&::before,&::after
+				content: ''
+				@apply block absolute pointer-events-none top-0 z-10  transition w-[1px] h-[20px] bg-grey-200
+			&::before
+				left: 33%
+			&::after
+				right: 33%
+			.text-wrap
+				@apply flex flex-col items-center justify-center
+				height: r(48px)
+
+			.current
+				@apply hidden
+
+			.idle
+				@apply block
+				
+		.swiper-slide-thumb-active
+			.item
+				hr
+					@apply bg-primary-2
+
+				.idle
+					@apply hidden
+
+				.current
+					@apply block
+

@@ -1,0 +1,70 @@
+.develope-1
+	.img
+		&::after
+			content: ''
+			@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full
+			background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0.89%, rgba(0, 174, 239, 0.1) 32.59%, rgba(0, 174, 239, 0.2) 76.03%)
+		a
+			@screen max-lg
+				+img-ratio(1,1)
+		img
+			transform: none !important
+
+	.heading-banner
+		@apply text-primary-1 font-bold uppercase text-4xl
+		@screen xl
+			@apply leading-none
+			font-size: r(52px)
+	.box-wrap
+		
+		border: 8px solid transparent
+		border-image: linear-gradient(134.27deg, rgba(0, 140, 255, 0.34) 1.25%, rgba(255, 255, 255, 0) 100%) 1
+		@apply p-4
+		@screen xl
+			border: 20px solid transparent
+			padding:  60px 52px 189px 60px
+
+.develope-2
+	.txt
+		@screen max-md
+			@apply py-10 px-[15px]
+		
+		@screen md
+			@apply pl-10 
+			max-width: r(700px)
+		@screen xl
+			padding-left: r(100px)
+	.row
+		@apply m-0 p-0 bg-primary-1
+		.col
+			@apply m-0 p-0
+		&:nth-child(even)
+			@apply flex-row-reverse
+			background: linear-gradient(180deg, rgba(0, 174, 239, 0.04) 0%, rgba(0, 174, 239, 0.04) 26.88%, rgba(0, 174, 239, 0.08) 100%)
+			.heading-1,.desc
+				@apply text-grey-950
+			.txt
+				@apply ml-auto 
+				@screen md
+					@apply pl-10 
+				@screen xl
+					padding-right: r(100px)
+	.img
+		a
+			@screen md
+				display: flex
+				height: r(600px)
+				width: 100%
+				img
+					width: 100%
+					height: 100%
+					object-fit: cover 
+			@screen max-md
+				+img-ratio(600,960)
+.develope-3
+	.init-swiper
+		@screen max-lg
+			--spv: 3
+		@screen max-md
+			--spv: 2
+		

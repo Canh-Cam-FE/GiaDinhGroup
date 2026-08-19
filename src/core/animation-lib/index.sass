@@ -1,0 +1,30 @@
+// ============================================================
+// animation-lib/index.sass — Library entry point
+//
+// Import this single file to get the full animation library,
+// or import individual partials à la carte.
+//
+// Full bundle:
+//   @import 'animation-lib/index'          // or just the directory
+//
+// À la carte:
+//   @import 'animation-lib/keyframes'       // keyframe tokens only
+//   @import 'animation-lib/animation-classes' // utility classes only
+//   @import 'animation-lib/hamburger'       // hamburger component only
+//
+// JS counterpart: src/js/modules/animations.js
+//   The JS file handles GSAP-driven scroll animations for the
+//   classes defined in _animation-classes.sass:
+//     .parallax-fixed-wrap  → parallaxImage()
+//     .inner-parallax       → innerParallax()
+//     .inner-blur-parallax  → innerBlurParallax()
+//     .fd-up-blur           → fadeUpBlur()
+//     .text-up-blur         → textUpBlur()
+//     .fd-scale-blur        → scaleBlur()
+//     .scale-up-blur        → scaleUpBlur()
+//     .reveal-3d-cinematic  → reveal3dCinematic()
+// ============================================================
+
+@import 'keyframes'
+@import 'animation-classes'
+@import 'hamburger'

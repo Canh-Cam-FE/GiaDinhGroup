@@ -1,0 +1,128 @@
+@use "sass:math"
+@use "sass:string"
+
+// Figma artboard width; pairs with --design-vw on :root (viewport.sass + viewport.js)
+$core-vw-base: 1920px !default
+// 100rem = design width when html font-size = calc(19.2/1920 * var(--design-vw))
+$core-vw-unit: 100rem !default
+
+@function _to-px($v)
+	@if math.is-unitless($v)
+		@return $v * 1px
+	@if math.unit($v) == "px"
+		@return $v
+	@return $v
+
+@function r($size, $base: $core-vw-base, $vwUnit: $core-vw-unit)
+	$px: _to-px($size)
+	@return (math.div($px, $base) * $vwUnit)
+
+@function clampSize($min, $max: null, $base: $core-vw-base, $vwUnit: $core-vw-unit)
+	$minPx: _to-px($min)
+	$maxPx: $minPx
+	@if $max != null
+		$maxPx: _to-px($max)
+	// Match preflight/typography: unitless px / --design-width * --design-vw.
+	// Avoids `px / px * rem` — postcss/cssnano strips that calc() and breaks on Windows.
+	$maxNum: math.div($maxPx, 1px)
+	$baseNum: math.div($base, 1px)
+	$fluid: string.unquote("calc(#{$maxNum} / var(--design-width, #{$baseNum}) * var(--design-vw, 100vw))")
+	@if $max != null and $maxPx != $minPx
+		@return clamp(#{$minPx}, #{$fluid}, #{$maxPx})
+	@return clamp(#{$minPx}, #{$fluid}, #{$fluid})
+=line-clamp($min,$max, $line-height, $lines-to-show)
+	@if unitless($line-height) == false 
+		$line-height: create-unitless-line-height($font-size, $line-height)
+	display: -webkit-box
+	font-size: clamp($min,r($max),r($max))
+	height: (r($max)* $line-height * $lines-to-show) 
+	min-height: ($min* $line-height * $lines-to-show) 
+	line-height: $line-height
+	overflow: hidden
+	text-overflow: ellipsis
+	-webkit-box-orient: vertical
+	-webkit-line-clamp: $lines-to-show
+=line($lines)
+	overflow: hidden
+	display: -webkit-box
+	text-overflow: ellipsis
+	-webkit-line-clamp: $lines
+	-webkit-box-orient: vertical
+
+=fz($min, $max)
+	font-size: clampSize($min, $max)
+=res-nav
+	@apply overflow-x-auto
+	ul
+		@apply  flex-start whitespace-nowrap pb-1
+		justify-content: flex-start
+		li
+			&:first-child
+				@apply pl-0
+=table-res
+	@apply overflow-x-auto
+	table
+		@apply w-full
+		white-space: nowrap
+=img-ratio($h:1,$w:1,$fit:cover)
+	position: relative
+	display: block
+	height: 0
+	overflow: hidden
+	padding-top: math.div($h, $w) * 100%
+	img,svg
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		object-fit: $fit
+		transition: .3s ease-in-out all
+=aspect-ratio($h:1,$w:1,$fit:cover)
+	position: relative
+	display: block
+	height: 0
+	overflow: hidden
+	padding-top: math.div($h, $w) * 100%
+	img,picture,video,iframe
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		object-fit: $fit
+		transition: .3s ease-in-out all
+=video-ratio($h:1,$w:1,$fit:cover)
+	position: relative
+	display: block
+	height: 0
+	overflow: hidden
+	padding-top: math.div($h, $w) * 100%
+	video,iframe
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		object-fit: $fit
+		transition: .3s ease-in-out all
+=line-vertical
+	&::before
+		content: ''
+		@apply block absolute top-0 pointer-events-none z-10 transition
+		background-image: url("data:image/svg+xml;charset=utf-8,<svg width='1' height='597' viewBox='0 0 1 597' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0.5 0L0.5 596.8' stroke='%23DCDCDC' stroke-dasharray='8 8'/></svg>")
+		background-repeat: no-repeat
+		background-size:  auto 100% !important
+		background-position: top center
+		width: 2px
+		height: 100%
+=line-horizontal
+	&::after
+		content: ''
+		@apply block absolute top-0 pointer-events-none z-10 transition
+		background-image: url("data:image/svg+xml;charset=utf-8,<svg width='360' height='1' viewBox='0 0 360 1' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 0.5L360 0.5' stroke='%23DCDCDC' stroke-dasharray='8 8'/></svg>")
+		background-repeat: no-repeat
+		background-size:  140% !important
+		background-position: top center
+		height: 1px
+		@apply w-full
