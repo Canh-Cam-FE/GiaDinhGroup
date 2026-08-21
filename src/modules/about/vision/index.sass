@@ -1,5 +1,6 @@
 .about-vision
 	
+	@apply pt-0
 	.mobile-block
 		@apply block
 		@screen lg
@@ -41,8 +42,8 @@
 			&::after
 				@apply opacity-100
 	.item-bg
-		@apply border-r border-white border-opacity-20 relative z-20
-		height: r(560px)
+		@apply border-r-2 border-white relative z-20
+		height: r(640px)
 		&::after
 			content: ''
 			@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full  opacity-0

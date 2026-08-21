@@ -1,4 +1,11 @@
 .projects-list
+	.container
+		>.wrap
+			@screen max-lg
+				@apply block mb-6
+	.heading-1
+		@screen max-lg
+			@apply mb-8
 	.zone-nav
 		.list
 			li
@@ -8,7 +15,7 @@
 					&::after
 						content: ''
 						@apply absolute right-0 top-1/2 -translate-y-1/2 w-px bg-gray-200
-						height: r(8px)
+						height: r(12px)
 
 			a
 				@apply inline-flex flex-col items-start border-b-2 border-transparent

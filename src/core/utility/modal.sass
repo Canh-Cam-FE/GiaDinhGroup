@@ -5,10 +5,13 @@
 .carousel__button
 	&.is-close
 		top: 0 !important
-		width: 50px
-		height: 50px
+		width: 40px
+		height: 40px
 		right: 0 !important
 		svg
+			@media screen and ( min-width: 2000px)
+				width: r(48px)
+				height: r(48px)
 .register-modal
 	padding: r(40px) r(30px) !important
 	max-width: r(900px) !important
@@ -26,7 +29,9 @@
 		@apply rounded-8
 		padding:   r(64px)  !important
 	.form-title
-		font-size: r(28px)
+		@apply text-3xl mb-10
+		@screen xl
+			font-size: r(28px)
 	.desc
 		@apply mb-6
 	.container,.container-fluid
@@ -34,7 +39,10 @@
 	.btn
 		em,i
 			animation: none !important
-
+	.wrap-form
+		.form-group
+			@media screen and ( max-width: 1024px)
+				grid-column: span 2 / span 2
 	.carousel__button
 		&.is-close
 			top: r(12px) !important

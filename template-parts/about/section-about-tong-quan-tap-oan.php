@@ -16,8 +16,10 @@ if (!$title && !$content && !$image) {
 						<h2 class="heading-1 text-gray-950 mb-10"><?php echo esc_html($title); ?></h2>
 					<?php endif; ?>
 					<?php if ($content): ?>
-						<div class="desc body-2">
-							<?php echo canhcam_kses_post($content); ?>
+						<div class="scrollbar-wrap">
+							<div class="desc body-2">
+								<?php echo canhcam_kses_post($content); ?>
+							</div>
 						</div>
 					<?php endif; ?>
 				</div>

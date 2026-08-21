@@ -1,11 +1,73 @@
 .mobile-menu-nav
 	@apply overflow-y-auto  
+	max-height: calc( 100vh - 120px)
+	@screen xl
+		display: none !important
 	.nav
 		@apply flex-col w-full 
+		.is-open
+			>.icon
+				&::after
+					transform: translate(-50%,-50%) rotateX(180deg) !important
+		>.menu-item
+			@apply z-30 relative w-full 
+			>.sub-menu
+				@apply pl-0
+			&:nth-child(2)
+				>.sub-menu
+					@apply block
+			.icon
+				@apply block absolute-y right-0 z-40  transition  font-Awesome6 text-2xl font-black w-[50px]  h-[32px] pointer-events-auto 
+				&::after
+					content: '\f078'
+					@apply flex-end  absolute-center pointer-events-none  z-10  transition w-full h-full  text-lg  font-black pr-4  text-primary-2
+				
+			
+			>a
+				@apply  relative  whitespace-nowrap   font-bold text-2xl  w-full flex-start  py-[26px]
+				transition: .4s all  ease-in-out
+			>.title
+				@apply relative
+				>a
+					@apply   text-2xl   font-bold py-7   w-full  
+				&.is-open
+					.icon
+						&:before
+							transform: rotate(-180deg)
+			&:hover,
+				>a
+					@apply bg-opacity-10
+	.sub-menu
+		@apply hidden
+	.menu-item-has-children
+		>.title
+			@apply relative
+			a
+				@apply relative pr-[20px]  whitespace-nowrap   w-full flex 
+		>a
+			@apply relative pr-[20px]  whitespace-nowrap   w-full flex 
+		>.sub-menu
+			@apply w-full p-0 pl-[14px]
+			li
+				@apply w-full
+				&.current-menu-item
+					a
+						@apply text-dark
+				.title
+					@apply bg-transparent w-full
+				a
+					@apply flex-start w-full text-lg font-normal  leading-none capitalize transition   bg-transparent  py-[12px]  pr-15 whitespace-normal
+					&::after
+						@apply hidden
+				>.sub-menu
+					a
+						@apply font-light  bg-transparent text-lg 
+						text-transform: none
+				
 	.menu-item
-		@apply relative z-10 
+		@apply relative z-10  block h-auto bg-transparent
 		&:not(:last-child)
-			@apply  mb-3
+			@apply border-b border-grey-200
 		.title 
 			@apply flex-between
 			>a
@@ -16,12 +78,13 @@
 		&:hover,&.current-menu-item,&.current-category-ancestor,&.current-menu-ancestor,&.current-menu-parent,&.current-category-parent,&.current-money-map-category-ancestor
 			>.title
 				a
-					@apply text-grey-950
+					@apply  bg-opacity-10 bg-primary-1 px-5 text-primary-2
 			>a
-				@apply text-grey-950
-	a
-			@apply text-xl  relative transition  text-grey-500 font-bold  
-			letter-spacing: 1.2px
-			transition: .3s all  ease-in-out
+				@apply  bg-opacity-10  bg-primary-1 px-5 text-primary-2
+				.icon
+					@apply text-dark
+		a
+			@apply text-2xl  relative   font-bold h-fit  
+		
 .menu-label
 	letter-spacing: 1.2px

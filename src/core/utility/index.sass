@@ -57,7 +57,7 @@
 			@apply py-1 px-2
 .scrollbar-wrap
 	max-height: 300px
-	padding-right: 15px
+	padding-right: 8px
 	overflow-y: auto
 .scrollbar-wrap::-webkit-scrollbar
 	background: #D9D9D9
@@ -229,7 +229,7 @@
 			overflow: hidden
 			height: max-content
 			span
-				@apply whitespace-nowrap  pr-8 h-full flex justify-start items-center  text-white relative font-bold text-base
+				@apply whitespace-nowrap  pr-8 h-full flex justify-start items-center  text-white relative font-normal text-base
 	.group-btn
 		@apply flex-between gap-3 h-full  px-4 pr-6  relative
 		&::after
@@ -266,7 +266,7 @@
 			em,i
 				@apply text-white
 	em,i
-		@apply  font-normal text-primary-3 text-lg leading-none
+		@apply  font-normal text-primary-3 text-lg leading-none h-auto
 		&:before
 			@apply font-Material-Icon font-normal
 			content: '\f1e0'

@@ -1,7 +1,18 @@
 .home-linh-vuc-hoat-ong
+	.container
+		@screen 2xl
+			max-width: #{clampSize(1430)}
 	.card
 		@apply relative w-full overflow-hidden
 		&:hover
+			.content
+				&:before
+					@apply opacity-0
+				&::after
+					@apply opacity-100
+			.txt-grid
+				grid-template-rows: 1fr
+		@screen max-lg
 			.content
 				&:before
 					@apply opacity-0
@@ -30,5 +41,14 @@
 			content: ''
 			@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full opacity-0
 			background: linear-gradient(250.24deg, rgba(0, 140, 255, 0.8) -0.5%, rgba(37, 75, 157, 0.8) 139.78%)
-			mask-image: linear-gradient(250.24deg, rgba(0, 140, 255, 0.8) -0.5%, rgba(37, 75, 157, 0.8) 139.78%)
-			-webkit-mask-image: linear-gradient(250.24deg, rgba(0, 140, 255, 0.8) -0.5%, rgba(37, 75, 157, 0.8) 139.78%)
+			backdrop-filter: blur(6px)
+
+	.row
+		margin: 0 -10px
+		.col
+			padding: 0 10px
+		@screen xl
+			margin: 0 r(-10px) r(-20px) r(-10px)
+			.col
+				padding: 0 r(10px)
+				margin-bottom: r(20px)

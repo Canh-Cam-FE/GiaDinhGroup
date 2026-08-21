@@ -34,8 +34,10 @@ if (!$title && !$content && !$portrait) {
 						<?php if ($content): ?>
 							<div class="bg-wrap relative z-50">
 								<div class="card bg-secondary-white-80 relative z-50 rem:rounded-[28px] p-10 lg:p-10 ">
-									<div class="desc body-2">
-										<?php echo canhcam_kses_post($content); ?>
+									<div class="scrollbar-wrap">
+										<div class="desc body-2">
+											<?php echo canhcam_kses_post($content); ?>
+										</div>
 									</div>
 								</div>
 							</div>

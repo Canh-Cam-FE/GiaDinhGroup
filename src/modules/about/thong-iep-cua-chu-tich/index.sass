@@ -1,5 +1,5 @@
 .about-thong-iep-cua-chu-tich
-	background: linear-gradient(180deg, rgba(0, 174, 239, 0.04) 0%, rgba(0, 174, 239, 0.08) 29.42%, rgba(37, 75, 157, 0.08) 73.77%, rgba(255, 255, 255, 0.00) 109.45%)
+	background: linear-gradient(0deg, rgba(0, 174, 239, 0.04) 0%, rgba(0, 174, 239, 0.08) 29.42%, rgba(37, 75, 157, 0.08) 73.77%, rgba(255, 255, 255, 0) 109.45%)
 	.media
 		@apply absolute 
 		bottom: r(34px)
@@ -11,12 +11,13 @@
 	.container
 		@apply pt-10
 	.row
-		@apply my-0
+		@apply my-0 
 		.col
-			@apply my-0 
+			@apply my-0
 	.img
+		@apply h-full flex flex-col
 		a
-			@apply flex items-end justify-center
+			@apply flex items-end justify-center mt-auto
 			img
 				@apply h-auto object-contain
 
@@ -53,3 +54,6 @@
 	.t52-400-198-s6-avc
 		@screen max-lg
 			@apply  text-4xl text-center mx-auto w-full
+	.qoute-text
+		.desc
+			@apply text-lg font-Montserrat

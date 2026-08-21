@@ -10,7 +10,9 @@
 			@apply text-6xl
 	.map-wrap
 		@apply relative w-full flex-center mx-auto
-		max-width: r(619px)
+		@screen xl
+			max-width: r(619px)
+			height: r(720px)
 		@screen lg
 			margin-left: auto
 		img
@@ -25,4 +27,9 @@
 		&:nth-child(2)
 			@screen max-lg
 				@apply order-1
-			
+	.heading-5
+		@apply text-xl
+	.heading-4
+		color: #101010
+		*
+			color: #101010

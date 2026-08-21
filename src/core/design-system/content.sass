@@ -6,6 +6,10 @@
 		@apply  leading-140
 		*
 			font: inherit
+		@screen max-sm
+			@apply text-[16px]
+			*
+				@apply text-[16px]
 		strong
 			@apply font-bold
 			*
@@ -40,6 +44,9 @@
 	.fullcontent
 		img,iframe
 			@apply w-auto max-h-full h-auto
+.single
+	header
+		box-shadow: 0px 8px 32px 0px #00000014
 .fullcontent
 	@apply text-base leading-140
 	*
@@ -55,6 +62,8 @@
 		@apply text-primary-1
 		&:hover
 			@apply underline
+	em,i
+		@apply italic text-sm
 	figure
 		@apply mx-auto my-5
 		@apply w-auto !#{important}

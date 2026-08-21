@@ -27,10 +27,10 @@
 	.bottom
 		border: 1.5px solid #FFFFFF33
 		@apply p-4
-		&::after
-			content: ''
-			@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full bg-dark bg-opacity-20 
-			backdrop-filter: blur(40px)
+		@apply  bg-dark bg-opacity-20
+		backdrop-filter: blur(40px)
+		.content-wrap
+			@apply relative z-50
 	.desktop-block
 		.desc
 			ul
@@ -98,7 +98,7 @@
 			@screen max-sm
 				@apply p-[24px] !#{important}
 		.heading-3
-			@apply w-full flex-between gap-4
+			@apply w-full flex-between gap-4 uppercase
 			@screen max-sm
 				@apply text-[24px] mb-[4px]
 			&::after

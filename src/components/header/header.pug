@@ -61,26 +61,49 @@ header(class='fixed  z-999 top-0 left-0 right-0 w-full transition ')
 			button(tabindex="-1" aria-label="Search Button")
 				<em class="fa-regular fa-magnifying-glass"></em>
 .mobile-nav-wrap
-
-	.mobile-top-nav.flex-between.relative.z-50.mb-5
-		.menu-label.heading-7.text-grey-500.uppercase(class='mr-5 lg:mr-[27px]') Menu
-		.language-wrap
-			div(class="wpml-ls wpml-ls-legacy-list-horizontal wpml-ls-statics-shortcode_actions")
-				div(class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-list-horizontal")
-					ul(role="menu")
-						li(class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-first-item wpml-ls-current-language wpml-ls-item-legacy-list-horizontal", role="none")
-							a.wpml-ls-link(href="https://worldhotelslongbeach.com/en/", role="menuitem", aria-label="Switch to EN(EN)", title="Switch to EN(EN)")
-								span.wpml-ls-native(lang="en") EN
-						li(class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-vi wpml-ls-last-item wpml-ls-item-legacy-list-horizontal", role="none")
-							a.wpml-ls-link(href="https://worldhotelslongbeach.com/", role="menuitem")
-								span.wpml-ls-native(role="menuitem") VI
-	
-		
+	.mobile-top-nav.relative.z-50
+		.close-menu
+			<em class="material-symbols-outlined icon-regular">close</em>
 	nav.mobile-menu-nav.relative.z-50
 		ul#menu-site-menu.nav
 			li#menu-item-1006.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-1006
-				a(href='javascript:;') Home
-			li#menu-item-1006.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-1006
-				a(href='javascript:;') Work
-			li#menu-item-1006.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-1006
+				a(href='javascript:;') Câu chuyện Nutricare
+			li#menu-item-1013.menu-item.menu-item-type-taxonomy.menu-item-object-category.current-post-ancestor.menu-item-has-children.menu-item-1013
+				a(href='javascript:;') Sản phẩm
+				ul.sub-menu
+					li#menu-item-1014.menu-item.menu-item-type-taxonomy.menu-item-object-category.current-post-ancestor.menu-item-1014.menu-item-has-children
+						a(href='javascript:;') Dinh dưỡng cho bé và mẹ mang thai dưỡng cho bé và mẹ mang thai
+						ul.sub-menu
+							li#menu-item-1014.menu-item.menu-item-type-taxonomy.menu-item-object-category.current-post-ancestor.menu-item-1014
+								a(href='javascript:;')  Lorem ipsum dolor 
+							li#menu-item-1014.menu-item.menu-item-type-taxonomy.menu-item-object-category.current-post-ancestor.menu-item-1014
+								a(href='javascript:;')  Lorem ipsum dolor 
+							li#menu-item-1014.menu-item.menu-item-type-taxonomy.menu-item-object-category.current-post-ancestor.menu-item-1014
+								a(href='javascript:;')  Lorem ipsum dolor 
+					li#menu-item-1014.menu-item.menu-item-type-taxonomy.menu-item-object-category.current-post-ancestor.menu-item-1014.menu-item-has-children
+						a(href='javascript:;') Dinh dưỡng cho bé và mẹ mang thai
+						ul.sub-menu
+							li#menu-item-1014.menu-item.menu-item-type-taxonomy.menu-item-object-category.current-post-ancestor.menu-item-1014
+								a(href='javascript:;')  Lorem ipsum dolor 
+							li#menu-item-1014.menu-item.menu-item-type-taxonomy.menu-item-object-category.current-post-ancestor.menu-item-1014
+								a(href='javascript:;')  Lorem ipsum dolor 
+							li#menu-item-1014.menu-item.menu-item-type-taxonomy.menu-item-object-category.current-post-ancestor.menu-item-1014
+								a(href='javascript:;')  Lorem ipsum dolor 
+					li#menu-item-1014.menu-item.menu-item-type-taxonomy.menu-item-object-category.current-post-ancestor.menu-item-1014
+						a(href='javascript:;') Sữa hạt
+					li#menu-item-1014.menu-item.menu-item-type-taxonomy.menu-item-object-category.current-post-ancestor.menu-item-1014
+						a(href='javascript:;') Sữa trái cây, Sữa chua uống
+			li#menu-item-1013.menu-item.menu-item-type-taxonomy.menu-item-object-category.current-post-ancestor.menu-item-has-children.menu-item-1013
 				a(href='javascript:;') Services
+				ul.sub-menu
+					li#menu-item-1014.menu-item.menu-item-type-taxonomy.menu-item-object-category.current-post-ancestor.menu-item-1014
+						a(href='javascript:;') Tin cong trinh
+			li#menu-item-1006.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-1006
+				a(href='javascript:;') Viện dinh dưỡng Y học Nutricare Hoa Kỳ 
+			li#menu-item-1006.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-1006
+				a(href='javascript:;') Khoa học dinh dưỡng
+	.searchbox
+		.container
+			input(type='text' placeholder='Search')
+			button(tabindex="-1" aria-label="Search Button")
+				<em class="fa-regular fa-magnifying-glass"></em>

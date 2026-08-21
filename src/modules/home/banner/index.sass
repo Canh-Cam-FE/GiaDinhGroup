@@ -71,6 +71,7 @@
 		@screen max-xl
 			@apply text-5xl my-3
 		@screen max-sm
+			@apply text-4xl
 			br
 				@apply hidden
 	.heading-3
@@ -99,6 +100,10 @@
 			padding-bottom: r(120px)
 		@screen xl
 			padding-bottom: r(140px)
+	.bg-wrap
+		@apply pb-0
+		@screen max-lg
+			@apply px-[15px]
 .header-btn-group
 	@apply relative py-1 px-4
 	&::before

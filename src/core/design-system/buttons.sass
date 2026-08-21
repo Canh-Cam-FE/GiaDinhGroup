@@ -15,7 +15,7 @@
 			@apply text-lg  font-normal relative z-20 text-white whitespace-nowrap
 		em,i
 			transition: .4s all  ease-in-out
-			@apply text-white relative z-40 flex-center overflow-hidden rounded-full text-xl font-normal   ml-2 w-5 h-4
+			@apply text-white relative z-40 flex-center overflow-hidden rounded-full text-xl font-normal   ml-2 pr-[2px]
 			font-weight: 300
 			
 	
@@ -24,12 +24,13 @@
 			span,em,i
 				@apply text-primary-1
 			&:hover
+				span,em,i
+					@apply text-primary-2
 				&::before
 					@apply opacity-0
 				&::after
 					@apply opacity-100
-				em,i
-					animation: l-t-r 0.4s forwards
+		
 				
 	&.btn-arrow
 		@apply   rounded-full   flex-center border-primary-1 border
@@ -101,7 +102,7 @@
 	&.btn-tertiary
 		@apply   py-1 border-b border-primary-1 border-transparent
 		span
-			@apply text-grey-500 leading-none text-sm transition font-normal uppercase
+			@apply text-grey-500 leading-none text-lg transition font-normal 
 		em,i
 			@apply ml-2 text-2xl  font-light text-grey-500 leading-none
 		&:hover
@@ -125,16 +126,21 @@
 		@apply flex-center pt-6 pb-1
 	.prev,.next
 		@apply flex-center transition  pointer-events-auto  font-Awesome6 border border-grey-300 
-		height: 40px
-		width: 40px
+		height: 32px
+		width: 32px
 		@media screen and ( max-width: 1024px)
 			@apply mx-3 relative
+		@screen sm
+			height: 40px
+			width: 40px
 		@screen lg
 			@apply absolute-y  z-30 w-12 h-12 min-w-12 min-h-12
 		&::before
-			@apply flex-center  pointer-events-none  z-50  transition w-fit h-fit leading-none font-light  text-2xl text-grey-300 font-Awesome6
+			@apply flex-center  pointer-events-none  z-50  transition w-fit h-fit leading-none font-light  text-lg text-grey-300 font-Awesome6
 			font-weight: 200 !important
 			width: 20px
+			@screen sm
+				@apply text-xl 
 			@screen lg
 				font-size: r(30px)
 		&:hover

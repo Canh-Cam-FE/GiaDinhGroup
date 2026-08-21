@@ -1,13 +1,15 @@
 .about-chief
 	.top-row
-		@apply justify-between
+		@apply justify-between m-0 p-0
+		.col
+			@apply  m-0 p-0
 		>.col
 			@screen max-lg
 				@apply w-full
 			@screen lg
-				width: 42.8%
+				width: 42.6%
 				&:nth-child(2)
-					width: 51.5%
+					width: 51.2%
 				
 	.card
 		@apply relative
@@ -24,10 +26,18 @@
 			gap: r(4px)
 
 		.media
-			@apply w-full overflow-hidden
+			@apply w-full overflow-hidden 
+			background: none
+			&:before
+				content: ''
+				@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full
+				background: url('../img/bg/mask-chief.jpg')
+				background-repeat: no-repeat
+				background-size: cover
+				background-position: center
 			+aspect-ratio(620, 600,contain)
 			img
-				@apply w-full h-full object-contain
+				@apply w-full h-full object-contain z-50
 
 	.list
 		.item
@@ -46,14 +56,21 @@
 			.box
 				flex: 0 1  auto
 				@apply h-full
+		.heading-6
+			@apply mb-1
 		.box
 			@apply h-full
 			gap: r(4px)
 		.media
-			background: linear-gradient(180deg, rgba(37, 75, 157, 0.04) 0%, rgba(37, 75, 157, 0.08) 25%, rgba(37, 75, 157, 0.08) 50%, rgba(37, 75, 157, 0.04) 100%)
-			@apply w-full overflow-hidden
+			&:before
+				content: ''
+				@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full
+				background: url('../img/bg/mask-chief.jpg')
+				background-repeat: no-repeat
+				background-size: cover
+				background-position: center
 			+aspect-ratio(262, 340,contain)
 
 			img
-				@apply w-full h-full object-contain
+				@apply w-full h-full object-contain z-50
 

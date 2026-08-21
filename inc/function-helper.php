@@ -489,25 +489,183 @@ function canhcam_get_home_page_id(): int
 		return $home_id;
 	}
 
+	$home_id = canhcam_get_page_id_by_template('templates/template-home.php');
+
+	if ($home_id > 0) {
+		return $home_id;
+	}
+
+	$front   = (int) get_option('page_on_front');
+	$home_id = $front > 0 ? $front : 0;
+
+	return $home_id;
+}
+
+/**
+ * Map CPT slug => listing page template path.
+ * Add new entries when a post type uses a dedicated page template.
+ *
+ * @return array<string, string>
+ */
+function canhcam_get_post_type_page_template_map(): array
+{
+	return apply_filters(
+		'canhcam_post_type_page_template_map',
+		array(
+			'career' => 'templates/template-career.php',
+			// 'projects' => 'templates/template-projects.php',
+			// 'sector'   => 'templates/template-about.php',
+		)
+	);
+}
+
+/**
+ * Get page template path for a post type from the map.
+ */
+function canhcam_get_page_template_for_post_type(string $post_type): string
+{
+	$map = canhcam_get_post_type_page_template_map();
+
+	return isset($map[$post_type]) ? (string) $map[$post_type] : '';
+}
+
+/**
+ * Get published page ID by template file path.
+ */
+function canhcam_get_page_id_by_template(string $template): int
+{
+	static $cache = array();
+
+	$template = trim($template);
+	if ($template === '') {
+		return 0;
+	}
+
+	if (isset($cache[$template])) {
+		return $cache[$template];
+	}
+
 	$pages = get_posts(array(
 		'post_type'      => 'page',
 		'post_status'    => 'publish',
 		'posts_per_page' => 1,
 		'meta_key'       => '_wp_page_template',
-		'meta_value'     => 'templates/template-home.php',
+		'meta_value'     => $template,
 		'fields'         => 'ids',
 	));
 
-	if (!empty($pages)) {
-		$home_id = (int) $pages[0];
-		return $home_id;
+	$cache[$template] = !empty($pages) ? (int) $pages[0] : 0;
+
+	return $cache[$template];
+}
+
+/**
+ * Get listing page ID mapped to a post type.
+ * Empty $post_type uses the current queried post type.
+ */
+function canhcam_get_post_type_page_id(string $post_type = ''): int
+{
+	if ($post_type === '') {
+		$post_type = (string) get_post_type();
 	}
 
-	$front = (int) get_option('page_on_front');
-	$home_id = $front > 0 ? $front : 0;
+	$template = canhcam_get_page_template_for_post_type($post_type);
 
-	return $home_id;
+	return $template !== '' ? canhcam_get_page_id_by_template($template) : 0;
 }
+
+/**
+ * Get listing page URL mapped to a post type.
+ *
+ * @return string|false
+ */
+function canhcam_get_post_type_page_url(string $post_type = '')
+{
+	$page_id = canhcam_get_post_type_page_id($post_type);
+
+	return $page_id > 0 ? get_permalink($page_id) : false;
+}
+
+/**
+ * Mark mapped listing-page menu items active on CPT singular views.
+ *
+ * @param array<int, WP_Post> $items Menu items.
+ * @return array<int, WP_Post>
+ */
+function canhcam_active_nav_menu_for_mapped_post_types($items)
+{
+	if (is_admin() || empty($items) || !is_singular()) {
+		return $items;
+	}
+
+	$post_type = (string) get_post_type();
+	$page_id   = canhcam_get_post_type_page_id($post_type);
+
+	if ($page_id <= 0) {
+		return $items;
+	}
+
+	$page_url       = untrailingslashit((string) get_permalink($page_id));
+	$active_item_id = 0;
+
+	foreach ($items as $item) {
+		$is_mapped_page = ('page' === $item->object && (int) $item->object_id === $page_id)
+			|| untrailingslashit((string) $item->url) === $page_url;
+
+		if (!$is_mapped_page) {
+			continue;
+		}
+
+		$item->current = true;
+		$item->classes = array_unique(array_merge((array) $item->classes, array(
+			'current-menu-item',
+			'current_page_item',
+		)));
+		$active_item_id = (int) $item->ID;
+		break;
+	}
+
+	if (!$active_item_id) {
+		return $items;
+	}
+
+	$parent_id = 0;
+	foreach ($items as $item) {
+		if ((int) $item->ID === $active_item_id) {
+			$parent_id = (int) $item->menu_item_parent;
+			break;
+		}
+	}
+
+	while ($parent_id) {
+		$found = false;
+
+		foreach ($items as $item) {
+			if ((int) $item->ID !== $parent_id) {
+				continue;
+			}
+
+			$item->current_item_ancestor = true;
+			$item->current_item_parent   = true;
+			$item->classes               = array_unique(array_merge((array) $item->classes, array(
+				'current-menu-ancestor',
+				'current-menu-parent',
+				'current_page_ancestor',
+				'current_page_parent',
+			)));
+			$parent_id = (int) $item->menu_item_parent;
+			$found     = true;
+			break;
+		}
+
+		if (!$found) {
+			break;
+		}
+	}
+
+	return $items;
+}
+add_filter('wp_nav_menu_objects', 'canhcam_active_nav_menu_for_mapped_post_types', 10, 1);
 
 /**
  * Resolve ACF object ID for current page, post, or taxonomy term.

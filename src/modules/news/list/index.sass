@@ -2,8 +2,16 @@
 	&.news-list
 		.news-item.big
 			@apply m-0 p-0 bg-primary-1 flex-nowrap
+			.heading-4
+				@apply line-clamp-3
 			.col
 				@apply m-0 p-0
+			@screen max-lg
+				@apply flex-wrap
+				.content
+					@apply p-8
+			.desc
+				@apply line-clamp-3
 	.btn-wrap
 		@apply mt-0
 	.tab-nav
@@ -23,7 +31,7 @@
 		@screen max-md
 			+res-nav
 			.list
-				@apply justify-start whitespace-nowrap flex-nowrap
+				@apply justify-start whitespace-nowrap flex-nowrap gap-[4px]
 
 	.tab-item
 		@apply w-full

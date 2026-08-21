@@ -3,16 +3,59 @@
 	padding-top: r(80px)
 	@screen xl
 		padding-top: r(150px)
+	.counter-wrap
+		@apply gap-[1px]
 	&.service-detail-1
+		@screen xl
+			&::after
+				content: ''
+				@apply block absolute-x pointer-events-none top-0 z-10  transition w-[1px] h-full
+				background: linear-gradient(180deg, rgba(220, 220, 220, 0) 0%, #DCDCDC 100%)
+				height: r(1000px)
+
 		@apply py-16
 		@screen xl
 			@apply py-20
 		.content
-			@apply ml-auto mr-0
+			@apply ml-auto  mr-0 justify-start
+			@apply lg:rem:pr-[80px]
+			@screen xl
+				@apply rem:max-w-[800px]
+			@screen 2xl
+				@apply rem:max-w-[700px]
+		.heading-1
+			@apply font-Montserrat
+		.counter
+			@apply font-Google-Sans-Flex !#{important}
+			@screen xl
+				font-size: r(60px)
+		.container-fluid
+			>.row
+				@apply m-0 p-0  
+				>.col
+					@apply m-0 p-0
+				@screen lg
+					gap: 0  r(160px) 
 		.list
+			.row
+				@apply gap-0
 			.inner
 				.desc
 					margin-top: r(2px)
+	&:not(.service-detail-1)
+		.list
+			.row
+				@apply gap-0
+		.bg-bottom
+			@screen max-sm
+				display: flex
+				@apply items-end
+				height: 200px
+				width: auto
+				img
+					width: auto
+					height: 100%
+					object-fit: cover
 	.container-fluid
 		@apply p-[15px]
 		@screen xl
@@ -20,6 +63,13 @@
 		>.row
 			@screen lg
 				@apply flex-nowrap
+			&:nth-child(1)
+				.col
+					&:nth-child(2)
+						@screen lg
+							@apply pl-0
+						
+				
 			&:not(:last-child)
 				@apply pb-15
 				@screen xl
@@ -36,7 +86,8 @@
 			@screen sm
 				@apply flex-nowrap
 	.progress-track
-		@apply top-0 w-[2px] h-full
+		@apply top-0 w-[2px] 
+		height: calc( 100% -  r(360px) )
 		@screen xl
 			@apply absolute-x 
 		@screen max-xl
@@ -99,5 +150,11 @@
 			*
 				@apply text-gray-950 font-bold
 	.bg-bottom
+		
+		height: r(480px)
+		&::after
+			content: ''
+			@apply block absolute pointer-events-none left-0 top-0 z-10  transition w-full h-1/2
+			background: linear-gradient(180deg, #FFFFFF 0%, #C7D3EC 100%)
 		img
-			@apply w-full
+			@apply w-full h-auto relative z-40

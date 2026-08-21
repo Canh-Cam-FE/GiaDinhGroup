@@ -3,7 +3,7 @@
 		animation-direction: reverse
 
 	.swiper-slide
-		@apply w-auto
+		@apply w-auto shrink-0
 
 	.item
 		@apply flex items-center justify-center bg-white border border-grey-100 px-4
@@ -13,3 +13,5 @@
 			padding: 0 r(32px)
 		img
 			@apply max-w-full max-h-full object-contain
+	.init-swiper
+		--mr: #{clampSize(20)}

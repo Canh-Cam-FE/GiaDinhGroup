@@ -228,7 +228,7 @@ module.exports = {
 					...(generatedTokens.colors.grey || {}),
 					// Non-Figma chrome ladder (see README / 03-colors-gradients.md).
 					// Figma Utility/gray-* maps to gray-* from the generated spread above.
-					50: "#f1f3f4",
+					50: "#f6f6f6",
 					100: "#efefef",
 					200: "#dcdcdc",
 					300: "#bdbdbd",

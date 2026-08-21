@@ -2,6 +2,15 @@
 .other-recruit-wrap
 	@apply sticky
 .recruit-detail
+	.heading-2
+		@apply text-primary-1
+	.grid
+		.col-span-12
+			@screen lg
+				@apply  col-span-9
+				&:nth-child(2)
+					@apply  col-span-3
+					
 	.row
 		
 		.col
@@ -9,9 +18,15 @@
 				&:nth-child(1)
 					width: 37.5%
 				&:nth-child(2)
-					width: 58%
+					width: 62%
 	.table-wrap
 		@apply flex-center
+		@screen max-md
+			@apply pt-8
+		@screen md
+			@apply pl-8 
+		@screen lg
+			@apply pl-10
 		td
 			@apply text-base py-3 w-full border-t border-grey-200
 			@screen sm
@@ -27,12 +42,15 @@
 					td
 						@apply  block w-full
 				td
-					@apply text-base
+					@apply text-base py-3
 					&:first-child
 						@apply font-bold text-base
 				&:last-child
 					td
 						@apply border-b border-grey-200
+						@screen max-lg
+							&:first-child
+								@apply border-b-transparent
 						&:first-child
 							@apply font-bold text-primary-1
 				p
@@ -44,14 +62,30 @@
 	.btn
 		@apply w-full flex-between
 		&.btn-primary
+			span
+				@media screen  and ( min-width: 768px) and ( max-width: 1200px)
+					@apply text-xs
 			em,i
-				@apply  h-full
+				@apply  h-full min-w-[16px]
+	.info-wrap
+		@screen max-lg
+			@apply py-[32px] px-[20px]
+		.row
+			@apply m-0 p-0
+			.col
+				@apply m-0 p-0
 	.block-wrap
+		@screen max-lg
+			@apply py-[32px] px-[20px]
+		.heading-2
+			@apply text-28
 .other-recruit
 	.recruit-item
 		border-bottom: 1px solid #d9d9d9
 		&:last-child
 			@apply border-b-transparent 
+	.heading-2
+		@apply text-white text-2xl
 	.timeline
 		em
 			@apply font-Awesome6 font-light

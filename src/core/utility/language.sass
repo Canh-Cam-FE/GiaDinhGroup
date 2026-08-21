@@ -5,6 +5,8 @@
 		@apply flex  w-[42px] justify-start
 	.wpml-ls-display
 		@apply hidden
+	img
+		@apply hidden !#{important}
 	.wpml-ls-current-language
 		&:hover
 			span
@@ -59,7 +61,7 @@
 		a 
 			@apply flex-center  text-grey-950
 			span
-				@apply order-1 m-0   text-base font-medium px-[2px] mx-1
+				@apply order-1 m-0  pl-[3px] text-base font-medium  mr-1
 			img
 				@apply overflow-hidden rounded-full w-[24px] h-[24px] min-w-[24px] 
 				@screen max-sm

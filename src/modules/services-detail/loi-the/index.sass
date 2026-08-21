@@ -1,4 +1,8 @@
 .services-detail-3
+	@screen max-lg
+		@apply pb-[80px]
+		.heading-1
+			@apply mb-8
 	&::after
 		content: ''
 		@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-full
@@ -11,8 +15,12 @@
 	.container-fluid
 		@apply p-0 relative z-50
 	.block-wrap
+		@screen max-lg
+			@apply mx-auto
 		@screen max-2xl
 			@apply pl-4
+		@screen lg
+			max-width: r(420px) 
 		@screen 2xl
 			max-width: r(300px)
 	.row
@@ -24,7 +32,9 @@
 				width: 29%
 			&:nth-child(2)
 				width: 67.7%
-			
+	.inner
+		@screen max-lg
+			@apply absolute-x bottom-[-40px]
 	.init-swiper
 		@screen md
 			--spv: 2.7

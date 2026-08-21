@@ -38,15 +38,20 @@ if (!$title && !$intro && empty($items) && empty($gallery)) {
 						<div class="row flex clamp:gap-[32-32]">
 							<?php foreach ($chunk as $stat) :
 										$number = $stat['item_number'] ?? '';
+										$sufix  = $stat['item_sufix'] ?? '';
 										$label  = $stat['item_label'] ?? '';
 										$note   = $stat['item_note'] ?? '';
 									?>
 							<div class="col w-full sm:w-1/2">
 								<div class="item flex flex-col clamp:gap-[8-8]">
-									<?php if ($number) : ?>
-									<h2 class="heading-1 text-primary-1"><?php echo esc_html($number); ?></h2>
-									<?php endif; ?>
-									<hr>
+									<div class="flex flex-row items-center justify-start gap-2">
+										<h2 class="heading-1 text-primary-1 counter">
+											<?php echo esc_html($number); ?>
+										</h2>
+										<div class="heading-1 text-primary-1 sufix">
+											<?php echo esc_html($sufix); ?>
+										</div>
+									</div>
 									<div class="inner flex items-center clamp:gap-[8-8]">
 										<span
 											class="box bg-primary-2 rounded-full rem:w-[8px] rem:h-[8px] rem:min-w-[8px]"></span>

@@ -14,7 +14,9 @@
 		bottom: -20px
 		left: 0
 		@media screen and ( max-width: 576px)
-			font-size: 12px
+			bottom: -22px
+			font-size: 12px 
+			@apply font-medium
 		&:before
 			font-family: 'Font Awesome 6 Pro' !important
 	.wpcf7-form-control-wrap
@@ -93,6 +95,8 @@
 		border-top: none !important
 		border-right: none !important
 		border-left: none !important
+		@screen max-xl
+			@apply px-4 
 		@screen 2xl
 			@apply   min-h-[40px]
 			height: r(42px)

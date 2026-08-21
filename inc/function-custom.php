@@ -32,86 +32,105 @@ return trim(str_replace('&nbsp;', '', strip_tags($str, '<img>'))) == '';
 
 class Canhcam_Desktop_Menu_Walker extends Walker_Nav_Menu
 {
-public function start_lvl(&$output, $depth = 0, $args = null)
-{
-$output .= '<ul class="sub-menu">';
+	public function start_lvl(&$output, $depth = 0, $args = null)
+	{
+		$output .= '<ul class="sub-menu">';
 	}
 
 	public function end_lvl(&$output, $depth = 0, $args = null)
 	{
-	$output .= '</ul>';
-}
-
-public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
-{
-$classes = empty($item->classes) ? [] : (array) $item->classes;
-$classes[] = 'menu-item';
-
-if (in_array('menu-item-has-children', $classes, true)) {
-$classes[] = 'menu-item-has-children';
-}
-
-$class_names = implode(' ', array_filter(array_unique($classes)));
-$class_attr = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
-$id_attr = ' id="menu-item-' . esc_attr($item->ID) . '"';
-
-$output .= '<li' . $id_attr . $class_attr . '>' ; $title=apply_filters('the_title', $item->title, $item->ID);
-	$title = apply_filters('nav_menu_item_title', $title, $item, $args, $depth);
-	$url = !empty($item->url) ? $item->url : '#';
-	$target = !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
-
-	if (0 === (int) $depth) {
-	$output .= '<div class="title">';
-		$output .= '<a href="' . esc_url($url) . '"' . $target . '>' . esc_html($title) . '</a>';
-		$output .= '</div>';
-	} else {
-	$output .= '<a href="' . esc_url($url) . '"' . $target . '>' . esc_html($title) . '</a>';
-	}
-	}
-
-	public function end_el(&$output, $item, $depth = 0, $args = null)
-	{
-	$output .= '</li>';
-	}
-	}
-
-	/**
-	* Mobile menu walker — simple flat list matching mobile-menu-nav mockup.
-	* Output: <li class="menu-item …"><a href="…">Title</a></li>
-	*/
-	class Canhcam_Mobile_Menu_Walker extends Walker_Nav_Menu
-	{
-	public function start_lvl(&$output, $depth = 0, $args = null)
-	{
-	$output .= '<ul class="sub-menu">';
-		}
-
-		public function end_lvl(&$output, $depth = 0, $args = null)
-		{
 		$output .= '</ul>';
 	}
 
 	public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
 	{
-	$classes = empty($item->classes) ? [] : (array) $item->classes;
-	$classes[] = 'menu-item';
+		$classes   = empty($item->classes) ? array() : (array) $item->classes;
+		$classes[] = 'menu-item';
 
-	$class_names = implode(' ', array_filter(array_unique($classes)));
-	$class_attr = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
-	$id_attr = ' id="menu-item-' . esc_attr($item->ID) . '"';
+		$has_children = in_array('menu-item-has-children', $classes, true);
 
-	$output .= '<li' . $id_attr . $class_attr . '>' ; $title=apply_filters('the_title', $item->title, $item->ID);
-		$title = apply_filters('nav_menu_item_title', $title, $item, $args, $depth);
-		$url = !empty($item->url) ? $item->url : '#';
+		$class_names = implode(' ', array_filter(array_unique($classes)));
+		$class_attr  = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+		$id_attr     = ' id="menu-item-' . esc_attr($item->ID) . '"';
 
-		$output .= '<a href="' . esc_url($url) . '">' . esc_html($title) . '</a>';
+		$output .= '<li' . $id_attr . $class_attr . '>';
+
+		$title  = apply_filters('the_title', $item->title, $item->ID);
+		$title  = apply_filters('nav_menu_item_title', $title, $item, $args, $depth);
+		$url    = !empty($item->url) ? $item->url : '#';
+		$target = !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
+
+		// Parent with submenu: block navigation click.
+		$link_attrs = '';
+		if ($has_children) {
+			$url        = '#';
+			$target     = '';
+			$link_attrs = ' onclick="return false;" aria-haspopup="true"';
 		}
 
-		public function end_el(&$output, $item, $depth = 0, $args = null)
-		{
+		$link = '<a href="' . esc_url($url) . '"' . $target . $link_attrs . '>' . esc_html($title) . '</a>';
+
+		if (0 === (int) $depth) {
+			$output .= '<div class="title">' . $link . '</div>';
+		} else {
+			$output .= $link;
+		}
+	}
+
+	public function end_el(&$output, $item, $depth = 0, $args = null)
+	{
 		$output .= '</li>';
+	}
+}
+
+/**
+ * Mobile menu walker — simple flat list matching mobile-menu-nav mockup.
+ * Output: <li class="menu-item …"><a href="…">Title</a></li>
+ */
+class Canhcam_Mobile_Menu_Walker extends Walker_Nav_Menu
+{
+	public function start_lvl(&$output, $depth = 0, $args = null)
+	{
+		$output .= '<ul class="sub-menu">';
+	}
+
+	public function end_lvl(&$output, $depth = 0, $args = null)
+	{
+		$output .= '</ul>';
+	}
+
+	public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+	{
+		$classes   = empty($item->classes) ? array() : (array) $item->classes;
+		$classes[] = 'menu-item';
+
+		$has_children = in_array('menu-item-has-children', $classes, true);
+
+		$class_names = implode(' ', array_filter(array_unique($classes)));
+		$class_attr  = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+		$id_attr     = ' id="menu-item-' . esc_attr($item->ID) . '"';
+
+		$output .= '<li' . $id_attr . $class_attr . '>';
+
+		$title = apply_filters('the_title', $item->title, $item->ID);
+		$title = apply_filters('nav_menu_item_title', $title, $item, $args, $depth);
+		$url   = !empty($item->url) ? $item->url : '#';
+
+		// Parent with submenu: block navigation click.
+		$link_attrs = '';
+		if ($has_children) {
+			$url        = '#';
+			$link_attrs = ' onclick="return false;" aria-haspopup="true"';
 		}
-		}
+
+		$output .= '<a href="' . esc_url($url) . '"' . $link_attrs . '>' . esc_html($title) . '</a>';
+	}
+
+	public function end_el(&$output, $item, $depth = 0, $args = null)
+	{
+		$output .= '</li>';
+	}
+}
 
 		?>
 		<?php

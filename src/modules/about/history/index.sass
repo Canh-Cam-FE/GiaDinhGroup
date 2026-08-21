@@ -17,6 +17,19 @@
 		em,i
 			@apply transition
 			font-size: r(30px)
+	.wrap
+		.prev,.next
+			@apply absolute-y   z-50
+			@screen max-md
+				@apply top-[60%]
+		.prev
+			@apply left-1
+			@screen lg
+				left: r(-88px)
+		.next
+			@apply right-1
+			@screen lg
+				right: r(-88px)
 	.swiper-pagination
 		position: absolute !important
 		@screen lg
@@ -32,7 +45,6 @@
 				@apply bg-primary-2 border-primary-2
 	.panel
 		@apply w-full overflow-hidden
-		max-width: r(1400px)
 
 		.swiper
 			@apply w-full
@@ -51,7 +63,10 @@
 
 	.history-thumb
 		@apply w-full overflow-hidden
-		
+		hr
+			@apply w-[2px]
+			@media screen and ( min-width: 2000px)
+				min-width: r(2px)
 		.swiper
 			@apply w-full overflow-visible
 		.swiper-slide

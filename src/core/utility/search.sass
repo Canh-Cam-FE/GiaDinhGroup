@@ -262,3 +262,23 @@
 	@apply font-bold text-center leading-tight
 .search-wrap 
 	@apply flex-center relative z-[120] cursor-pointer transition
+	@screen xl
+		@apply mr-2
+.section-SearchResults
+	@apply py-16
+	.heading-2
+		@apply mb-8
+.search-results-group
+	@apply pt-10
+	.grid
+		@screen max-md
+			@apply grid-cols-2
+		@screen max-sm
+			@apply grid-cols-1
+	.sector-item
+		a
+			@apply transition flex-col gap-3
+		.heading-5
+			@apply mt-5 mb-3 block line-clamp-2
+		.desc
+			@apply line-clamp-3

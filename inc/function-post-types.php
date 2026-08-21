@@ -58,3 +58,19 @@ add_action('init', function () {
 		'rewrite'       => array('slug' => 'tuyen-dung'),
 	));
 });
+
+/**
+ * No public sector listing — redirect taxonomy / archive URLs to About.
+ */
+add_action('template_redirect', function () {
+	if (!is_tax('sector_category') && !is_post_type_archive('sector')) {
+		return;
+	}
+
+	$about_url = function_exists('get_page_link_by_template')
+		? get_page_link_by_template('templates/template-about.php')
+		: false;
+
+	wp_safe_redirect($about_url ? $about_url : home_url('/'), 301);
+	exit;
+});
