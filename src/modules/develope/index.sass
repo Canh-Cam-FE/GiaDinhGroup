@@ -17,15 +17,20 @@
 			@apply leading-none
 			font-size: r(52px)
 	.box-wrap
-		border: 8px solid transparent
-		border-image: linear-gradient(134.27deg, rgba(0, 140, 255, 0.34) 1.25%, rgba(255, 255, 255, 0) 100%) 1
-		@apply p-4
-		@screen max-lg
-			@apply bg-white bg-opacity-50
+		@apply relative p-4
+		&::before
+			content: ''
+			@apply absolute inset-0 pointer-events-none
+			padding: 8px
+			border-radius: inherit
+			background: linear-gradient(180deg, rgba(0, 140, 255, 0.34) 0%, rgba(0, 140, 255, 0) 100%)
+			-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)
+			-webkit-mask-composite: xor
+			mask-composite: exclude
 		@screen lg
-			border: 20px solid transparent
-			border-image: linear-gradient(134.27deg, rgba(0, 140, 255, 0.34) 1.25%, rgba(255, 255, 255, 0) 100%) 1
 			@apply pt-15 pl-15 rem:pb-[189px] rem:pr-[52px]
+			&::before
+				padding: 20px
 		@screen max-2xl
 			max-width: r(620px)
 		// @screen max-lg

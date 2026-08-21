@@ -278,6 +278,56 @@ export function swiperInit() {
 
 	window.initSwiper = [];
 
+	function getCssSpv(el) {
+		const wrap = el?.closest?.(".init-swiper") || el;
+		if (!wrap) return 1;
+		const spv = parseFloat(getComputedStyle(wrap).getPropertyValue("--spv"));
+		return Number.isFinite(spv) && spv > 0 ? spv : 1;
+	}
+
+	// Fractional --spv (e.g. 2.7) can add an end snap that cuts the leading slide.
+	// Keep snaps aligned to slide starts so the first visible item is never clipped.
+	function alignSnapToSlideStarts(swiper) {
+		if (!swiper?.slidesGrid?.length) return;
+		if (swiper.params?.loop) return;
+		if (getCssSpv(swiper.el) % 1 === 0) return;
+
+		const maxOffset = Math.abs(swiper.maxTranslate());
+		const aligned = swiper.slidesGrid.filter((offset) => offset <= maxOffset + 0.5);
+		if (aligned.length) {
+			swiper.snapGrid = aligned;
+		}
+	}
+
+	function bindPlayOnView(swiper) {
+		const root = swiper.el.closest(".init-swiper") || swiper.el;
+		swiper.autoplay?.stop();
+		if (swiper.params.loop && typeof swiper.slideToLoop === "function") {
+			swiper.slideToLoop(0, 0);
+		} else {
+			swiper.slideTo(0, 0);
+		}
+
+		const io = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						swiper.autoplay?.start();
+					} else {
+						swiper.autoplay?.stop();
+						if (swiper.params.loop && typeof swiper.slideToLoop === "function") {
+							swiper.slideToLoop(0, swiper.params.speed);
+						} else {
+							swiper.slideTo(0, swiper.params.speed);
+						}
+					}
+				});
+			},
+			{ threshold: 0.25 }
+		);
+		io.observe(root);
+	}
+
 	$(".init-swiper .swiper").each(function (index) {
 		const $this = $(this);
 
@@ -288,6 +338,9 @@ export function swiperInit() {
 		const isTriggerLoadedNext = $this.hasClass("trigger-loaded-next");
 		const isCenter = $this.hasClass("is-center-slide");
 		const isGrid = $this.hasClass("is-grid");
+		const playOnView =
+			$this.hasClass("play-on-view") ||
+			$this.closest(".init-swiper").hasClass("play-on-view");
 
 		// Data attrs
 		let time = Number($this.data("time"));
@@ -388,6 +441,8 @@ export function swiperInit() {
 				},
 
 				init: function () {
+					alignSnapToSlideStarts(this);
+
 					// Fix duplicate fancybox in loop mode
 					if (isLoop) {
 						window.lazyLoader?.observe();
@@ -399,6 +454,10 @@ export function swiperInit() {
 
 					if (isTriggerLoadedNext) {
 						triggerLozadNextSlideImage(this);
+					}
+
+					if (playOnView && time !== 0) {
+						bindPlayOnView(this);
 					}
 
 					console.log("Swiper initialized:", {
@@ -427,6 +486,8 @@ export function swiperInit() {
 				},
 
 				resize: function (swiper) {
+					alignSnapToSlideStarts(swiper);
+
 					const totalSlidesWidth = swiper.slidesSizesGrid.reduce(
 						(acc, curr) => acc + curr,
 						0

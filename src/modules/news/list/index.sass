@@ -32,6 +32,8 @@
 			+res-nav
 			.list
 				@apply justify-center whitespace-nowrap flex-nowrap gap-[4px]
+				@screen max-sm
+				@apply justify-normal
 
 	.tab-item
 		@apply w-full
@@ -56,6 +58,9 @@
 			@apply flex flex-col
 			padding: r(20px) r(4px)
 			gap: r(16px)
+			h4
+				a
+					@apply line-clamp-2
 
 	.card .media a
 		+aspect-ratio(640, 520)

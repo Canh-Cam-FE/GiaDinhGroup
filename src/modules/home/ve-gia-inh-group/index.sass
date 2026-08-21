@@ -16,6 +16,8 @@
 		@apply py-16
 		@screen xl
 			@apply py-20
+		.stat-item 
+			@apply border-b border-b-[#EFEFEF] 
 		.content
 			@apply ml-auto  mr-0 justify-start
 			@apply lg:rem:pr-[80px]
@@ -23,8 +25,14 @@
 				@apply rem:max-w-[800px]
 			@screen 2xl
 				@apply rem:max-w-[700px]
+			.wrap
+				h2
+					line-height: calc(62/48)
+					@apply font-Montserrat
 		.heading-1
-			@apply font-sans xl:rem:text-[60px] rem:text-[52px] lowercase
+			@apply font-sans 
+		.sufix
+			@apply xl:rem:text-[60px] rem:text-[52px] lowercase
 		.counter
 			@apply font-Google-Sans-Flex !#{important}
 			@screen xl
@@ -38,10 +46,10 @@
 					gap: 0  r(160px) 
 		.list
 			.row
-				@apply gap-0
+				@apply gap-5
 			.inner
 				.desc
-					margin-top: r(2px)
+					margin-top: r(4px)
 				h4
 					@apply flex-shrink-0
 	&:not(.service-detail-1)

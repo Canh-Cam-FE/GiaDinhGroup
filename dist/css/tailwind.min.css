@@ -1727,6 +1727,9 @@ p.desc {
 .w-px {
   width: 1px;
 }
+.min-w-0 {
+  min-width: 0;
+}
 .min-w-12 {
   min-width: 2.5rem;
 }
@@ -1757,11 +1760,11 @@ p.desc {
 .min-w-\[8px\] {
   min-width: 8px;
 }
-.min-w-0 {
-  min-width: 0;
-}
 .max-w-full {
   max-width: 100%;
+}
+.flex-1 {
+  flex: 1 1 0%;
 }
 .flex-shrink-0 {
   flex-shrink: 0;
@@ -1997,6 +2000,10 @@ p.desc {
 .border-white\/40 {
   border-color: rgb(255 255 255 / 0.4);
 }
+.border-b-\[\#EFEFEF\] {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(239 239 239 / var(--tw-border-opacity, 1));
+}
 .border-b-grey-950 {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(41 41 41 / var(--tw-border-opacity, 1));
@@ -2113,9 +2120,6 @@ p.desc {
 }
 .bg-opacity-20 {
   --tw-bg-opacity: 0.2;
-}
-.bg-opacity-50 {
-  --tw-bg-opacity: 0.5;
 }
 .bg-none {
   background-image: none;
@@ -3834,9 +3838,6 @@ body {
     height: clamp(60px, calc(60 / var(--design-width, 1920) * var(--design-vw, 100vw)), calc(60 / var(--design-width, 1920) * var(--design-vw, 100vw)));
   }
 }
-body.minimize .search-overlay {
-  top: var(--header-height);
-}
 @keyframes fd-in {
   0% {
     opacity: 0;
@@ -4373,7 +4374,7 @@ body.minimize .search-overlay {
 }
 .wrap-form .wpcf7-response-output {
   position: relative;
-  font-size: clamp(14px, calc(16 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.8333333333333334rem);
+  font-size: clamp(14px, calc(14 / 1920 * var(--design-vw, calc(100vw - var(--scrollbar-width, 0px)))), 0.7291666666666667rem);
   line-height: 1.4;
   --tw-text-opacity: 1;
   color: rgb(255 0 0 / var(--tw-text-opacity, 1));
@@ -7248,9 +7249,6 @@ body.minimize .search-overlay {
 }
 .ratio\:pt-\[960_1920\] {
   padding-top: 50%;
-}
-.ratio\:pt-\[293_440\] {
-  padding-top: 66.5909090909091%;
 }
 @media (min-width: 576.1px) {
 

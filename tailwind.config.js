@@ -266,6 +266,7 @@ module.exports = {
 				"Mona-Sans": ["'Mona Sans'", "sans-serif"],
 				Pinyon: ["'Pinyon Script'", "cursive"],
 				Poppins: ["'Poppins'", "sans-serif"],
+				Montserrat: ["'Montserrat'", "sans-serif"],
 				"Segoe-UI": ["'Segoe UI'", "sans-serif"],
 				"Playfair-Display": ["'Playfair Display'", "serif"],
 				"NVN-Motherland-Signature": ["'NVN Motherland Signature'"],
