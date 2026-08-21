@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="./css/core.min.css" attr>
+	<link rel="stylesheet" href="./css/tailwind.min.css">
+	<link rel="stylesheet" href="./css/main.min.css">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&amp;family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Roboto:ital,wght@0,100..900;1,100..900&amp;family=Material+Symbols+Outlined:wght@100;400;700&amp;display=swap"
+		attr>
+	<title>Dự án — Gia Định Group</title>
+</head>
+
+<body class="page projects-page">
+	<header class="fixed  z-999 top-0 left-0 right-0 w-full transition ">
+		<div class="container-xxl relative z-50 flex-between h-full no-pad">
+			<div class="nav-brand z-50 pointer-events-auto z-50 flex-center"><a class="pointer-events-auto"
+					href="javascript:;"><img src="./img/logo.svg" alt=""></a></div>
+			<nav class="nav-primary-menu">
+				<ul class="nav" id="menu-site-menu">
+					<li class="menu-item current-menu-item" id="menu-item-1006">
+						<div class="title"><a href="javascript:;">Về Digiworld</a></div>
+					</li>
+					<li class="menu-item" id="menu-item-1006">
+						<div class="title"><a href="javascript:;">Ngành hàng</a></div>
+					</li>
+					<li class="menu-item menu-item menu-item-has-children menu-item-has-children drop-mega"
+						id="menu-item-1006">
+						<div class="title"><a href="javascript:;">Phát triển bền vững</a></div>
+					</li>
+					<li class="menu-item menu-item menu-item-has-children menu-item-has-children drop-mega"
+						id="menu-item-1006">
+						<div class="title"><a href="javascript:;">Quan hệ nhà đầu tư</a></div>
+						<ul class="sub-menu">
+							<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1014"
+								id="menu-item-1014"><a href="javascript:;">Góc chia sẻ</a></li>
+							<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1014"
+								id="menu-item-1014"><a href="javascript:;">góc chia sẻ</a></li>
+							<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1014"
+								id="menu-item-1014"><a href="javascript:;">điểm bán</a></li>
+						</ul>
+					</li>
+					<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1014"
+						id="menu-item-1014"><a href="javascript:;">liên hệ</a></li>
+				</ul>
+			</nav>
+			<div class="header-btn-group flex-center">
+				<div class="search-wrap relative z-50 mr-4">
+					<div class="search-toggle"></div>
+				</div>
+				<div class="language-wrap">
+					<div
+						class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-dropdown js-wpml-ls-legacy-dropdown">
+						<ul>
+							<li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-dropdown"
+								tabindex="0"><a class="js-wpml-ls-item-toggle wpml-ls-item-toggle"><img
+										class="wpml-ls-flag" src="./img/icon/us.gif" alt="" width="26" height="26"><span
+										class="wpml-ls-native">VN</span></a>
+								<ul class="wpml-ls-sub-menu">
+									<li
+										class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-vi wpml-ls-last-item">
+										<a class="wpml-ls-link"><img class="wpml-ls-flag" src="./img/icon/vn.gif" alt=""
+												width="26" height="26"><span class="wpml-ls-native" lang="vi">VN
+											</span></a></li>
+									<li
+										class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-vi wpml-ls-last-item">
+										<a class="wpml-ls-link"><img class="wpml-ls-flag" src="./img/icon/vn.gif" alt=""
+												width="26" height="26"><span class="wpml-ls-native"
+												lang="vi">VI</span></a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="site-menu-toggle mt-1" tabindex="-1" aria-label="Toggle Site Menu">
+				<div class="hamburger hamburger--collapse">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="searchbox">
+		<div class="search-overlay">
+			<div class="close-search"><em class="material-symbols-outlined">close</em></div>
+			<div class="container">
+				<input type="text" placeholder="Search">
+				<button tabindex="-1" aria-label="Search Button"><em
+						class="fa-regular fa-magnifying-glass"></em></button>
+			</div>
+		</div>
+	</div>
+	<div class="mobile-nav-wrap">
+		<div class="mobile-top-nav relative z-50">
+			<div class="close-menu"><em class="material-symbols-outlined icon-regular">close</em></div>
+		</div>
+		<nav class="mobile-menu-nav relative z-50">
+			<ul class="nav" id="menu-site-menu">
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1006" id="menu-item-1006">
+					<a href="javascript:;">Câu chuyện Nutricare</a></li>
+				<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-has-children menu-item-1013"
+					id="menu-item-1013"><a href="javascript:;">Sản phẩm</a>
+					<ul class="sub-menu">
+						<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-1014 menu-item-has-children"
+							id="menu-item-1014"><a href="javascript:;">Dinh dưỡng cho bé và mẹ mang thai dưỡng cho bé và
+								mẹ mang thai</a>
+							<ul class="sub-menu">
+								<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-1014"
+									id="menu-item-1014"><a href="javascript:;"> Lorem ipsum dolor </a></li>
+								<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-1014"
+									id="menu-item-1014"><a href="javascript:;"> Lorem ipsum dolor </a></li>
+								<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-1014"
+									id="menu-item-1014"><a href="javascript:;"> Lorem ipsum dolor </a></li>
+							</ul>
+						</li>
+						<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-1014 menu-item-has-children"
+							id="menu-item-1014"><a href="javascript:;">Dinh dưỡng cho bé và mẹ mang thai</a>
+							<ul class="sub-menu">
+								<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-1014"
+									id="menu-item-1014"><a href="javascript:;"> Lorem ipsum dolor </a></li>
+								<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-1014"
+									id="menu-item-1014"><a href="javascript:;"> Lorem ipsum dolor </a></li>
+								<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-1014"
+									id="menu-item-1014"><a href="javascript:;"> Lorem ipsum dolor </a></li>
+							</ul>
+						</li>
+						<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-1014"
+							id="menu-item-1014"><a href="javascript:;">Sữa hạt</a></li>
+						<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-1014"
+							id="menu-item-1014"><a href="javascript:;">Sữa trái cây, Sữa chua uống</a></li>
+					</ul>
+				</li>
+				<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-has-children menu-item-1013"
+					id="menu-item-1013"><a href="javascript:;">Services</a>
+					<ul class="sub-menu">
+						<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-1014"
+							id="menu-item-1014"><a href="javascript:;">Tin cong trinh</a></li>
+					</ul>
+				</li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1006" id="menu-item-1006">
+					<a href="javascript:;">Viện dinh dưỡng Y học Nutricare Hoa Kỳ </a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1006" id="menu-item-1006">
+					<a href="javascript:;">Khoa học dinh dưỡng</a></li>
+			</ul>
+		</nav>
+		<div class="searchbox">
+			<div class="container">
+				<input type="text" placeholder="Search">
+				<button tabindex="-1" aria-label="Search Button"><em
+						class="fa-regular fa-magnifying-glass"></em></button>
+			</div>
+		</div>
+	</div>
+	<main>
+		<div class="banner-breadcrumb">
+			<section class="top-banner single init-swiper">
+				<div class="swiper overflow-hidden">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="img zoom-in overflow-hidden"><a class="img-ratio ratio:pt-[496_1920]"><img
+										class="lozad" src="https://picsum.photos/1920/1080?nature=1" alt=""
+										loading="lazy" /></a></div>
+						</div>
+						<div class="swiper-slide">
+							<div class="img zoom-in overflow-hidden"><a class="img-ratio ratio:pt-[496_1920]"><img
+										class="lozad" src="https://picsum.photos/1920/1080?nature=1" alt=""
+										loading="lazy" /></a></div>
+						</div>
+						<div class="swiper-slide">
+							<div class="img zoom-in overflow-hidden"><a class="img-ratio ratio:pt-[496_1920]"><img
+										class="lozad" src="https://picsum.photos/1920/1080?nature=1" alt=""
+										loading="lazy" /></a></div>
+						</div>
+						<div class="swiper-slide">
+							<div class="img zoom-in overflow-hidden"><a class="img-ratio ratio:pt-[496_1920]"><img
+										class="lozad" src="https://picsum.photos/1920/1080?nature=1" alt=""
+										loading="lazy" /></a></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="global-breadcrumb">
+				<div class="container">
+					<h2 class="heading-banner text-white text-4xl lg:text-6xl font-bold uppercase">Giới thiệu</h2>
+					<nav class="rank-math-breadcrumb" aria-label="breadcrumbs">
+						<p><a href="https://gom-viet-thanh.webcanhcam.vn">Home</a><span class="separator"> - </span><a
+								href="https://gom-viet-thanh.webcanhcam.vn/services/">Services</a><span
+								class="separator"> - </span><span class="last">Packing and loading services for ceramic
+								products</span></p>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<section class="projects-list bg-gray-50 pad-8">
+			<div class="container">
+				<div class="wrap flex flex-wrap items-center clamp:gap-[16-24] mb-10 lg:justify-between max-lg:mb-7">
+					<h2 class="heading-1 text-gray-950">DỰ ÁN</h2>
+					<div class="zone-nav">
+						<ul class="list flex flex-wrap items-center clamp:gap-[16-16]" role="tablist"
+							aria-label="Danh mục dự án" data-js-target="projects-filter">
+							<li><a><span class="desc body-1 text-primary-2">Tất cả</span></a></li>
+							<li><a><span class="desc body-1 text-gray-950">Bất động sản công nghiệp</span></a></li>
+							<li><a><span class="desc body-1 text-gray-950">Bất động sản thương mại</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="card project-big group">
+					<div class="row">
+						<div class="col w-full lg:w-7/12">
+							<div class="media zoom-in"><a href="javascript:;"><img class="lozad"
+										src="https://picsum.photos/1920/1080?nature=1" alt="" loading="lazy" /></a>
+							</div>
+						</div>
+						<div class="col w-full lg:w-5/12">
+							<div class="content">
+								<div class="wrap">
+									<h3><a class="group-hover:text-primary-2 heading-3 text-gray-950">Cụm Công Nghiệp Hồ
+											Sơn 1</a></h3>
+									<div class="box">
+										<div class="item">
+											<div class="desc body-2 text-gray-950 label font-bold">Vị trí</div>
+											<div class="desc body-2 text-gray-950">Huyện Hữu Lũng, Tỉnh Lạng Sơn</div>
+										</div>
+										<div class="inner flex items-center clamp:gap-[52-52]">
+											<div class="item">
+												<div class="desc body-2 text-gray-950 label font-bold">Quy mô</div>
+												<div class="desc body-2 text-gray-950">75 ha</div>
+											</div>
+											<hr>
+											<div class="item">
+												<div class="desc body-2 text-gray-950 label font-bold">Thời gian bàn
+													giao</div>
+												<div class="desc body-2 text-gray-950">2025</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="btn-wrap"><a class="btn btn-primary"><span>Xem chi tiết</span><em
+											class="fa-regular fa-arrow-right"></em></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="list grid grid-cols-1 md:grid-cols-2 mt-10 lg:grid-cols-3 clamp:gap-[40-40]">
+					<div class="item bg-white project-item">
+						<div class="gallery-swiper swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="media zoom-in"><a href="javascript:;"><img class="lozad"
+												src="https://picsum.photos/1920/1080?nature=1" alt=""
+												loading="lazy" /></a></div>
+								</div>
+								<div class="swiper-slide">
+									<div class="media zoom-in"><a href="javascript:;"><img class="lozad"
+												src="https://picsum.photos/1920/1080?nature=1" alt=""
+												loading="lazy" /></a></div>
+								</div>
+								<div class="swiper-slide">
+									<div class="media zoom-in"><a href="javascript:;"><img class="lozad"
+												src="https://picsum.photos/1920/1080?nature=1" alt=""
+												loading="lazy" /></a></div>
+								</div>
+							</div>
+						</div>
+						<div class="content">
+							<h4><a class="heading-5 text-gray-950">Cụm Công Nghiệp Hồ Sơn 1</a></h4>
+							<div class="desc body-2 text-gray-950">
+								<ul>
+									<li> Vị Trí: Huyện Hữu Lũng, Tỉnh Lạng Sơn</li>
+									<li>Quy Mô: 75 ha</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="item bg-white project-item">
+						<div class="media zoom-in"><a href="javascript:;"><img class="lozad"
+									src="https://picsum.photos/1920/1080?nature=1" alt="" loading="lazy" /></a></div>
+						<div class="content">
+							<h4><a class="heading-5 text-gray-950">Cụm Công Nghiệp Hồ Sơn 1</a></h4>
+							<div class="desc body-2 text-gray-950">
+								<ul>
+									<li> Vị Trí: Huyện Hữu Lũng, Tỉnh Lạng Sơn</li>
+									<li>Quy Mô: 75 ha</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="item bg-white project-item">
+						<div class="media zoom-in"><a href="javascript:;"><img class="lozad"
+									src="https://picsum.photos/1920/1080?nature=1" alt="" loading="lazy" /></a></div>
+						<div class="content">
+							<h4><a class="heading-5 text-gray-950">Cụm Công Nghiệp Hồ Sơn 1</a></h4>
+							<div class="desc body-2 text-gray-950">
+								<ul>
+									<li> Vị Trí: Huyện Hữu Lũng, Tỉnh Lạng Sơn</li>
+									<li>Quy Mô: 75 ha</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="item bg-white project-item">
+						<div class="gallery-swiper swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="media zoom-in"><a href="javascript:;"><img class="lozad"
+												src="https://picsum.photos/1920/1080?nature=1" alt=""
+												loading="lazy" /></a></div>
+								</div>
+								<div class="swiper-slide">
+									<div class="media zoom-in"><a href="javascript:;"><img class="lozad"
+												src="https://picsum.photos/1920/1080?nature=1" alt=""
+												loading="lazy" /></a></div>
+								</div>
+								<div class="swiper-slide">
+									<div class="media zoom-in"><a href="javascript:;"><img class="lozad"
+												src="https://picsum.photos/1920/1080?nature=1" alt=""
+												loading="lazy" /></a></div>
+								</div>
+							</div>
+						</div>
+						<div class="content">
+							<h4><a class="heading-5 text-gray-950">Cụm Công Nghiệp Hồ Sơn 1</a></h4>
+							<div class="desc body-2 text-gray-950">
+								<ul>
+									<li> Vị Trí: Huyện Hữu Lũng, Tỉnh Lạng Sơn</li>
+									<li>Quy Mô: 75 ha</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="item bg-white project-item">
+						<div class="media zoom-in"><a href="javascript:;"><img class="lozad"
+									src="https://picsum.photos/1920/1080?nature=1" alt="" loading="lazy" /></a></div>
+						<div class="content">
+							<h4><a class="heading-5 text-gray-950">Cụm Công Nghiệp Hồ Sơn 1</a></h4>
+							<div class="desc body-2 text-gray-950">
+								<ul>
+									<li> Vị Trí: Huyện Hữu Lũng, Tỉnh Lạng Sơn</li>
+									<li>Quy Mô: 75 ha</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="item bg-white project-item">
+						<div class="media zoom-in"><a href="javascript:;"><img class="lozad"
+									src="https://picsum.photos/1920/1080?nature=1" alt="" loading="lazy" /></a></div>
+						<div class="content">
+							<h4><a class="heading-5 text-gray-950">Cụm Công Nghiệp Hồ Sơn 1</a></h4>
+							<div class="desc body-2 text-gray-950">
+								<ul>
+									<li> Vị Trí: Huyện Hữu Lũng, Tỉnh Lạng Sơn</li>
+									<li>Quy Mô: 75 ha</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="item bg-white project-item">
+						<div class="gallery-swiper swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="media zoom-in"><a href="javascript:;"><img class="lozad"
+												src="https://picsum.photos/1920/1080?nature=1" alt=""
+												loading="lazy" /></a></div>
+								</div>
+								<div class="swiper-slide">
+									<div class="media zoom-in"><a href="javascript:;"><img class="lozad"
+												src="https://picsum.photos/1920/1080?nature=1" alt=""
+												loading="lazy" /></a></div>
+								</div>
+								<div class="swiper-slide">
+									<div class="media zoom-in"><a href="javascript:;"><img class="lozad"
+												src="https://picsum.photos/1920/1080?nature=1" alt=""
+												loading="lazy" /></a></div>
+								</div>
+							</div>
+						</div>
+						<div class="content">
+							<h4><a class="heading-5 text-gray-950">Cụm Công Nghiệp Hồ Sơn 1</a></h4>
+							<div class="desc body-2 text-gray-950">
+								<ul>
+									<li> Vị Trí: Huyện Hữu Lũng, Tỉnh Lạng Sơn</li>
+									<li>Quy Mô: 75 ha</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="item bg-white project-item">
+						<div class="media zoom-in"><a href="javascript:;"><img class="lozad"
+									src="https://picsum.photos/1920/1080?nature=1" alt="" loading="lazy" /></a></div>
+						<div class="content">
+							<h4><a class="heading-5 text-gray-950">Cụm Công Nghiệp Hồ Sơn 1</a></h4>
+							<div class="desc body-2 text-gray-950">
+								<ul>
+									<li> Vị Trí: Huyện Hữu Lũng, Tỉnh Lạng Sơn</li>
+									<li>Quy Mô: 75 ha</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="item bg-white project-item">
+						<div class="media zoom-in"><a href="javascript:;"><img class="lozad"
+									src="https://picsum.photos/1920/1080?nature=1" alt="" loading="lazy" /></a></div>
+						<div class="content">
+							<h4><a class="heading-5 text-gray-950">Cụm Công Nghiệp Hồ Sơn 1</a></h4>
+							<div class="desc body-2 text-gray-950">
+								<ul>
+									<li> Vị Trí: Huyện Hữu Lũng, Tỉnh Lạng Sơn</li>
+									<li>Quy Mô: 75 ha</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modulepager">
+				<ul class="pagination">
+					<li class="active"><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+				</ul>
+			</div>
+		</section>
+	</main>
+	<div class="sidenav-group"><a class="back-to-top  transition opacity-100 pointer-events-none flex-center  mb-1 e">
+			<div class="icon flex-center bg-white rounded-full overflow-hidden"><em class="fa-regular fa-arrow-up"></em>
+			</div>
+		</a>
+		<ul>
+			<li><a class="wrap" href="">
+					<div class="icon"><em class="material-symbols-outlined">download</em></div>
+					<div class="txt-grid">
+						<div><span>Lien hệ</span></div>
+					</div>
+				</a></li>
+			<li>
+				<div class="wrap">
+					<div class="icon"><em class="material-symbols-outlined">chat_bubble</em></div>
+					<div class="txt-grid social-list">
+						<div>
+							<ul class="social-fixed">
+								<li> <a href="#"><i class="fa-brands fa-facebook-messenger"></i></a></li>
+								<li> <a href="#"><i class="fa-brands fa-facebook-messenger"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<footer class="pt-15 lg:pt-20">
+		<div class="container">
+			<div class="row">
+				<div class="col w-full lg:w-7/12">
+					<div class="wrapper flex-start gap-7 lg:gap-10">
+						<div class="logo"><a><img src="./img/logo.svg" alt="alt"></a></div>
+						<div class="txt">
+							<h1 class="heading-2 text-primary-1 mb-6"> Công Ty Cổ Phần Tập Đoàn Gia Định</h1>
+							<address>
+								<ul>
+									<li>Trụ sở chính: Số 566, Quốc Lộ 13, Khu phố 6, Phường Hiệp Bình, Tp Hồ Chí Minh
+									</li>
+									<li>Điện thoại:<a>028 3726 9110</a></li>
+									<li>Email:<a>giadinh@giadinhgroup.com.vn</a></li>
+								</ul>
+							</address>
+						</div>
+					</div>
+				</div>
+				<div class="col w-full lg:w-5/12">
+					<h4 class="heading-5 text-primary-1 mb-6 text-center lg:text-right">Theo dõi húng tôi </h4>
+					<div class="social flex-center gap-2 lg:flex-end"><a href="javascript:;" aria-label="Facebook"><i
+								class="fa-brands fa-facebook-f"></i></a><a href="javascript:;" aria-label="LinkedIn"><i
+								class="fa-brands fa-linkedin"></i></a><a href="javascript:;" aria-label="YouTube"><i
+								class="fa-brands fa-youtube"></i></a><a href="javascript:;" aria-label="Email"><i
+								class="fa-regular fa-envelope"></i></a></div>
+				</div>
+			</div>
+			<div class="bottom py-10 relative mt-10">
+				<div class="left max-lg:col-reverse w-full lg:flex-between max-lg:gap-5">
+					<div class="desc body-4 text-grey-950 max-lg:text-center">© 2026 Toppan Equator. All Rights
+						Reserved. Design website by Canh Cam.</div>
+					<div class="box lg:pl-9">
+						<ul class="desc body-4 flex-start policy-nav">
+							<li class="flex-center whitespace-nowrap"><a
+									class="transition border-b border-transparent py-[1px]" href="">Site map </a></li>
+							<li class="flex-center whitespace-nowrap"><a
+									class="transition border-b border-transparent py-[1px]" href="">Policy</a></li>
+							<li class="flex-center whitespace-nowrap"><a
+									class="transition border-b border-transparent py-[1px]" href=""> legal privacy</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="https://unpkg.com/videojs-youtube/dist/Youtube.min.js"></script>
+	<script src="./js/core.min.js"></script>
+	<script src="./js/main.min.js"> </script>
+	<script src="https://unpkg.com/videojs-youtube/dist/Youtube.min.js"></script>
+</body>
+
+</html>

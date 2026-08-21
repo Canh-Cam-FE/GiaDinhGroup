@@ -1,6 +1,6 @@
 .contact-us
 	.row
-		@apply justify-between
+		@apply justify-between xl:gap-0 gap-8
 	.btn
 		em,i
 			transform: none !important
@@ -37,7 +37,9 @@
 		.frm-btnwrap
 			@screen max-md
 				@apply mt-8
-		
+		.btn-wrap
+			@screen max-md
+				@apply flex justify-between items-center
 .loader
 	@apply my-4 hidden
 	svg

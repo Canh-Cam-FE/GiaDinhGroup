@@ -87,9 +87,10 @@
 				transform: translateX(5px)
 .project-item
 	@apply flex flex-col overflow-hidden bg-white
+	.gallery-swiper
+		@apply w-full min-w-0
 	.media
 		@apply overflow-hidden w-full
-
 		a
 			@apply block w-full
 			+aspect-ratio(293,440 )
@@ -120,8 +121,8 @@
 		ul
 			@apply pl-0
 			li
-				@apply pl-4
+				@apply pl-4 inline-flex items-center gap-2
 				&:last-child
 					@apply mb-0
 				&:before
-					@apply w-[4px] min-w-[4px] min-h-[4px] left-0 top-1
+					@apply w-1 h-1 left-0 top-1 static

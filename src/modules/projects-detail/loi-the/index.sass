@@ -1,10 +1,10 @@
 .projects-detail-vi-tri
 	.item
-		@apply flex flex-col
+		@apply flex flex-col cursor-pointer
 		a
 			@apply relative
-			&::after
-				@apply bg-black/40
+			// &::after
+			// 	@apply bg-black/40
 		&:hover
 			.box
 				@apply opacity-0
@@ -13,6 +13,9 @@
 					transform: translateX(-110%)
 				&::after
 					transform: translateX(110%)
+			.content
+				&::before
+					@apply opacity-100
 
 	.img
 		@apply relative
@@ -35,16 +38,22 @@
 		
 
 	.content
-		@apply absolute inset-0 flex flex-col justify-between h-full z-90
 		padding: r(32px) r(40px)
 		gap: r(12px)
+		@apply absolute inset-0 flex flex-col justify-between h-full z-90
+		&::before
+			content: ""
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 53.5%, rgba(0, 0, 0, 0.80) 88.13%)
+			@apply absolute w-full h-full top-0 left-0 pointer-events-none -z-1 transition-all opacity-0
 
 	.box
 		@apply flex items-center transition
-		width: r(96px)
-		height: r(96px)
+		width: r(72px)
+		height: r(86px)
 
 		i
+			font-variation-settings: "wght" 100, "FILL" 0, "GRAD" 0, "opsz" 24
 			@apply text-5xl leading-none
 			@screen xl
 				font-size: r(96px)
+			

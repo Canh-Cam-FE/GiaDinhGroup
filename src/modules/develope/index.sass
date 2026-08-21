@@ -17,7 +17,6 @@
 			@apply leading-none
 			font-size: r(52px)
 	.box-wrap
-		
 		border: 8px solid transparent
 		border-image: linear-gradient(134.27deg, rgba(0, 140, 255, 0.34) 1.25%, rgba(255, 255, 255, 0) 100%) 1
 		@apply p-4
@@ -26,13 +25,21 @@
 		@screen lg
 			border: 20px solid transparent
 			border-image: linear-gradient(134.27deg, rgba(0, 140, 255, 0.34) 1.25%, rgba(255, 255, 255, 0) 100%) 1
-			padding:  60px 52px 189px 60px
+			@apply pt-15 pl-15 rem:pb-[189px] rem:pr-[52px]
 		@screen max-2xl
-			max-width: r(800px)
-		@screen max-lg
-			max-width: calc( 100% - 80px )
+			max-width: r(620px)
+		// @screen max-lg
+		// 	max-width: calc( 100% - 80px )
 		@screen max-sm
 			max-width: 100% 
+		.desc
+			@apply xl:rem:h-[88px] overflow-y-scroll pr-2
+			&::-webkit-scrollbar
+				@apply w-1 h-1
+			&::-webkit-scrollbar-track
+				background-color: rgba(#b4b2b2,.5 )
+			&::-webkit-scrollbar-thumb
+				@apply rounded-full bg-gray-200
 .develope-2
 	.txt
 		@screen max-md
@@ -76,4 +83,8 @@
 			--spv: 3
 		@screen max-md
 			--spv: 2
+		.news-item
+			.img
+				a
+					@apply ratio:pt-[220_440]
 		

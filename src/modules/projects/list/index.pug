@@ -43,9 +43,20 @@ section.projects-list.bg-gray-50.pad-8
 		.list.grid.grid-cols-1(class='md:grid-cols-2 mt-10 lg:grid-cols-3 clamp:gap-[40-40]')
 			-for(i=1;i<4;i++)
 				.item.bg-white.project-item
-					.media.zoom-in
-						a(href='javascript:;')
-							+FooImg
+					.gallery-swiper.swiper
+						.swiper-wrapper
+							.swiper-slide
+								.media.zoom-in
+									a(href='javascript:;')
+										+FooImg
+							.swiper-slide
+								.media.zoom-in
+									a(href='javascript:;')
+										+FooImg
+							.swiper-slide
+								.media.zoom-in
+									a(href='javascript:;')
+										+FooImg
 					.content
 						h4
 							a.heading-5.text-gray-950 Cụm Công Nghiệp Hồ Sơn 1

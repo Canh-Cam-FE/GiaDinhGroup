@@ -188,6 +188,12 @@
 					@apply opacity-100
 			.txt-grid
 				grid-template-columns: 1fr
+				&.social-list
+					@apply pl-2 pr-3
+					&::before
+						@apply opacity-100
+	ul.social-fixed
+		@apply flex items-center gap-2 flex-row
 	em,i
 		@apply text-white transition font-normal text-lg leading-none
 		@screen xl
@@ -230,6 +236,11 @@
 			height: max-content
 			span
 				@apply whitespace-nowrap  pr-8 h-full flex justify-start items-center  text-white relative font-normal text-base
+		&.social-list
+			@apply relative
+			&::before
+				content: ""
+				@apply h-full w-[1px] bg-white/40 pointer-events-none z-1 absolute opacity-0
 	.group-btn
 		@apply flex-between gap-3 h-full  px-4 pr-6  relative
 		&::after

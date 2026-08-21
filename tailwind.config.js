@@ -163,7 +163,7 @@ module.exports = {
 				xs: [calcFzVP(12), { lineHeight: "1.4" }],
 				sm: [calcFzVP(14), { lineHeight: "1.4" }],
 				base: [calcFzVP(16), { lineHeight: "1.4" }],
-				lg: [calcFzVP(18), { lineHeight: "1.4" }],
+				lg: ["calc(18/1920*100rem)", , { lineHeight: "1.4" }],
 				xl: [calcFzVP(20), { lineHeight: "1.4" }],
 				"2xl": [calcFzVP(24), { lineHeight: "1.35" }],
 				"3xl": [calcFzVP(30), { lineHeight: "1.3" }],

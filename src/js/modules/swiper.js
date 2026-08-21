@@ -114,7 +114,20 @@ export function swiperInit() {
 		}, intervalStep);
 	}
 
-
+	document.querySelectorAll(".gallery-swiper.swiper").forEach((el) => {
+		new Swiper(el, {
+			slidesPerView: 1,
+			observer: true,
+			observeParents: true,
+			preventInteractionOnTransition: false,
+			speed: 1205,
+			autoplay: false,
+			lazy: {
+				loadPrevNext: true,
+			},
+			loop: true,
+		});
+	});
 
 
 	function resetProgressTrack() {

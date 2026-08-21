@@ -24,7 +24,7 @@
 			@screen 2xl
 				@apply rem:max-w-[700px]
 		.heading-1
-			@apply font-Montserrat
+			@apply font-sans xl:rem:text-[60px] rem:text-[52px] lowercase
 		.counter
 			@apply font-Google-Sans-Flex !#{important}
 			@screen xl
@@ -42,6 +42,8 @@
 			.inner
 				.desc
 					margin-top: r(2px)
+				h4
+					@apply flex-shrink-0
 	&:not(.service-detail-1)
 		.list
 			.row
