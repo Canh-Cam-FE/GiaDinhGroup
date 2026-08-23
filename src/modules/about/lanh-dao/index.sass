@@ -12,7 +12,7 @@
 					width: 51.2%
 				
 	.card
-		@apply relative
+		@apply relative h-full
 		&::after
 			content: ''
 			@apply block absolute pointer-events-none left-0 bottom-0 z-10  transition w-full h-[1px] bg-primary-2 opacity-0
@@ -22,7 +22,7 @@
 			.heading-4
 				@apply text-primary-2
 		.box
-			@apply flex flex-col items-center
+			@apply flex flex-col items-center flex-1
 			gap: r(4px)
 
 		.media

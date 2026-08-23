@@ -15,15 +15,15 @@
 					&::after
 						content: ''
 						@apply absolute right-0 top-1/2 -translate-y-1/2 w-px bg-gray-200
-						height: r(12px)
+						height: r(16px)
 
 			a
-				@apply inline-flex flex-col items-start border-b-2 border-transparent
+				@apply inline-flex flex-col items-start 
+				// @apply border-b-2 border-transparent
 				padding-bottom: r(4px)
 
 				&[aria-selected='true']
 					@apply border-primary-2
-
 					span
 						@apply text-primary-2
 
@@ -119,10 +119,24 @@
 	.desc
 		@apply relative z-40
 		ul
-			@apply pl-0
+			@apply pl-0 flex flex-col gap-1
 			li
-				@apply pl-4 inline-flex items-center gap-2
+				@apply pl-3 inline-flex items-center gap-2 mb-0
 				&:last-child
 					@apply mb-0
 				&:before
 					@apply w-1 h-1 left-0 top-1 static
+body
+	&.tax-projects_category
+		.nav-primary-menu
+			.nav
+				>.menu-item
+					&#menu-item-70
+						>.title 
+							.icon
+								&::after
+									@apply text-primary-2
+							a
+								@apply text-primary-2
+							&:after
+								@apply w-full

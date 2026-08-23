@@ -645,7 +645,7 @@ export function swiperInit() {
 			loop: true,
 			speed: 1205,
 			slidesPerView: 1,
-			// autoplay: { delay: 5000 },
+			autoplay: { delay: 5000 },
 			slideToClickedSlide: true,
 			lazy: { loadPrevNext: true },
 			navigation: {

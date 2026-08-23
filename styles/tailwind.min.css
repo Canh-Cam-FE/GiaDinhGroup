@@ -1678,6 +1678,9 @@ p.desc {
 .w-2 {
   width: 0.4166666666666667rem;
 }
+.w-5 {
+  width: 1.0416666666666667rem;
+}
 .w-6 {
   width: 1.25rem;
 }
@@ -1829,6 +1832,9 @@ p.desc {
 }
 .items-stretch {
   align-items: stretch;
+}
+.justify-normal {
+  justify-content: normal;
 }
 .justify-start {
   justify-content: flex-start;

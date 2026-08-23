@@ -38,13 +38,13 @@
 		@screen max-sm
 			max-width: 100% 
 		.desc
-			@apply xl:rem:h-[88px] overflow-y-scroll pr-2
+			@apply xl:rem:h-[92px] overflow-y-scroll pr-2
 			&::-webkit-scrollbar
 				@apply w-1 h-1
 			&::-webkit-scrollbar-track
 				background-color: rgba(#b4b2b2,.5 )
 			&::-webkit-scrollbar-thumb
-				@apply rounded-full bg-gray-200
+				@apply rounded-full bg-gray-300
 .develope-2
 	.txt
 		@screen max-md
@@ -88,8 +88,19 @@
 			--spv: 3
 		@screen max-md
 			--spv: 2
+		.swiper-slide
+			@apply flex flex-col h-auto
 		.news-item
+			@apply flex flex-col flex-1
 			.img
 				a
 					@apply ratio:pt-[220_440]
-		
+			.content
+				@apply flex flex-col flex-1
+				.desc
+					@apply mt-auto
+				.inner
+					@apply flex-1
+	.swiper-nav
+		.prev, .next
+			@apply top-[24%] #{!important}
