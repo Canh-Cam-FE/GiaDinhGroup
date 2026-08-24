@@ -1,20 +1,16 @@
 <?php
-$title = get_field('news_title');
+$title  = get_field('news_title');
 $button = get_field('news_button');
 
-// Lấy danh sách các chuyên mục (category)
-$categories = get_terms([
-	'taxonomy'   => 'category',
-	'hide_empty' => true,
-	'number'     => 3, // Lấy 3 chuyên mục để giống mockup
-]);
+$nav        = function_exists('canhcam_get_term_nav_context') ? canhcam_get_term_nav_context('post') : array();
+$categories = !empty($nav['children']) && is_array($nav['children']) ? $nav['children'] : array();
 
 // Hàm helper để render danh sách bài viết trong 1 tab
 if (!function_exists('canhcam_render_news_tab_content')) {
 	function canhcam_render_news_tab_content($query)
 	{
 		if (!$query->have_posts()) {
-			echo '<div class="desc body-2 text-gray-800">Nội dung sẽ được cập nhật.</div>';
+			echo '<div class="desc body-2 text-gray-800">' . esc_html__('Nội dung sẽ được cập nhật.', 'canhcamtheme') . '</div>';
 			return;
 		}
 
@@ -171,7 +167,7 @@ if (!function_exists('canhcam_render_news_tab_content')) {
 			<ul class="list flex flex-wrap items-center justify-center clamp:gap-[16-16]">
 				<li class="active">
 					<a href="javascript:;" data-type="news-tab-all">
-						<span class="desc body-1">Tất cả</span><i class="material-symbols-outlined">arrow_drop_down</i>
+						<span class="desc body-1"><?php echo esc_html__('Tất cả', 'canhcamtheme'); ?></span><i class="material-symbols-outlined">arrow_drop_down</i>
 					</a>
 				</li>
 				<?php foreach ($categories as $cat) : ?>

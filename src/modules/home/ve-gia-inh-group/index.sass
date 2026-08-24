@@ -25,6 +25,8 @@
 				@apply rem:max-w-[800px]
 			@screen 2xl
 				@apply rem:max-w-[700px]
+				@apply rem:pr-[100px]
+				
 			.wrap
 				h2
 					line-height: calc(62/48)
@@ -43,7 +45,7 @@
 				>.col
 					@apply m-0 p-0
 				@screen lg
-					gap: 0  r(160px) 
+					gap: 0  r(80px) 
 		.list
 			.row
 				@apply gap-5
@@ -52,6 +54,23 @@
 					margin-top: r(4px)
 				h4
 					@apply flex-shrink-0
+		.swiper-nav .prev::before, .swiper-nav .next::before
+			@apply text-white !#{important}
+		.swiper-nav .prev, .swiper-nav .next
+			@apply border-white !#{important}
+		.single-swiper
+			@apply relative
+		.swiper-nav.inset .prev
+			@apply left-4
+			@screen max-sm
+				@apply left-2
+		.swiper-nav.inset .next
+			@screen lg
+				right: 5rem
+			@screen max-lg
+				@apply right-4
+			@screen max-sm
+				@apply right-2
 	&:not(.service-detail-1)
 		.list
 			.row

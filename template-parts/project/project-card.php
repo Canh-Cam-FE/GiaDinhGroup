@@ -1,22 +1,61 @@
 <?php
-/**
- * Project card (grid / related).
- *
- * @var int|null $post_id Optional post ID; defaults to current post.
- */
-$post_id  = isset($post_id) ? (int) $post_id : get_the_ID();
+
+$post_id   = isset($post_id) ? (int) $post_id : get_the_ID();
 $permalink = get_permalink($post_id);
 $location  = get_field('project_location', $post_id);
 $scale     = get_field('project_scale', $post_id);
+$gallery   = get_field('project_gallery', $post_id);
+
+
+$list_gallery = array();
+
+$thumbnail_id = get_post_thumbnail_id($post_id);
+
+if ($thumbnail_id) {
+	$list_gallery[] = $thumbnail_id;
+}
+
+if ($gallery) {
+	foreach ($gallery as $image) {
+		$image_id = isset($image['ID']) ? (int) $image['ID'] : 0;
+
+		if ($image_id) {
+			$list_gallery[] = $image_id;
+		}
+	}
+}
+
+$list_gallery = array_unique($list_gallery);
 ?>
 <div class="item bg-white project-item">
-	<div class="media zoom-in">
-		<a href="<?php echo esc_url($permalink); ?>">
-			<?php if (has_post_thumbnail($post_id)) : ?>
-				<?php echo get_image_post($post_id, 'image'); ?>
-			<?php endif; ?>
-		</a>
-	</div>
+	<?php if ($list_gallery) : ?>
+		<div class="gallery-swiper swiper">
+			<div class="swiper-wrapper">
+
+				<?php foreach ($list_gallery as $image_id) : ?>
+					<div class="swiper-slide">
+						<div class="media zoom-in">
+							<a href="javascript:;">
+								<?php
+								echo wp_get_attachment_image(
+									$image_id,
+									'large',
+									false,
+									array(
+										'class'   => 'lozad',
+										'loading' => 'lazy',
+										'alt'     => '',
+									)
+								);
+								?>
+							</a>
+						</div>
+					</div>
+				<?php endforeach; ?>
+
+			</div>
+		</div>
+	<?php endif; ?>
 	<div class="content">
 		<h4>
 			<a class="heading-5 text-gray-950" href="<?php echo esc_url($permalink); ?>">

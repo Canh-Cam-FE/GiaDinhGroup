@@ -87,7 +87,7 @@ $other_careers = new WP_Query(array(
 				<div class="btn-group bg-grey-50 p-6 w-full mb-10">
 					<?php if ($app_shortcode) : ?>
 					<a class="btn w-full btn-primary mb-3" href="#recruit-modal" data-fancybox>
-						<span><?php echo esc_html__('Ứng tuyển', 'canhcamtheme'); ?></span>
+						<span><?php echo esc_html__('Nộp CV ứng tuyển', 'canhcamtheme'); ?></span>
 						<em class="fa-regular fa-plus"></em>
 					</a>
 					<?php endif; ?>

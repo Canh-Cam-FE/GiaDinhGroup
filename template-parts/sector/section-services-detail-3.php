@@ -29,8 +29,8 @@ if (!$title && empty($items)) {
 			</div>
 			<?php if (!empty($items)) : ?>
 				<div class="col w-full">
-					<div class="wrap w-full relative init-swiper max-lg:px-[15px]">
-						<div class="swiper">
+					<div class="wrap w-full relative init-swiper max-lg:px-[15px] play-on-view">
+						<div class="swiper is-loop" data-time="5000">
 							<div class="swiper-wrapper">
 								<?php foreach ($items as $item) :
 									$image     = $item['item_image'] ?? null;

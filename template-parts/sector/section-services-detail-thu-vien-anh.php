@@ -12,7 +12,7 @@ if (empty($gallery)) {
 	return;
 }
 
-$slides = array_chunk($gallery, 5);
+$slides = array_chunk($gallery, 2);
 ?>
 <section class="services-detail-thu-vien-anh bg-grey-50 pad-8">
 	<div class="container">
